@@ -1,0 +1,23 @@
+# Python virtual environment
+oil-sif/
+venv/
+.venv/
+env/
+
+# Python bytecode & cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Large AI model files & weights
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.bin
+*.h5
