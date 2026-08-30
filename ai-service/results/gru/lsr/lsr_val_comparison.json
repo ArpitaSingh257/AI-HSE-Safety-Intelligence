@@ -1,0 +1,26 @@
+{
+  "gru": {
+    "micro_precision": 0.3655913978494624,
+    "micro_recall": 0.4788732394366197,
+    "micro_f1": 0.4146341463414634,
+    "macro_precision": 0.2512566137566138,
+    "macro_recall": 0.31117586117586116,
+    "macro_f1": 0.2761501008259982,
+    "hamming_loss": 0.08020050125313283,
+    "exact_match_ratio": 0.5939849624060151,
+    "model": "Embedding + GRU",
+    "val_loss": 0.9322263334030495
+  },
+  "gru_attention": {
+    "micro_precision": 0.7,
+    "micro_recall": 0.6901408450704225,
+    "micro_f1": 0.6950354609929078,
+    "macro_precision": 0.5187744717156482,
+    "macro_recall": 0.4636881636881637,
+    "macro_f1": 0.4772494172494172,
+    "hamming_loss": 0.03592314118629908,
+    "exact_match_ratio": 0.7368421052631579,
+    "model": "Embedding + GRU + Attention",
+    "val_loss": 0.7938902694031709
+  }
+}

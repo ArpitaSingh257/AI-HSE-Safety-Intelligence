@@ -1,0 +1,46 @@
+{
+  "best_model": "Calibrated Linear SVM",
+  "test_accuracy": 0.7985074626865671,
+  "test_precision": 0.839622641509434,
+  "test_recall_sif1": 0.898989898989899,
+  "test_f1": 0.8682926829268293,
+  "test_roc_auc": 0.8782106782106782,
+  "test_pr_auc": 0.9585599768655455,
+  "confusion_matrix_tn_fp_fn_tp": [
+    [
+      18,
+      17
+    ],
+    [
+      10,
+      89
+    ]
+  ],
+  "classification_report": {
+    "0": {
+      "precision": 0.6428571428571429,
+      "recall": 0.5142857142857142,
+      "f1-score": 0.5714285714285714,
+      "support": 35.0
+    },
+    "1": {
+      "precision": 0.839622641509434,
+      "recall": 0.898989898989899,
+      "f1-score": 0.8682926829268293,
+      "support": 99.0
+    },
+    "accuracy": 0.7985074626865671,
+    "macro avg": {
+      "precision": 0.7412398921832885,
+      "recall": 0.7066378066378066,
+      "f1-score": 0.7198606271777004,
+      "support": 134.0
+    },
+    "weighted avg": {
+      "precision": 0.7882286679808505,
+      "recall": 0.7985074626865671,
+      "f1-score": 0.790753549326538,
+      "support": 134.0
+    }
+  }
+}

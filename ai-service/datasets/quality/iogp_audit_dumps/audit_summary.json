@@ -1,0 +1,3470 @@
+{
+  "IOGP_HPE": {
+    "filename": "IAOGP - High Potential Event Reports.pdf",
+    "total_pages": 92,
+    "candidate_count": 88,
+    "candidates": [
+      {
+        "page": 5,
+        "word_count": 269,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 13 Mar 2025 COUNTRY: Gabon FUNCTION: Drilling CAUSE: Caught in, under or between (excl. dropped objects) ACTIVITY: Transport - Land PRIMARY LIFE-SAVING RULE:  Driving SECONARY LIFE-SAVING RULE: "
+      },
+      {
+        "page": 6,
+        "word_count": 273,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 01 May 2025 COUNTRY: Gabon FUNCTION: Drilling CAUSE: Struck by (not dropped object) ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECONARY"
+      },
+      {
+        "page": 7,
+        "word_count": 298,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 18 Aug 2025 COUNTRY: Gabon FUNCTION: Drilling CAUSE: Struck by (not dropped object) ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVIN"
+      },
+      {
+        "page": 8,
+        "word_count": 289,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 19 Jan 2025 COUNTRY: Gabon FUNCTION: Construction CAUSE: Explosion, fire or burns ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Work authorization SECONARY LIFE-SAVING RU"
+      },
+      {
+        "page": 9,
+        "word_count": 407,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 25 Mar 2025 COUNTRY: Ghana FUNCTION: Unspecified CAUSE: Dropped objects ACTIVITY: Office, warehouse, accommodation, catering PRIMARY LIFE-SAVING RULE:  Line of fire NARRATIVE: During a heavy rai"
+      },
+      {
+        "page": 10,
+        "word_count": 308,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 26 Jul 2025 COUNTRY: Nigeria FUNCTION: Drilling CAUSE: Struck by (not dropped object) ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECONA"
+      },
+      {
+        "page": 11,
+        "word_count": 290,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 08 Oct 2025 COUNTRY: Nigeria FUNCTION: Production CAUSE: Struck by (not dropped object) ACTIVITY: Transport - Land PRIMARY LIFE-SAVING RULE:  Driving SECONARY LIFE-SAVING RULE:  Line of fire NAR"
+      },
+      {
+        "page": 12,
+        "word_count": 256,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "3. During test digging, the excavator bucket contacted a buried 11 kVA composite electrical cable, causing a dent  and minor cut. 4. Excavator use in close proximity to unidentified/poorly defined und"
+      },
+      {
+        "page": 13,
+        "word_count": 301,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "AFRICA OFFSHORE DATE: 18 Feb 2025 COUNTRY: Congo FUNCTION: Production CAUSE: Dropped objects ACTIVITY: Production operations PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING RULE:  Work au"
+      },
+      {
+        "page": 14,
+        "word_count": 398,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "AFRICA OFFSHORE DATE: 23 Mar 2025 COUNTRY: Equatorial Guinea FUNCTION: Production CAUSE: Falls from height ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Line of fire SE"
+      },
+      {
+        "page": 15,
+        "word_count": 280,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "AFRICA OFFSHORE DATE: 02 Dec 2025 COUNTRY: Gabon FUNCTION: Production CAUSE: Struck by (not dropped object) ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Line of fire S"
+      },
+      {
+        "page": 16,
+        "word_count": 284,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "AFRICA OFFSHORE DATE: 18 Mar 2025 COUNTRY: Mauritania FUNCTION: Production CAUSE: Pressure release ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Energy isolation SECONARY LIFE-"
+      },
+      {
+        "page": 17,
+        "word_count": 335,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "AFRICA OFFSHORE DATE: 18 Nov 2025 COUNTRY: Namibia FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECON"
+      },
+      {
+        "page": 18,
+        "word_count": 298,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "ASIA/AUSTRALASIA ONSHORE DATE: 03 Dec 2025 COUNTRY: Australia FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical li"
+      },
+      {
+        "page": 19,
+        "word_count": 277,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "ASIA/AUSTRALASIA ONSHORE DATE: 17 Apr 2025 COUNTRY: Australia FUNCTION: Production CAUSE: Dropped objects ACTIVITY: Office, warehouse, accommodation, catering PRIMARY LIFE-SAVING RULE:  Safe mechanica"
+      },
+      {
+        "page": 20,
+        "word_count": 321,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "ASIA/AUSTRALASIA ONSHORE DATE: 05 Sep 2025 COUNTRY: Australia FUNCTION: Production CAUSE: Pressure release ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Energy isolation SECONA"
+      },
+      {
+        "page": 21,
+        "word_count": 328,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "ASIA/AUSTRALASIA ONSHORE WHAT WENT WRONG: The suspended fender was lifted in close proximity to, and potentially above, two workers positioned in an elevated  work platform on the southern berth. The "
+      },
+      {
+        "page": 22,
+        "word_count": 267,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "ASIA/AUSTRALASIA ONSHORE DATE: 09 Apr 2025 COUNTRY: Indonesia FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical li"
+      },
+      {
+        "page": 23,
+        "word_count": 191,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "ASIA/AUSTRALASIA ONSHORE CORRECTIVE ACTIONS AND RECOMMENDATIONS: \u2022 Ensure positive isolation of process equipment/lines prior to conducting hot work. \u2022 Ensure adequate procedures for hot work (job met"
+      },
+      {
+        "page": 24,
+        "word_count": 314,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "ASIA/AUSTRALASIA OFFSHORE DATE: 01 Mar 2025 COUNTRY: Australia FUNCTION: Construction CAUSE: Caught in, under or between (excl. dropped objects) ACTIVITY: Lifting, crane, rigging, deck operations PRIM"
+      },
+      {
+        "page": 25,
+        "word_count": 220,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "EUROPE ONSHORE DATE: 18 Jun 2025 COUNTRY: Austria FUNCTION: Production CAUSE: Falls from height ACTIVITY: Drilling, workover, well operations PRIMARY LIFE-SAVING RULE:  Working at height SECONARY LIFE"
+      },
+      {
+        "page": 26,
+        "word_count": 447,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "EUROPE ONSHORE PEOPLE (ACTS): Use of Protective Methods: Failure to warn of hazard PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate maintenance/inspection/testing PROCESS (CO"
+      },
+      {
+        "page": 27,
+        "word_count": 491,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "EUROPE ONSHORE CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Improper position (in the line of fire) PEOPLE (ACTS): Use of Protective Methods: Equipment or materials not secured PROCESS (CONDIT"
+      },
+      {
+        "page": 28,
+        "word_count": 400,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "EUROPE ONSHORE ensure safe accessibility, visibility, and controlled load movement. Stop-work authority must be reinforced culturally  to empower all personnel to intervene. Competence verification pr"
+      },
+      {
+        "page": 29,
+        "word_count": 348,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "EUROPE ONSHORE CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Improper position (in the line of fire) PEOPLE (ACTS): Use of Protective Methods: Equipment or materials not secured PROCESS (CONDIT"
+      },
+      {
+        "page": 30,
+        "word_count": 283,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "EUROPE ONSHORE DATE: 31 Mar 2025 COUNTRY: Romania FUNCTION: Production CAUSE: Dropped objects ACTIVITY: Drilling, workover, well operations PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING"
+      },
+      {
+        "page": 31,
+        "word_count": 310,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "EUROPE ONSHORE \u2022 No information passed to crane operator that the hook was in the skip and there were issues with disconnecting it. \u2022 No crane motion instruction should have been issued by the banksma"
+      },
+      {
+        "page": 32,
+        "word_count": 242,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "EUROPE ONSHORE DATE: 14 Oct 2025 COUNTRY: UK FUNCTION: Construction CAUSE: Caught in, under or between (excl. dropped objects) ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RU"
+      },
+      {
+        "page": 33,
+        "word_count": 147,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "DATE: 18 Oct 2025 COUNTRY: UK FUNCTION: Construction CAUSE: Dropped objects ACTIVITY: Construction, commissioning, decommissioning PRIMARY LIFE-SAVING RULE:  Working at height SECONARY LIFE-SAVING RUL"
+      },
+      {
+        "page": 34,
+        "word_count": 420,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 05 Mar 2025 COUNTRY: Netherlands FUNCTION: Production CAUSE: Caught in, under or between (excl. dropped objects) ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Saf"
+      },
+      {
+        "page": 35,
+        "word_count": 581,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "PROCESS (CONDITIONS): Organizational: Inadequate hazard identification or risk assessment PROCESS (CONDITIONS): Organizational: Inadequate supervision DATE: 01 Sep 2025 COUNTRY: Norway FUNCTION: Drill"
+      },
+      {
+        "page": 36,
+        "word_count": 364,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Improper position (in the line of fire) PEOPLE (ACTS): Use of Tools, Equipment, Materials and Products: Improper use/position of tools/equipment/ m"
+      },
+      {
+        "page": 37,
+        "word_count": 493,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 02 Apr 2025 COUNTRY: Norway FUNCTION: Production CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECONARY LIFE-SAVING"
+      },
+      {
+        "page": 38,
+        "word_count": 293,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "DATE: 29 Aug 2025 COUNTRY: Norway FUNCTION: Production CAUSE: Exposure noise, chemical, biological, vibration, extreme temperature ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE: "
+      },
+      {
+        "page": 39,
+        "word_count": 501,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "DATE: 02 Jul 2025 COUNTRY: Norway FUNCTION: Construction CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING RULE:  W"
+      },
+      {
+        "page": 40,
+        "word_count": 128,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 11 Jul 2025 COUNTRY: UK FUNCTION: Production CAUSE: Falls from height ACTIVITY: Transport - Water, incl. marine activity PRIMARY LIFE-SAVING RULE:  Working at height SECONARY LIFE-SAVING RULE:  "
+      },
+      {
+        "page": 41,
+        "word_count": 414,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 09 Sep 2025 COUNTRY: Bahrain FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING RULE:  Safe"
+      },
+      {
+        "page": 42,
+        "word_count": 238,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "Operators and service providers shall operate strictly within their defined scopes of work, with no overreach beyond  assigned responsibilities. CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Im"
+      },
+      {
+        "page": 43,
+        "word_count": 272,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 04 Jun 2025 COUNTRY: Iraq FUNCTION: Production CAUSE: Exposure electrical ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Work authorization SECONARY LIFE-SAVING RULE:  Lin"
+      },
+      {
+        "page": 44,
+        "word_count": 338,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "CORRECTIVE ACTIONS AND RECOMMENDATIONS: 1. Ensure that all potentially Live systems are isolated prior to starting work.  2. Have approved PTW and supporting documents for the task.  3. Improve hazard"
+      },
+      {
+        "page": 45,
+        "word_count": 401,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Improper position (in the line of fire) PEOPLE (ACTS): Use of Protective Methods: Failure to warn of hazard PEOPLE (ACTS): Use of Protective Method"
+      },
+      {
+        "page": 46,
+        "word_count": 248,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 05 Feb 2025 COUNTRY: Oman FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECONARY LIFE-SAVING RUL"
+      },
+      {
+        "page": 47,
+        "word_count": 322,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 20 Sep 2025 COUNTRY: Oman FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECONARY LIFE-SAVING RUL"
+      },
+      {
+        "page": 48,
+        "word_count": 322,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 08 Apr 2025 COUNTRY: Qatar FUNCTION: Production CAUSE: Pressure release ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Energy isolation SECONARY LIFE-SAVING RULE:  Line of"
+      },
+      {
+        "page": 49,
+        "word_count": 208,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 22 Nov 2025 COUNTRY: Qatar FUNCTION: Production CAUSE: Struck by (not dropped object) ACTIVITY: Production operations PRIMARY LIFE-SAVING RULE:  Driving SECONARY LIFE-SAVING RULE:  Line of fire "
+      },
+      {
+        "page": 50,
+        "word_count": 254,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 22 Mar 2025 COUNTRY: Qatar FUNCTION: Construction CAUSE: Dropped objects ACTIVITY: Construction, commissioning, decommissioning PRIMARY LIFE-SAVING RULE:  Working at height SECONARY LIFE-SAVING "
+      },
+      {
+        "page": 51,
+        "word_count": 374,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 24 Mar 2025 COUNTRY: Qatar FUNCTION: Construction CAUSE: Dropped objects ACTIVITY: Construction, commissioning, decommissioning PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING RULE:"
+      },
+      {
+        "page": 52,
+        "word_count": 380,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 19 Mar 2025 COUNTRY: Qatar FUNCTION: Construction CAUSE: Dropped objects ACTIVITY: Transport - Land PRIMARY LIFE-SAVING RULE:  Bypassing safety controls SECONARY LIFE-SAVING RULE:  Line of fire "
+      },
+      {
+        "page": 53,
+        "word_count": 246,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 07 Sep 2025 COUNTRY: Qatar FUNCTION: Construction CAUSE: Exposure electrical ACTIVITY: Construction, commissioning, decommissioning PRIMARY LIFE-SAVING RULE:  Energy isolation SECONARY LIFE-SAVI"
+      },
+      {
+        "page": 54,
+        "word_count": 448,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 01 Jun 2025 COUNTRY: Qatar FUNCTION: Construction CAUSE: Pressure release ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING RULE:  B"
+      },
+      {
+        "page": 55,
+        "word_count": 329,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 11 Jan 2025 COUNTRY: Qatar FUNCTION: Construction CAUSE: Struck by (not dropped object) ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECO"
+      },
+      {
+        "page": 56,
+        "word_count": 435,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 15 Jul 2025 COUNTRY: UAE FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Drilling, workover, well operations PRIMARY LIFE-SAVING RULE:  Work authorization SECONARY LIFE-SAVING RULE:  Line of"
+      },
+      {
+        "page": 57,
+        "word_count": 254,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 21 Dec 2025 COUNTRY: UAE FUNCTION: Production CAUSE: Exposure electrical ACTIVITY: Excavation, trenching, ground disturbance PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING RULE:  W"
+      },
+      {
+        "page": 58,
+        "word_count": 281,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 03 Sep 2025 COUNTRY: UAE FUNCTION: Construction CAUSE: Caught in, under or between (excl. dropped objects) ACTIVITY: Construction, commissioning, decommissioning PRIMARY LIFE-SAVING RULE:  Safe "
+      },
+      {
+        "page": 59,
+        "word_count": 280,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 30 Apr 2025 COUNTRY: UAE FUNCTION: Construction CAUSE: Dropped objects ACTIVITY: Transport - Land PRIMARY LIFE-SAVING RULE:  Driving SECONARY LIFE-SAVING RULE:  Line of fire NARRATIVE: On 30/04/"
+      },
+      {
+        "page": 60,
+        "word_count": 338,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 14 Apr 2025 COUNTRY: Qatar FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECONARY LIFE-SAVING RU"
+      },
+      {
+        "page": 61,
+        "word_count": 327,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 16 Apr 2025 COUNTRY: Qatar FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING RULE:  Safe m"
+      },
+      {
+        "page": 62,
+        "word_count": 384,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 15 Jul 2025 COUNTRY: Qatar FUNCTION: Drilling CAUSE: Falls from height ACTIVITY: Drilling, workover, well operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECONARY LIFE-SAVING RULE:"
+      },
+      {
+        "page": 63,
+        "word_count": 410,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "PROCESS (CONDITIONS): Organizational: Inadequate work standards/procedures PROCESS (CONDITIONS): Organizational: Inadequate hazard identification or risk assessment PROCESS (CONDITIONS): Organizationa"
+      },
+      {
+        "page": 64,
+        "word_count": 239,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "PROCESS (CONDITIONS): Organizational: Inadequate hazard identification or risk assessment PROCESS (CONDITIONS): Organizational: Inadequate communication DATE: 28 Oct 2025 COUNTRY: Qatar FUNCTION: Prod"
+      },
+      {
+        "page": 65,
+        "word_count": 365,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 25 Jul 2025 COUNTRY: Qatar FUNCTION: Production CAUSE: Pressure release ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Energy isolation SECONARY LIFE-SAVING RULE:  Line of"
+      },
+      {
+        "page": 66,
+        "word_count": 432,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 20 May 2025 COUNTRY: Canada FUNCTION: Production CAUSE: Explosion, fire or burns ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Energy isolation SECONARY LIFE-SAVING RULE:"
+      },
+      {
+        "page": 67,
+        "word_count": 272,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 28 Feb 2025 COUNTRY: Canada FUNCTION: Production CAUSE: Exposure noise, chemical, biological, vibration, extreme temperature ACTIVITY: Transport - Land PRIMARY LIFE-SAVING RULE:  Line of fire SE"
+      },
+      {
+        "page": 68,
+        "word_count": 340,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 15 Oct 2025 COUNTRY: Canada FUNCTION: Construction CAUSE: Dropped objects ACTIVITY: Construction, commissioning, decommissioning PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING RULE"
+      },
+      {
+        "page": 69,
+        "word_count": 448,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "WHAT WENT WRONG: Axis pump hand opened a valve and allowed wellbore pressure to energize the hose resulting in it whipping and  striking the IP. CORRECTIVE ACTIONS AND RECOMMENDATIONS: Improper sequen"
+      },
+      {
+        "page": 70,
+        "word_count": 297,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Improper position (in the line of fire) PEOPLE (ACTS): Use of Tools, Equipment, Materials and Products: Servicing of energized equipment/inadequate"
+      },
+      {
+        "page": 71,
+        "word_count": 305,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "WHAT WENT WRONG: Work performed under confined space entry and hot work permits occurred more than 2 hours after permits were  initially issued and was not revalidated prior to beginning work. CORRECT"
+      },
+      {
+        "page": 72,
+        "word_count": 180,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 13 Aug 2025 COUNTRY: USA FUNCTION: Unspecified CAUSE: Struck by (not dropped object) ACTIVITY: Drilling, workover, well operations PRIMARY LIFE-SAVING RULE:  Energy isolation SECONARY LIFE-SAVIN"
+      },
+      {
+        "page": 73,
+        "word_count": 400,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 14 Oct 2025 COUNTRY: USA FUNCTION: Drilling CAUSE: Falls from height ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Working at height SECONARY LIFE-SAVING RULE:  L"
+      },
+      {
+        "page": 74,
+        "word_count": 250,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 05 Aug 2025 COUNTRY: USA FUNCTION: Production CAUSE: Exposure electrical ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Energy isolation SECONARY LIFE-SAVING RULE:  Line o"
+      },
+      {
+        "page": 75,
+        "word_count": 280,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 21 Apr 2025 COUNTRY: Azerbaijan FUNCTION: Drilling CAUSE: Caught in, under or between (excl. dropped objects) ACTIVITY: Office, warehouse, accommodation, catering PRIMARY LIFE-SAVING RULE:  Line"
+      },
+      {
+        "page": 76,
+        "word_count": 260,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 13 Jul 2025 COUNTRY: Kazakhstan FUNCTION: Production CAUSE: Exposure noise, chemical, biological, vibration, extreme temperature ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RU"
+      },
+      {
+        "page": 77,
+        "word_count": 329,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 01 Aug 2025 COUNTRY: Azerbaijan FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECONARY LIFE-SAVI"
+      },
+      {
+        "page": 78,
+        "word_count": 288,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 31 Jan 2025 COUNTRY: Azerbaijan FUNCTION: Production CAUSE: Water related, drowning ACTIVITY: Diving (incl. decompression), subsea, ROV PRIMARY LIFE-SAVING RULE:  Bypassing safety controls SECON"
+      },
+      {
+        "page": 79,
+        "word_count": 260,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 14 Mar 2025 COUNTRY: Azerbaijan FUNCTION: Production CAUSE: Water related, drowning ACTIVITY: Diving (incl. decompression), subsea, ROV PRIMARY LIFE-SAVING RULE:  Work authorization SECONARY LIF"
+      },
+      {
+        "page": 80,
+        "word_count": 228,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 20 Sep 2025 COUNTRY: Argentina FUNCTION: Production CAUSE: Pressure release ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Energy isolation SECONARY LIFE-SAVING RULE:  Lin"
+      },
+      {
+        "page": 81,
+        "word_count": 286,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 27 Apr 2025 COUNTRY: Argentina FUNCTION: Construction CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECONARY LIFE-S"
+      },
+      {
+        "page": 82,
+        "word_count": 303,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 23 May 2025 COUNTRY: Argentina FUNCTION: Construction CAUSE: Struck by (not dropped object) ACTIVITY: Transport - Land PRIMARY LIFE-SAVING RULE:  Driving SECONARY LIFE-SAVING RULE:  Line of fire"
+      },
+      {
+        "page": 83,
+        "word_count": 280,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "WHAT WENT WRONG: Detaching of a truck tyre. CORRECTIVE ACTIONS AND RECOMMENDATIONS: Review the maintenance plan to ensure actions that guarantee the compliance of all wheel hub components. CAUSAL FACT"
+      },
+      {
+        "page": 84,
+        "word_count": 221,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "DATE: 21 Mar 2025 COUNTRY: Ecuador FUNCTION: Production CAUSE: Falls from height ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Safe mechanical lifting SECONARY LIFE-SAV"
+      },
+      {
+        "page": 85,
+        "word_count": 272,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "DATE: 31 Oct 2025 COUNTRY: Peru FUNCTION: Construction CAUSE: Explosion, fire or burns ACTIVITY: Construction, commissioning, decommissioning PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVI"
+      },
+      {
+        "page": 86,
+        "word_count": 349,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "DATE: 04 Feb 2025 COUNTRY: Brazil FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Drilling, workover, well operations PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING RULE:  Work autho"
+      },
+      {
+        "page": 87,
+        "word_count": 319,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "DATE: 18 Jan 2025 COUNTRY: Brazil FUNCTION: Drilling CAUSE: Dropped objects ACTIVITY: Lifting, crane, rigging, deck operations PRIMARY LIFE-SAVING RULE:  Line of fire SECONARY LIFE-SAVING RULE:  Safe "
+      },
+      {
+        "page": 88,
+        "word_count": 349,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "\u2022 Work scope changed without risk assessment. \u2022 JSA/permit requirements were not properly followed (not signed by all participants). \u2022 Poor communication and coordination between personnel during the "
+      },
+      {
+        "page": 89,
+        "word_count": 352,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "\u2022 Allow hot cloths to cool in a ventilated metal container or spread individually -do not pile them. \u2022 Provide training on spontaneous combustion risks (especially oils, solvents, and hydrocarbons). \u2022"
+      },
+      {
+        "page": 90,
+        "word_count": 255,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "CAUSAL FACTORS: PEOPLE (ACTS): Inattention/Lack of Awareness: Improper decision making or lack of judgment PROCESS (CONDITIONS): Organizational: Inadequate work standards/procedures PROCESS (CONDITION"
+      },
+      {
+        "page": 91,
+        "word_count": 82,
+        "has_narrative_header": false,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "CORRECTIVE ACTIONS AND RECOMMENDATIONS: Always ensure reels and rotating equipment are properly secured using effective locking, braking, or holding  systems to prevent uncommanded movement and associ"
+      },
+      {
+        "page": 92,
+        "word_count": 53,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP Headquarters 3 Moorgate Place, London, EC2R 6EA, United Kingdom  T: +44 20 4570 6879  E: reception@iogp.org   IOGP Europe T: +32 2 882 16 53   E: reception-europe@iogp.org   www.iogp.org For the "
+      }
+    ]
+  },
+  "IOGP_FATAL": {
+    "filename": "IAOGP - Safety performance indicators.pdf",
+    "total_pages": 154,
+    "candidate_count": 149,
+    "candidates": [
+      {
+        "page": 1,
+        "word_count": 26,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "JULY 2026 REPORT 2025pfh DATA SERIES  Safety performance indicators \u2013 Process safety events \u2013 2025 data Tier 1 PSE, fatal incident, and high potential event reports"
+      },
+      {
+        "page": 3,
+        "word_count": 36,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "Revision history VERSION DATE AMENDMENTS 1.0 July 2026 First release REPORT 2025pfh JULY 2026 DATA SERIES  Safety performance indicators \u2013 Process safety events \u2013 2025 data Tier 1 PSE, fatal incident,"
+      },
+      {
+        "page": 4,
+        "word_count": 64,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "Contents TIER 1 PROCESS SAFETY EVENTS (PSE) 5 FATAL INCIDENTS CLASSIFIED AS TIER 1 PSE  124 FATAL TIER 1 PSE NOT INCLUDED IN THE SPECIFIC PSE DATA COLLECTION 130 FATAL INCIDENTS RELATED TO PROCESS SAF"
+      },
+      {
+        "page": 5,
+        "word_count": 224,
+        "has_narrative_header": true,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "TIER 1 PROCESS SAFETY EVENTS (PSE) Tier 1 PSE are predominantly lagging indicators related to Loss of Primary Containment (LOPC) referred to as a  Process Safety Event (PSE). The Tier 1 Key Performanc"
+      },
+      {
+        "page": 6,
+        "word_count": 227,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "AFRICA ONSHORE DATE: 14 Mar 2025 COUNTRY: Equatorial Guinea FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Tanks and Sumps/Pits: "
+      },
+      {
+        "page": 7,
+        "word_count": 414,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Hardware Barrier Failures: Process Containment Human Barrier Failures: Operating in accordance with procedures - PTW, Isolation of equipment, Overrides and  inhibits of safety systems, Shift"
+      },
+      {
+        "page": 8,
+        "word_count": 232,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "\u2022 integrity critical tasks such as fluid sampling, chemical treatment, corrosion monitoring. \u2022 The history and operating conditions of the pipeline \u2022 The frequency of the execution of the ICTs for eac"
+      },
+      {
+        "page": 9,
+        "word_count": 296,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 20 May 2025 COUNTRY: Angola FUNCTION: Production NUMBER OF DEATHS: 4 ACTIVITY: Workover/Well services MODE OF OPERATION: Planned shutdown POINT OF RELEASE:  Breaking containment location PROCESS"
+      },
+      {
+        "page": 10,
+        "word_count": 420,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Human Barrier Failures: Surveillance, operator rounds and routine inspection CAUSAL FACTORS: PEOPLE (ACTS): Inattention/Lack of Awareness: Lack of attention/distracted by other concerns/stre"
+      },
+      {
+        "page": 11,
+        "word_count": 254,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "\u2022 Provide training and awareness sessions for relevant onboard personnel on how and when to conduct  Deviations. This will build competence and ensure that risk assessments are properly recorded. BARR"
+      },
+      {
+        "page": 12,
+        "word_count": 371,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "ASIA/AUSTRALASIA ONSHORE DATE: 23 Sep 2025 COUNTRY: Bangladesh FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Unspecified - other MODE OF OPERATION: Normal POINT OF RELEASE:  Onshore Pipelines/Flo"
+      },
+      {
+        "page": 13,
+        "word_count": 301,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "\u2022 No formal process existed to confirm or rule out abnormal activity or illegal tapping as the cause of pipeline  pressure drops before restarting shipping. SSERP and emergency drills revealed gaps in"
+      },
+      {
+        "page": 14,
+        "word_count": 259,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: The importance of inspection for third party owned equipment. BARRIERS: Management System Element Barrier Failure: Plans and procedures CAUSAL FACTORS: PEOPLE (AC"
+      },
+      {
+        "page": 15,
+        "word_count": 245,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 16 May 2025 COUNTRY: Indonesia FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Planned shutdown POINT OF RELEASE:  Breaking Containment Locations: Pip"
+      },
+      {
+        "page": 16,
+        "word_count": 284,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "ASIA/AUSTRALASIA OFFSHORE DATE: 08 May 2025 COUNTRY: Australia FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Unspecified production POINT OF RELEASE:  Sub"
+      },
+      {
+        "page": 17,
+        "word_count": 255,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: Lessons learned will be confirmed once laboratory results and investigation findings are complete. BARRIERS: Hardware Barrier Failures: Structural Integrity CAUSA"
+      },
+      {
+        "page": 18,
+        "word_count": 444,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: CI usage checks at the end of each shift are a good practice for early detection of leaks and CI pump availability. It is important to ensure instrumentation comp"
+      },
+      {
+        "page": 19,
+        "word_count": 374,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Hardware Barrier Failures: Process Containment CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Deviation unintentional (by individual or group) PEOPLE (ACTS): Following Procedures: Impr"
+      },
+      {
+        "page": 20,
+        "word_count": 557,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 31 May 2025 COUNTRY: Italy FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Breaking Containment Locations: Loading/unloading"
+      },
+      {
+        "page": 21,
+        "word_count": 330,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "Management System Element Barrier Failure: Asset design and integrity Management System Element Barrier Failure: Plans and procedures CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Deviation uni"
+      },
+      {
+        "page": 22,
+        "word_count": 336,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "manually activate the foam deluge failed and released water into the bund, which agitated the methanol, causing  several fixed gas detectors in the bunded area to alarm. The site siren automatically s"
+      },
+      {
+        "page": 23,
+        "word_count": 395,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 14 Feb 2025 COUNTRY: Norway FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Breaking Containment Locations: Loading/unloadin"
+      },
+      {
+        "page": 24,
+        "word_count": 333,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "Work practices and accomplishment - Poor understanding of risk or misjudgement of potential hazard (Lack of  pressure relief to flare). CORRECTIVE ACTIONS & RECOMMENDATIONS: Conduct pre-job conversati"
+      },
+      {
+        "page": 25,
+        "word_count": 278,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "\u2022 Improving procedures that have become accepted as a norm without enough scrutiny and highlighting  shortcomings to management regardless of difficulty to implement the solution. \u2022 Taking time to res"
+      },
+      {
+        "page": 26,
+        "word_count": 374,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? 1. Failure of Primary Level Control Barrier- high-high level switch failed to operate and did not initiate the automatic  closure of the associated loading valves (XV and SDV). 2. Des"
+      },
+      {
+        "page": 27,
+        "word_count": 198,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: Periodic maintenance/inspection/testing. BARRIERS: Human Barrier Failures: Surveillance, operator rounds and routine inspection CAUSAL FACTORS: PROCESS (CONDITION"
+      },
+      {
+        "page": 28,
+        "word_count": 249,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Human Barrier Failures: Surveillance, operator rounds and routine inspection CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate maintenance/inspection"
+      },
+      {
+        "page": 29,
+        "word_count": 364,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 17 Jun 2025 COUNTRY: Qatar FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Piping in Process and Utility Systems (excluding "
+      },
+      {
+        "page": 30,
+        "word_count": 364,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? 1. Water breakout from offshore facilities leading to accelerated corrosion due to ingress of free water in the inlet  facilities beyond its design limits. 2. Design parameters change"
+      },
+      {
+        "page": 31,
+        "word_count": 348,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 17 Oct 2025 COUNTRY: Qatar FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Routine maintenance POINT OF RELEASE:  Piping in Process and Utility System"
+      },
+      {
+        "page": 32,
+        "word_count": 340,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Hardware Barrier Failures: Process Containment CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate design/specification/management  of change DATE: 31 "
+      },
+      {
+        "page": 33,
+        "word_count": 313,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? The top event involving the detachment of the valve handle, stem and lifting jack nut, and subsequent injury to the  operator is attributed to a weak inherent design of the valve, com"
+      },
+      {
+        "page": 34,
+        "word_count": 323,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 28 Feb 2025 COUNTRY: Canada FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Breaking Containment Locations: Loading/unloadin"
+      },
+      {
+        "page": 35,
+        "word_count": 259,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "INCIDENT DESCRIPTION: An uncontrolled release to surface occurred at a thermal well pad, and incident management resources were  activated to support response and stabilization. The investigation is o"
+      },
+      {
+        "page": 36,
+        "word_count": 186,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 10 Mar 2025 COUNTRY: Canada FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Breaking Containment Locations: Sample system PR"
+      },
+      {
+        "page": 37,
+        "word_count": 314,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "DATE: 20 Sep 2025 COUNTRY: Canada FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Piping in Process and Utility Systems (excluding"
+      },
+      {
+        "page": 38,
+        "word_count": 383,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: Valve interventions on large-diameter systems are high-risk activities and require strict control of stored energy  (pressure, mechanical, gravitational). Full is"
+      },
+      {
+        "page": 39,
+        "word_count": 373,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: ERW longitudinal welds represent a known integrity risk and require focused monitoring, especially in aging  pipelines. Flood-prone and low-lying areas significan"
+      },
+      {
+        "page": 40,
+        "word_count": 414,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "Timely notification of maintenance and inspection teams supports effective evaluation and corrective action. Integrity management programs should include: \u2022 Inspection and monitoring of idle or rarely"
+      },
+      {
+        "page": 41,
+        "word_count": 526,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Hardware Barrier Failures: Process Containment CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate maintenance/inspection/testing DATE: 30 Nov 2025 COU"
+      },
+      {
+        "page": 42,
+        "word_count": 314,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "\u2022 Management should actively collaborate with workers to identify opportunities to encourage more frequent  pausing of work, seeking assistance, and escalating issues, and subsequently develop a plan "
+      },
+      {
+        "page": 43,
+        "word_count": 160,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 01 Feb 2025 COUNTRY: USA FUNCTION: Drilling and Completion Operations NUMBER OF DEATHS: 0 ACTIVITY: Drilling MODE OF OPERATION: Drilling POINT OF RELEASE:  Wells, drilling and intervention: Well"
+      },
+      {
+        "page": 44,
+        "word_count": 319,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 06 Apr 2025 COUNTRY: USA FUNCTION: Drilling and Completion Operations NUMBER OF DEATHS: 0 ACTIVITY: Workover/Well services MODE OF OPERATION: Other production POINT OF RELEASE:  Wells, drilling "
+      },
+      {
+        "page": 45,
+        "word_count": 250,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "Root Cause #2: Quality control or acceptance testing: Inadequate. Seal integrity compromised: Seals and packaging did not meet manufacturer standards. Improper storage: Seals are required to be stored"
+      },
+      {
+        "page": 46,
+        "word_count": 237,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? Pin hole leak noticed in oil tank. CORRECTIVE ACTIONS & RECOMMENDATIONS: Unknown. BARRIERS: Hardware Barrier Failures: Structural Integrity CAUSAL FACTORS: NONE: Unspecified DATE: 22 "
+      },
+      {
+        "page": 47,
+        "word_count": 298,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: Not available. BARRIERS: Hardware Barrier Failures: Structural Integrity CAUSAL FACTORS: NONE: Unspecified DATE: 18 Sep 2025 COUNTRY: USA FUNCTION: Production NUM"
+      },
+      {
+        "page": 48,
+        "word_count": 311,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? Workers did not communicate schedule or plan with the company. Permit to work was not signed, approved, or  followed. Walkdown was not completed. Work was not on the schedule. CORRECT"
+      },
+      {
+        "page": 49,
+        "word_count": 314,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? On 1/22/2025, a contract crew was on location to remove used scavenger from the bubble tower, while in the  process of removing a bull plug from a 2\u201d ball valve so the vac truck could"
+      },
+      {
+        "page": 50,
+        "word_count": 271,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? On 2/5/2025 tank released 18 bbls oil into containment from the thief hatch. Level transmitters and salt water  disposal pumps had both malfunctioned and issues were being actively wo"
+      },
+      {
+        "page": 51,
+        "word_count": 292,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? On 2/19/2025 discovered a 2\u201d bottoms line valve on the back of tank had frozen and broke releasing produced oil  and produced water into earthen/permeable secondary containment. Free "
+      },
+      {
+        "page": 52,
+        "word_count": 317,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "INCIDENT DESCRIPTION: Small tornado damaged causing 113 KCF gas release from broken scrubber inlet; well shut in. WHAT WENT WRONG? On 3/4/2025 a Production Technician (PT) was notified by a transporte"
+      },
+      {
+        "page": 53,
+        "word_count": 408,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 13 Apr 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Piping in Process and Utility Systems (excluding su"
+      },
+      {
+        "page": 54,
+        "word_count": 296,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: Implement the corrective action MOC at the Tank Battery to: \u2022 Shutdown upstream ESPs due to the high tank levels at the Tank Battery \u2022 Shutdown upstream ESPs duri"
+      },
+      {
+        "page": 55,
+        "word_count": 269,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? On 05/11/2025, a release was discovered when excess pressure from wells lifted a PSV on a test separator, resulting  in a gas release and light misting at the tank battery. The leak d"
+      },
+      {
+        "page": 56,
+        "word_count": 281,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? On 6/1/2025 Production Foreman received a low differential alarm. The foreman went to the Compressor site to  investigate and discovered that the glycol pump on the reboiler skid had "
+      },
+      {
+        "page": 57,
+        "word_count": 299,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? On 6/26/25, Night Surveillance reported fluid carried over into the LP flare system and out the flare stack after  the battery had a process shutdown. The fluid ignited and burned its"
+      },
+      {
+        "page": 58,
+        "word_count": 248,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: N/A. BARRIERS: Hardware Barrier Failures: Process Containment CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate maintenan"
+      },
+      {
+        "page": 59,
+        "word_count": 297,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: O2 Verification: Prior to restarting the station after a shutdown, verify oxygen levels with appropriate equipment to  prevent combustion risks. Vacuum Condition "
+      },
+      {
+        "page": 60,
+        "word_count": 352,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 26 Aug 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Piping in Process and Utility Systems (excluding su"
+      },
+      {
+        "page": 61,
+        "word_count": 248,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Hardware Barrier Failures: Structural Integrity CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate maintenance/inspection/testing DATE: 23 Sep 2025 CO"
+      },
+      {
+        "page": 62,
+        "word_count": 255,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate maintenance/inspection/testing DATE: 01 Dec 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVI"
+      },
+      {
+        "page": 63,
+        "word_count": 231,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 18 Dec 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Piping in Process and Utility Systems (excluding su"
+      },
+      {
+        "page": 64,
+        "word_count": 348,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 18 Dec 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Piping in Process and Utility Systems (excluding su"
+      },
+      {
+        "page": 65,
+        "word_count": 284,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Management System Element Barrier Failure: Plans and procedures CAUSAL FACTORS: PROCESS (CONDITIONS): Organizational: Inadequate training/competence DATE: 20 Jan 2025 COUNTRY: USA FUNCTION: "
+      },
+      {
+        "page": 66,
+        "word_count": 285,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "SWPH was deemed an air pack \u201cavailable\u201d area prior to this incident and has since been deemed a \u201ccarry\u201d area. CORRECTIVE ACTIONS & RECOMMENDATIONS: N/A. BARRIERS: Hardware Barrier Failures: Structural"
+      },
+      {
+        "page": 67,
+        "word_count": 290,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: N/A. BARRIERS: Hardware Barrier Failures: Structural Integrity CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate maintena"
+      },
+      {
+        "page": 68,
+        "word_count": 279,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "0.31 barrels crude oil collected inside of the building, plus 0.23 bbl sludge/solids. A total of 17.8 barrels crude oil  migrated outside of the building. CORRECTIVE ACTIONS & RECOMMENDATIONS: N/A. BA"
+      },
+      {
+        "page": 69,
+        "word_count": 303,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? The plant operator received a CO2 high injection flowrate alarm for the injection well. After dispatching the field  operator, it was found that the injection well fiberglass flowline"
+      },
+      {
+        "page": 70,
+        "word_count": 267,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? A landowner notified operations of a possible CO2 leak. Upon investigation, the operator discovered the fiberglass  flowline had failed. This caused 6141 lbs of CO2 to be released on "
+      },
+      {
+        "page": 71,
+        "word_count": 267,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 08 Dec 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Breaking Containment Locations: Loading/unloading c"
+      },
+      {
+        "page": 72,
+        "word_count": 280,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 20 Jan 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Breaking Containment Locations: Piping/valve (inadv"
+      },
+      {
+        "page": 73,
+        "word_count": 341,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 27 Mar 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Tanks and Sumps/Pits: Atmospheric tank overflow PRO"
+      },
+      {
+        "page": 74,
+        "word_count": 299,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate maintenance/inspection/testing DATE: 14 Apr 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVI"
+      },
+      {
+        "page": 75,
+        "word_count": 337,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 03 Jul 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Tanks and Sumps/Pits: Atmospheric tank overflow PRO"
+      },
+      {
+        "page": 76,
+        "word_count": 314,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate design/specification/management  of change DATE: 20 Sep 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEAT"
+      },
+      {
+        "page": 77,
+        "word_count": 248,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Hardware Barrier Failures: Ignition Control CAUSAL FACTORS: PROCESS (CONDITIONS): Work Place Hazards: Storms or acts of nature DATE: 03 Oct 2025 COUNTRY: USA FUNCTION: Production NUMBER OF D"
+      },
+      {
+        "page": 78,
+        "word_count": 377,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PROCESS (CONDITIONS): Organizational: Inadequate work standards/procedures DATE: 02 Dec 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE "
+      },
+      {
+        "page": 79,
+        "word_count": 197,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: N/A. BARRIERS:  Hardware Barrier Failures: Process Containment CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Deviation unintentional (by individual or grou"
+      },
+      {
+        "page": 80,
+        "word_count": 184,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Human Barrier Failures: Operating in accordance with procedures - PTW, Isolation of equipment, Overrides and  inhibits of safety systems, Shift handover, etc. CAUSAL FACTORS: PEOPLE (ACTS): "
+      },
+      {
+        "page": 81,
+        "word_count": 200,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 25 Apr 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Other production POINT OF RELEASE:  Piping in Process and Utility Systems (ex"
+      },
+      {
+        "page": 82,
+        "word_count": 171,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 17 Jun 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Relief, Vent and Discharge Systems: Drain PROCESS S"
+      },
+      {
+        "page": 83,
+        "word_count": 151,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 11 Jul 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Other production POINT OF RELEASE:  Tanks and Sumps/Pits: Atmospheric tank PR"
+      },
+      {
+        "page": 84,
+        "word_count": 241,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 24 Jul 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Other production POINT OF RELEASE:  Relief, Vent and Discharge Systems: Relie"
+      },
+      {
+        "page": 85,
+        "word_count": 179,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 19 Aug 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Tanks and Sumps/Pits: Atmospheric tank PROCESS SAFE"
+      },
+      {
+        "page": 86,
+        "word_count": 203,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 06 Oct 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Workover/Well services MODE OF OPERATION: Other production POINT OF RELEASE:  Wells, drilling and intervention: Well i"
+      },
+      {
+        "page": 87,
+        "word_count": 171,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 14 Oct 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Piping in Process and Utility Systems (excluding su"
+      },
+      {
+        "page": 88,
+        "word_count": 196,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 03 Dec 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Planned shutdown POINT OF RELEASE:  Tanks and Sumps/Pits: Atmospheric tank PR"
+      },
+      {
+        "page": 89,
+        "word_count": 165,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 12 Dec 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Equipment: Pump PROCESS SAFETY FUNDAMENTAL:  Not ap"
+      },
+      {
+        "page": 90,
+        "word_count": 219,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 15 Feb 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Relief, Vent and Discharge Systems: Relief valve (b"
+      },
+      {
+        "page": 91,
+        "word_count": 271,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 15 Mar 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Breaking Containment Locations: Piping/valve (inadv"
+      },
+      {
+        "page": 92,
+        "word_count": 228,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 19 Sep 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Equipment: Compressor/blower/fan PROCESS SAFETY FUN"
+      },
+      {
+        "page": 93,
+        "word_count": 173,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 08 Jan 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Other production POINT OF RELEASE:  Onshore Pipelines/Flowlines: Onshore flow"
+      },
+      {
+        "page": 94,
+        "word_count": 166,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 27 Jan 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Equipment: Fired heater/Boiler/Furnace PROCESS SAFE"
+      },
+      {
+        "page": 95,
+        "word_count": 291,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 24 Aug 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Unspecified - other MODE OF OPERATION: Normal POINT OF RELEASE:  Equipment: Pump PROCESS SAFETY FUNDAMENTAL:  We apply"
+      },
+      {
+        "page": 96,
+        "word_count": 454,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: Remove or positively isolate legacy connections that are no longer required, and ensure PM/inspection scopes  explicitly include remaining fittings and potential "
+      },
+      {
+        "page": 97,
+        "word_count": 428,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "Workers must recognize \u201cline of fire\u201d and stored energy hazards and apply Stop-Work Authority without hesitation. Clear procedures and training are essential for responding to gas leaks, emphasizing t"
+      },
+      {
+        "page": 98,
+        "word_count": 359,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "Early detection by diving personnel highlights the importance of qualified inspections during subsea operations. Environmental response readiness must be immediate, including rapid quantification of r"
+      },
+      {
+        "page": 99,
+        "word_count": 330,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 13 Mar 2025 COUNTRY: USA FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Workover/Well services MODE OF OPERATION: Normal POINT OF RELEASE:  Piping in Process and Utility Systems (excluding s"
+      },
+      {
+        "page": 100,
+        "word_count": 223,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Hardware Barrier Failures: Process Containment CAUSAL FACTORS: PROCESS (CONDITIONS): Organizational: Inadequate training/competence RUSSIA & CENTRAL ASIA ONSHORE DATE: 16 Jan 2025 COUNTRY: A"
+      },
+      {
+        "page": 101,
+        "word_count": 170,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 26 Jun 2025 COUNTRY: Azerbaijan FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Workover/Well services MODE OF OPERATION: Abandonment POINT OF RELEASE:  Wells, drilling and intervention: Well"
+      },
+      {
+        "page": 102,
+        "word_count": 320,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 13 Jul 2025 COUNTRY: Kazakhstan FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Piping in Process and Utility Systems (exclu"
+      },
+      {
+        "page": 103,
+        "word_count": 208,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "INCIDENT DESCRIPTION: A sour gas release occurred at high pressure gas separator. The release occurred while business partners were  removing a pressure safety valve for inspection and recertification"
+      },
+      {
+        "page": 104,
+        "word_count": 219,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "RUSSIA & CENTRAL ASIA OFFSHORE DATE: 14 Dec 2025 COUNTRY: Azerbaijan FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Pipeline operations MODE OF OPERATION: Normal POINT OF RELEASE:  Subsea: Subsea "
+      },
+      {
+        "page": 105,
+        "word_count": 260,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: Vendor\u2019s procedure did not include removing the temporary gasket and project QA/QC was not systematic. BARRIERS: Hardware Barrier Failures: Process Containment Ha"
+      },
+      {
+        "page": 106,
+        "word_count": 310,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 22 Oct 2025 COUNTRY: Argentina FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Routine maintenance POINT OF RELEASE:  Piping in Process and Utility Sy"
+      },
+      {
+        "page": 107,
+        "word_count": 271,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CORRECTIVE ACTIONS & RECOMMENDATIONS: There are no inter-company procedures, defined roles, or communication processes to coordinate critical  manoeuvres and/or deliveries between companies. BARRIERS:"
+      },
+      {
+        "page": 108,
+        "word_count": 316,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 14 Mar 2025 COUNTRY: Argentina FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Relief, Vent and Discharge Systems: Flare and"
+      },
+      {
+        "page": 109,
+        "word_count": 342,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 13 Mar 2025 COUNTRY: Brazil FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Tanks and Sumps/Pits: Atmospheric tank overflow "
+      },
+      {
+        "page": 110,
+        "word_count": 278,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "\u2022 Promote periodic reviews of norms and standards, ensuring they are up-to-date, clear, and aligned with the real  operational context; \u2022 Strengthen training, simulations, and behavioural verification"
+      },
+      {
+        "page": 111,
+        "word_count": 434,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "SOUTH & CENTRAL AMERICA OFFSHORE DATE: 21 Sep 2025 COUNTRY: Brazil FUNCTION: Drilling and Completion Operations NUMBER OF DEATHS: 0 ACTIVITY: Workover/Well services MODE OF OPERATION: Normal POINT OF "
+      },
+      {
+        "page": 112,
+        "word_count": 546,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Deviation unintentional (by individual or group) PEOPLE (ACTS): Use of Tools, Equipment, Materials and Products: Improper use/position of tools/equ"
+      },
+      {
+        "page": 113,
+        "word_count": 471,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "Reporting procedures for structural integrity issues within asset management systems must be clearly defined  and consistently applied, with personnel retrained to ensure correct categorization and tr"
+      },
+      {
+        "page": 114,
+        "word_count": 477,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG? Several systemic and technical failures contributed to the accident. Key inspections and planned maintenance  activities, including the painting and full-circumference inspection of t"
+      },
+      {
+        "page": 115,
+        "word_count": 468,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Overexertion or improper position/posture for task PEOPLE (ACTS): Use of Protective Methods: Personal Protective Equipment not used or used imprope"
+      },
+      {
+        "page": 116,
+        "word_count": 419,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "BARRIERS: Hardware Barrier Failures: Structural Integrity CAUSAL FACTORS: PROCESS (CONDITIONS): Organizational: Inadequate hazard identification or risk assessment DATE: 24 Jul 2025 COUNTRY: Brazil FU"
+      },
+      {
+        "page": 117,
+        "word_count": 468,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate/defective tools/equipment/ materials/products PROCESS (CONDITIONS): Organizational: Failure to report/learn f"
+      },
+      {
+        "page": 118,
+        "word_count": 468,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PROCESS (CONDITIONS): Organizational: Inadequate hazard identification or risk assessment DATE: 18 Sep 2025 COUNTRY: Brazil FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Productio"
+      },
+      {
+        "page": 119,
+        "word_count": 262,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Deviation unintentional (by individual or group) PEOPLE (ACTS): Following Procedures: Improper position (in the line of fire) PEOPLE (ACTS): Use of"
+      },
+      {
+        "page": 120,
+        "word_count": 457,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 08 Nov 2025 COUNTRY: Brazil FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Normal POINT OF RELEASE:  Breaking Containment Locations: Breaking contain"
+      },
+      {
+        "page": 121,
+        "word_count": 380,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate design/specification/management  of change PROCESS (CONDITIONS): Organizational: Inadequate training/competence DATE: 18 Dec "
+      },
+      {
+        "page": 122,
+        "word_count": 374,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 14 Sep 2025 COUNTRY: Guyana FUNCTION: Production NUMBER OF DEATHS: 0 ACTIVITY: Production operations MODE OF OPERATION: Start-up POINT OF RELEASE:  Breaking Containment Locations: Sample system "
+      },
+      {
+        "page": 124,
+        "word_count": 288,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "FATAL INCIDENTS CLASSIFIED AS TIER 1 PSE  In this Section, fatal incidents reported in the safety performance dataset that were also reported as Tier 1 PSE in  the process safety data set are presente"
+      },
+      {
+        "page": 125,
+        "word_count": 314,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "PERMANENT IMPAIRMENT PI Category: Unspecified, PI Subcategory: Unspecified, Body part: Head (incl. mouth, etc.), Nature of injury: Burn,  Time in service: -, Function: Construction, Employer: Contract"
+      },
+      {
+        "page": 126,
+        "word_count": 210,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Improper position (in the line of fire) PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate design/specification/management "
+      },
+      {
+        "page": 127,
+        "word_count": 412,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "ASIA/AUSTRALASIA OFFSHORE DATE: 22 Oct 2025 COUNTRY: Malaysia NUMBER OF DEATHS: 1 FUNCTION: Production CAUSE: Struck by (not dropped object) ACTIVITY: Production operations PRIMARY LIFE-SAVING RULE:  "
+      },
+      {
+        "page": 128,
+        "word_count": 317,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "NORTH AMERICA ONSHORE DATE: 10 Dec 2025 COUNTRY: Mexico NUMBER OF DEATHS: 1 FUNCTION: Unspecified CAUSE: Struck by (not dropped object) ACTIVITY: Production operations PRIMARY LIFE-SAVING RULE:  Line "
+      },
+      {
+        "page": 129,
+        "word_count": 120,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "DATE: 18 Sep 2025 COUNTRY: USA NUMBER OF DEATHS: 1 FUNCTION: Construction CAUSE: Struck by (not dropped object) ACTIVITY: Construction, commissioning, decommissioning PRIMARY LIFE-SAVING RULE:  Energy"
+      },
+      {
+        "page": 130,
+        "word_count": 60,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "FATAL TIER 1 PSE NOT INCLUDED IN THE SPECIFIC PSE  DATA COLLECTION Participation in the IOGP annual collection of safety and process safety performance data is voluntary, and not all  Member Companies"
+      },
+      {
+        "page": 131,
+        "word_count": 343,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "FATAL INCIDENTS RELATED TO PROCESS SAFETY In this Section, fatal incidents reported in the safety performance dataset that were related to process safety but  were not classified as PSE are presented."
+      },
+      {
+        "page": 132,
+        "word_count": 250,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "HIGH POTENTIAL EVENTS CLASSIFIED AS TIER 1 PSE  In this Section, high potential events reported in the safety performance dataset that were also reported as Tier 1  PSE in the process safety data set "
+      },
+      {
+        "page": 133,
+        "word_count": 274,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "EUROPE ONSHORE DATE: 11 Oct 2025 COUNTRY: UK FUNCTION: Production CAUSE: Explosion, fire or burns ACTIVITY: Production operations PRIMARY LIFE-SAVING RULE:  Bypassing safety controls SECONARY LIFE-SAV"
+      },
+      {
+        "page": 134,
+        "word_count": 429,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "4. Redundant Barrier Not Maintained in Practice - A local high-level switch, previously identified as a safety barrier  in earlier designs and referenced in the Control and Operating Philosophy, was r"
+      },
+      {
+        "page": 135,
+        "word_count": 415,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "creating conditions for ignition. When work was performed on the spectacle blind, this led to a deflagration and an  uncontrolled release of energy that injured the worker. CORRECTIVE ACTIONS AND RECO"
+      },
+      {
+        "page": 136,
+        "word_count": 318,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PEOPLE (ACTS): Following Procedures: Improper position (in the line of fire) PEOPLE (ACTS): Use of Tools, Equipment, Materials and Products: Servicing of energized equipment/inadequate"
+      },
+      {
+        "page": 137,
+        "word_count": 347,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG: Work performed under confined space entry and hot work permits occurred more than 2 hours after permits were  initially issued and was not revalidated prior to beginning work. CORRECT"
+      },
+      {
+        "page": 139,
+        "word_count": 319,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "HIGH POTENTIAL EVENTS RELATED TO PROCESS SAFETY  In this Section, high potential events reported in the safety performance dataset that were PSE related but not  classified as PSE are presented. AFRIC"
+      },
+      {
+        "page": 140,
+        "word_count": 465,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "AFRICA OFFSHORE DATE: 07 Jul 2025 COUNTRY: Ghana FUNCTION: Production CAUSE: Pressure release ACTIVITY: Production operations PRIMARY LIFE-SAVING RULE:  Line of fire NARRATIVE: On 7th July 2025 at 15:"
+      },
+      {
+        "page": 141,
+        "word_count": 282,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 18 Mar 2025 COUNTRY: Mauritania FUNCTION: Production CAUSE: Pressure release ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Energy isolation SECONARY LIFE-SAVING RULE:  Li"
+      },
+      {
+        "page": 142,
+        "word_count": 360,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "ASIA/AUSTRALASIA ONSHORE DATE: 05 Sep 2025 COUNTRY: Australia FUNCTION: Production CAUSE: Pressure release ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Energy isolation SECONA"
+      },
+      {
+        "page": 143,
+        "word_count": 362,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG: Due to inadequate process isolation, hydrocarbon liquid and vapours from one of the process vessels entered the  habitat canvas where hot work was executed. This resulted in a fire on"
+      },
+      {
+        "page": 144,
+        "word_count": 333,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "CAUSAL FACTORS: PROCESS (CONDITIONS): Tools, Equipment, Materials and Products: Inadequate/defective tools/equipment/ materials/products PROCESS (CONDITIONS): Tools, Equipment, Materials and Products:"
+      },
+      {
+        "page": 145,
+        "word_count": 336,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 21 Aug 2025 COUNTRY: Thailand FUNCTION: Construction CAUSE: Explosion, fire or burns ACTIVITY: Construction, commissioning, decommissioning PRIMARY LIFE-SAVING RULE:  Other issue \u2013 no applicable"
+      },
+      {
+        "page": 146,
+        "word_count": 296,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "closed. Without airflow, oxygen was gradually displaced overnight creating a hazardous atmosphere that posed a  serious risk of unconsciousness and fatality. CORRECTIVE ACTIONS AND RECOMMENDATIONS: As"
+      },
+      {
+        "page": 147,
+        "word_count": 393,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 08 Apr 2025 COUNTRY: Qatar FUNCTION: Production CAUSE: Pressure release ACTIVITY: Maintenance, inspection, testing PRIMARY LIFE-SAVING RULE:  Energy isolation SECONARY LIFE-SAVING RULE:  Line of"
+      },
+      {
+        "page": 148,
+        "word_count": 385,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "WHAT WENT WRONG: 1. The end-blinds utilized were designed with threaded plugs typically intended for use in depressurized systems or  during hydrostatic testing. These end-blinds were the only type av"
+      },
+      {
+        "page": 149,
+        "word_count": 400,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "Pressurized hose not marked up as per checklist. Line was not walked as per procedure to verify status of line. The hose disconnected was a supply line, not an outlet, due to misidentification of the "
+      },
+      {
+        "page": 150,
+        "word_count": 491,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "performance under the evolving conditions, and early indications (e.g., hiss/fluid observations) did not trigger a hold  point prior to the flow event. CORRECTIVE ACTIONS AND RECOMMENDATIONS: Strength"
+      },
+      {
+        "page": 151,
+        "word_count": 190,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "DATE: 13 Jun 2025 COUNTRY: USA FUNCTION: Production CAUSE: Explosion, fire or burns ACTIVITY: Production operations PRIMARY LIFE-SAVING RULE:  Other issue \u2013 no applicable rule NARRATIVE: A manual emer"
+      },
+      {
+        "page": 152,
+        "word_count": 155,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": false,
+        "preview": "SOUTH & CENTRAL AMERICA ONSHORE DATE: 16 Feb 2025 COUNTRY: Brazil FUNCTION: Drilling CAUSE: Struck by (not dropped object) ACTIVITY: Transport - Land PRIMARY LIFE-SAVING RULE:  Driving SECONARY LIFE-S"
+      }
+    ]
+  },
+  "IOGP_SPI_2025": {
+    "filename": "IAOGP-Safety performance indicators - 2025 data.pdf",
+    "total_pages": 153,
+    "candidate_count": 68,
+    "candidates": [
+      {
+        "page": 4,
+        "word_count": 277,
+        "has_narrative_header": false,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "Table of contents Contributing companies Introduction and background Scope of reporting and data validation Data series 1. Summary of 2025 results 1.1 General 1.2 Fatalities 1.3 Total recordable injur"
+      },
+      {
+        "page": 6,
+        "word_count": 447,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "Introduction The International Association of Oil and Gas Producers (IOGP) has been collecting safety incident data from its Member Companies globally since 1985. The data collected are entered into t"
+      },
+      {
+        "page": 7,
+        "word_count": 275,
+        "has_narrative_header": true,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "collection and reporting procedure. Any communication with reporting companies is conducted by the IOGP Secretariat and any data validated by an IOGP work group is blind coded to preserve the anonymit"
+      },
+      {
+        "page": 8,
+        "word_count": 170,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "1. Summary of 2025 results This section summarizes the safety performance of contributing IOGP Member Companies for 2025. The key performance indicators (KPI) used to benchmark safety performance in t"
+      },
+      {
+        "page": 9,
+        "word_count": 152,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "1.1 General The safety performance of contributing IOGP Member Companies in 2025 is based on the analysis of 3,855 million work hours of data. Submissions were made by 56 of the 72 operating company I"
+      },
+      {
+        "page": 10,
+        "word_count": 310,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "1.2 Fatalities Against the background of a 7% decrease in work hours reported, the number of fatalities has increased from 32 in 2024 to 52 in 2025. The 52 fatalities occurred in 40 separate incidents"
+      },
+      {
+        "page": 11,
+        "word_count": 113,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Figure 3 \u00a0 The FAR for 2025 was 1.35, 75% higher than the 2024 rate (0.77). The company-only FAR for 2025 was 0.88, 54% higher than the rate for 2024 (0.57). The contractor-only FAR was 1.49, 77% high"
+      },
+      {
+        "page": 12,
+        "word_count": 77,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "1.3 Total recordable injuries The overall total recordable injury rate (TRIR) (fatalities, lost work day cases, restricted work day cases, and medical treatment cases) was 0.76, 6% lower than in 2024 "
+      },
+      {
+        "page": 13,
+        "word_count": 190,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "1.4 Lost time injuries The overall lost time injury rate (LTIR) (fatalities and lost work day cases) was 0.25, 4% higher than in 2024 (0.24). \u00a0 Figure 6: The participating IOGP Member Companies report"
+      },
+      {
+        "page": 15,
+        "word_count": 183,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "2. 2025 results In this section, the primary indicators used to measure contributing IOGP Member Companies\u2019 safety performance are: number and nature of fatalities total recordable injury rate fatal a"
+      },
+      {
+        "page": 16,
+        "word_count": 180,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "2.2 Fatal accident rate In 2025 there were 8 company fatalities (6 in 2024) as a result of 8 separate incidents. In 2025 there were 44 contractor fatalities (26 in 2024) as a result of 32 separate inc"
+      },
+      {
+        "page": 17,
+        "word_count": 43,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Figure 11: \u00a0 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 0 1 2 3 Fatal accident rate (per 100 million hours worked) Fatal accident rate onshore & offshore (2016\u20132025) Onshore Offshore Overall IO"
+      },
+      {
+        "page": 18,
+        "word_count": 207,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "2.3 Fatal incident rate The fatal incident rate (FIR) is a measure of the rate at which fatal incidents occur, in contrast to the fatal accident rate (FAR) which measures the rate of fatalities. Accor"
+      },
+      {
+        "page": 19,
+        "word_count": 78,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Figure 13: \u00a0 Figure 14: \u00a0 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 0.0 0.5 1.0 1.5 2.0 Fatal incident rate (per 100 million hours worked) Fatal incident rate company & contractor (2016\u20132025) "
+      },
+      {
+        "page": 20,
+        "word_count": 247,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "2.4 Fatalities by incident cause and activity 35 of the 40 fatal incidents involved one fatality. 5 incidents involved 2 or more fatalities. Table 4: Fatalities by cause and activity (2025) \u00a0 \u00a0 Figure"
+      },
+      {
+        "page": 21,
+        "word_count": 37,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Figure 16: \u00a0 Number of fatalities by activity (2025) Maintenance: 14 Transport - Land: 10 Drilling: 9 Lifting: 6 Production: 5 Construction: 4 Transport - Air: 3 Unspecified: 1 IOGP safety performance"
+      },
+      {
+        "page": 22,
+        "word_count": 234,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 5: Fatalities by cause (2021 - 2025) \u00a0 Figure 17: \u00a0 Cause Number of fatalities 2021 2022 2023 2024 2025 Assault or violent act 6 1 8 4 4 Aviation accident 0 1 0 1 3 Caught in, under or between ("
+      },
+      {
+        "page": 23,
+        "word_count": 212,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 6: Fatalities by activity (2021 - 2025) \u00a0 Figure 18: \u00a0 Activity Number of fatalities 2021 2022 2023 2024 2025 Construction, commissioning, decommissioning 3 4 3 4 4 Diving (incl. decompression),"
+      },
+      {
+        "page": 24,
+        "word_count": 177,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "2.5 Total recordable injury rate Submissions without information on medical treatment cases (MTC) were \ufb01ltered out, leaving a dataset of 3,535 million hours, 92% of the database. There were 2,685 repo"
+      },
+      {
+        "page": 40,
+        "word_count": 190,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "2.10 Incident triangles In this section, the relative numbers of types of occupational injury are shown in the form of \u2018incident triangles\u2019. The ratios have been corrected to account for the absence, "
+      },
+      {
+        "page": 41,
+        "word_count": 98,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Figure 39: Incident triangles (2025)    Figure 40: Incident triangles (2024)    \u00a0 The varying ratio of fatalities to lost time injuries to recordable injuries for 2024-2025 challenges the traditional "
+      },
+      {
+        "page": 42,
+        "word_count": 225,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 18: Ratio of fatalities to lost time injuries by cause (2025) \u00a0 Table 19: Ratio of fatalities to lost time injuries by activity (2025) \u00a0 Cause LTIs (fatalities + LWDCs) Fatalities Ratio (LTI:Fat"
+      },
+      {
+        "page": 43,
+        "word_count": 189,
+        "has_narrative_header": false,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "2.11 Causal factors The allocation of causal factors to fatal incidents and high potential events was requested as part of the data submission. IOGP \ufb01rst began recording causal factors in 2010. Users "
+      },
+      {
+        "page": 44,
+        "word_count": 209,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "2.12 Fatal incident causal factors Causal factors are divided into two separate groups, People (Acts) and Process (Conditions), see Report 2025su Safety data reporting user guide \u2013 2025 data and Gloss"
+      },
+      {
+        "page": 45,
+        "word_count": 1002,
+        "has_narrative_header": false,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 21: Causal factors assigned to fatal incidents (2016 - 2025) Causal factors are listed in order of frequency for 2025. The top 10 causal factors assigned to fatal incidents for each year are hig"
+      },
+      {
+        "page": 46,
+        "word_count": 250,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "2.13 High potential event causal factors High potential events are de\ufb01ned as 'an event which could have, under slightly different circumstances, realistically resulted in a fatal incident'. Participat"
+      },
+      {
+        "page": 47,
+        "word_count": 944,
+        "has_narrative_header": false,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "Table 23: Causal factors assigned to high potential events (2016 - 2025) Causal factors are listed in order of frequency for 2025. The top 10 causal factors assigned to high potential events for each "
+      },
+      {
+        "page": 48,
+        "word_count": 189,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "2.14 Life-Saving Rules In 2010, IOGP released IOGP Report 459 - Life-Saving Rules, intended for use by the oil and gas industry to mitigate risk and reduce fatalities. Each IOGP Life-Saving Rule consi"
+      },
+      {
+        "page": 50,
+        "word_count": 224,
+        "has_narrative_header": true,
+        "has_causal_header": false,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Assessment of the applicability of the IOGP Life-Saving Rules to fatal incident descriptions for 2025 data has shown that at least 85% of the fatal incidents reported are covered by the IOGP Life-Savi"
+      },
+      {
+        "page": 51,
+        "word_count": 63,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Figure 43: Bypassing safety controls Confined space Driving Energy isolation Hot work Line of fire Safe mechanical lifting Work authorization Working at height Other issue \u2013 no applicable rule Unspeci"
+      },
+      {
+        "page": 54,
+        "word_count": 144,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "3. Results by region In this section, the safety performance of the contributing IOGP Member Companies is presented for regions and individual countries within those regions. Indicators used to measur"
+      },
+      {
+        "page": 55,
+        "word_count": 252,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "\uf518\u00a0De\ufb01nitions Fatal accident rate (FAR): The number of company/contractor fatalities per 100 million hours worked. Fatal incidents per 100 million work hours (FIR): The number of incidents that result "
+      },
+      {
+        "page": 56,
+        "word_count": 128,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "3.1 Fatalities Table 26 shows the number of fatalities, fatal incidents, and fatal accident rate in each of the seven regions into which the data are partitioned. Table 26: Fatalities, fatal incidents"
+      },
+      {
+        "page": 57,
+        "word_count": 153,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "3.2 Fatal accident rate Further fatal accident rate (FAR) analysis is presented in Section 3.5, where \ufb01ve-year rolling averages of FAR are presented for each of the regions. Table 27: Fatal accident r"
+      },
+      {
+        "page": 64,
+        "word_count": 151,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Figure 53: *AFRICA AVERAGE *Cameroon Gabon Mauritania Equatorial Guinea Namibia Tunisia *Angola Ghana Libya Congo Ivory Coast *Nigeria Algeria Egypt Mozambique S\u00e3o Tom\u00e9 and Pr\u00edncipe Senegal South Afri"
+      },
+      {
+        "page": 65,
+        "word_count": 148,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Figure 54: *AFRICA AVERAGE Mauritania Namibia Gabon Tunisia Equatorial Guinea *Cameroon *Angola Algeria Congo *Nigeria Egypt Ghana Ivory Coast Libya Mozambique S\u00e3o Tom\u00e9 and Pr\u00edncipe Senegal South Afri"
+      },
+      {
+        "page": 66,
+        "word_count": 140,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "3.8 Incident triangles by region In this section, the relative numbers of types of occupational injury are shown in the form of \u2018incident triangles\u2019. The ratios have been corrected to account for the "
+      },
+      {
+        "page": 67,
+        "word_count": 72,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 31: Ratio of LTI and TRI to fatalities - Africa (2022-2025) \u00a0 Figure 55: Incident triangles (2025) - Africa    \u00a0 \u00a0 Year Ratio of LTI to fatalities Ratio of TRI to fatalities 2025 9:1 26:1 2024 9"
+      },
+      {
+        "page": 68,
+        "word_count": 73,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 32: Ratio of LTI and TRI to fatalities - Asia/Australasia (2022-2025) \u00a0 Figure 56: Incident triangles (2025) - Asia/Australasia    \u00a0 \u00a0 Year Ratio of LTI to fatalities Ratio of TRI injuries to fa"
+      },
+      {
+        "page": 69,
+        "word_count": 73,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 33: Ratio of LTI and TRI to fatalities - Europe (2022-2025) \u00a0 Figure 57: Incident triangles (2025) - Europe    \u00a0 \u00a0 Year Ratio of LTI to fatalities Ratio of TRI injuries to fatalities 2025 220:1 "
+      },
+      {
+        "page": 70,
+        "word_count": 74,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 34: Ratio of LTI and TRI to fatalities - Middle East (2022-2025) \u00a0 Figure 58: Incident triangles (2025) - Middle East    \u00a0 \u00a0 Year Ratio of LTI to fatalities Ratio of TRI to fatalities 2025 18:1 "
+      },
+      {
+        "page": 71,
+        "word_count": 74,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 35: Ratio of LTI and TRI to fatalities - North America (2022-2025) \u00a0 Figure 59: Incident triangles (2025) - North America    \u00a0 \u00a0 Year Ratio of LTI to fatalities Ratio of TRI to fatalities 2025 3"
+      },
+      {
+        "page": 72,
+        "word_count": 91,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 36: Ratio of LTI and TRI to fatalities - Russia & Central Asia (2022-2025) \u00a0 Figure 60: Incident triangles (2025) - Russia & Central Asia    Note: data are only included in TRI where medical tre"
+      },
+      {
+        "page": 73,
+        "word_count": 83,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table 37: Ratio of LTI and TRI to fatalities - South America (2022-2025) \u00a0 Figure 61: Incident triangles (2025) - South America    See Appendix B - Section 3 for data tables. Year Ratio of LTI to fata"
+      },
+      {
+        "page": 75,
+        "word_count": 252,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "\uf518\u00a0De\ufb01nitions Fatal accident rate (FAR): The number of company/contractor fatalities per 100 million hours worked. Fatal incidents per 100 million work hours (FIR): The number of incidents that result "
+      },
+      {
+        "page": 76,
+        "word_count": 119,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "4.1 Fatalities The distribution of company and contractor fatal incidents and fatalities between the functions is shown for the years 2021-2025. Table 39: Fatalities and fatal incidents by function (2"
+      },
+      {
+        "page": 98,
+        "word_count": 249,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Lost time injury rate \u2013 unspeci\ufb01ed Figures 84 and 85 show the lost time injury rate (LTIR) for companies and contractors for activities categorized as 'unspeci\ufb01ed' in different regions of the world. T"
+      },
+      {
+        "page": 100,
+        "word_count": 219,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "5. Results by Company 5.1 Overall company results This section compares the safety performance of individual companies with each other and with their performance in previous years. For reasons of anon"
+      },
+      {
+        "page": 101,
+        "word_count": 171,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "5.1.1 Fatal accident rate In Figure 86, the fatal accident rate (FAR) is presented for those companies that, with their contractors, reported more than 50 million work hours. 21 companies met this cri"
+      },
+      {
+        "page": 104,
+        "word_count": 295,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "5.1.3 Lost time injury rate The lost time injury rate (LTIR) for companies together with their contractors is presented below. The incidence of a fatality in either company or contractor operations is"
+      },
+      {
+        "page": 105,
+        "word_count": 312,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Figure 92: In Figure 93, the LTIR is presented for those companies that, with their contractors, reported more than 50 million work hours, in rank order of the company-with-contractor LTIR. 21 compani"
+      },
+      {
+        "page": 106,
+        "word_count": 91,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Figure 94: A B C D E F G *I *J K M N *Q T X Y Z AA HH MM PP QQ SS TT UU VV WW XX YY ZZ AAA BBB 0.0 0.3 0.6 0.9 1.2 1.5 Lost time injury rate (per million hours worked) 2.02 5.89 1.59 2.57 2.32 Lost ti"
+      },
+      {
+        "page": 112,
+        "word_count": 342,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Proportion of database used in analysis For calculations of fatal accident rate (FAR, fatal incidents per 100 million work hours), and lost time injury rate (LTIR): All hours in the database were used"
+      },
+      {
+        "page": 113,
+        "word_count": 586,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Appendix B - Data tables Table B.1: Summary of 2025 data by region \u00a0 Table B.2: Summary of 2025 data overall \u00a0 Region Data type Operations Hours worked (thousands) Fatalities LWDCs (number) RWDCs (num"
+      },
+      {
+        "page": 114,
+        "word_count": 365,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table B.3: Summary of 2025 data by function \u00a0 Function Data type Operations Hours worked (thousands) Fatalities LWDCs (number) RWDCs (number) MTCs (number) FAR TRIR LTIR Exploration Company Onshore 15"
+      },
+      {
+        "page": 115,
+        "word_count": 249,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "The following data are presented in relation to the sections where they were used. Section 2 Overall results Table B.4: Fatal accident rate (2016-2025) Table B.5: Fatal incident rate (2016-2025) Table"
+      },
+      {
+        "page": 116,
+        "word_count": 393,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table B.6: Fatalities by cause (2025) Table B.7: Fatalities by activity (2025) \u00a0 Table B.8: Total recordable injury rate (2016-2025) Cause Company Contractor Overall Onshore Offshore % of total Assaul"
+      },
+      {
+        "page": 118,
+        "word_count": 413,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table B.11: Lost work day cases by activity (2025) Table B.12: Lost work day case severity (2016-2025) Table B.13: Restricted work day case severity (2016-2025) \u00a0 Table B.14: IOGP Life-Saving Rules al"
+      },
+      {
+        "page": 120,
+        "word_count": 359,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Section 3 Results by region Table B.16: Fatalities and fatal incidents by region (2021-2025) Table B.17: Fatal accident rate by region (2021-2025) Table B.18: Total recordable injury rate by region (2"
+      },
+      {
+        "page": 121,
+        "word_count": 575,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Table B.20: Work hours reported by region (2016-2025) Table B.21: Fatal accident rate \ufb01ve-year rolling average by region (2016-2025) Table B.22: Total recordable injury rate \ufb01ve-year rolling average b"
+      },
+      {
+        "page": 126,
+        "word_count": 344,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Section 4 Results by function Table B.27: Fatalities and fatal incidents by function (2021-2025) Table B.28: Exposure hours by function (2021-2025) Table B.29: Fatal accident rate \ufb01ve-year rolling ave"
+      },
+      {
+        "page": 136,
+        "word_count": 479,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Appendix C - Contributing companies Table C.1 shows the size of the database in thousands of work hours reported for each contributing company and whether reported data include information on contract"
+      },
+      {
+        "page": 146,
+        "word_count": 387,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "Exposure: Electrical (as an incident/event category) Exposure to electrical shock or electrical burns etc. Exposure: Noise, Chemical, Biological, Vibration (as an incident/event category) Exposure to "
+      },
+      {
+        "page": 147,
+        "word_count": 390,
+        "has_narrative_header": false,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Hours Worked The actual hours worked, including overtime hours, are recorded in the case of onshore operations. The hours worked by an individual will generally be about 2,000 per year. For offshore w"
+      },
+      {
+        "page": 148,
+        "word_count": 437,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Medical Treatment Case (MTC) Cases that are not severe enough to be reported as lost work day cases or restricted work day cases but are more severe than requiring simple \ufb01rst aid treatment. Motor Veh"
+      },
+      {
+        "page": 150,
+        "word_count": 385,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Production (as a work function) Petroleum and natural gas producing operations, including their administrative and engineering aspects, minor construction, repairs, maintenance and servicing, material"
+      },
+      {
+        "page": 151,
+        "word_count": 296,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Road A thoroughfare which has a prepared, graded and levelled surface designed for the conveyance of motor vehicles (see also \u2018off-road\u2019), such as: Asphalt, tarmac Concrete Aggregate Dirt/sand Ice RWD"
+      },
+      {
+        "page": 153,
+        "word_count": 56,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP safety performance indicators - 2025 data summarizes the safety performance of Member Companies participating in the data collection programme. 3.9 billion work hours of data from 56 companies we"
+      }
+    ]
+  },
+  "IOGP_GUIDE": {
+    "filename": "IAOGP - Safety data reporting user guide.pdf",
+    "total_pages": 76,
+    "candidate_count": 39,
+    "candidates": [
+      {
+        "page": 4,
+        "word_count": 178,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "1.  Introduction 5 1.1 Changes to IOGP Safety Performance Reporting, 2025 Data 6 2. Structure of reporting system 7 3.  Scope of reporting and key definitions 9 3.1 Work-relatedness definition 9 3.2 O"
+      },
+      {
+        "page": 5,
+        "word_count": 488,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "1.  Introduction The International Association of Oil and Gas Producers (IOGP) has been collecting global  safety incident data from Member Companies since 1985. The data collected are entered  direct"
+      },
+      {
+        "page": 6,
+        "word_count": 150,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "1.1 Changes to IOGP Safety Performance Reporting, 2025 Data Report 2 \u2013 Fatal and permanent impairment incident reports: \u2022 A new field has been added: \u201cIf PI, could this incident have realistically res"
+      },
+      {
+        "page": 7,
+        "word_count": 407,
+        "has_narrative_header": false,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "2. Structure of reporting system Member Companies are requested to provide their safety incident and event data using  the standard forms that are described in this guide. A separate form is completed"
+      },
+      {
+        "page": 8,
+        "word_count": 240,
+        "has_narrative_header": true,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Report 4: Motor vehicle crashes Used for reporting the number and severity of motor vehicle crashes and fatalities. These  data are used for industry performance benchmarking in line with the IOGP Rep"
+      },
+      {
+        "page": 9,
+        "word_count": 364,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "3.  Scope of reporting and key definitions Data are reported on a country-by-country basis for all operations where the company either: \u2022 is the operator \u2022 has majority or controlling interest and has"
+      },
+      {
+        "page": 10,
+        "word_count": 465,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "\u2022 Is solely the result of eating, drinking, or preparing food or drink for personal  consumption (whether bought on the employer\u2019s premises or brought in). For  example, if the employee is injured by "
+      },
+      {
+        "page": 11,
+        "word_count": 388,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Lost work day case (LWDC) When reporting occupational injury data (reports 1 and 1LWDC): non-fatal cases that  involve a person being unfit to perform any work on any day after the occurrence of the  "
+      },
+      {
+        "page": 12,
+        "word_count": 424,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "RWDC days (Number of days restricted work) Days counting as restricted work are defined as for a lost work day case (LWDC above). Medical treatment cases (MTC) Those cases not severe enough to be repo"
+      },
+      {
+        "page": 14,
+        "word_count": 369,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Contractor employee A person employed by a contractor or contractor\u2019s subcontractor(s) who is directly involved  in execution of prescribed work under a Mode 1 or Mode 2 contract with the reporting  c"
+      },
+      {
+        "page": 16,
+        "word_count": 349,
+        "has_narrative_header": true,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Note: For PSE reporting decommissioning activities exclusion: Equipment/systems/ pipework must have been fully decontaminated, disconnected from the operational process  (including all valves, piping,"
+      },
+      {
+        "page": 17,
+        "word_count": 193,
+        "has_narrative_header": true,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "\u2022 feet/ankle \u2022 fingers/thumb \u2022 hand/wrist \u2022 head (incl. mouth) \u2022 genitalia or other sexual organs \u2022 internal organs (can be used for injuries involving electrocution, asphyxiation or  exposure to toxi"
+      },
+      {
+        "page": 18,
+        "word_count": 212,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "\u2022 sprain, strain \u2022 temperature-related \u2013 cold \u2022 temperature-related \u2013 heat \u2022 vibration-related 3.10 Incident/event causes The following list should be used for the reporting of lost work day cases, pe"
+      },
+      {
+        "page": 20,
+        "word_count": 190,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "PROCESS (CONDITIONS) CLASSIFICATIONS Process (conditions) classifications usually involve some type of physical hazard or  organizational aspect out with the control of the individual. There are four "
+      },
+      {
+        "page": 22,
+        "word_count": 365,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "\u2022 projectiles/explosion/fire \u2022 tensioned lines/spring loaded devices/stored energy \u2022 working at height/falling objects 3.14  Motor vehicle crash definitions The scope for the reporting of motor vehicl"
+      },
+      {
+        "page": 24,
+        "word_count": 431,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "A vehicle crash is considered to have occurred during commute travel if it meets the  definition above, regardless of whether the event occurs while driving a company or  personal vehicle or whether t"
+      },
+      {
+        "page": 25,
+        "word_count": 376,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Work-relatedness is not generally a factor when determining whether a process safety  event is recordable based on a fatality or injury consequence. Note: Changes to definitions and examples published"
+      },
+      {
+        "page": 30,
+        "word_count": 316,
+        "has_narrative_header": true,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "Element 1 \u2013 commitment and accountability Element 2 \u2013 policies, standards, and objectives Element 3 \u2013 organization, resources, and capability Element 4 \u2013 stakeholders and customers Element 5 \u2013 risk as"
+      },
+      {
+        "page": 33,
+        "word_count": 325,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Management system element* barrier failure Management system elements designed to prevent process safety events and mitigate any  potential consequences of such events. Management system elements supp"
+      },
+      {
+        "page": 42,
+        "word_count": 337,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": true,
+        "preview": "Falls from height (as an incident/event category) A person falls from one level to another. Fatal Accident Rate (FAR) The number of fatalities per 100,000,000 (100 million) work hours. Fatal Incident "
+      },
+      {
+        "page": 43,
+        "word_count": 381,
+        "has_narrative_header": false,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Key performance indicator (KPI) Information or data that provides evidence of a company\u2019s performance in managing its   key risks. KPIs may also be referred to as performance metrics. Lifting, crane, "
+      },
+      {
+        "page": 44,
+        "word_count": 402,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Medical treatment case (MTC) Cases that are not severe enough to be reported as lost work day cases or restricted work  day cases but are more severe than requiring simple first aid treatment. Note: A"
+      },
+      {
+        "page": 45,
+        "word_count": 405,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Near Miss An unplanned on uncontrolled event or chain of events that has not resulted in recordable  injury or physical damage or environmental damage but had the potential to do so in  other circumst"
+      },
+      {
+        "page": 49,
+        "word_count": 362,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Recordable injury A type of event or incident, including an LOPC or an occupational injury, or other outcome  which has been determined to meet or exceed definitions, criteria or thresholds for  inclu"
+      },
+      {
+        "page": 50,
+        "word_count": 345,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "Slips and trips (at the same height) (as an incident/event category) Slips, trips and falls caused by falling over or onto something at the same height. Struck by (as an incident/event category) Incid"
+      },
+      {
+        "page": 56,
+        "word_count": 377,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "APPENDIX 4: Frequently Asked Questions 1. Work-relatedness/home based workers: If an employee voluntarily takes work home  and is injured while working at home, is the case recordable? No. Injuries oc"
+      },
+      {
+        "page": 57,
+        "word_count": 202,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "5. OSHA vs. IOGP \u2013 What are the differences between reporting under the OSHA and IOGP  requirements? OSHA only requires the reporting of company employees (as defined in Appendix 2). The  main differe"
+      },
+      {
+        "page": 58,
+        "word_count": 340,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "APPENDIX 5: Report forms \u2013 guidance only IOGP Safety Data Report REPORT 1 - OCCUPATIONAL INJURIES - 2025 DATA Company 0 Contact name/title 0 Year 2025 Country Total number of fatal incidents involving"
+      },
+      {
+        "page": 60,
+        "word_count": 877,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP Safety Data Report REPORT 2 - FATAL AND/OR ACTUAL PERMANENT IMPAIRMENT (PI) INCIDENTS - 2025 DATA Company 0 Contact name/title 0 Year 2025 Country Incident details   If an incident involves both "
+      },
+      {
+        "page": 61,
+        "word_count": 637,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": false,
+        "has_hipo": true,
+        "preview": "IOGP Safety Data Report REPORT 3 - HIGH POTENTIAL EVENTS - 2025 DATA Company 0 Contact name/title 0 Year 2025 Country Please provide maximum of 5 high potential events with the most learning. Event de"
+      },
+      {
+        "page": 63,
+        "word_count": 544,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP Safety Data Report REPORT 4 - MOTOR VEHICLE CRASHES - 2025 DATA Company 0 Contact name/title 0 Year 2025 Country MVC Categories (See IOGP Report 365) Category C \u2013 Catastrophic events 1. Any MVC r"
+      },
+      {
+        "page": 64,
+        "word_count": 939,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP Safety Data Report REPORT 5 - PROCESS SAFETY EVENTS - 2025 DATA Company 0 Contact name/title 0 Year 2025 Country   Location Function Total Process Safety  Events  Employee or  Contractor Fatality"
+      },
+      {
+        "page": 65,
+        "word_count": 956,
+        "has_narrative_header": false,
+        "has_causal_header": false,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP Safety Data Report REPORT 5A - PROCESS SAFETY EVENTS DUE TO SABOTAGE OR WILLFUL DAMAGE - 2025 DATA Company 0 Contact name/title 0 Year 2025 Country TIER 1   Sabotage/willful damage only  NOT to b"
+      },
+      {
+        "page": 66,
+        "word_count": 1883,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP Safety Data Report Page 1 of 3 REPORT 5B - TIER 1 PSE REPORT - 2025 DATA   Company 0 Contact name/title 0 Year 2025 Country PROCESS SAFETY EVENT DETAILS EXAMPLES AND EXPLANATION/GUIDANCE What was"
+      },
+      {
+        "page": 67,
+        "word_count": 1883,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP Safety Data Report Page 1 of 3 REPORT 5B - TIER 1 PSE REPORT - 2025 DATA   Company 0 Contact name/title 0 Year 2025 Country PROCESS SAFETY EVENT DETAILS EXAMPLES AND EXPLANATION/GUIDANCE What was"
+      },
+      {
+        "page": 69,
+        "word_count": 1088,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP Safety Data Report Page 1 of 2 REPORT 6A - WELL CONTROL INCIDENT REPORT - 2025 DATA Company 0 Contact name/title 0 Year 2025 Country (where incident occurred) EXAMPLES AND EXPLANATION/GUIDANCE In"
+      },
+      {
+        "page": 70,
+        "word_count": 1088,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": false,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP Safety Data Report Page 1 of 2 REPORT 6A - WELL CONTROL INCIDENT REPORT - 2025 DATA Company 0 Contact name/title 0 Year 2025 Country (where incident occurred) EXAMPLES AND EXPLANATION/GUIDANCE In"
+      },
+      {
+        "page": 71,
+        "word_count": 1357,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "APPENDIX 6: Fatal incident description \u2013  worked example IOGP Safety Data Report REPORT 2 - FATAL AND/OR ACTUAL PERMANENT IMPAIRMENT (PI) INCIDENTS - 2025 DATA Company XYZ Operating Company Contact na"
+      },
+      {
+        "page": 72,
+        "word_count": 1349,
+        "has_narrative_header": true,
+        "has_causal_header": true,
+        "has_lsr": true,
+        "has_fatal": true,
+        "has_hipo": false,
+        "preview": "IOGP Safety Data Report REPORT 2 - FATAL AND/OR ACTUAL PERMANENT IMPAIRMENT (PI) INCIDENTS - 2025 DATA Company XYZ Operating Company Contact name/title A. N. Other, another@xyz.com Year 2025 Country I"
+      }
+    ]
+  }
+}

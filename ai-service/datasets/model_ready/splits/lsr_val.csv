@@ -1,0 +1,245 @@
+record_id,source,narrative,primary_lsr,secondary_lsr,all_lsrs,label_count,lsr_label_provenance
+OILPS_OSHA_03388,OSHA,"Two employees were working on an empty above-ground 2,500-barrel crude oil tank. Employee 1 was welding while employee 2 was watching. Employee 1 saw fire behind the welding smoke and notified employee 2. Before they could get off the tank, they both fell in the tank and sustained burns from the fire.",Hot Work,,Hot Work,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03813,OSHA,"An employee was retrieving material from the open bin of a digger derrick when the digger derrick contacted 7,200-volt primary electric lines. The employee sustained an electrical shock that went through his arms and exited his right foot.",Working at Height,,Working at Height,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_HPE_0079,IOGP_HPE,"While adjusting the ultra-high-pressure water blasting equipment in close proximity to normally energized cable 
+trays, in three separate instances, two workers reported experiencing electrical shock sensations upon contacting 
+the cable trays.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_00465,OSHA,"An employee was setting pipes on the ground and working on pipe support. The ground fell out, causing the pipes to slip and crush the employee's right leg.",Line of Fire,,Line of Fire,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00810,OSHA,An employee was loading out components of a stacked drilling rig when a beam flipped over and struck the employee. The employee suffered a broken leg and fractured ribs.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_04141,OSHA,"An employee was using a cutting torch to heat up bolts that had seized up. The bolts caught on fire in a flash burn, and the employee suffered burns to the arms and elbows.",Hot Work,,Hot Work,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0003,IOGP_SPI,"At approximately 11:50 AM, a gas release was observed in the vicinity. The incident was reported by the surfer boat 
+Captain who observed visible gas bubbles breaking the sea surface along the pipelines route. 
+Subsea team started a sonar survey to locate any abnormalities on the gas lines in the area. The Subsea team 
+widened the survey area and focused on 8” gas line and detected a gas release from this line which was confirmed 
+to be the source of the observed bubbling.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0032,IOGP_SPI,"Crude oil leak from a line coming from T-Junction and going central processing unit. The line was isolated. The 
+total volume spilled is 10 bbls.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_02233,OSHA,"An employee was completing a fluid treatment process. The employee had just closed a 4-inch valve on a ""T"" manifold when he tripped and fell forward, striking the shin of his right leg against a valve handle and then landing on the ground. The employee's right leg sustained a spiral fracture requiring hospitalization and surgery.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02850,OSHA,"An employee was detaching a 200-pound bale at or near an oil well site. He tripped on a rock and fell backward and the bale fell on his abdomen, causing internal bleeding.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02095,OSHA,"An employee was bleeding down injection lines, using a 36-inch pipe wrench, to let hydrates thaw overnight. A valve was opened and pressure (about 900 psi) was released, causing a section of pipe to come loose and strike the employee's leg above the knee. He was hospitalized.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0119,IOGP_SPI,"Fire on Oct 3, 2025; wells shut in and fire extinguished without injuries.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0116,IOGP_SPI,"PLC programming loss prevented alarms/shut-ins, causing overflow; inlet shut manually and remediation started.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0145,IOGP_SPI,"Incident 1: A threaded test port for a pressure relief valve on a compressor system failed due to fatigue induced by 
+vibration.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_02831,OSHA,"During routine maintenance of the bonnet end cap on a blowout preventer, the cap fell and smashed an employee's right ring finger against another ram bonnet. The finger was amputated.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03204,OSHA,An employee was run over by a telehandler. The employee suffered a broken pelvis and was hospitalized.,Safe Mechanical Lifting,,Safe Mechanical Lifting,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0138,IOGP_SPI,"Discharge line that had a 1” riser with a 1” ball valve was accidentally run over. Upon striking the riser, it broke off, 
+and gas began to release.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_HPE_0028,IOGP_HPE,"An operator was removing a grating panel with manual handling hooks on the weather deck. 
+During the operation, the grating unhooked from the manual handling tools and fell through the opening, hit a cable 
+gate before landing on the underlying deck, approximately 10 meters below. The grating measures 1x1 meter and 
+weighs 52,4 kg which gives a kinetic energy of 5149, 44 Joules. No one was injured, but under slightly changed 
+circumstances people could have been in the line of fire as the deck was not cordoned off and there was a work 
+team close to the area where it dropped.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0124,IOGP_SPI,Oil hauler failed to check his truck before loading and spilled.,None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_03719,OSHA,"On May 2, 2024, an employee was dumping a hopper into a bigger dumpster when his left ring finger got caught by the hopper and was amputated.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02642,OSHA,An employee was retrieving boxes from the roof of an interior lab/office. The employee fell through the roof approximately 10 feet to the floor below. The employee suffered a fractured left femur and patella as well as head lacerations.,Working at Height,,Working at Height,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_HPE_0090,IOGP_HPE,"During maintenance work at a Generation Unit, the mechanical technician suffered a fall from height, falling to a 
+lower level from the engine access platform.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_03033,OSHA,"An employee fell from the top of a trailer loaded with bundles of tubes. He landed on the concrete walking surface 61 inches below, breaking two ribs and suffering shoulder, back, and lung injuries.",Working at Height,,Working at Height,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03730,OSHA,"An employee was signaling a forklift operator as a 20-foot-long, 4-inch-thick section of steel pipe was lowered. The pipe came loose and fell striking the employee's head and shoulder. The employee sustained a head laceration and fractured ribs.",Safe Mechanical Lifting,,Safe Mechanical Lifting,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02211,OSHA,"An employee was attempting to close a manual valve after flushing a hydraulic choke. When the manual valve would not close, he went to retrieve a tool (wrench) to help close the valve and tripped over a flow line. He fell to the ground and broke his left arm.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03511,OSHA,Employees were engaging in horseplay when the injured employee lost his balance and fell from the back of a digger derrick truck to the ground. The employee's leg was fractured in two places.,Working at Height,Driving,Working at Height; Driving,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_04070,OSHA,"An employee was replacing a seized gearbox on an oil well using a breaker bar. After the breaker bar broke the gearbox loose, the bar struck the employee in the face, causing a fractured nasal bone and a laceration from the crown of the nose to above the right eye. The employee was hospitalized.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01966,OSHA,"An employee was unpacking boxes at a receiving table. The employee tripped on a cable that had dropped off the table and fell, suffering a broken hip. The employee was hospitalized.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03986,OSHA,"An employee was walking across a concrete parking lot when they slipped and fell on a patch of ice, resulting in a fractured leg.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03827,OSHA,"An employee was replacing the well house. After installing the new well house, the employee drilled a 2- to 3-inch hole in the side of the well house to run a 2-inch pipe. The employee inserted the pipe into the hole and secured it inside the well house. The employee then traveled outside the well house to apply tape onto the threaded section of the new pipe. The employee used his left index finger to hold the tape on the threads. The pipe section inside the well house fell from its support and the employee's finger was lacerated, resulting in a fingertip amputation.",Working at Height,,Working at Height,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00779,OSHA,An employee was hospitalized after sustaining an electrical shock while unscrewing a light bulb on a training rig.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00665,OSHA,"While performing well servicing operations, an employee became lightheaded and began vomiting. He was hospitalized for dehydration.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_04164,OSHA,"An employee was watching the landing joint being lowered into the rotary table when it clipped the slip bowl, causing the slip bowl to flip over and strike the employee's legs. The employee's right femur was fractured and they sustained a fracture to the left leg below the knee. The employee was hospitalized.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03976,OSHA,"An employee was on a 4-foot podium ladder when the wind blew it over. He fell, and his left middle fingertip was amputated.",Working at Height,,Working at Height,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00282,OSHA,An employee suffered heat exhaustion and was given IV fluids. The employee was kept in the hospital for observation.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00702,OSHA,An employee was repairing a meter run and began to experience cramping. The employee was hospitalized for heat exhaustion.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03071,OSHA,"An employee was performing maintenance on a forklift when they fell approximately 2 feet off the forklift and landed on a tote, resulting in multiple fractured ribs.",Safe Mechanical Lifting,,Safe Mechanical Lifting,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00286,OSHA,"On July 17, 2015, at approximately 1:45pm, an employee was hospitalized after suffering two broken bones to his lower left leg. Before the incident, the employee was standing on the third rung of a 12-foot stepladder, tightening bolts on a flange with a torque wrench. While applying pressure to the wrench, a reducer on the wrench broke, causing the employee to lose his balance. As he stepped down 34"" to the gravel surface, he landed awkwardly on his left foot, causing fractures.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01885,OSHA,An employee was ventilating a building containing a gas leak and the gases ignited when the employee opened the door. The employee suffered first degree burns to the face and neck and second degree burns to both hands.,Hot Work,,Hot Work,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00758,OSHA,"An employee was starting a pressure washer when a plug from the block valve blew out and struck the employee in the face, fracturing the left cheek and jaw.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01160,OSHA,An employee was adjusting the high/low switch on his truck-mounted welder. He was turning around when he lost his footing because it had just rained and his truck bed was slick. He went to steady himself and reached to grab onto something with his hands. His right hand slid underneath the cowling of his welder and two fingers were severely lacerated by the motor fan blades. He was hospitalized.,Driving,,Driving,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0034,IOGP_SPI,Flammable hydrocarbon released due to 30-LT0012A (1/2inch nipple) detached.,None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_04158,OSHA,"An employee was delivering a load to a customer location. As the employee made a right-hand turn onto a road, the tractor trailer tracked off the roadway and overturned. The employee sustained bleeding on the brain, a fractured collarbone, and a fractured finger.",Driving,,Driving,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00013,OSHA,"At the facility shop area, an employee tripped over his feet and fell on an industrial sized valve stem used in hydrofracking (a piece of sharp equipment) and lacerated his abdomen. This injury required hospitalization for two days.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_HPE_0059,IOGP_HPE,"While a Wellhead Engineer was installing a side outlet valve at the wellhead deck, a Floor Man was preparing 
+downhole guides on the upper deck level, but one down hole guide clamp, weighing 7 kg, slipped and dropped 
+through open hatch and hit the right middle side of the hard hat above the brim and landed in the grating, causing 
+the IP to fall on to the grating resulting in bruises to his right forehead and injury to his right knee.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0172,IOGP_SPI,A gas leak occurred as a result of a crack in a nipple on the 4-inch line associated with the globe valve.,None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_HPE_0055,IOGP_HPE,"A trailer driver was transporting six concrete barriers (3.5t each) on a flatbed trailer. The barriers were stacked in 
+two rows (three in each row), with one cargo lashing belt securing two concrete barriers each. While the trailer was 
+travelling on the bumpy road, the driver noticed that one of the lashing belts securing the rear concrete barriers 
+had broken, causing the load to shift slightly towards the edge of the trailer. He pulled over to address the situation. 
+Fortunately, no injuries or damage occurred.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0170,IOGP_SPI,"During fibre optic installation work, an 8” pipe was broken by a backhoe excavator.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0045,IOGP_SPI,"Operator noticed that the tap was in the open position. Release had overflowed onto the building floor. Small 
+amounts of oil had leaked onto the ground outside the building.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0168,IOGP_SPI,"Gas release occurred from 8” blinded flange on TEG contactor due to the degradation of incorrect designed rubber 
+gasket left installed.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_02466,OSHA,An employee was opening the top steam vent on the main fractionator. The trapped hot condensate from the vent leaked out and landed on the employee's back and shoulders. The employee was hospitalized with second degree burns.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00343,OSHA,"An employee was conducting work on the 60-feet-high platform of an oil derrick, operating rigging to move piping into position. The employee became sick, vomited, experienced cramps, and was eventually hospitalized for heat-related health issues.",Safe Mechanical Lifting,Working at Height,Safe Mechanical Lifting; Working at Height,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01674,OSHA,An employee was hospitalized from heat exhaustion.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01923,OSHA,"An employee was performing maintenance on a heater treater. When he opened the heater treater door an explosion occurred. The employee sustained hand, body, and face burns.",Hot Work,,Hot Work,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0083,IOGP_SPI,Truck loading error released 46.8 bbl oil; contained onsite and recovered.,None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_00172,OSHA,"An employee fell from a tractor and struck her head on the ground, resulting in a concussion. She was hospitalized overnight.",Working at Height,,Working at Height,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03651,OSHA,"An employee was walking along a narrow rural roadway toward the back of a digger derrick truck as another digger derrick truck was moving forward from the opposite direction, passing the parked vehicle. The employee's foot was run over by the tire of the vehicle. The employee sustained fractures to the top of the right foot and a dislocated big toe.",Working at Height,Driving,Working at Height; Driving,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01781,OSHA,"During the breaking of a connection, an employee was holding a ""mud bucket"" against a pipe to minimize the splashing of mud on an oil rig floor. As the two pieces of pipe were moved apart, a spray of mud caused the employee to fall and hit his head on a piece of equipment behind him. He suffered a scalp laceration and a skull fracture.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02476,OSHA,"A maintenance employee was attempting to repair/replace an inoperative breaker to a hot oil furnace when an electrical arc flash occurred, causing first degree burns to the employee's hands.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0152,IOGP_SPI,Leak found on pipeline during operator visit.,None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_02774,OSHA,"At 2:17 p.m. on March 29, 2021, an employee fell while stepping out of a tractor. He landed on the ground and suffered a broken left hip.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02680,OSHA,An employee was working on the rig floor. Equipment fell to the rig floor and the employee jumped off the rig onto the ground suffering a compound fracture to the right ankle.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02359,OSHA,"A Kinder Morgan employee accessed the top of a truck during a loading operation. When he opened the dome lid, alkylate pressure released and propelled him onto the truck rack roof, then to the ground below. He suffered multiple fractures and a torn artery in the skull, requiring hospitalization.",Energy Isolation,Working at Height,Energy Isolation; Working at Height; Driving,3,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0106,IOGP_SPI,Water tank overpressure launched tank 250 ft and released 290 bbl water inside berms; investigation ongoing.,None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0072,IOGP_SPI,Two corrosion failures on 10” transfer line caused total 838.29 bbl oil release; repairs and remediation underway.,None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0052,IOGP_SPI,"At 18:00 hrs on 11/30/2025, on-call personnel notified the Production Supervisor via radio about an event in the 
+measurement tank (TM) area, detecting on site the passage of liquids in the suction valve from TM-1 to the RA-11 
+oily register, which caused an increase in levels in the API dam and RA-05 oily registers (separator area), RA-12 
+(measuring tank dam) and S/N registers in the area of pumps with hydrocarbon spillage on the ground of these 
+areas, immediately an attempt was made to pump with the Internal Combustion Motor Pump 03 (MBCI-03) in a 
+discontinuous manner due to the low suction pressure, so the suction valve of the TM-1 was dismantled. managing 
+to contain the passage of liquid to the API dam and oily registers with diversion of oil to the TM containment dam 
+and later pumping to the vertical tanks through the pump (MBCI-03).",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_02633,OSHA,A crew of five employees used two forklifts along with a telehandler to load and carry pipe that had been cut into 125-foot sections from the fuel pier to the parking lot for painting. The injured employee was guiding the pipe while it was being moved by the forklift. The pipe struck a bush and began swaying and the injured employee's hand was caught between the pipe and the building next to it. The employee's right ring and pinky fingers were amputated.,Safe Mechanical Lifting,,Safe Mechanical Lifting,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0021,IOGP_SPI,"An incident occurred during the transfer of an amine solution from a truck to a storage tank. The transfer 
+was performed using a corrugated flexible hose connected to the truck with a threaded coupling and to the 
+tank with a metal clamp. The end of the transfer was verified by observing hose vibrations generated during 
+nitrogen displacement operations. After completing the transfer, one operator closed the nitrogen valve used for 
+pressurization toward the truck and visually confirmed closure of the amine discharge valve on the truck. The 
+second operator entered the containment area to close the tank valves. After closing the needle valve located near 
+the tank, while attempting to close the ball valve, the hose suddenly detached from the nozzle, causing an amine 
+splash that hit the operator’s face through a gap between the visor and the chin. While attempting to wash at the 
+eyewash station, the operator rubbed his face and eyes with contaminated hands, worsening the injury. He was 
+immediately assisted by a colleague, taken to the infirmary, and then transported to the emergency room.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_SPI_0095,IOGP_SPI,"Bottom valve sand blockage masked fluid level, releasing 43 bbl oil during manway opening; no injuries.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_HPE_0001,IOGP_HPE,"On Thursday March 13th, 2025, the crew change bus had a road accident. It was 18h30 and after a heavy rain at the 
+time of the incident.
+The bus driver was driving too close to the road edge to avoid potholes of the road section. While doing so a part of 
+the road edge collapsed under the right front bus tire making the bus end its trajectory on the pipelines on the side 
+of the road with 28 pax on board.
+Immediate action: 
+• An alcohol test was performed (negative).
+• The TAG removed. 
+• Rearranged work because of restricted mobility due to ankle sprain.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_HPE_0073,IOGP_HPE,"A Mechanic and an E-Tech were repairing a section of the natural gas manifold on frac pump. The employees were 
+replacing a section on the manifold referred to as a pistol. After the repairs were made the employees opened 
+the natural gas supply valve to supply the gas manifold on the pump. The mechanic stepped up onto a platform to 
+open the main ball valve of the natural gas manifold to allow the pump to start burning the natural gas as fuel. As 
+the mechanic (IP) opened the main ball valve, both employees heard a loud pop noise. The top of the low-pressure 
+regulator (VDR) broke away from its base and struck the mechanic in the head above his right eye causing a 
+laceration. The top of the VDR is made of aluminum and weighs approximately 1lb/~454g. The IP was evaluated at a 
+local emergency room, and the IP received 8 sutures to close the laceration.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_01434,OSHA,An employee was walking into the dog house to warm up and closed the door on her hand resulting in a fractured right thumb.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0185,IOGP_SPI,"A chemical operator was performing a transfer and dosing operation of a caustic product into a cooling water 
+system in an industrial plant. During the disconnection of a hose used for product injection (in an improvised 
+location), residual pressure caused the chemical to splash onto the operator’s face and over his protective coverall. 
+In reaction, the operator jumped from a portable ladder (about 1.5 meters high), resulting in a twisted ankle in 
+addition to the chemical burn. The worker received immediate first aid and required medical attention, leading to 
+time off work.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_HPE_0089,IOGP_HPE,"During the dismantling of scaffolding in a 45° angular configuration, assembler 01 had to apply excessive force 
+to loosen a remaining clamp (exposed to the weather) using a ratchet wrench, causing the bolt to shear and 
+subsequently break. With the sudden opening of the clamp, the tube (3.65 kg) slipped from his left hand, fell, and 
+slid along the structure, traveling a lateral distance of approximately 4.5 meters, striking the back of assembler 04s 
+helmet on the lower level, resulting in a superficial cut to the scalp.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_03151,OSHA,"An employee was about to change out the choke parts to fix a leaking choke on the belly dump of a gas production unit (GPU). While the choke was being unbolted, pressure came through it, blowing the employee backward and causing lacerations and broken bones in their face.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02495,OSHA,"An employee was acting as a spotter for the loading of a rig pump. The employee tried to remove a pin that was in the way of the resting point of the pump and his right thumb was caught in a pinch point, resulting in an amputation of the thumb at the first knuckle.",Line of Fire,,Line of Fire,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_04116,OSHA,An employee was helping to load a truck. A pipe in the truck began shifting and he went to try to grab it when he fell backward to the ground and broke an arm.,Driving,,Driving,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01939,OSHA,"Two employees were helping welders by holding a 16"" flange when a flash fire occurred. The first employee suffered a puncture wound from a vent pipe and burns to the face. The second employee suffered burns to the back of his neck, his back, and his right arm.",Hot Work,,Hot Work,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03246,OSHA,"An employee was driving an all-terrain vehicle to inspect a well. The vehicle struck an uneven surface, ejecting the employee from the vehicle to the ground. The employee sustained bilateral leg fractures.",Driving,,Driving,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01017,OSHA,"An employee was opening the oil tank hatch when a spark ignited the material inside the tank. The employee sustained burns to the face, back and hands.",Hot Work,,Hot Work,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03472,OSHA,"An employee was adjusting the operator console to raise it to a higher level. He removed the bracket that connects the console to the rail system so he could begin raising it. The console shifted, causing the employee to fall 10 feet, resulting in a shoulder fracture and head laceration.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_FATAL_0189,IOGP_FATAL,"Crews were performing flange management on the water 16’’ and 18’ lines and installation of the blind flange on 
+the 24’ overboard line for hydrotest. During the process, crew encountered a clash with an abandoned open 18’ line 
+and started hot cutting the 18’ line to make room to install a blind flange. Fire broke out at worksite, resulting in 17 
+people injured (including first aid cases) and 1 person missing.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_HPE_0096,IOGP_HPE,"On 27 December at approximately 07:30, cleaning cloths contaminated with cooking oil were washed and dried in 
+the laundry.
+After drying, the cloths were placed on the floor inside an open bag next to other cloths. Later, all laundry 
+ventilation, exhaust, and air-conditioning systems were switched off while the room was unattended.
+At approximately 13:15, the cloths began releasing smoke and an incipient fire developed. The steward used a dry 
+chemical extinguisher and the fire brigade extinguished the fire.
+No injuries or damage occurred, but the event had serious fire potential.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_03697,OSHA,"A crew of two was attempting to blind/isolate the loop to the re-slurry control valve to the north rise. As the employees were loosening the bolts to open the pipe and placing the blind, a valve that was holding back the slurry opened. This released the hot slurry (640 degrees Fahrenheit) onto the employees performing the work. Both employees sustained thermal burns from the slurry and were hospitalized.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00100,OSHA,"An employee was attaching a compressor to a skid with a pneumatic impact driver. The employee's finger got caught in the driver, which tore off his fingertip; the injury did not involve the bone.",Line of Fire,Driving,Line of Fire; Driving,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01863,OSHA,"An employee was pulling serial numbers off a hydraulic valve. The strap that was being used to hold the valve snapped and the valve fell, pinning the employee against a forklift. The employee suffered broken ribs and was hospitalized.",Safe Mechanical Lifting,,Safe Mechanical Lifting,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02421,OSHA,An employee was power washing the shop when he was struck by a reversing forklift that ran over and broke his right leg.,Line of Fire,Safe Mechanical Lifting,Line of Fire; Safe Mechanical Lifting,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03795,OSHA,An employee was filling a 150-gallon water tank on a drilling rig truck. The pressure of the hose at the water station threw the employee from the platform to the ground 4.5 feet below. The employee suffered broken ribs and a head injury and was hospitalized.,Energy Isolation,Driving,Energy Isolation; Driving,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02201,OSHA,An employee was pumping chemicals in a hot oiler pump truck. A chemical reaction caused an explosion that propelled the employee into the back of another vehicle. The employee suffered facial contusions.,Hot Work,Driving,Hot Work; Driving,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03917,OSHA,"A employee was anchoring a heavy pipe into a rack when the pipe slipped. The pipe pinched his left hand and middle finger when he went to catch it, resulting in an amputation of the middle finger above the middle knuckle.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03456,OSHA,"An employee was using a roustabout. As he was lowering the hook for the cable and pulling the slack out of it, the lift began to tip over. The employee went to move out of the way but tripped and fell in the process. The lift then fell on the employee, lacerating his left leg and abdomen.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03208,OSHA,"Two employees were performing routine maintenance activities on instrumentation equipment when a caustic line going into an instrument began to release sodium hydroxide and propane, resulting in burns to the face and upper body due to contact with sodium hydroxide. Both employees were hospitalized.",Toxic Gas / Hazardous Substance,,Toxic Gas / Hazardous Substance,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00334,OSHA,"While an employee was moving a small pile of hot material with a bobcat, a flash of steam entered the cab of the bobcat. The employee exited the cab and tripped into a pool of hot water, receiving first and second degree burns and requiring hospitalization.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0127,IOGP_SPI,"During batch treatment on the flowline, a gas lift line was misidentified as the flowline. A bull plug was misidentified 
+and opened.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_00576,OSHA,An employee was using a pressure washer at an oil and gas site. The water pressure was approximately 1400 psi. He lost control of the hose and the wand struck the employee's left hand causing a laceration between the thumb and wrist. The employee was hospitalized overnight.,Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03214,OSHA,An employee was helping load a trailer. The vehicle was jostled and his left middle finger was crushed between the truck and the hitch. He suffered an amputation to the finger.,Driving,,Driving,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02480,OSHA,"Two electricians were troubleshooting an HVAC (condenser) unit in a control room. Both employees went to the control room and applied group lockout to a single disconnect rated at 250 VDC power. After locking out the power to the control room and condenser unit, the employees began troubleshooting several deficiencies they observed while looking through the control panel. After repairing those items, the two employees removed the locks and validated that the repairs were working. The employees observed everything working as required except the HVAC compressor. The injured employee went up to the condenser area on an elevated walking surface that was covered in blaze which is a byproduct of the coke produced at the plant. The accumulation of blaze created an uneven surface. The employee had to remove an exterior covering or guard to validate that 250 VDC was coming from the thermostat to the junction box on the compressor motor. The employee squatted down and lost his balance before checking for 250 VDC. The employee reached to catch himself and in doing so grabbed the belts that drive the compressor motor. When contact was made, the motor began running and the employee's left hand was pulled through the pulleys amputating his left middle and ring fingers.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03487,OSHA,"An employee was loading asphalt from a storage tank into a tanker truck from an above ground asphalt loading rack. After removing the loading spout from the tanker and placing a bucket drip pan under it, the employee stepped onto the crows nest of the truck to close the loading hatch. Residual asphalt (approximately 370 degrees F) in the loading line spilled out of the spout, into the bucket, and splashed down onto the employee below. The employee sustained second-degree burns to the back of his head, neck, ears, and side of his face near the jawline. The employee was hospitalized.",Driving,,Driving,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00208,OSHA,"An employee suffered an amputation injury while rigging up a top drive at or near Parshall, North Dakota.",Safe Mechanical Lifting,,Safe Mechanical Lifting,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02996,OSHA,"An employee was removing bolts from a wellhead tree when the tree fell onto his left leg, resulting in lower leg fractures.",Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0184,IOGP_SPI,"At approximately 05:45, a rupture occurred in a gas lift riser pipeline. Gas detectors on the unit identified the 
+presence of a gas cloud, which triggered an emergency shutdown of the facility, resulting in the immediate halt of 
+production operations. Personnel were promptly relocated to designated muster points as a precautionary measure.
+Firefighting and oil recovery vessels were deployed to the site for monitoring and response. An emergency response 
+structure was mobilized at the operations center. A subsea construction vessel equipped with a remotely operated 
+vehicle (ROV) was assigned to inspect the risers on the offshore platform to identify the source of the leak.
+Continuous monitoring of gas sensors confirmed that the gas detection had ceased. The rupture in the gas lift riser 
+is currently under investigation. Further laboratory analysis of the damaged riser is required to determine the root 
+cause, and the event remains under investigation pending these results.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_HPE_0026,IOGP_HPE,"When filling a mud tank with brine to prepare for cleaning of the tank, the transfer hose became dislodged, fell 
+towards the ground (2.6m) and began to whip. The hose struck the pump operator’s leg, who suffered a ruptured 
+Achilles tendon. The operator required surgery, classifying this as a Lost Work Day Case under IOGP guidelines. The 
+incident is considered high potential, as the heavy hose coupling could have caused a fatality if it struck the head of 
+the injured person when it fell.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_HPE_0066,IOGP_HPE,"During the workboat transfer operation, workboat was transferred from the laydown area to the transport vessel 
+main deck and positioned in its transport cradle. During final positioning, the vessel could not remain steady. As a 
+result, the workboat swung into a nearby Cargo Carrying Unit (CCU), causing damage to the hull. A crew member 
+handling a tag line was exposed to risk and was nearly caught between the CCU and the swinging workboat.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_03577,OSHA,"After running a survey and putting air back on the hole, two employees were standing in the doorway of the doghouse watching the flow line to see if there was a gas flare. The pilot light for the flow line was not ignited. The injured employee used a propane torch to igniting the pilot light. A flash fire resulted due to down-hole gas that had come out of the flow line. The injured employee sustained second degree burns to their face, forearms, and hands.",Hot Work,,Hot Work,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02089,OSHA,"An employee was vacuuming catalyst inside a confined space. A piece of the catalyst rolled down from the pile and struck his leg, breaking the femur. He was hospitalized.",Confined Space,,Confined Space,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_02202,OSHA,An employee was cleaning oil off the floor of a turbine unit with a pressure washer at a compressor station when he began to feel dizzy and later experienced headaches. He was hospitalized for heat exhaustion.,Energy Isolation,,Energy Isolation,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0046,IOGP_SPI,Operator observed oil spilling from tank.,None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_01816,OSHA,"Between 9:00 and 10:00 a.m. on October 3, 2018, an employee was guiding the butt of a wooden electrical pole, which was being lifted by the winch of a digger derrick. The employee's neck came into contact with the pole as it was being grabbed by the pole claws; the top of the pole moved into (or close to) overhead high-voltage electrical lines. The employee suffered a 69,000-volt electrical shock down the body and out his foot.",Safe Mechanical Lifting,Working at Height,Safe Mechanical Lifting; Working at Height,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0163,IOGP_SPI,A water-clay-gas mixture blowout was observed to erupt from an abandoned onshore well.,None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_03742,OSHA,A crew was pulling pipe out of the hole and laying pipe/joint one at a time. The injured employee was laying down a drill collar after removing it when the collar swung and pinched their left little finger against a stationary part. The finger was amputated at the first joint.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0001,IOGP_SPI,"Operator was alerted of LEL levels in the parameter of the condensate tank. It was identified that the tank was 
+overflowing condensate.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_FATAL_0194,IOGP_FATAL,"Around 10 minutes into clearing/removal activities a high energy release occurred ejecting the contents of the 
+piping assembly including the pig, fatally striking a contract worker in the head.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_00867,OSHA,An employee was pulling an LP gas hose to fill a residential LP tank and slipped on ice and fell breaking his hip.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00285,OSHA,An employee was hospitalized for complications due to a muscle injury after working on the battery.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03802,OSHA,"The injured employee was working on the drill floor assisting to repair the oil well. The employee was using hydraulic-operated tongs when a piece inside the tongs came loose. The employee was fixing it when the lever that powers the tool was hit and the hydraulic tongs crushed his left ring finger, resulting in an amputation above the second joint.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0076,IOGP_SPI,"PSV lifted causing 43.485 Kscf gas release and light misting; liquids were minimal.
+54
+Safety performance indicators – Process safety events – 2025 data
+===PAGE_55===",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_01322,OSHA,An employee slipped and fell while walking on a partially constructed walkway beam. His right leg became wedged and fractured on a support brace during the fall.,None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00272,OSHA,"Employees were rigging down the workover rig at about 11:30 a.m., on July 5, when an employee's right thumb and first finger were caught between the derrick tip section and stop plate. The employee's thumb had to be surgically amputated.",Safe Mechanical Lifting,Working at Height,Safe Mechanical Lifting; Working at Height,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_HPE_0030,IOGP_HPE,Sucker rod broke consequently elevator dropped.,None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_HPE_0093,IOGP_HPE,"During load handling with the crane (Knuckle Boom Crane #1), after positioning a container on the deck and 
+removing the sling from the crane hook, while moving the boom to connect the sling to another nearby load, the tip 
+of Knuckle Boom Crane #1 collided with the joint of the other crane (Pipe Handling Crane) located in the center of 
+the pipe deck, causing a load cell from KBC #1 to fall onto the top of a container on the pipe deck.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_01688,OSHA,While flushing chemical from a tanker truck an explosion occurred that burned three employees. One of the injured employees was hospitalized with burns to the face and hands.,Hot Work,Driving,Hot Work; Driving,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_04033,OSHA,"An employee was about to dump sand from a hopper, raised on the forks of a forklift. As the hopper's weight shifted forward and it began to dump, the employee's left middle finger was pinched between the forklift fork and the metal frame of the hopper. The fingertip was crushed, and the employee underwent a medical amputation at the first knuckle.",Safe Mechanical Lifting,,Safe Mechanical Lifting,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0137,IOGP_SPI,"Tubing head penetrator failed, resulting in a release.",None,,None,0,SOURCE_GROUNDED
+OILPS_IOGP_HPE_0084,IOGP_HPE,"During the inspection of the 8-inch subsea oil and gas pipeline located between offshore platforms, diving 
+operations were in progress and a scheduled descent from the diving vessel had commenced.
+Approximately 15 minutes after the diver entered the water, the vessel’s mechanic reported hull damage resulting in 
+water ingress into the engine room.
+The diver was immediately recovered from the water, and the vessel proceeded toward the platform, where it was 
+safely moored at the docking bridge.
+Following the safe disembarkation of personnel, the damaged vessel was towed to the onshore port by an assisting 
+tugboat.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_03426,OSHA,"An employee was inspecting noise from a pumping unit. As he went to push on the belt guard, the employee was pinned between the crank arm and the base of the unit, resulting in a lacerated liver, and bruising to the chest, arms, back, and shoulders.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01851,OSHA,Employees were constructing a tank battery and removing a bottom hatch with a grinder when a fire and explosion occurred from an empty tank. The injured employee received body burns that required hospitalization.,Hot Work,,Hot Work,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_03004,OSHA,"A service technician was repairing a natural gas regulator that was leaking. When the water heater valve was opened, natural gas ignited, and the technician sustained burns to the arms.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_SPI_0105,IOGP_SPI,"Fiberglass flowline failed releasing 6,141 lbs CO2 in ROW; Tier 1 event; no off-site impact.
+Safety performance indicators – Process safety events – 2025 data
+69
+
+===PAGE_70===",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_00060,OSHA,"Pipeline was being cleaned using a pig. The pig shot out of the pipeline and struck the employee, causing injuries to the lower part of his body.",None,,None,0,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_IOGP_HPE_0095,IOGP_HPE,"On 17 November at approximately 09:40, the smoke detector in the laundry room activated after several cleaning 
+cloths spontaneously combusted shortly after being removed from a dryer and placed on the floor.
+The fire brigade responded immediately and extinguished the fire using CO₂ and dry powder extinguishers.
+No injuries or asset damage occurred, but the event had potential for a serious fire and smoke exposure.",None,,None,0,SOURCE_GROUNDED
+OILPS_OSHA_01359,OSHA,Two employees were working on a forklift due to a belt issue. The injured employee was working on the belt when the other employee started the forklift. The belt and pulley in the forklift motor then amputated the injured employee's right index fingertip.,Safe Mechanical Lifting,,Safe Mechanical Lifting,1,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_01905,OSHA,"An employee was rigging down a well servicing rig. As the derrick was lowered, it severed his right index finger and thumb under the knuckle. He was hospitalized.",Safe Mechanical Lifting,Working at Height,Safe Mechanical Lifting; Working at Height,2,PROJECT_ANNOTATED_AI_ASSISTED
+OILPS_OSHA_00440,OSHA,"An employee was welding two sections of pipe on top of a skid platform. The skid platform (2 feet high) collapsed, and the pipe rolled onto the employee's lower leg, fracturing the right ankle. The employee was hospitalized overnight.",Hot Work,,Hot Work,1,PROJECT_ANNOTATED_AI_ASSISTED

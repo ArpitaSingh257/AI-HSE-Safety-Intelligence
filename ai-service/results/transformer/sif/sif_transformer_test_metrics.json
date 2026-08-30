@@ -1,0 +1,33 @@
+{
+  "model": "DistilBERT-base-uncased (Fine-Tuned)",
+  "tuned_validation_threshold": 0.3,
+  "test_accuracy": 0.835820895522388,
+  "test_precision": 0.8532110091743119,
+  "test_recall_sif1": 0.9393939393939394,
+  "test_f1": 0.8942307692307693,
+  "test_roc_auc": 0.8816738816738817,
+  "test_pr_auc": 0.9514331506516687,
+  "confusion_matrix_tn_fp_fn_tp": [
+    [
+      19,
+      16
+    ],
+    [
+      6,
+      93
+    ]
+  ],
+  "false_negatives": 6,
+  "false_positives": 16,
+  "validation_metrics": {
+    "epoch": 4,
+    "val_loss": 0.19013560665426432,
+    "val_accuracy": 0.8592592592592593,
+    "val_precision": 0.9263157894736842,
+    "val_recall_sif1": 0.88,
+    "val_f1": 0.9025641025641026,
+    "val_roc_auc": 0.9299999999999999,
+    "val_pr_auc": 0.9731452933478073,
+    "tuned_threshold": 0.3
+  }
+}

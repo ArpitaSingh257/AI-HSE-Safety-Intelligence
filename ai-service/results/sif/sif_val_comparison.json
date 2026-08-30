@@ -1,0 +1,20 @@
+{
+  "logistic_regression": {
+    "model": "TF-IDF + Logistic Regression (balanced)",
+    "accuracy": 0.8444444444444444,
+    "precision": 0.9438202247191011,
+    "recall_sif1": 0.84,
+    "f1": 0.8888888888888888,
+    "roc_auc": 0.9168571428571428,
+    "pr_auc": 0.971992676461203
+  },
+  "linear_svm": {
+    "model": "TF-IDF + Calibrated Linear SVM",
+    "accuracy": 0.8666666666666667,
+    "precision": 0.9183673469387755,
+    "recall_sif1": 0.9,
+    "f1": 0.9090909090909091,
+    "roc_auc": 0.9385714285714285,
+    "pr_auc": 0.9792970678552374
+  }
+}

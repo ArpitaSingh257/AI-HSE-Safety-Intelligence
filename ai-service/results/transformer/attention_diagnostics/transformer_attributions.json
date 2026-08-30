@@ -1,0 +1,167 @@
+[
+  {
+    "sample_index": 0,
+    "record_id": "OILPS_IOGP_SPI_0040",
+    "ground_truth_sif": 1,
+    "predicted_sif_prob": 0.9541,
+    "narrative_preview": "During this operation, the handle and stem assembly of the 3-way valve, operating under an oil pressure of 55 bar, \ndetached from the valve body and s...",
+    "top_attended_tokens": [
+      {
+        "token": "valve",
+        "weight": 0.06080000102519989
+      },
+      {
+        "token": ".",
+        "weight": 0.05849999934434891
+      },
+      {
+        "token": ",",
+        "weight": 0.05220000073313713
+      },
+      {
+        "token": ".",
+        "weight": 0.03750000149011612
+      },
+      {
+        "token": "valve",
+        "weight": 0.03739999979734421
+      },
+      {
+        "token": ",",
+        "weight": 0.0348999984562397
+      }
+    ]
+  },
+  {
+    "sample_index": 5,
+    "record_id": "OILPS_OSHA_02035",
+    "ground_truth_sif": 1,
+    "predicted_sif_prob": 0.3937,
+    "narrative_preview": "Two employees were in a trailer. A lit cigarette ignited gas that had leaked from a propane tank in the trailer, causing an explosion. Both employees ...",
+    "top_attended_tokens": [
+      {
+        "token": "were",
+        "weight": 0.09350000321865082
+      },
+      {
+        "token": "a",
+        "weight": 0.06750000268220901
+      },
+      {
+        "token": ".",
+        "weight": 0.06360000371932983
+      },
+      {
+        "token": ".",
+        "weight": 0.0560000017285347
+      },
+      {
+        "token": "employees",
+        "weight": 0.039799999445676804
+      },
+      {
+        "token": "suffered",
+        "weight": 0.03629999980330467
+      }
+    ]
+  },
+  {
+    "sample_index": 12,
+    "record_id": "OILPS_OSHA_00602",
+    "ground_truth_sif": 1,
+    "predicted_sif_prob": 0.3442,
+    "narrative_preview": "An employee climbed a ladder to assess the next level of a metal roof. He stepped on a shingle and fell 8 feet through the roof to the ground, breakin...",
+    "top_attended_tokens": [
+      {
+        "token": ".",
+        "weight": 0.10480000078678131
+      },
+      {
+        "token": ".",
+        "weight": 0.09839999675750732
+      },
+      {
+        "token": "an",
+        "weight": 0.09210000187158585
+      },
+      {
+        "token": "employee",
+        "weight": 0.06809999793767929
+      },
+      {
+        "token": ",",
+        "weight": 0.05469999834895134
+      },
+      {
+        "token": "climbed",
+        "weight": 0.043699998408555984
+      }
+    ]
+  },
+  {
+    "sample_index": 25,
+    "record_id": "OILPS_OSHA_03004",
+    "ground_truth_sif": 0,
+    "predicted_sif_prob": 0.954,
+    "narrative_preview": "A service technician was repairing a natural gas regulator that was leaking. When the water heater valve was opened, natural gas ignited, and the tech...",
+    "top_attended_tokens": [
+      {
+        "token": ".",
+        "weight": 0.1120000034570694
+      },
+      {
+        "token": ".",
+        "weight": 0.09719999879598618
+      },
+      {
+        "token": ",",
+        "weight": 0.05339999869465828
+      },
+      {
+        "token": "was",
+        "weight": 0.051600001752376556
+      },
+      {
+        "token": "service",
+        "weight": 0.04309999942779541
+      },
+      {
+        "token": "regulator",
+        "weight": 0.033900000154972076
+      }
+    ]
+  },
+  {
+    "sample_index": 40,
+    "record_id": "OILPS_IOGP_SPI_0061",
+    "ground_truth_sif": 1,
+    "predicted_sif_prob": 0.9544,
+    "narrative_preview": "Responding to volume anomalies, a Reliability Operator (RO) and Senior Reliability Operator (SRO) discovered \nsurfaced emulsion in an offsite right-of...",
+    "top_attended_tokens": [
+      {
+        "token": ".",
+        "weight": 0.07119999825954437
+      },
+      {
+        "token": ".",
+        "weight": 0.04960000142455101
+      },
+      {
+        "token": ".",
+        "weight": 0.04619999974966049
+      },
+      {
+        "token": ")",
+        "weight": 0.043699998408555984
+      },
+      {
+        "token": ")",
+        "weight": 0.03720000013709068
+      },
+      {
+        "token": "leak",
+        "weight": 0.03229999914765358
+      }
+    ]
+  }
+]

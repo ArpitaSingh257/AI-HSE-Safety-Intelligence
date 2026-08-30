@@ -1,0 +1,21 @@
+{
+  "best_model": "Embedding + GRU + Attention",
+  "test_accuracy": 0.8805970149253731,
+  "test_precision": 0.8952380952380953,
+  "test_recall_sif1": 0.9494949494949495,
+  "test_f1": 0.9215686274509803,
+  "test_roc_auc": 0.8891774891774892,
+  "test_pr_auc": 0.9427728196377598,
+  "confusion_matrix_tn_fp_fn_tp": [
+    [
+      24,
+      11
+    ],
+    [
+      5,
+      94
+    ]
+  ],
+  "false_negatives": 5,
+  "false_positives": 11
+}

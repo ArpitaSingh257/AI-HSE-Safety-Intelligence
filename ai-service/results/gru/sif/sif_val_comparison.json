@@ -1,0 +1,22 @@
+{
+  "gru": {
+    "model": "Embedding + GRU",
+    "val_loss": 0.24189950302329466,
+    "accuracy": 0.9037037037037037,
+    "precision": 0.9223300970873787,
+    "recall_sif1": 0.95,
+    "f1": 0.9359605911330049,
+    "roc_auc": 0.954,
+    "pr_auc": 0.9847714534197259
+  },
+  "gru_attention": {
+    "model": "Embedding + GRU + Attention",
+    "val_loss": 0.14449408030896274,
+    "accuracy": 0.9407407407407408,
+    "precision": 0.96,
+    "recall_sif1": 0.96,
+    "f1": 0.96,
+    "roc_auc": 0.966,
+    "pr_auc": 0.9877218265138189
+  }
+}

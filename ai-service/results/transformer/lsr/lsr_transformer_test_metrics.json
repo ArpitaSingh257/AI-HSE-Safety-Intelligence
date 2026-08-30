@@ -1,0 +1,79 @@
+{
+  "micro_precision": 0.19811320754716982,
+  "micro_recall": 0.8289473684210527,
+  "micro_f1": 0.3197969543147208,
+  "macro_precision": 0.11085838778605549,
+  "macro_recall": 0.5203924162257496,
+  "macro_f1": 0.18234892574515216,
+  "hamming_loss": 0.21578099838969403,
+  "exact_match_ratio": 0.37681159420289856,
+  "model": "DistilBERT-base-uncased Multi-Label (Fine-Tuned)",
+  "validation_metrics": {
+    "micro_precision": 0.1829652996845426,
+    "micro_recall": 0.8169014084507042,
+    "micro_f1": 0.29896907216494845,
+    "macro_precision": 0.10163601135698123,
+    "macro_recall": 0.4968660968660969,
+    "macro_f1": 0.16817445064393094,
+    "hamming_loss": 0.227234753550543,
+    "exact_match_ratio": 0.38345864661654133,
+    "val_loss": 0.720173604506299,
+    "epoch": 4
+  },
+  "per_rule_metrics": {
+    "Bypassing Safety Controls": {
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Confined Space": {
+      "support": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Driving": {
+      "support": 15,
+      "precision": 0.2542372881355932,
+      "recall": 1.0,
+      "f1": 0.40540540540540543
+    },
+    "Energy Isolation": {
+      "support": 16,
+      "precision": 0.17857142857142858,
+      "recall": 0.9375,
+      "f1": 0.3
+    },
+    "Hot Work": {
+      "support": 13,
+      "precision": 0.18309859154929578,
+      "recall": 1.0,
+      "f1": 0.30952380952380953
+    },
+    "Line of Fire": {
+      "support": 5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Safe Mechanical Lifting": {
+      "support": 14,
+      "precision": 0.2,
+      "recall": 0.8571428571428571,
+      "f1": 0.32432432432432434
+    },
+    "Toxic Gas / Hazardous Substance": {
+      "support": 2,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Working at Height": {
+      "support": 9,
+      "precision": 0.18181818181818182,
+      "recall": 0.8888888888888888,
+      "f1": 0.3018867924528302
+    }
+  }
+}

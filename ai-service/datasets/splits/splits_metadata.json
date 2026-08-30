@@ -1,0 +1,11 @@
+{
+  "random_seed": 42,
+  "total_records": 4529,
+  "train_count": 3169,
+  "train_pct": 69.97,
+  "val_count": 677,
+  "val_pct": 14.95,
+  "test_count": 683,
+  "test_pct": 15.08,
+  "split_strategy": "Stratified by source authority to prevent cross-source leakage"
+}

@@ -1,0 +1,22 @@
+{
+  "logistic_regression": {
+    "micro_precision": 0.9038461538461539,
+    "micro_recall": 0.6619718309859155,
+    "micro_f1": 0.7642276422764228,
+    "macro_precision": 0.6075757575757577,
+    "macro_recall": 0.46810411810411817,
+    "macro_f1": 0.5246774159817638,
+    "hamming_loss": 0.02422723475355054,
+    "exact_match_ratio": 0.7969924812030075
+  },
+  "linear_svm": {
+    "micro_precision": 0.9534883720930233,
+    "micro_recall": 0.5774647887323944,
+    "micro_f1": 0.7192982456140351,
+    "macro_precision": 0.6442199775533108,
+    "macro_recall": 0.3998704998704999,
+    "macro_f1": 0.47785625680362526,
+    "hamming_loss": 0.026733500417710943,
+    "exact_match_ratio": 0.7894736842105263
+  }
+}

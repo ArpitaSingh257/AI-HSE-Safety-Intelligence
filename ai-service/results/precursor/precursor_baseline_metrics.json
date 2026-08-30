@@ -1,0 +1,27 @@
+{
+  "dataset_total": 900,
+  "annotation_format": "Extracted Entity String Representation (No token spans)",
+  "limitation_note": "Token-level BIO tags are absent. Evaluated grounded lexical overlap between entity definitions and source narrative.",
+  "lexical_grounding_rate": {
+    "activity": {
+      "mean_token_overlap": 0.06388888888888888,
+      "high_overlap_records_pct": 4.333333333333334
+    },
+    "hazard": {
+      "mean_token_overlap": 0.02928956228956229,
+      "high_overlap_records_pct": 0.5555555555555556
+    },
+    "barrier": {
+      "mean_token_overlap": 0.017789001122334457,
+      "high_overlap_records_pct": 0.0
+    },
+    "barrier_failure": {
+      "mean_token_overlap": 0.050261161454398164,
+      "high_overlap_records_pct": 0.0
+    },
+    "potential_consequence": {
+      "mean_token_overlap": 0.018137566137566136,
+      "high_overlap_records_pct": 0.0
+    }
+  }
+}

@@ -1,0 +1,21 @@
+# Core Web API & Validation
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+
+# Data Processing & Extraction
+pandas>=2.2.0
+numpy>=1.26.0
+pypdf>=4.0.0
+pdfplumber>=0.10.0
+
+# Machine Learning & NLP
+scikit-learn>=1.4.0
+sentence-transformers>=2.5.0
+torch>=2.2.0
+faiss-cpu>=1.8.0
+
+# Testing & Quality
+pytest>=8.0.0
+httpx>=0.27.0

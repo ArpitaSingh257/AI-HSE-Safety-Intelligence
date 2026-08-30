@@ -1,0 +1,67 @@
+{
+  "micro_precision": 0.6097560975609756,
+  "micro_recall": 0.6578947368421053,
+  "micro_f1": 0.6329113924050633,
+  "macro_precision": 0.4285662413113393,
+  "macro_recall": 0.5122337539004206,
+  "macro_f1": 0.46223169886629606,
+  "hamming_loss": 0.04669887278582931,
+  "exact_match_ratio": 0.6956521739130435,
+  "best_model": "Embedding + GRU + Attention",
+  "per_rule_metrics": {
+    "Bypassing Safety Controls": {
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Confined Space": {
+      "support": 2,
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "f1": 0.4
+    },
+    "Driving": {
+      "support": 15,
+      "precision": 0.7222222222222222,
+      "recall": 0.8666666666666667,
+      "f1": 0.7878787878787878
+    },
+    "Energy Isolation": {
+      "support": 16,
+      "precision": 0.6666666666666666,
+      "recall": 0.625,
+      "f1": 0.6451612903225806
+    },
+    "Hot Work": {
+      "support": 13,
+      "precision": 0.7142857142857143,
+      "recall": 0.7692307692307693,
+      "f1": 0.7407407407407407
+    },
+    "Line of Fire": {
+      "support": 5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "Safe Mechanical Lifting": {
+      "support": 14,
+      "precision": 0.47058823529411764,
+      "recall": 0.5714285714285714,
+      "f1": 0.5161290322580645
+    },
+    "Toxic Gas / Hazardous Substance": {
+      "support": 2,
+      "precision": 0.25,
+      "recall": 0.5,
+      "f1": 0.3333333333333333
+    },
+    "Working at Height": {
+      "support": 9,
+      "precision": 0.7,
+      "recall": 0.7777777777777778,
+      "f1": 0.7368421052631579
+    }
+  }
+}
