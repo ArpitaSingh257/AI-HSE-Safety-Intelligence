@@ -2,7 +2,7 @@
 schemas.py - Production Pydantic Schemas for OILPS AI Inference API Contract.
 """
 
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Any
 from pydantic import BaseModel, Field
 
 class IncidentAnalysisRequest(BaseModel):
@@ -39,6 +39,18 @@ class LSRAnalysisResponse(BaseModel):
     rule_predictions: List[LSRRulePrediction] = Field(default_factory=list, description="Detailed per-rule probabilities, thresholds, and trigger statuses.")
     salient_tokens: List[SalientToken] = Field(default_factory=list, description="Top tokens salient to barrier failure and operational activity.")
 
+class SafetyRecommendationsResponse(BaseModel):
+    priority: str = Field(..., description="Action priority level: CRITICAL, HIGH, MODERATE, or LOW.")
+    summary: str = Field(..., description="High-level narrative overview of the required safety response.")
+    immediate_actions: List[str] = Field(default_factory=list, description="Immediate stop-work, isolation, or evacuation actions.")
+    control_verification: List[str] = Field(default_factory=list, description="Specific safety barrier and permit checks to verify before proceeding.")
+    escalation: List[str] = Field(default_factory=list, description="Escalation protocol for HSE officers and site leadership.")
+    rule_specific_guidance: Dict[str, Dict[str, Any]] = Field(default_factory=dict, description="Detailed per-rule guidance for all triggered Life-Saving Rules.")
+    disclaimer: str = Field(
+        default="Recommendations are generated as decision-support guidance from detected IOGP Life-Saving Rules and SIF precursor risk tiers. They do not replace site-specific operating procedures or competent HSE professional review.",
+        description="Standard safety decision-support disclaimer."
+    )
+
 class ModelInfo(BaseModel):
     sif_model: str = Field(default="Stage 6 Optimized Bidirectional GRU + Attention", description="Frozen SIF champion architecture name.")
     lsr_model: str = Field(default="Stage 7 Robust Bidirectional GRU + Attention", description="Frozen LSR champion architecture name.")
@@ -50,6 +62,7 @@ class IncidentAnalysisResponse(BaseModel):
     incident_text: str = Field(..., description="Original incident narrative evaluated.")
     sif: SIFAnalysisResponse = Field(..., description="SIF precursor classification, probability, and risk tier.")
     lsr: LSRAnalysisResponse = Field(..., description="IOGP Life-Saving Rules multi-label activations and breakdown.")
+    recommendations: Optional[SafetyRecommendationsResponse] = Field(default=None, description="Actionable safety recommendations and control verifications.")
     model_info: ModelInfo = Field(default_factory=ModelInfo, description="Metadata describing frozen champion architectures.")
 
 class HealthCheckResponse(BaseModel):
