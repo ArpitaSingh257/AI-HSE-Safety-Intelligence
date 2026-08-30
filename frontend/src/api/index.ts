@@ -17,6 +17,26 @@ import type { DashboardOverviewResponse } from '../types/dashboard';
 const USE_MOCK = import.meta.env.VITE_USE_MOCK !== 'false';
 
 /**
+ * Decides whether a failed real-API call should silently fall back to mock
+ * data, or whether the error should propagate to the UI.
+ *
+ * - No response at all (network down, backend not running) → fallback to
+ *   mock so the demo still works offline.
+ * - 4xx client errors (validation failures, 404s, auth errors) → these are
+ *   REAL errors the user needs to see (e.g. "Description must be at least
+ *   10 characters"). Never mask these with fake mock data - doing so causes
+ *   silent data loss where the user thinks something saved when it didn't.
+ * - 5xx server errors → backend is reachable but broken, fallback is a
+ *   reasonable demo safety net.
+ */
+function shouldFallbackToMock(error: any): boolean {
+  if (!error?.response) return true;
+  const status = error.response.status;
+  if (status >= 400 && status < 500) return false;
+  return true;
+}
+
+/**
  * AUTH SERVICE (POST /api/auth/login, POST /api/auth/register, GET /api/auth/me)
  */
 export const authService = {
@@ -27,8 +47,11 @@ export const authService = {
     try {
       const response = await apiClient.post<AuthResponse>('/auth/login', credentials);
       return response.data;
-    } catch {
-      return mockAuthService.login(credentials);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockAuthService.login(credentials);
+      }
+      throw error;
     }
   },
 
@@ -47,8 +70,11 @@ export const authService = {
     try {
       const response = await apiClient.get<User>('/auth/me');
       return response.data;
-    } catch {
-      return mockAuthService.getCurrentUser();
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockAuthService.getCurrentUser();
+      }
+      throw error;
     }
   },
 };
@@ -66,8 +92,11 @@ export const reportsService = {
         params: filters,
       });
       return response.data;
-    } catch {
-      return mockReportsService.getReports(filters);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockReportsService.getReports(filters);
+      }
+      throw error;
     }
   },
 
@@ -78,8 +107,11 @@ export const reportsService = {
     try {
       const response = await apiClient.get<SafetyReport>(`/reports/${id}`);
       return response.data;
-    } catch {
-      return mockReportsService.getReportById(id);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockReportsService.getReportById(id);
+      }
+      throw error;
     }
   },
 
@@ -90,8 +122,11 @@ export const reportsService = {
     try {
       const response = await apiClient.post<SafetyReport>('/reports', payload);
       return response.data;
-    } catch {
-      return mockReportsService.createReport(payload);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockReportsService.createReport(payload);
+      }
+      throw error;
     }
   },
 
@@ -102,8 +137,11 @@ export const reportsService = {
     try {
       const response = await apiClient.put<SafetyReport>(`/reports/${id}`, updates);
       return response.data;
-    } catch {
-      return mockReportsService.updateReport(id, updates);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockReportsService.updateReport(id, updates);
+      }
+      throw error;
     }
   },
 
@@ -114,8 +152,11 @@ export const reportsService = {
     try {
       const response = await apiClient.delete<{ success: boolean }>(`/reports/${id}`);
       return response.data;
-    } catch {
-      return mockReportsService.deleteReport(id);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockReportsService.deleteReport(id);
+      }
+      throw error;
     }
   },
 
@@ -126,8 +167,11 @@ export const reportsService = {
     try {
       const response = await apiClient.post<SifAnalysisResult>(`/reports/${id}/analyze`);
       return response.data;
-    } catch {
-      return mockReportsService.analyzeReport(id);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockReportsService.analyzeReport(id);
+      }
+      throw error;
     }
   },
 
@@ -138,8 +182,11 @@ export const reportsService = {
     try {
       const response = await apiClient.get<SifAnalysisResult>(`/ai-results/${reportId}`);
       return response.data;
-    } catch {
-      return mockReportsService.getAiResults(reportId);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockReportsService.getAiResults(reportId);
+      }
+      throw error;
     }
   },
 };
@@ -155,39 +202,77 @@ export const dashboardService = {
     try {
       const response = await apiClient.get<DashboardOverviewResponse>('/dashboard/overview');
       return response.data;
-    } catch {
-      return mockDashboardService.getOverview();
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockDashboardService.getOverview();
+      }
+      throw error;
     }
   },
 
   async getSites() {
     if (USE_MOCK) return mockDashboardService.getSites();
-    const response = await apiClient.get('/dashboard/sites');
-    return response.data;
+    try {
+      const response = await apiClient.get('/dashboard/sites');
+      return response.data;
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockDashboardService.getSites();
+      }
+      throw error;
+    }
   },
 
   async getActivities() {
     if (USE_MOCK) return mockDashboardService.getActivities();
-    const response = await apiClient.get('/dashboard/activities');
-    return response.data;
+    try {
+      const response = await apiClient.get('/dashboard/activities');
+      return response.data;
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockDashboardService.getActivities();
+      }
+      throw error;
+    }
   },
 
   async getLifeSavingRules() {
     if (USE_MOCK) return mockDashboardService.getLifeSavingRules();
-    const response = await apiClient.get('/dashboard/life-saving-rules');
-    return response.data;
+    try {
+      const response = await apiClient.get('/dashboard/life-saving-rules');
+      return response.data;
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockDashboardService.getLifeSavingRules();
+      }
+      throw error;
+    }
   },
 
   async getPrecursors() {
     if (USE_MOCK) return mockDashboardService.getPrecursors();
-    const response = await apiClient.get('/dashboard/precursors');
-    return response.data;
+    try {
+      const response = await apiClient.get('/dashboard/precursors');
+      return response.data;
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockDashboardService.getPrecursors();
+      }
+      throw error;
+    }
   },
 
   async getTrends() {
     if (USE_MOCK) return mockDashboardService.getTrends();
-    const response = await apiClient.get('/dashboard/trends');
-    return response.data;
+    try {
+      const response = await apiClient.get('/dashboard/trends');
+      return response.data;
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockDashboardService.getTrends();
+      }
+      throw error;
+    }
   },
 };
 
@@ -202,8 +287,11 @@ export const patternsService = {
     try {
       const response = await apiClient.get<PrecursorPattern[]>('/patterns');
       return response.data;
-    } catch {
-      return mockPatternsService.getPatterns();
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockPatternsService.getPatterns();
+      }
+      throw error;
     }
   },
 
@@ -214,8 +302,11 @@ export const patternsService = {
     try {
       const response = await apiClient.get<PrecursorPattern>(`/patterns/${id}`);
       return response.data;
-    } catch {
-      return mockPatternsService.getPatternById(id);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockPatternsService.getPatternById(id);
+      }
+      throw error;
     }
   },
 };
@@ -231,8 +322,11 @@ export const interventionsService = {
     try {
       const response = await apiClient.get<HSEIntervention[]>('/interventions');
       return response.data;
-    } catch {
-      return mockInterventionsService.getInterventions();
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockInterventionsService.getInterventions();
+      }
+      throw error;
     }
   },
 
@@ -243,8 +337,11 @@ export const interventionsService = {
     try {
       const response = await apiClient.put<HSEIntervention>(`/interventions/${id}`, updates);
       return response.data;
-    } catch {
-      return mockInterventionsService.updateIntervention(id, updates);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockInterventionsService.updateIntervention(id, updates);
+      }
+      throw error;
     }
   },
 
@@ -255,8 +352,11 @@ export const interventionsService = {
     try {
       const response = await apiClient.post<HSEIntervention>('/interventions', newIntervention);
       return response.data;
-    } catch {
-      return mockInterventionsService.createIntervention(newIntervention);
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockInterventionsService.createIntervention(newIntervention);
+      }
+      throw error;
     }
   },
 };
@@ -272,8 +372,11 @@ export const auditService = {
     try {
       const response = await apiClient.get<AuditLogEntry[]>('/audit-logs');
       return response.data;
-    } catch {
-      return mockAuditService.getAuditLogs();
+    } catch (error) {
+      if (shouldFallbackToMock(error)) {
+        return mockAuditService.getAuditLogs();
+      }
+      throw error;
     }
   },
 };
