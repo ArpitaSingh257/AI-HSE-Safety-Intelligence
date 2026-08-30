@@ -1,0 +1,167 @@
+{
+  "crane": {
+    "in_vocab": true,
+    "idx": 315,
+    "train_count": 39
+  },
+  "lifting": {
+    "in_vocab": true,
+    "idx": 406,
+    "train_count": 24
+  },
+  "sling": {
+    "in_vocab": true,
+    "idx": 1315,
+    "train_count": 6
+  },
+  "casing": {
+    "in_vocab": true,
+    "idx": 615,
+    "train_count": 12
+  },
+  "bundle": {
+    "in_vocab": false,
+    "idx": 1,
+    "train_count": 1
+  },
+  "suspended": {
+    "in_vocab": true,
+    "idx": 318,
+    "train_count": 3
+  },
+  "hoist": {
+    "in_vocab": true,
+    "idx": 510,
+    "train_count": 8
+  },
+  "rigging": {
+    "in_vocab": true,
+    "idx": 5,
+    "train_count": 12
+  },
+  "confined": {
+    "in_vocab": true,
+    "idx": 1560,
+    "train_count": 2
+  },
+  "vessel": {
+    "in_vocab": true,
+    "idx": 880,
+    "train_count": 7
+  },
+  "separator": {
+    "in_vocab": true,
+    "idx": 366,
+    "train_count": 9
+  },
+  "tank": {
+    "in_vocab": true,
+    "idx": 30,
+    "train_count": 108
+  },
+  "pit": {
+    "in_vocab": true,
+    "idx": 652,
+    "train_count": 130
+  },
+  "entry": {
+    "in_vocab": true,
+    "idx": 1543,
+    "train_count": 2
+  },
+  "h2s": {
+    "in_vocab": true,
+    "idx": 1221,
+    "train_count": 0
+  },
+  "sulfide": {
+    "in_vocab": true,
+    "idx": 943,
+    "train_count": 5
+  },
+  "gas": {
+    "in_vocab": true,
+    "idx": 193,
+    "train_count": 124
+  },
+  "toxic": {
+    "in_vocab": false,
+    "idx": 1,
+    "train_count": 1
+  },
+  "monitoring": {
+    "in_vocab": false,
+    "idx": 1,
+    "train_count": 1
+  },
+  "ventilation": {
+    "in_vocab": true,
+    "idx": 1143,
+    "train_count": 2
+  },
+  "pressure": {
+    "in_vocab": true,
+    "idx": 152,
+    "train_count": 89
+  },
+  "hydrotest": {
+    "in_vocab": false,
+    "idx": 1,
+    "train_count": 1
+  },
+  "bleeder": {
+    "in_vocab": true,
+    "idx": 1387,
+    "train_count": 2
+  },
+  "line": {
+    "in_vocab": true,
+    "idx": 40,
+    "train_count": 195
+  },
+  "fire": {
+    "in_vocab": true,
+    "idx": 306,
+    "train_count": 64
+  },
+  "struck": {
+    "in_vocab": true,
+    "idx": 20,
+    "train_count": 77
+  },
+  "swung": {
+    "in_vocab": true,
+    "idx": 898,
+    "train_count": 6
+  },
+  "dropped": {
+    "in_vocab": true,
+    "idx": 613,
+    "train_count": 16
+  },
+  "pinch": {
+    "in_vocab": true,
+    "idx": 186,
+    "train_count": 21
+  },
+  "fall": {
+    "in_vocab": true,
+    "idx": 438,
+    "train_count": 28
+  },
+  "height": {
+    "in_vocab": true,
+    "idx": 1239,
+    "train_count": 8
+  },
+  "scaffold": {
+    "in_vocab": true,
+    "idx": 903,
+    "train_count": 12
+  },
+  "ladder": {
+    "in_vocab": true,
+    "idx": 139,
+    "train_count": 29
+  }
+}

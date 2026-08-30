@@ -1,0 +1,92 @@
+{
+  "model_name": "stage12_domain_augmented_bigru",
+  "embed_dim": 200,
+  "hidden_dim": 128,
+  "dropout": 0.25,
+  "per_rule_thresholds": {
+    "Bypassing Safety Controls": 0.35,
+    "Confined Space": 0.35,
+    "Driving": 0.35,
+    "Energy Isolation": 0.27,
+    "Hot Work": 0.23,
+    "Line of Fire": 0.15,
+    "Safe Mechanical Lifting": 0.81,
+    "Toxic Gas / Hazardous Substance": 0.35,
+    "Working at Height": 0.69
+  },
+  "test_metrics": {
+    "micro_precision": 0.7313432835820896,
+    "micro_recall": 0.6447368421052632,
+    "micro_f1": 0.6853146853146853,
+    "macro_precision": 0.6012108262108263,
+    "macro_recall": 0.5016381766381767,
+    "macro_f1": 0.53516611102818,
+    "weighted_f1": 0.6765758439987115,
+    "hamming_loss": 0.036231884057971016,
+    "exact_match_ratio": 0.7318840579710145
+  },
+  "demo_probes": [
+    {
+      "title": "Hydrotest Pressure Fitting Failure",
+      "triggered_rules": [
+        "Energy Isolation"
+      ],
+      "raw_probabilities": {
+        "Bypassing Safety Controls": 0.0,
+        "Confined Space": 0.0,
+        "Driving": 0.0,
+        "Energy Isolation": 0.7432000041007996,
+        "Hot Work": 0.00019999999494757503,
+        "Line of Fire": 0.0,
+        "Safe Mechanical Lifting": 0.00019999999494757503,
+        "Toxic Gas / Hazardous Substance": 0.0,
+        "Working at Height": 0.0
+      }
+    },
+    {
+      "title": "Crane Lifting Tubular Handling",
+      "triggered_rules": [],
+      "raw_probabilities": {
+        "Bypassing Safety Controls": 0.0,
+        "Confined Space": 0.0,
+        "Driving": 0.0,
+        "Energy Isolation": 9.999999747378752e-05,
+        "Hot Work": 9.999999747378752e-05,
+        "Line of Fire": 0.0,
+        "Safe Mechanical Lifting": 0.0,
+        "Toxic Gas / Hazardous Substance": 0.0,
+        "Working at Height": 9.999999747378752e-05
+      }
+    },
+    {
+      "title": "Confined Space Vessel Entry with H2S",
+      "triggered_rules": [],
+      "raw_probabilities": {
+        "Bypassing Safety Controls": 0.0,
+        "Confined Space": 9.999999747378752e-05,
+        "Driving": 0.0,
+        "Energy Isolation": 0.0003000000142492354,
+        "Hot Work": 9.999999747378752e-05,
+        "Line of Fire": 0.0,
+        "Safe Mechanical Lifting": 0.0,
+        "Toxic Gas / Hazardous Substance": 0.0020000000949949026,
+        "Working at Height": 0.00039999998989515007
+      }
+    },
+    {
+      "title": "Minor Slip on Ice in Yard",
+      "triggered_rules": [],
+      "raw_probabilities": {
+        "Bypassing Safety Controls": 0.0,
+        "Confined Space": 0.0,
+        "Driving": 0.0,
+        "Energy Isolation": 0.0,
+        "Hot Work": 0.00019999999494757503,
+        "Line of Fire": 9.999999747378752e-05,
+        "Safe Mechanical Lifting": 0.0,
+        "Toxic Gas / Hazardous Substance": 0.0,
+        "Working at Height": 0.00019999999494757503
+      }
+    }
+  ]
+}

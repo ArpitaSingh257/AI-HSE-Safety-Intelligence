@@ -1,0 +1,218 @@
+{
+  "sif_test_metrics": {
+    "f1": 0.9082125603864735,
+    "recall": 0.9494949494949495,
+    "precision": 0.8703703703703703,
+    "pr_auc": 0.9440409718123324
+  },
+  "lsr_test_metrics": {
+    "micro_f1": 0.6794871794871795,
+    "macro_f1": 0.5617857770156621,
+    "hamming_loss": 0.040257648953301126,
+    "exact_match": 0.6884057971014492
+  },
+  "demo_scenarios": [
+    {
+      "title": "A. Hydrotest Pressurized Fitting Failure",
+      "narrative": "During hydrostatic testing of the 6-inch high pressure discharge line at 4,500 psi, an operator attempted to tighten a leaking fitting while the line remained pressurized. The bleeder plug ruptured and struck the worker in the chest.",
+      "sif_probability": 0.9999,
+      "sif_prediction": 1,
+      "sif_salient_tokens": [
+        {
+          "token": "pressure",
+          "weight": 0.8729000091552734
+        },
+        {
+          "token": "fitting",
+          "weight": 0.03779999911785126
+        },
+        {
+          "token": "pressurized",
+          "weight": 0.02669999934732914
+        },
+        {
+          "token": "high",
+          "weight": 0.02250000089406967
+        },
+        {
+          "token": "remained",
+          "weight": 0.01269999984651804
+        }
+      ],
+      "triggered_lsrs": [
+        "Energy Isolation"
+      ],
+      "lsr_probabilities": {
+        "Bypassing Safety Controls": 9.999999747378752e-05,
+        "Confined Space": 9.999999747378752e-05,
+        "Driving": 0.0,
+        "Energy Isolation": 0.8237000107765198,
+        "Hot Work": 0.0005000000237487257,
+        "Line of Fire": 0.00019999999494757503,
+        "Safe Mechanical Lifting": 9.999999747378752e-05,
+        "Toxic Gas / Hazardous Substance": 0.0,
+        "Working at Height": 9.999999747378752e-05
+      }
+    },
+    {
+      "title": "B. Crane Lifting / Sling Failure",
+      "narrative": "A crawler crane was lifting a 2-ton casing bundle across the rig floor when the nylon sling parted due to sharp edge contact. The casing bundle swung downward, striking the floor near the rotary table.",
+      "sif_probability": 0.9997,
+      "sif_prediction": 1,
+      "sif_salient_tokens": [
+        {
+          "token": "2",
+          "weight": 0.3596999943256378
+        },
+        {
+          "token": "crane",
+          "weight": 0.1906999945640564
+        },
+        {
+          "token": "casing",
+          "weight": 0.13079999387264252
+        },
+        {
+          "token": "ton",
+          "weight": 0.08630000054836273
+        },
+        {
+          "token": "floor",
+          "weight": 0.06310000270605087
+        }
+      ],
+      "triggered_lsrs": [],
+      "lsr_probabilities": {
+        "Bypassing Safety Controls": 0.0,
+        "Confined Space": 0.0,
+        "Driving": 0.0,
+        "Energy Isolation": 9.999999747378752e-05,
+        "Hot Work": 0.0003000000142492354,
+        "Line of Fire": 0.0,
+        "Safe Mechanical Lifting": 0.014399999752640724,
+        "Toxic Gas / Hazardous Substance": 0.0,
+        "Working at Height": 0.0003000000142492354
+      }
+    },
+    {
+      "title": "C. Confined-Space H2S Incident",
+      "narrative": "An employee entered an enclosed crude oil storage separator without continuous gas monitoring or ventilation. Lethal levels of hydrogen sulfide (H2S) gas overcame the worker inside the vessel.",
+      "sif_probability": 0.8875,
+      "sif_prediction": 1,
+      "sif_salient_tokens": [
+        {
+          "token": "employee",
+          "weight": 0.47110000252723694
+        },
+        {
+          "token": "vessel",
+          "weight": 0.33469998836517334
+        },
+        {
+          "token": "oil",
+          "weight": 0.06440000236034393
+        },
+        {
+          "token": "crude",
+          "weight": 0.03500000014901161
+        },
+        {
+          "token": "an",
+          "weight": 0.0203000009059906
+        }
+      ],
+      "triggered_lsrs": [],
+      "lsr_probabilities": {
+        "Bypassing Safety Controls": 9.999999747378752e-05,
+        "Confined Space": 0.00430000014603138,
+        "Driving": 0.00019999999494757503,
+        "Energy Isolation": 0.0005000000237487257,
+        "Hot Work": 0.003599999938160181,
+        "Line of Fire": 0.0,
+        "Safe Mechanical Lifting": 0.00019999999494757503,
+        "Toxic Gas / Hazardous Substance": 0.010099999606609344,
+        "Working at Height": 0.00019999999494757503
+      }
+    },
+    {
+      "title": "D. Minor Slip on Ice in Yard",
+      "narrative": "While walking across the paved maintenance yard after a shift change, an operator slipped on a patch of ice and bruised their knee. First aid applied; worker returned to full duty immediately.",
+      "sif_probability": 0.2779,
+      "sif_prediction": 0,
+      "sif_salient_tokens": [
+        {
+          "token": "while",
+          "weight": 0.29989999532699585
+        },
+        {
+          "token": "shift",
+          "weight": 0.24199999868869781
+        },
+        {
+          "token": "operator",
+          "weight": 0.1145000010728836
+        },
+        {
+          "token": "an",
+          "weight": 0.08810000121593475
+        },
+        {
+          "token": "walking",
+          "weight": 0.06700000166893005
+        }
+      ],
+      "triggered_lsrs": [],
+      "lsr_probabilities": {
+        "Bypassing Safety Controls": 0.0,
+        "Confined Space": 0.0,
+        "Driving": 0.0,
+        "Energy Isolation": 9.999999747378752e-05,
+        "Hot Work": 0.00039999998989515007,
+        "Line of Fire": 0.00019999999494757503,
+        "Safe Mechanical Lifting": 0.0,
+        "Toxic Gas / Hazardous Substance": 0.0,
+        "Working at Height": 9.999999747378752e-05
+      }
+    }
+  ],
+  "robustness_audit": [
+    {
+      "test": "ALL UPPERCASE",
+      "input_text": "HYDROSTATIC TESTING AT 4,500 PSI BLEEDER VALVE RUPTURED.",
+      "sif_probability": 0.9973,
+      "triggered_lsrs": []
+    },
+    {
+      "test": "EXTRA WHITESPACE & PUNCTUATION",
+      "input_text": "  crawler   crane   lifting   casing...   sling   parted!!!   ",
+      "sif_probability": 0.9992,
+      "triggered_lsrs": [
+        "Safe Mechanical Lifting"
+      ]
+    },
+    {
+      "test": "OUT-OF-VOCABULARY WORDS",
+      "input_text": "Worker sustained minor bruising in unclassified warehouse subdistrict.",
+      "sif_probability": 0.992,
+      "triggered_lsrs": []
+    },
+    {
+      "test": "EMPTY INPUT",
+      "input_text": "",
+      "sif_probability": 0.0,
+      "triggered_lsrs": []
+    },
+    {
+      "test": "NONE INPUT",
+      "input_text": "None",
+      "sif_probability": 0.0,
+      "triggered_lsrs": []
+    },
+    {
+      "test": "VERY SHORT INPUT",
+      "input_text": "fell",
+      "sif_probability": 0.9813,
+      "triggered_lsrs": []
+    }
+  ]
+}

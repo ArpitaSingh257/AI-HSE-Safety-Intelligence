@@ -1,21 +1,21 @@
 record_id,narrative,ground_truth,stage6_probability,production_probability,probability_difference,stage6_prediction,production_prediction,match
-OILPS_IOGP_SPI_0040,"During this operation, the handle and stem assembly of the 3-way valve, operatin...",1,0.9999,0.9999,0.0,1,1,True
-OILPS_OSHA_03827,"An employee was replacing the well house. After installing the new well house, t...",1,0.9981,0.9981,0.0,1,1,True
+OILPS_IOGP_SPI_0040,"During this operation, the handle and stem assembly of the 3-way valve, operatin...",1,0.9923,0.9999,0.0076,1,1,True
+OILPS_OSHA_03827,"An employee was replacing the well house. After installing the new well house, t...",1,0.9997,0.9981,0.0016,1,1,True
 OILPS_IOGP_SPI_0148,"After bringing the well online following a frac hit, there was a release downstr...",1,1.0,1.0,0.0,1,1,True
-OILPS_OSHA_02714,"While walking at grade under an asphalt rail car loading rack, an employee tripp...",0,0.0012,0.0012,0.0,0,0,True
-OILPS_OSHA_02131,An employee was setting up a board over a 3-foot deep excavation so that he coul...,0,0.9998,0.9998,0.0,1,1,True
-OILPS_OSHA_02035,Two employees were in a trailer. A lit cigarette ignited gas that had leaked fro...,1,0.9954,0.9954,0.0,1,1,True
-OILPS_IOGP_HPE_0056,"During welding activities, the fire watch for the naked flame activity received ...",1,0.9871,0.9871,0.0,1,1,True
-OILPS_OSHA_03126,An employee was tasked with offloading a marine vessel. He was resetting the loa...,0,0.0015,0.0015,0.0,0,0,True
-OILPS_OSHA_02185,An employee was replacing catalyst parts in the heat and became ill due to heat ...,0,0.0111,0.0111,0.0,0,0,True
-OILPS_IOGP_HPE_0005,"During a heavy rainstorm, two aluminium composite panels (component of the exter...",1,0.9968,0.9968,0.0,1,1,True
-OILPS_IOGP_SPI_0041,"An H2S alarm was received at a facility, and operations responded to investigate...",1,0.9988,0.9988,0.0,1,1,True
-OILPS_OSHA_04229,An employee was testing a breaker that energizes a dryer when the breaker trippe...,1,0.9654,0.9654,0.0,1,1,True
-OILPS_OSHA_00602,An employee climbed a ladder to assess the next level of a metal roof. He steppe...,1,0.9536,0.9536,0.0,1,1,True
+OILPS_OSHA_02714,"While walking at grade under an asphalt rail car loading rack, an employee tripp...",0,0.0249,0.0012,0.0237,0,0,True
+OILPS_OSHA_02131,An employee was setting up a board over a 3-foot deep excavation so that he coul...,0,0.9946,0.9998,0.0052,1,1,True
+OILPS_OSHA_02035,Two employees were in a trailer. A lit cigarette ignited gas that had leaked fro...,1,0.9983,0.9954,0.0029,1,1,True
+OILPS_IOGP_HPE_0056,"During welding activities, the fire watch for the naked flame activity received ...",1,0.9992,0.9871,0.0121,1,1,True
+OILPS_OSHA_03126,An employee was tasked with offloading a marine vessel. He was resetting the loa...,0,0.0235,0.0015,0.022,0,0,True
+OILPS_OSHA_02185,An employee was replacing catalyst parts in the heat and became ill due to heat ...,0,0.0789,0.0111,0.0678,0,0,False
+OILPS_IOGP_HPE_0005,"During a heavy rainstorm, two aluminium composite panels (component of the exter...",1,0.9984,0.9968,0.0016,1,1,True
+OILPS_IOGP_SPI_0041,"An H2S alarm was received at a facility, and operations responded to investigate...",1,0.9984,0.9988,0.0004,1,1,True
+OILPS_OSHA_04229,An employee was testing a breaker that energizes a dryer when the breaker trippe...,1,0.7763,0.9654,0.1891,1,1,False
+OILPS_OSHA_00602,An employee climbed a ladder to assess the next level of a metal roof. He steppe...,1,0.9744,0.9536,0.0208,1,1,True
 OILPS_IOGP_SPI_0033,Several gas-detection alarms were triggered at a remote manifold station during ...,1,0.9999,0.9999,0.0,1,1,True
-OILPS_OSHA_00171,An employee working on the drilling floor was picking up the jerk chain for the ...,1,0.2729,0.2729,0.0,0,0,True
-OILPS_IOGP_SPI_0160,"During a commissioning pressure test on newly installed equipment, the system fa...",1,0.9999,0.9999,0.0,1,1,True
-OILPS_OSHA_02343,An employee suffered a 480-volt shock while investigating a power outage in a pr...,0,0.4373,0.4373,0.0,1,1,True
-OILPS_OSHA_03680,An employee was trying to lower the level on a condensate boiler by opening a pu...,0,0.7132,0.7132,0.0,1,1,True
-OILPS_IOGP_SPI_0178,"On March 7th, 2025, the platform experienced a major process safety incident whe...",1,0.9992,0.9992,0.0,1,1,True
-OILPS_IOGP_SPI_0135,A hole developed on the bottom side of the slop tank....,1,0.9791,0.9791,0.0,1,1,True
+OILPS_OSHA_00171,An employee working on the drilling floor was picking up the jerk chain for the ...,1,0.075,0.2729,0.1979,0,0,False
+OILPS_IOGP_SPI_0160,"During a commissioning pressure test on newly installed equipment, the system fa...",1,1.0,0.9999,0.0001,1,1,True
+OILPS_OSHA_02343,An employee suffered a 480-volt shock while investigating a power outage in a pr...,0,0.7651,0.4373,0.3278,1,1,False
+OILPS_OSHA_03680,An employee was trying to lower the level on a condensate boiler by opening a pu...,0,0.7174,0.7132,0.0042,1,1,True
+OILPS_IOGP_SPI_0178,"On March 7th, 2025, the platform experienced a major process safety incident whe...",1,0.9997,0.9992,0.0005,1,1,True
+OILPS_IOGP_SPI_0135,A hole developed on the bottom side of the slop tank....,1,0.7895,0.9791,0.1896,1,1,False

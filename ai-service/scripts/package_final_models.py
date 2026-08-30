@@ -47,18 +47,42 @@ def package_models():
         print(f"Copied SIF vocabulary -> {sif_target_dir / 'sif_vocab.json'}")
 
     # -------------------------------------------------------------------------
-    # 2. PACKAGE LSR CHAMPION
+    # 2. PACKAGE LSR CHAMPION WITH STAGE 10 CALIBRATED THRESHOLDS
     # -------------------------------------------------------------------------
     lsr_src_ckpt = base_dir / "results" / "lsr_stage7" / "checkpoints" / "best_lsr_stage7_model.pt"
     lsr_src_cfg = base_dir / "results" / "lsr_stage7" / "stage7_lsr_config.json"
+    lsr_stage10_thresh = base_dir / "results" / "lsr_stage10" / "calibrated_thresholds.json"
     lsr_src_vocab = base_dir / "results" / "gru" / "lsr" / "lsr_vocab.json"
     
     if lsr_src_ckpt.exists():
         shutil.copy2(lsr_src_ckpt, lsr_target_dir / "lsr_model.pt")
         print(f"Copied LSR checkpoint -> {lsr_target_dir / 'lsr_model.pt'}")
-    if lsr_src_cfg.exists():
-        shutil.copy2(lsr_src_cfg, lsr_target_dir / "lsr_config.json")
-        print(f"Copied LSR config     -> {lsr_target_dir / 'lsr_config.json'}")
+        
+    lsr_cfg_data = {
+        "model_name": "lsr_stage7_norm_base",
+        "embed_dim": 200,
+        "hidden_dim": 128,
+        "dropout": 0.25,
+        "per_rule_thresholds": {
+            "Bypassing Safety Controls": 0.15,
+            "Confined Space": 0.15,
+            "Driving": 0.49,
+            "Energy Isolation": 0.63,
+            "Hot Work": 0.83,
+            "Line of Fire": 0.17,
+            "Safe Mechanical Lifting": 0.35,
+            "Toxic Gas / Hazardous Substance": 0.15,
+            "Working at Height": 0.69
+        }
+    }
+    if lsr_stage10_thresh.exists():
+        with open(lsr_stage10_thresh, "r") as f:
+            lsr_cfg_data["per_rule_thresholds"] = json.load(f)
+            
+    with open(lsr_target_dir / "lsr_config.json", "w") as f:
+        json.dump(lsr_cfg_data, f, indent=2)
+    print(f"Wrote calibrated LSR config -> {lsr_target_dir / 'lsr_config.json'}")
+        
     if lsr_src_vocab.exists():
         shutil.copy2(lsr_src_vocab, lsr_target_dir / "lsr_vocab.json")
         print(f"Copied LSR vocabulary -> {lsr_target_dir / 'lsr_vocab.json'}")

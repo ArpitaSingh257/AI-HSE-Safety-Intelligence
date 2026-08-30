@@ -1,0 +1,188 @@
+[
+  {
+    "domain": "Lifting & Rigging",
+    "target_rule": "Safe Mechanical Lifting",
+    "keyword_pattern": "\\b(crane|lifting|sling|rigging|hoist|casing bundle)\\b",
+    "total_keyword_matches": 10,
+    "true_positives_in_data": 6,
+    "mean_model_probability_on_positives": 0.3607,
+    "representative_samples": [
+      {
+        "record_id": "OILPS_OSHA_02369",
+        "text": "While attaching a lifting sling to a truck, an employee was struck by a backhoe bucket. The employee...",
+        "ground_truth": 1,
+        "model_probability": 0.1349,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_IOGP_HPE_0014",
+        "text": "Flex Joint strikes handrail creating 2 Dropped Objects. During the removal of the Flex Joint from th...",
+        "ground_truth": 0,
+        "model_probability": 0.0372,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_IOGP_HPE_0012",
+        "text": "While parking the starboard (STBD) crane following routine lifting operations, the crane boom was br...",
+        "ground_truth": 0,
+        "model_probability": 0.019,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_IOGP_HPE_0037",
+        "text": "On an offshore drilling rig, on 1 September 2025, personnel and marine crew were installing handrail...",
+        "ground_truth": 0,
+        "model_probability": 0.0,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_OSHA_02738",
+        "text": "The sheaves of the crane were frozen due to ice and snow conditions, which caused a backlash with th...",
+        "ground_truth": 1,
+        "model_probability": 0.025,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      }
+    ]
+  },
+  {
+    "domain": "Confined Space & Gas",
+    "target_rule": "Confined Space",
+    "keyword_pattern": "\\b(confined|separator|vessel entry|tank entry|mud pit)\\b",
+    "total_keyword_matches": 3,
+    "true_positives_in_data": 1,
+    "mean_model_probability_on_positives": 0.0002,
+    "representative_samples": [
+      {
+        "record_id": "OILPS_IOGP_SPI_0148",
+        "text": "After bringing the well online following a frac hit, there was a release downstream of the 90-degree...",
+        "ground_truth": 0,
+        "model_probability": 0.0001,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_IOGP_FATAL_0048",
+        "text": "The worker was holding the position of Trainee with a service company, while performing activities o...",
+        "ground_truth": 0,
+        "model_probability": 0.0,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_OSHA_00983",
+        "text": "An employee had entered a confined space in a reactor when he slipped on catalyst support media. As ...",
+        "ground_truth": 1,
+        "model_probability": 0.0002,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      }
+    ]
+  },
+  {
+    "domain": "Toxic Gas Exposure",
+    "target_rule": "Toxic Gas / Hazardous Substance",
+    "keyword_pattern": "\\b(h2s|hydrogen sulfide|toxic gas|chemical exposure)\\b",
+    "total_keyword_matches": 3,
+    "true_positives_in_data": 1,
+    "mean_model_probability_on_positives": 0.8518,
+    "representative_samples": [
+      {
+        "record_id": "OILPS_IOGP_SPI_0041",
+        "text": "An H2S alarm was received at a facility, and operations responded to investigate. A wellhead was fou...",
+        "ground_truth": 0,
+        "model_probability": 0.0001,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_IOGP_SPI_0100",
+        "text": "Operator heard leak sound and slight H2S odor in compressor building; evacuated and compressor shut ...",
+        "ground_truth": 0,
+        "model_probability": 0.0,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_OSHA_03476",
+        "text": "An employee was exposed to hydrogen sulfide while loading crude oil. The employee was hospitalized....",
+        "ground_truth": 1,
+        "model_probability": 0.8518,
+        "pred_stage7": 1,
+        "pred_stage10": 1
+      }
+    ]
+  },
+  {
+    "domain": "Line of Fire Trajectory",
+    "target_rule": "Line of Fire",
+    "keyword_pattern": "\\b(line of fire|swung|struck by|dropped object|pinch)\\b",
+    "total_keyword_matches": 7,
+    "true_positives_in_data": 4,
+    "mean_model_probability_on_positives": 0.11192500000000001,
+    "representative_samples": [
+      {
+        "record_id": "OILPS_OSHA_00885",
+        "text": "An employee was fixing a damaged pipeline and was struck by a pickup truck. The employee suffered a ...",
+        "ground_truth": 1,
+        "model_probability": 0.0592,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_OSHA_02369",
+        "text": "While attaching a lifting sling to a truck, an employee was struck by a backhoe bucket. The employee...",
+        "ground_truth": 1,
+        "model_probability": 0.384,
+        "pred_stage7": 1,
+        "pred_stage10": 1
+      },
+      {
+        "record_id": "OILPS_IOGP_HPE_0077",
+        "text": "While changing out tong heads during an ESP install, the IP\u2019s right arm came into contact with the a...",
+        "ground_truth": 0,
+        "model_probability": 0.0003,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_OSHA_02531",
+        "text": "During rig down, an employee was attempting to move a hose supported on a spreader bar. The hose cam...",
+        "ground_truth": 0,
+        "model_probability": 0.0001,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      },
+      {
+        "record_id": "OILPS_OSHA_00097",
+        "text": "Employee was changing out a piece of pipe while installing underground conduits on a directional dri...",
+        "ground_truth": 1,
+        "model_probability": 0.003,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      }
+    ]
+  },
+  {
+    "domain": "Energy Isolation",
+    "target_rule": "Energy Isolation",
+    "keyword_pattern": "\\b(hydrostatic|bleeder|pressurized|de energize|loto|lockout)\\b",
+    "total_keyword_matches": 1,
+    "true_positives_in_data": 0,
+    "mean_model_probability_on_positives": 0.0,
+    "representative_samples": [
+      {
+        "record_id": "OILPS_IOGP_SPI_0183",
+        "text": "During a planned maintenance activity to replace fasteners on a gas injection pipeline, a high-press...",
+        "ground_truth": 0,
+        "model_probability": 0.0376,
+        "pred_stage7": 0,
+        "pred_stage10": 0
+      }
+    ]
+  }
+]

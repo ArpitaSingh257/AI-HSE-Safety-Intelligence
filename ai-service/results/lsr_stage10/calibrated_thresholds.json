@@ -1,11 +1,11 @@
 {
-  "Bypassing Safety Controls": 0.2,
-  "Confined Space": 0.48,
-  "Driving": 0.5,
-  "Energy Isolation": 0.46,
-  "Hot Work": 0.52,
-  "Line of Fire": 0.52,
-  "Safe Mechanical Lifting": 0.48,
-  "Toxic Gas / Hazardous Substance": 0.46,
-  "Working at Height": 0.45
+  "Bypassing Safety Controls": 0.15,
+  "Confined Space": 0.15,
+  "Driving": 0.49,
+  "Energy Isolation": 0.63,
+  "Hot Work": 0.83,
+  "Line of Fire": 0.17,
+  "Safe Mechanical Lifting": 0.35,
+  "Toxic Gas / Hazardous Substance": 0.15,
+  "Working at Height": 0.69
 }

@@ -264,7 +264,7 @@ def run_stage_10_calibration():
     print(f"  Weight Integrity:  Stage 7 Trained Checkpoint Loaded Successfully.")
     
     # Sanity check: evaluate a domain sample
-    sample_tensor, _ = vocab.text_to_indices("crane lifting casing bundle dropped into line of fire")
+    sample_tensor = vocab.text_to_indices("crane lifting casing bundle dropped into line of fire")
     with torch.no_grad():
         sample_logits, _ = model(torch.tensor([sample_tensor], dtype=torch.long).to(device))
         sample_probs = torch.sigmoid(sample_logits[0]).cpu().numpy()

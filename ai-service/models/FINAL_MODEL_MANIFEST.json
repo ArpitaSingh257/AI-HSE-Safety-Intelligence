@@ -1,0 +1,49 @@
+{
+  "manifest_version": "2.0.0",
+  "freeze_status": "FROZEN_FOR_PRODUCTION",
+  "project": "SIH26165 \u2014 Oil India Limited Precursor Safety Intelligence",
+  "timestamp": "2026-08-30",
+  "production_champions": {
+    "sif_champion": {
+      "model_name": "sif_stage6_bigru_attention_optimized",
+      "originating_stage": "Stage 6 Hyperparameter Optimization",
+      "architecture": "Embedding (200) -> BiGRU (128) -> Softmax Attention -> Linear(1)",
+      "checkpoint_path": "models/sif/sif_model.pt",
+      "vocabulary_path": "models/sif/sif_vocab.json",
+      "config_path": "models/sif/sif_config.json",
+      "decision_threshold": 0.3,
+      "verified_test_metrics": {
+        "f1_score": 0.9082125603864735,
+        "sif_recall": 0.9494949494949495,
+        "precision": 0.8703703703703703,
+        "pr_auc": 0.9440409718123324
+      }
+    },
+    "lsr_champion": {
+      "model_name": "lsr_stage7_robust_bigru_attention",
+      "originating_stage": "Stage 7 Robustness Optimization",
+      "architecture": "Embedding (200) -> BiGRU (128) -> LayerNorm -> Scaled Dot-Product Attention -> 2-Layer MLP -> 9 Sigmoids",
+      "checkpoint_path": "models/lsr/lsr_model.pt",
+      "vocabulary_path": "models/lsr/lsr_vocab.json",
+      "config_path": "models/lsr/lsr_config.json",
+      "per_rule_thresholds": {
+        "Bypassing Safety Controls": 0.5,
+        "Confined Space": 0.5,
+        "Driving": 0.25,
+        "Energy Isolation": 0.3,
+        "Hot Work": 0.45,
+        "Line of Fire": 0.2,
+        "Safe Mechanical Lifting": 0.2,
+        "Toxic Gas / Hazardous Substance": 0.5,
+        "Working at Height": 0.25
+      },
+      "verified_test_metrics": {
+        "micro_f1": 0.6794871794871795,
+        "macro_f1": 0.5617857770156621,
+        "hamming_loss": 0.040257648953301126,
+        "exact_match_ratio": 0.6884057971014492
+      }
+    }
+  },
+  "disclaimer": "Stage 7 remains the official LSR production champion. Stage 6 remains the official SIF production champion. Attention weights represent sequence salience and serve as interpretability aids, not formal causal proofs."
+}

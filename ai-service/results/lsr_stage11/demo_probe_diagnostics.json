@@ -1,0 +1,175 @@
+[
+  {
+    "incident_id": "DEMO_1_HYDROTEST",
+    "title": "High-Pressure Hydrotest Fitting Failure",
+    "expected_rules": [
+      "Energy Isolation",
+      "Line of Fire"
+    ],
+    "probabilities": {
+      "Bypassing Safety Controls": 9.999999747378752e-05,
+      "Confined Space": 9.999999747378752e-05,
+      "Driving": 0.0,
+      "Energy Isolation": 0.8237000107765198,
+      "Hot Work": 0.0005000000237487257,
+      "Line of Fire": 0.00019999999494757503,
+      "Safe Mechanical Lifting": 9.999999747378752e-05,
+      "Toxic Gas / Hazardous Substance": 0.0,
+      "Working at Height": 9.999999747378752e-05
+    },
+    "stage7_triggers": [
+      "Energy Isolation"
+    ],
+    "stage10_triggers": [
+      "Energy Isolation"
+    ],
+    "top_attended_tokens": [
+      {
+        "token": "pressure",
+        "weight": 0.09430000185966492
+      },
+      {
+        "token": "high",
+        "weight": 0.07840000092983246
+      },
+      {
+        "token": "discharge",
+        "weight": 0.060600001364946365
+      },
+      {
+        "token": "fitting",
+        "weight": 0.06030000001192093
+      },
+      {
+        "token": "line",
+        "weight": 0.05770000070333481
+      }
+    ]
+  },
+  {
+    "incident_id": "DEMO_2_CRANE_LIFTING",
+    "title": "Crane Lifting Tubular Handling in Line of Fire",
+    "expected_rules": [
+      "Safe Mechanical Lifting",
+      "Line of Fire"
+    ],
+    "probabilities": {
+      "Bypassing Safety Controls": 0.0,
+      "Confined Space": 0.0,
+      "Driving": 0.0,
+      "Energy Isolation": 9.999999747378752e-05,
+      "Hot Work": 0.0003000000142492354,
+      "Line of Fire": 0.0,
+      "Safe Mechanical Lifting": 0.014399999752640724,
+      "Toxic Gas / Hazardous Substance": 0.0,
+      "Working at Height": 0.0003000000142492354
+    },
+    "stage7_triggers": [],
+    "stage10_triggers": [],
+    "top_attended_tokens": [
+      {
+        "token": "lifting",
+        "weight": 0.06790000200271606
+      },
+      {
+        "token": "crane",
+        "weight": 0.06589999794960022
+      },
+      {
+        "token": "2",
+        "weight": 0.04610000178217888
+      },
+      {
+        "token": "a",
+        "weight": 0.04479999840259552
+      },
+      {
+        "token": "due",
+        "weight": 0.03200000151991844
+      }
+    ]
+  },
+  {
+    "incident_id": "DEMO_3_CONFINED_H2S",
+    "title": "Confined Space Vessel Entry with H2S Accumulation",
+    "expected_rules": [
+      "Confined Space",
+      "Toxic Gas / Hazardous Substance"
+    ],
+    "probabilities": {
+      "Bypassing Safety Controls": 9.999999747378752e-05,
+      "Confined Space": 0.00430000014603138,
+      "Driving": 0.00019999999494757503,
+      "Energy Isolation": 0.0005000000237487257,
+      "Hot Work": 0.003599999938160181,
+      "Line of Fire": 0.0,
+      "Safe Mechanical Lifting": 0.00019999999494757503,
+      "Toxic Gas / Hazardous Substance": 0.010099999606609344,
+      "Working at Height": 0.00019999999494757503
+    },
+    "stage7_triggers": [],
+    "stage10_triggers": [],
+    "top_attended_tokens": [
+      {
+        "token": "hydrogen",
+        "weight": 0.05810000002384186
+      },
+      {
+        "token": "vessel",
+        "weight": 0.05660000070929527
+      },
+      {
+        "token": "levels",
+        "weight": 0.047600001096725464
+      },
+      {
+        "token": "of",
+        "weight": 0.04410000145435333
+      },
+      {
+        "token": "sulfide",
+        "weight": 0.04270000010728836
+      }
+    ]
+  },
+  {
+    "incident_id": "DEMO_4_NEGATIVE_SLIP",
+    "title": "Minor Slip on Ice in Yard (Negative Control)",
+    "expected_rules": [],
+    "probabilities": {
+      "Bypassing Safety Controls": 0.0,
+      "Confined Space": 0.0,
+      "Driving": 0.0,
+      "Energy Isolation": 9.999999747378752e-05,
+      "Hot Work": 0.00039999998989515007,
+      "Line of Fire": 0.00019999999494757503,
+      "Safe Mechanical Lifting": 0.0,
+      "Toxic Gas / Hazardous Substance": 0.0,
+      "Working at Height": 9.999999747378752e-05
+    },
+    "stage7_triggers": [],
+    "stage10_triggers": [],
+    "top_attended_tokens": [
+      {
+        "token": "shift",
+        "weight": 0.06689999997615814
+      },
+      {
+        "token": "change",
+        "weight": 0.05790000036358833
+      },
+      {
+        "token": "ice",
+        "weight": 0.043699998408555984
+      },
+      {
+        "token": "bruised",
+        "weight": 0.03709999844431877
+      },
+      {
+        "token": "worker",
+        "weight": 0.03550000116229057
+      }
+    ]
+  }
+]

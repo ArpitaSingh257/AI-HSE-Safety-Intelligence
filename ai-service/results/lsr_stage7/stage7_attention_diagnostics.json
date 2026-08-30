@@ -9,27 +9,27 @@
     "top_attended_tokens": [
       {
         "token": "pressure",
-        "weight": 0.09440000355243683
+        "weight": 0.07970000058412552
       },
       {
         "token": "bar",
-        "weight": 0.07620000094175339
-      },
-      {
-        "token": "55",
-        "weight": 0.05889999866485596
-      },
-      {
-        "token": "detached",
-        "weight": 0.04820000007748604
+        "weight": 0.062300000339746475
       },
       {
         "token": "the",
-        "weight": 0.043699998408555984
+        "weight": 0.050200000405311584
+      },
+      {
+        "token": "detached",
+        "weight": 0.049400001764297485
+      },
+      {
+        "token": "55",
+        "weight": 0.04690000042319298
       },
       {
         "token": "from",
-        "weight": 0.03970000147819519
+        "weight": 0.041099999099969864
       }
     ]
   },
@@ -43,28 +43,28 @@
     ],
     "top_attended_tokens": [
       {
-        "token": "winch",
-        "weight": 0.09790000319480896
+        "token": "caught",
+        "weight": 0.07450000196695328
       },
       {
-        "token": "line",
-        "weight": 0.08370000123977661
+        "token": "the",
+        "weight": 0.048900000751018524
       },
       {
         "token": "as",
-        "weight": 0.07530000060796738
-      },
-      {
-        "token": "winch",
-        "weight": 0.0722000002861023
-      },
-      {
-        "token": "caught",
-        "weight": 0.05939999967813492
+        "weight": 0.048700001090765
       },
       {
         "token": "line",
-        "weight": 0.04809999838471413
+        "weight": 0.04580000042915344
+      },
+      {
+        "token": "line",
+        "weight": 0.04470000043511391
+      },
+      {
+        "token": "line",
+        "weight": 0.04259999841451645
       }
     ]
   },
@@ -78,27 +78,27 @@
     "top_attended_tokens": [
       {
         "token": "pressure",
-        "weight": 0.14980000257492065
+        "weight": 0.10490000247955322
       },
       {
         "token": "sustained",
-        "weight": 0.07479999959468842
-      },
-      {
-        "token": "lubricant",
-        "weight": 0.048700001090765
+        "weight": 0.05990000069141388
       },
       {
         "token": "filling",
-        "weight": 0.04399999976158142
-      },
-      {
-        "token": "the",
-        "weight": 0.03370000049471855
+        "weight": 0.047600001096725464
       },
       {
         "token": "employees",
-        "weight": 0.03150000050663948
+        "weight": 0.03799999877810478
+      },
+      {
+        "token": "55",
+        "weight": 0.03590000048279762
+      },
+      {
+        "token": "lubricant",
+        "weight": 0.03590000048279762
       }
     ]
   },
@@ -109,28 +109,28 @@
     "predicted_rules": [],
     "top_attended_tokens": [
       {
-        "token": "hospitalization",
-        "weight": 0.08479999750852585
-      },
-      {
         "token": "exhaustion",
-        "weight": 0.08380000293254852
+        "weight": 0.06340000033378601
       },
       {
         "token": "due",
-        "weight": 0.0689999982714653
+        "weight": 0.060499999672174454
+      },
+      {
+        "token": "hospitalization",
+        "weight": 0.06019999831914902
       },
       {
         "token": "to",
-        "weight": 0.06759999692440033
+        "weight": 0.05660000070929527
+      },
+      {
+        "token": "replacing",
+        "weight": 0.05550000071525574
       },
       {
         "token": "heat",
-        "weight": 0.061500001698732376
-      },
-      {
-        "token": "requiring",
-        "weight": 0.05620000138878822
+        "weight": 0.05530000105500221
       }
     ]
   },
@@ -142,27 +142,27 @@
     "top_attended_tokens": [
       {
         "token": "line",
-        "weight": 0.04349999874830246
-      },
-      {
-        "token": "500",
-        "weight": 0.0430000014603138
+        "weight": 0.038600001484155655
       },
       {
         "token": "the",
-        "weight": 0.04129999876022339
-      },
-      {
-        "token": "from",
-        "weight": 0.03669999912381172
+        "weight": 0.030899999663233757
       },
       {
         "token": "feet",
-        "weight": 0.035999998450279236
+        "weight": 0.028200000524520874
+      },
+      {
+        "token": "from",
+        "weight": 0.025699999183416367
       },
       {
         "token": "with",
-        "weight": 0.032999999821186066
+        "weight": 0.02500000037252903
+      },
+      {
+        "token": "500",
+        "weight": 0.02459999918937683
       }
     ]
   }

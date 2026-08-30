@@ -1855,7 +1855,5 @@
     "coil": 1852,
     "fusing": 1853,
     "boards": 1854
-  },
-  "max_len": 99,
-  "vocab_size": 1855
+  }
 }

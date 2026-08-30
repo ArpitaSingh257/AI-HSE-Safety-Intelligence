@@ -1,0 +1,27 @@
+{
+  "model_name": "stage11_asymmetric_multihead_gru",
+  "embed_dim": 200,
+  "hidden_dim": 128,
+  "dropout": 0.25,
+  "per_rule_thresholds": {
+    "Bypassing Safety Controls": 0.4,
+    "Confined Space": 0.4,
+    "Driving": 0.73,
+    "Energy Isolation": 0.47,
+    "Hot Work": 0.27,
+    "Line of Fire": 0.39,
+    "Safe Mechanical Lifting": 0.38,
+    "Toxic Gas / Hazardous Substance": 0.4,
+    "Working at Height": 0.51
+  },
+  "test_metrics": {
+    "micro_precision": 0.625,
+    "micro_recall": 0.7894736842105263,
+    "micro_f1": 0.6976744186046512,
+    "macro_precision": 0.47147166558931264,
+    "macro_recall": 0.6384547551214218,
+    "macro_f1": 0.5253170839377737,
+    "hamming_loss": 0.04186795491143317,
+    "exact_match_ratio": 0.6739130434782609
+  }
+}
