@@ -1,0 +1,256 @@
+{
+  "total_test_samples": 134,
+  "true_positives": 96,
+  "true_negatives": 22,
+  "false_negatives_count": 3,
+  "false_positives_count": 13,
+  "false_negative_samples": [
+    {
+      "record_id": "OILPS_OSHA_00171",
+      "ground_truth_sif": 1,
+      "predicted_sif": 0,
+      "predicted_prob": 0.075,
+      "threshold": 0.3,
+      "narrative": "An employee working on the drilling floor was picking up the jerk chain for the tongs when the driller applied tension to the chain. The employee got the fingers of his left hand pinched between the headache post and the chain.",
+      "top_attended_tokens": [
+        {
+          "token": "employee",
+          "weight": 0.24770000576972961
+        },
+        {
+          "token": "employee",
+          "weight": 0.23180000483989716
+        },
+        {
+          "token": "tongs",
+          "weight": 0.1995999962091446
+        },
+        {
+          "token": "his",
+          "weight": 0.04580000042915344
+        },
+        {
+          "token": "tension",
+          "weight": 0.030500000342726707
+        }
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_02381",
+      "ground_truth_sif": 1,
+      "predicted_sif": 0,
+      "predicted_prob": 0.0795,
+      "threshold": 0.3,
+      "narrative": "An employee was attempting to tack weld and repair a tubular steel livestock gate. The gate was in a bind due to a broken component and was positioned in such a way that a gap was present between the broken component and anchoring rail. As the employee placed the left hand on the anchoring rail, it dropped, pinching the soft tissue of the employee's left index finger between the component and anchor. As the employee pulled the hand back, the employee's left index finger was amputated (without bone loss).",
+      "top_attended_tokens": [
+        {
+          "token": "employee",
+          "weight": 0.14180000126361847
+        },
+        {
+          "token": "employee",
+          "weight": 0.12460000067949295
+        },
+        {
+          "token": "employee",
+          "weight": 0.1200999990105629
+        },
+        {
+          "token": "present",
+          "weight": 0.07999999821186066
+        },
+        {
+          "token": "employee",
+          "weight": 0.07639999687671661
+        }
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_04070",
+      "ground_truth_sif": 1,
+      "predicted_sif": 0,
+      "predicted_prob": 0.0371,
+      "threshold": 0.3,
+      "narrative": "An employee was replacing a seized gearbox on an oil well using a breaker bar. After the breaker bar broke the gearbox loose, the bar struck the employee in the face, causing a fractured nasal bone and a laceration from the crown of the nose to above the right eye. The employee was hospitalized.",
+      "top_attended_tokens": [
+        {
+          "token": "employee",
+          "weight": 0.36550000309944153
+        },
+        {
+          "token": "employee",
+          "weight": 0.22439999878406525
+        },
+        {
+          "token": "employee",
+          "weight": 0.050999999046325684
+        },
+        {
+          "token": "a",
+          "weight": 0.039799999445676804
+        },
+        {
+          "token": "an",
+          "weight": 0.03020000085234642
+        }
+      ]
+    }
+  ],
+  "false_positive_samples": [
+    {
+      "record_id": "OILPS_OSHA_02131",
+      "ground_truth_sif": 0,
+      "predicted_sif": 1,
+      "predicted_prob": 0.9946,
+      "threshold": 0.3,
+      "narrative": "An employee was setting up a board over a 3-foot deep excavation so that he could access the control valve to stop a leak. The employee fell into the excavation that was filled with hot water and suffered burns to the feet, leg and knee.",
+      "top_attended_tokens": [
+        {
+          "token": "foot",
+          "weight": 0.6442000269889832
+        },
+        {
+          "token": "employee",
+          "weight": 0.08640000224113464
+        },
+        {
+          "token": "3",
+          "weight": 0.07649999856948853
+        },
+        {
+          "token": "excavation",
+          "weight": 0.049400001764297485
+        },
+        {
+          "token": "deep",
+          "weight": 0.041600000113248825
+        }
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_02343",
+      "ground_truth_sif": 0,
+      "predicted_sif": 1,
+      "predicted_prob": 0.7651,
+      "threshold": 0.3,
+      "narrative": "An employee suffered a 480-volt shock while investigating a power outage in a production area.",
+      "top_attended_tokens": [
+        {
+          "token": "employee",
+          "weight": 0.47040000557899475
+        },
+        {
+          "token": "an",
+          "weight": 0.1160999983549118
+        },
+        {
+          "token": "suffered",
+          "weight": 0.08259999752044678
+        },
+        {
+          "token": "a",
+          "weight": 0.057500001043081284
+        },
+        {
+          "token": "shock",
+          "weight": 0.03889999911189079
+        }
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_03680",
+      "ground_truth_sif": 0,
+      "predicted_sif": 1,
+      "predicted_prob": 0.7174,
+      "threshold": 0.3,
+      "narrative": "An employee was trying to lower the level on a condensate boiler by opening a pump case drain line. The plugged condensate line shifted unexpectedly and pinched the employee's left hand against a stanchion. The employee suffered burns to the hand.",
+      "top_attended_tokens": [
+        {
+          "token": "employee",
+          "weight": 0.19550000131130219
+        },
+        {
+          "token": "employee",
+          "weight": 0.11069999635219574
+        },
+        {
+          "token": "employee",
+          "weight": 0.09780000150203705
+        },
+        {
+          "token": "a",
+          "weight": 0.07569999992847443
+        },
+        {
+          "token": "opening",
+          "weight": 0.07360000163316727
+        }
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_03004",
+      "ground_truth_sif": 0,
+      "predicted_sif": 1,
+      "predicted_prob": 0.9995,
+      "threshold": 0.3,
+      "narrative": "A service technician was repairing a natural gas regulator that was leaking. When the water heater valve was opened, natural gas ignited, and the technician sustained burns to the arms.",
+      "top_attended_tokens": [
+        {
+          "token": "gas",
+          "weight": 0.5631999969482422
+        },
+        {
+          "token": "ignited",
+          "weight": 0.14059999585151672
+        },
+        {
+          "token": "natural",
+          "weight": 0.12839999794960022
+        },
+        {
+          "token": "opened",
+          "weight": 0.02969999983906746
+        },
+        {
+          "token": "gas",
+          "weight": 0.026399999856948853
+        }
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_00308",
+      "ground_truth_sif": 0,
+      "predicted_sif": 1,
+      "predicted_prob": 0.3671,
+      "threshold": 0.3,
+      "narrative": "An employee was overcome by heat stress while conducting oil-well servicing operations.",
+      "top_attended_tokens": [
+        {
+          "token": "employee",
+          "weight": 0.4456999897956848
+        },
+        {
+          "token": "stress",
+          "weight": 0.14970000088214874
+        },
+        {
+          "token": "an",
+          "weight": 0.07940000295639038
+        },
+        {
+          "token": "oil",
+          "weight": 0.06419999897480011
+        },
+        {
+          "token": "operations",
+          "weight": 0.05889999866485596
+        }
+      ]
+    }
+  ],
+  "linguistic_failure_patterns": [
+    "Passive Voice & Delayed Narrative: Severe energy release mentioned at end of multi-clause sentence.",
+    "Rare Electrical/Arc Flash terminology with sparse token count in training vocabulary.",
+    "Short Ambiguous Narratives (<15 words) lacking explicit barrier failure descriptions."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "micro_precision": 0.7066666666666667,
+  "micro_recall": 0.6973684210526315,
+  "micro_f1": 0.7019867549668874,
+  "macro_precision": 0.5742579860226918,
+  "macro_recall": 0.5941493691493691,
+  "macro_f1": 0.5773625693165924,
+  "weighted_f1": 0.704200181750091,
+  "hamming_loss": 0.036231884057971016,
+  "exact_match_ratio": 0.717391304347826,
+  "model": "Stage 7 Robust GRU + Attention",
+  "config": "Stage7_Norm_Base"
+}

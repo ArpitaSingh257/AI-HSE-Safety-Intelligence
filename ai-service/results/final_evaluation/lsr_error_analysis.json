@@ -1,0 +1,113 @@
+{
+  "total_test_samples": 138,
+  "exact_match_count": 99,
+  "exact_match_ratio": 0.717391304347826,
+  "one_rule_missed_count": 16,
+  "spurious_rule_count": 18,
+  "partial_match_count": 5,
+  "hardest_rules_summary": [
+    "1. Bypassing Safety Controls: Extremely rare test support (1 sample). High linguistic subtlety.",
+    "2. Confined Space: Rare support (2 samples), often co-occurring with Toxic Gas / Hazardous Substance.",
+    "3. Line of Fire vs Safe Mechanical Lifting: Semantic overlap when suspended loads drop into worker pathways."
+  ],
+  "representative_missed_examples": [
+    {
+      "record_id": "OILPS_OSHA_00885",
+      "narrative_preview": "An employee was fixing a damaged pipeline and was struck by a pickup truck. The employee suffered a broken leg, rib trauma, damaged spleen a...",
+      "true_rules": [
+        "Driving",
+        "Line of Fire"
+      ],
+      "predicted_rules": [
+        "Driving"
+      ],
+      "match_status": "Mismatch"
+    },
+    {
+      "record_id": "OILPS_OSHA_00394",
+      "narrative_preview": "An employee working in the maintenance garage was conducting an oil change on a vehicle and was looking for a drum to collect the oil. The e...",
+      "true_rules": [
+        "Driving"
+      ],
+      "predicted_rules": [],
+      "match_status": "Mismatch"
+    },
+    {
+      "record_id": "OILPS_OSHA_02026",
+      "narrative_preview": "An employee was flushing out the coil tubing due to a frozen line. He started hammering on the line and it broke apart. He was struck in the...",
+      "true_rules": [
+        "Energy Isolation"
+      ],
+      "predicted_rules": [],
+      "match_status": "Mismatch"
+    },
+    {
+      "record_id": "OILPS_OSHA_02438",
+      "narrative_preview": "An employee was lowering a scaffold board using a rope and pulley assembly when the board slipped out of the rope and fell. The board caught...",
+      "true_rules": [
+        "Working at Height"
+      ],
+      "predicted_rules": [],
+      "match_status": "Mismatch"
+    },
+    {
+      "record_id": "OILPS_OSHA_02105",
+      "narrative_preview": "On April 23, 2019, an employee was testing the voltage on a 34.5-kV, 4160/2400 step-down transformer when an arc flash burned the upper righ...",
+      "true_rules": [
+        "Energy Isolation"
+      ],
+      "predicted_rules": [],
+      "match_status": "Mismatch"
+    }
+  ],
+  "representative_spurious_examples": [
+    {
+      "record_id": "OILPS_IOGP_SPI_0040",
+      "narrative_preview": "During this operation, the handle and stem assembly of the 3-way valve, operating under an oil pressure of 55 bar, \ndetached from the valve ...",
+      "true_rules": [],
+      "predicted_rules": [
+        "Energy Isolation"
+      ],
+      "match_status": "Mismatch"
+    },
+    {
+      "record_id": "OILPS_IOGP_SPI_0148",
+      "narrative_preview": "After bringing the well online following a frac hit, there was a release downstream of the 90-degree choke on the \nhigh-pressure separator....",
+      "true_rules": [],
+      "predicted_rules": [
+        "Energy Isolation"
+      ],
+      "match_status": "Mismatch"
+    },
+    {
+      "record_id": "OILPS_OSHA_01419",
+      "narrative_preview": "An employee was moving a large job site tool. The tool fell and caught his right hand resulting in amputation of the pinky fingertip....",
+      "true_rules": [],
+      "predicted_rules": [
+        "Safe Mechanical Lifting"
+      ],
+      "match_status": "Mismatch"
+    },
+    {
+      "record_id": "OILPS_OSHA_03635",
+      "narrative_preview": "On January 6, 2024, an employee was making a swivel connection involving a winch line. As the joint was being tightened, the threads became ...",
+      "true_rules": [
+        "Safe Mechanical Lifting"
+      ],
+      "predicted_rules": [
+        "Line of Fire",
+        "Safe Mechanical Lifting"
+      ],
+      "match_status": "Mismatch"
+    },
+    {
+      "record_id": "OILPS_IOGP_HPE_0056",
+      "narrative_preview": "During welding activities, the fire watch for the naked flame activity received an electrical shock when attempting to \nshift an electrical ...",
+      "true_rules": [],
+      "predicted_rules": [
+        "Hot Work"
+      ],
+      "match_status": "Mismatch"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "champion_model": "Stage 7 Robust Bidirectional GRU + Attention (Stage7_Norm_Base)",
+  "test_micro_precision": 0.7066666666666667,
+  "test_micro_recall": 0.6973684210526315,
+  "test_micro_f1": 0.7019867549668874,
+  "test_macro_f1": 0.5773625693165924,
+  "test_weighted_f1": 0.704200181750091,
+  "test_hamming_loss": 0.036231884057971016,
+  "test_exact_match_ratio": 0.717391304347826,
+  "per_rule_breakdown": {
+    "Bypassing Safety Controls": {
+      "threshold": 0.5,
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 138
+    },
+    "Confined Space": {
+      "threshold": 0.5,
+      "support": 2,
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1_score": 0.5,
+      "tp": 1,
+      "fp": 1,
+      "fn": 1,
+      "tn": 135
+    },
+    "Driving": {
+      "threshold": 0.25,
+      "support": 15,
+      "precision": 0.9285714285714286,
+      "recall": 0.8666666666666667,
+      "f1_score": 0.896551724137931,
+      "tp": 13,
+      "fp": 1,
+      "fn": 2,
+      "tn": 122
+    },
+    "Energy Isolation": {
+      "threshold": 0.3,
+      "support": 16,
+      "precision": 0.5882352941176471,
+      "recall": 0.625,
+      "f1_score": 0.6060606060606061,
+      "tp": 10,
+      "fp": 7,
+      "fn": 6,
+      "tn": 115
+    },
+    "Hot Work": {
+      "threshold": 0.44999999999999996,
+      "support": 13,
+      "precision": 0.9166666666666666,
+      "recall": 0.8461538461538461,
+      "f1_score": 0.88,
+      "tp": 11,
+      "fp": 1,
+      "fn": 2,
+      "tn": 124
+    },
+    "Line of Fire": {
+      "threshold": 0.2,
+      "support": 5,
+      "precision": 0.25,
+      "recall": 0.2,
+      "f1_score": 0.2222222222222222,
+      "tp": 1,
+      "fp": 3,
+      "fn": 4,
+      "tn": 130
+    },
+    "Safe Mechanical Lifting": {
+      "threshold": 0.2,
+      "support": 14,
+      "precision": 0.8181818181818182,
+      "recall": 0.6428571428571429,
+      "f1_score": 0.72,
+      "tp": 9,
+      "fp": 2,
+      "fn": 5,
+      "tn": 122
+    },
+    "Toxic Gas / Hazardous Substance": {
+      "threshold": 0.5,
+      "support": 2,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1_score": 0.8,
+      "tp": 2,
+      "fp": 1,
+      "fn": 0,
+      "tn": 135
+    },
+    "Working at Height": {
+      "threshold": 0.25,
+      "support": 9,
+      "precision": 0.5,
+      "recall": 0.6666666666666666,
+      "f1_score": 0.5714285714285714,
+      "tp": 6,
+      "fp": 6,
+      "fn": 3,
+      "tn": 123
+    }
+  }
+}

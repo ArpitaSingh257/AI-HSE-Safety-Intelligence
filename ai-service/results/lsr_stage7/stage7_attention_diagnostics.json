@@ -1,0 +1,169 @@
+[
+  {
+    "sample_index": 0,
+    "record_id": "OILPS_IOGP_SPI_0040",
+    "ground_truth_lsrs": "nan",
+    "predicted_rules": [
+      "Energy Isolation"
+    ],
+    "top_attended_tokens": [
+      {
+        "token": "pressure",
+        "weight": 0.09440000355243683
+      },
+      {
+        "token": "bar",
+        "weight": 0.07620000094175339
+      },
+      {
+        "token": "55",
+        "weight": 0.05889999866485596
+      },
+      {
+        "token": "detached",
+        "weight": 0.04820000007748604
+      },
+      {
+        "token": "the",
+        "weight": 0.043699998408555984
+      },
+      {
+        "token": "from",
+        "weight": 0.03970000147819519
+      }
+    ]
+  },
+  {
+    "sample_index": 5,
+    "record_id": "OILPS_OSHA_03635",
+    "ground_truth_lsrs": "Safe Mechanical Lifting",
+    "predicted_rules": [
+      "Line of Fire",
+      "Safe Mechanical Lifting"
+    ],
+    "top_attended_tokens": [
+      {
+        "token": "winch",
+        "weight": 0.09790000319480896
+      },
+      {
+        "token": "line",
+        "weight": 0.08370000123977661
+      },
+      {
+        "token": "as",
+        "weight": 0.07530000060796738
+      },
+      {
+        "token": "winch",
+        "weight": 0.0722000002861023
+      },
+      {
+        "token": "caught",
+        "weight": 0.05939999967813492
+      },
+      {
+        "token": "line",
+        "weight": 0.04809999838471413
+      }
+    ]
+  },
+  {
+    "sample_index": 12,
+    "record_id": "OILPS_OSHA_03491",
+    "ground_truth_lsrs": "Energy Isolation",
+    "predicted_rules": [
+      "Energy Isolation"
+    ],
+    "top_attended_tokens": [
+      {
+        "token": "pressure",
+        "weight": 0.14980000257492065
+      },
+      {
+        "token": "sustained",
+        "weight": 0.07479999959468842
+      },
+      {
+        "token": "lubricant",
+        "weight": 0.048700001090765
+      },
+      {
+        "token": "filling",
+        "weight": 0.04399999976158142
+      },
+      {
+        "token": "the",
+        "weight": 0.03370000049471855
+      },
+      {
+        "token": "employees",
+        "weight": 0.03150000050663948
+      }
+    ]
+  },
+  {
+    "sample_index": 25,
+    "record_id": "OILPS_OSHA_02185",
+    "ground_truth_lsrs": "nan",
+    "predicted_rules": [],
+    "top_attended_tokens": [
+      {
+        "token": "hospitalization",
+        "weight": 0.08479999750852585
+      },
+      {
+        "token": "exhaustion",
+        "weight": 0.08380000293254852
+      },
+      {
+        "token": "due",
+        "weight": 0.0689999982714653
+      },
+      {
+        "token": "to",
+        "weight": 0.06759999692440033
+      },
+      {
+        "token": "heat",
+        "weight": 0.061500001698732376
+      },
+      {
+        "token": "requiring",
+        "weight": 0.05620000138878822
+      }
+    ]
+  },
+  {
+    "sample_index": 40,
+    "record_id": "OILPS_IOGP_SPI_0061",
+    "ground_truth_lsrs": "nan",
+    "predicted_rules": [],
+    "top_attended_tokens": [
+      {
+        "token": "line",
+        "weight": 0.04349999874830246
+      },
+      {
+        "token": "500",
+        "weight": 0.0430000014603138
+      },
+      {
+        "token": "the",
+        "weight": 0.04129999876022339
+      },
+      {
+        "token": "from",
+        "weight": 0.03669999912381172
+      },
+      {
+        "token": "feet",
+        "weight": 0.035999998450279236
+      },
+      {
+        "token": "with",
+        "weight": 0.032999999821186066
+      }
+    ]
+  }
+]
