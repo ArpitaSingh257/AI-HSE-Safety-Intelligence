@@ -1,0 +1,62 @@
+{
+  "manifest_version": "1.0.0",
+  "project": "SIH26165 \u2014 Oil India Limited Precursor Safety Intelligence",
+  "timestamp": "2026-08-30",
+  "production_models": {
+    "sif_binary_classifier": {
+      "model_name": "sif_bigru_attention_optimized",
+      "task": "SIF Potential Binary Classification (1 / 0)",
+      "architecture": "Trainable Embedding (200) -> Bidirectional GRU (128) -> Softmax Sequence Attention -> Linear (1)",
+      "checkpoint_path": "models/sif/sif_model.pt",
+      "vocabulary_path": "models/sif/sif_vocab.json",
+      "config_path": "models/sif/sif_config.json",
+      "originating_stage": "Stage 6 Hyperparameter Optimization",
+      "max_sequence_length": 120,
+      "validation_threshold": 0.3,
+      "random_seed": 42,
+      "dataset_provenance": "896 Clean Binary Records (300 IOGP Grounded + 596 Annotated OSHA Contextual Energy)",
+      "verified_test_metrics": {
+        "test_recall_sif1": 0.9697,
+        "test_precision": 0.8807,
+        "test_f1": 0.9231,
+        "test_pr_auc": 0.9715,
+        "test_accuracy": 0.8806,
+        "test_false_negatives": 3
+      }
+    },
+    "lsr_multilabel_classifier": {
+      "model_name": "lsr_robust_bigru_attention_stage7",
+      "task": "IOGP Life-Saving Rules 9-Class Multi-Label Classification",
+      "architecture": "Trainable Embedding (200) -> Bidirectional GRU (128) -> LayerNorm -> Scaled Dot-Product Attention -> 2-Layer MLP Head -> 9 Sigmoids",
+      "checkpoint_path": "models/lsr/lsr_model.pt",
+      "vocabulary_path": "models/lsr/lsr_vocab.json",
+      "config_path": "models/lsr/lsr_config.json",
+      "originating_stage": "Stage 7 Robustness Optimization",
+      "max_sequence_length": 120,
+      "label_ordering": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Toxic Gas / Hazardous Substance",
+        "Working at Height"
+      ],
+      "class_imbalance_handling": "Smooth Square-Root Positive Weighting (w = sqrt(N_neg / N_pos))",
+      "threshold_tuning_strategy": "Independent Validation-Derived Thresholds Per Rule",
+      "random_seed": 42,
+      "dataset_provenance": "900 Multi-Label Records across 9 Canonical IOGP Rules",
+      "verified_test_metrics": {
+        "test_micro_f1": 0.702,
+        "test_macro_f1": 0.5774,
+        "test_weighted_f1": 0.7085,
+        "test_hamming_loss": 0.0362,
+        "test_exact_match_ratio": 0.7174
+      }
+    }
+  },
+  "target_leakage_protection": "Strict narrative-only text input. No metadata, severity, or human rationales enter vectorizer/embedding.",
+  "precursor_extraction_status": "Precursor dataset verified as decoupled entity strings; sequence token NER deferred pending character-offset annotation."
+}

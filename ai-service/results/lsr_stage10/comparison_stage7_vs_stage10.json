@@ -1,0 +1,152 @@
+{
+  "stage7_baseline": {
+    "micro_precision": 0.06999041227229147,
+    "micro_recall": 0.9605263157894737,
+    "micro_f1": 0.13047363717605004,
+    "macro_precision": 0.059433002796847184,
+    "macro_recall": 0.7222222222222222,
+    "macro_f1": 0.10869851901189498,
+    "hamming_loss": 0.78341384863124,
+    "exact_match_ratio": 0.0
+  },
+  "stage10_calibrated": {
+    "micro_precision": 0.05568720379146919,
+    "micro_recall": 0.618421052631579,
+    "micro_f1": 0.10217391304347827,
+    "macro_precision": 0.05028947732680758,
+    "macro_recall": 0.5343915343915344,
+    "macro_f1": 0.08821180990005216,
+    "hamming_loss": 0.6650563607085346,
+    "exact_match_ratio": 0.0
+  },
+  "per_rule_comparison": [
+    {
+      "rule": "Bypassing Safety Controls",
+      "stage7_threshold": 0.5,
+      "calibrated_threshold": 0.2,
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "tp": 0,
+      "fp": 138,
+      "fn": 0,
+      "tn": 0
+    },
+    {
+      "rule": "Confined Space",
+      "stage7_threshold": 0.5,
+      "calibrated_threshold": 0.48,
+      "support": 2,
+      "precision": 0.015625,
+      "recall": 1.0,
+      "f1_score": 0.03076923076923077,
+      "tp": 2,
+      "fp": 126,
+      "fn": 0,
+      "tn": 10
+    },
+    {
+      "rule": "Driving",
+      "stage7_threshold": 0.25,
+      "calibrated_threshold": 0.5,
+      "support": 15,
+      "precision": 0.1388888888888889,
+      "recall": 0.6666666666666666,
+      "f1_score": 0.22988505747126436,
+      "tp": 10,
+      "fp": 62,
+      "fn": 5,
+      "tn": 61
+    },
+    {
+      "rule": "Energy Isolation",
+      "stage7_threshold": 0.3,
+      "calibrated_threshold": 0.46,
+      "support": 16,
+      "precision": 0.125,
+      "recall": 1.0,
+      "f1_score": 0.2222222222222222,
+      "tp": 16,
+      "fp": 112,
+      "fn": 0,
+      "tn": 10
+    },
+    {
+      "rule": "Hot Work",
+      "stage7_threshold": 0.45,
+      "calibrated_threshold": 0.52,
+      "support": 13,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 13,
+      "tn": 124
+    },
+    {
+      "rule": "Line of Fire",
+      "stage7_threshold": 0.2,
+      "calibrated_threshold": 0.52,
+      "support": 5,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "tp": 0,
+      "fp": 22,
+      "fn": 5,
+      "tn": 111
+    },
+    {
+      "rule": "Safe Mechanical Lifting",
+      "stage7_threshold": 0.2,
+      "calibrated_threshold": 0.48,
+      "support": 14,
+      "precision": 0.1,
+      "recall": 0.6428571428571429,
+      "f1_score": 0.17307692307692307,
+      "tp": 9,
+      "fp": 81,
+      "fn": 5,
+      "tn": 43
+    },
+    {
+      "rule": "Toxic Gas / Hazardous Substance",
+      "stage7_threshold": 0.5,
+      "calibrated_threshold": 0.46,
+      "support": 2,
+      "precision": 0.007874015748031496,
+      "recall": 0.5,
+      "f1_score": 0.015503875968992248,
+      "tp": 1,
+      "fp": 126,
+      "fn": 1,
+      "tn": 10
+    },
+    {
+      "rule": "Working at Height",
+      "stage7_threshold": 0.25,
+      "calibrated_threshold": 0.45,
+      "support": 9,
+      "precision": 0.06521739130434782,
+      "recall": 1.0,
+      "f1_score": 0.12244897959183673,
+      "tp": 9,
+      "fp": 129,
+      "fn": 0,
+      "tn": 0
+    }
+  ],
+  "calibrated_thresholds": {
+    "Bypassing Safety Controls": 0.2,
+    "Confined Space": 0.48,
+    "Driving": 0.5,
+    "Energy Isolation": 0.46,
+    "Hot Work": 0.52,
+    "Line of Fire": 0.52,
+    "Safe Mechanical Lifting": 0.48,
+    "Toxic Gas / Hazardous Substance": 0.46,
+    "Working at Height": 0.45
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "total_test_incidents": 138,
+  "stage7_exact_match_count": 0,
+  "stage10_exact_match_count": 0,
+  "exact_match_improvement": "0.00% -> 0.00%",
+  "hamming_loss_improvement": "0.7834 -> 0.6651",
+  "micro_precision_improvement": "0.0700 -> 0.0557",
+  "spurious_reductions_examples": [
+    {
+      "record_id": "OILPS_OSHA_01419",
+      "narrative_preview": "An employee was moving a large job site tool. The tool fell and caught his right hand resulting in amputation of the pinky fingert...",
+      "true_rules": [],
+      "stage7_predicted": [
+        "Bypassing Safety Controls",
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ],
+      "calibrated_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Energy Isolation",
+        "Safe Mechanical Lifting",
+        "Toxic Gas / Hazardous Substance",
+        "Working at Height"
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_01418",
+      "narrative_preview": "An employee was sitting on a haul trailer when an ATV backed into him pinning him against the haul trailer. The employee was hospi...",
+      "true_rules": [],
+      "stage7_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ],
+      "calibrated_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Energy Isolation",
+        "Toxic Gas / Hazardous Substance",
+        "Working at Height"
+      ]
+    },
+    {
+      "record_id": "OILPS_IOGP_HPE_0056",
+      "narrative_preview": "During welding activities, the fire watch for the naked flame activity received an electrical shock when attempting to \nshift an e...",
+      "true_rules": [],
+      "stage7_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ],
+      "calibrated_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Energy Isolation",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_04139",
+      "narrative_preview": "An employee was performing gas service work outdoors in extreme heat when they became ill. The employee was hospitalized with dehy...",
+      "true_rules": [],
+      "stage7_predicted": [
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ],
+      "calibrated_predicted": [
+        "Bypassing Safety Controls",
+        "Energy Isolation",
+        "Line of Fire",
+        "Toxic Gas / Hazardous Substance",
+        "Working at Height"
+      ]
+    },
+    {
+      "record_id": "OILPS_IOGP_HPE_0005",
+      "narrative_preview": "During a heavy rainstorm, two aluminium composite panels (component of the external cladding material for the \nOffice building) di...",
+      "true_rules": [],
+      "stage7_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ],
+      "calibrated_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Driving",
+        "Energy Isolation",
+        "Toxic Gas / Hazardous Substance",
+        "Working at Height"
+      ]
+    }
+  ],
+  "missed_rule_examples": [
+    {
+      "record_id": "OILPS_OSHA_00885",
+      "narrative_preview": "An employee was fixing a damaged pipeline and was struck by a pickup truck. The employee suffered a broken leg, rib trauma, damage...",
+      "true_rules": [
+        "Driving",
+        "Line of Fire"
+      ],
+      "stage7_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ],
+      "calibrated_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Driving",
+        "Energy Isolation",
+        "Safe Mechanical Lifting",
+        "Toxic Gas / Hazardous Substance",
+        "Working at Height"
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_03635",
+      "narrative_preview": "On January 6, 2024, an employee was making a swivel connection involving a winch line. As the joint was being tightened, the threa...",
+      "true_rules": [
+        "Safe Mechanical Lifting"
+      ],
+      "stage7_predicted": [
+        "Bypassing Safety Controls",
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ],
+      "calibrated_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Driving",
+        "Energy Isolation",
+        "Toxic Gas / Hazardous Substance",
+        "Working at Height"
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_02369",
+      "narrative_preview": "While attaching a lifting sling to a truck, an employee was struck by a backhoe bucket. The employee suffered a right hip injury....",
+      "true_rules": [
+        "Driving",
+        "Line of Fire",
+        "Safe Mechanical Lifting"
+      ],
+      "stage7_predicted": [
+        "Confined Space",
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ],
+      "calibrated_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Energy Isolation",
+        "Safe Mechanical Lifting",
+        "Toxic Gas / Hazardous Substance",
+        "Working at Height"
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_03450",
+      "narrative_preview": "An employee was refueling a pump when a flash fire occurred and burned the employee's left arm. The employee was hospitalized....",
+      "true_rules": [
+        "Hot Work"
+      ],
+      "stage7_predicted": [
+        "Bypassing Safety Controls",
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ],
+      "calibrated_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Driving",
+        "Energy Isolation",
+        "Safe Mechanical Lifting",
+        "Toxic Gas / Hazardous Substance",
+        "Working at Height"
+      ]
+    },
+    {
+      "record_id": "OILPS_OSHA_01196",
+      "narrative_preview": "An employee and driver were unloading a frac tank from a winch truck. While trying to unhook the winch cable from the tank, the dr...",
+      "true_rules": [
+        "Driving",
+        "Safe Mechanical Lifting"
+      ],
+      "stage7_predicted": [
+        "Bypassing Safety Controls",
+        "Driving",
+        "Energy Isolation",
+        "Hot Work",
+        "Line of Fire",
+        "Safe Mechanical Lifting",
+        "Working at Height"
+      ],
+      "calibrated_predicted": [
+        "Bypassing Safety Controls",
+        "Confined Space",
+        "Energy Isolation",
+        "Toxic Gas / Hazardous Substance",
+        "Working at Height"
+      ]
+    }
+  ]
+}
