@@ -1,0 +1,16 @@
+{
+  "champion_model": "Stage 6 Optimized Bidirectional GRU + Attention (SIF_Cfg3_MidBi)",
+  "decision_threshold": 0.3,
+  "test_accuracy": 0.8805970149253731,
+  "test_precision": 0.8807339449541285,
+  "test_recall_sif1": 0.9696969696969697,
+  "test_f1": 0.9230769230769231,
+  "test_pr_auc": 0.9714901932441655,
+  "test_roc_auc": 0.9316017316017315,
+  "confusion_matrix": {
+    "tn": 22,
+    "fp": 13,
+    "fn": 3,
+    "tp": 96
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "embed_dim": 200,
+  "hidden_dim": 128,
+  "dropout": 0.25,
+  "lr": 0.0007,
+  "tag": "Stage7_Norm_Base",
+  "per_rule_thresholds": {
+    "Bypassing Safety Controls": 0.5,
+    "Confined Space": 0.5,
+    "Driving": 0.25,
+    "Energy Isolation": 0.3,
+    "Hot Work": 0.44999999999999996,
+    "Line of Fire": 0.2,
+    "Safe Mechanical Lifting": 0.2,
+    "Toxic Gas / Hazardous Substance": 0.5,
+    "Working at Height": 0.25
+  }
+}

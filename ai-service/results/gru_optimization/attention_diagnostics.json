@@ -1,0 +1,577 @@
+[
+  {
+    "sample_index": 0,
+    "record_id": "OILPS_IOGP_SPI_0040",
+    "ground_truth_sif": 1,
+    "predicted_sif_prob": 0.9923,
+    "narrative_preview": "During this operation, the handle and stem assembly of the 3-way valve, operating under an oil pressure of 55 bar, \ndetached from the valve ...",
+    "top_attended_tokens": [
+      {
+        "token": "pressure",
+        "weight": 0.8151999711990356
+      },
+      {
+        "token": "exposure",
+        "weight": 0.02710000053048134
+      },
+      {
+        "token": "oil",
+        "weight": 0.02199999988079071
+      },
+      {
+        "token": "facial",
+        "weight": 0.02019999921321869
+      },
+      {
+        "token": "oil",
+        "weight": 0.016599999740719795
+      },
+      {
+        "token": "due",
+        "weight": 0.013700000010430813
+      }
+    ],
+    "full_token_attentions": [
+      {
+        "token": "during",
+        "weight": 0.0010999999940395355
+      },
+      {
+        "token": "this",
+        "weight": 0.00019999999494757503
+      },
+      {
+        "token": "operation",
+        "weight": 9.999999747378752e-05
+      },
+      {
+        "token": "the",
+        "weight": 0.0
+      },
+      {
+        "token": "handle",
+        "weight": 0.0
+      },
+      {
+        "token": "and",
+        "weight": 0.0
+      },
+      {
+        "token": "stem",
+        "weight": 0.0
+      },
+      {
+        "token": "assembly",
+        "weight": 0.0
+      },
+      {
+        "token": "of",
+        "weight": 0.0
+      },
+      {
+        "token": "the",
+        "weight": 9.999999747378752e-05
+      },
+      {
+        "token": "3",
+        "weight": 0.0006000000284984708
+      },
+      {
+        "token": "way",
+        "weight": 0.0006000000284984708
+      },
+      {
+        "token": "valve",
+        "weight": 0.00019999999494757503
+      },
+      {
+        "token": "operating",
+        "weight": 9.999999747378752e-05
+      },
+      {
+        "token": "under",
+        "weight": 0.0027000000700354576
+      },
+      {
+        "token": "an",
+        "weight": 0.006300000008195639
+      },
+      {
+        "token": "oil",
+        "weight": 0.016599999740719795
+      },
+      {
+        "token": "pressure",
+        "weight": 0.8151999711990356
+      },
+      {
+        "token": "of",
+        "weight": 0.00139999995008111
+      },
+      {
+        "token": "55",
+        "weight": 0.004600000102072954
+      }
+    ]
+  },
+  {
+    "sample_index": 5,
+    "record_id": "OILPS_OSHA_02035",
+    "ground_truth_sif": 1,
+    "predicted_sif_prob": 0.9983,
+    "narrative_preview": "Two employees were in a trailer. A lit cigarette ignited gas that had leaked from a propane tank in the trailer, causing an explosion. Both ...",
+    "top_attended_tokens": [
+      {
+        "token": "explosion",
+        "weight": 0.6816999912261963
+      },
+      {
+        "token": "gas",
+        "weight": 0.09309999644756317
+      },
+      {
+        "token": "an",
+        "weight": 0.06759999692440033
+      },
+      {
+        "token": "ignited",
+        "weight": 0.02590000070631504
+      },
+      {
+        "token": "causing",
+        "weight": 0.024700000882148743
+      },
+      {
+        "token": "that",
+        "weight": 0.021700000390410423
+      }
+    ],
+    "full_token_attentions": [
+      {
+        "token": "two",
+        "weight": 0.00430000014603138
+      },
+      {
+        "token": "employees",
+        "weight": 0.000699999975040555
+      },
+      {
+        "token": "were",
+        "weight": 0.0003000000142492354
+      },
+      {
+        "token": "in",
+        "weight": 0.00019999999494757503
+      },
+      {
+        "token": "a",
+        "weight": 0.00039999998989515007
+      },
+      {
+        "token": "trailer",
+        "weight": 0.00019999999494757503
+      },
+      {
+        "token": "a",
+        "weight": 0.0012000000569969416
+      },
+      {
+        "token": "lit",
+        "weight": 0.0005000000237487257
+      },
+      {
+        "token": "cigarette",
+        "weight": 0.0007999999797903001
+      },
+      {
+        "token": "ignited",
+        "weight": 0.02590000070631504
+      },
+      {
+        "token": "gas",
+        "weight": 0.09309999644756317
+      },
+      {
+        "token": "that",
+        "weight": 0.021700000390410423
+      },
+      {
+        "token": "had",
+        "weight": 0.010599999688565731
+      },
+      {
+        "token": "leaked",
+        "weight": 0.00279999990016222
+      },
+      {
+        "token": "from",
+        "weight": 0.00139999995008111
+      },
+      {
+        "token": "a",
+        "weight": 0.0034000000450760126
+      },
+      {
+        "token": "propane",
+        "weight": 0.00139999995008111
+      },
+      {
+        "token": "tank",
+        "weight": 0.0052999998442828655
+      },
+      {
+        "token": "in",
+        "weight": 0.0013000000035390258
+      },
+      {
+        "token": "the",
+        "weight": 0.0005000000237487257
+      }
+    ]
+  },
+  {
+    "sample_index": 12,
+    "record_id": "OILPS_OSHA_00602",
+    "ground_truth_sif": 1,
+    "predicted_sif_prob": 0.9744,
+    "narrative_preview": "An employee climbed a ladder to assess the next level of a metal roof. He stepped on a shingle and fell 8 feet through the roof to the groun...",
+    "top_attended_tokens": [
+      {
+        "token": "ladder",
+        "weight": 0.6935999989509583
+      },
+      {
+        "token": "stepped",
+        "weight": 0.04019999876618385
+      },
+      {
+        "token": "a",
+        "weight": 0.03319999948143959
+      },
+      {
+        "token": "fell",
+        "weight": 0.03200000151991844
+      },
+      {
+        "token": "employee",
+        "weight": 0.031599998474121094
+      },
+      {
+        "token": "metal",
+        "weight": 0.030500000342726707
+      }
+    ],
+    "full_token_attentions": [
+      {
+        "token": "an",
+        "weight": 0.0044999998062849045
+      },
+      {
+        "token": "employee",
+        "weight": 0.031599998474121094
+      },
+      {
+        "token": "climbed",
+        "weight": 0.007799999788403511
+      },
+      {
+        "token": "a",
+        "weight": 0.03319999948143959
+      },
+      {
+        "token": "ladder",
+        "weight": 0.6935999989509583
+      },
+      {
+        "token": "to",
+        "weight": 0.005499999970197678
+      },
+      {
+        "token": "assess",
+        "weight": 0.000699999975040555
+      },
+      {
+        "token": "the",
+        "weight": 0.0005000000237487257
+      },
+      {
+        "token": "next",
+        "weight": 0.002099999925121665
+      },
+      {
+        "token": "level",
+        "weight": 0.004800000227987766
+      },
+      {
+        "token": "of",
+        "weight": 0.00039999998989515007
+      },
+      {
+        "token": "a",
+        "weight": 0.011099999770522118
+      },
+      {
+        "token": "metal",
+        "weight": 0.030500000342726707
+      },
+      {
+        "token": "roof",
+        "weight": 0.00430000014603138
+      },
+      {
+        "token": "he",
+        "weight": 0.0020000000949949026
+      },
+      {
+        "token": "stepped",
+        "weight": 0.04019999876618385
+      },
+      {
+        "token": "on",
+        "weight": 0.00039999998989515007
+      },
+      {
+        "token": "a",
+        "weight": 0.0031999999191612005
+      },
+      {
+        "token": "shingle",
+        "weight": 0.003800000064074993
+      },
+      {
+        "token": "and",
+        "weight": 0.009999999776482582
+      }
+    ]
+  },
+  {
+    "sample_index": 25,
+    "record_id": "OILPS_OSHA_03004",
+    "ground_truth_sif": 0,
+    "predicted_sif_prob": 0.9995,
+    "narrative_preview": "A service technician was repairing a natural gas regulator that was leaking. When the water heater valve was opened, natural gas ignited, an...",
+    "top_attended_tokens": [
+      {
+        "token": "gas",
+        "weight": 0.5631999969482422
+      },
+      {
+        "token": "ignited",
+        "weight": 0.14059999585151672
+      },
+      {
+        "token": "natural",
+        "weight": 0.12839999794960022
+      },
+      {
+        "token": "opened",
+        "weight": 0.02969999983906746
+      },
+      {
+        "token": "gas",
+        "weight": 0.026399999856948853
+      },
+      {
+        "token": "water",
+        "weight": 0.014800000004470348
+      }
+    ],
+    "full_token_attentions": [
+      {
+        "token": "a",
+        "weight": 0.01209999993443489
+      },
+      {
+        "token": "service",
+        "weight": 0.006300000008195639
+      },
+      {
+        "token": "technician",
+        "weight": 0.003700000001117587
+      },
+      {
+        "token": "was",
+        "weight": 0.0007999999797903001
+      },
+      {
+        "token": "repairing",
+        "weight": 0.0007999999797903001
+      },
+      {
+        "token": "a",
+        "weight": 0.006099999882280827
+      },
+      {
+        "token": "natural",
+        "weight": 0.008200000040233135
+      },
+      {
+        "token": "gas",
+        "weight": 0.026399999856948853
+      },
+      {
+        "token": "regulator",
+        "weight": 0.0015999999595806003
+      },
+      {
+        "token": "that",
+        "weight": 0.005900000222027302
+      },
+      {
+        "token": "was",
+        "weight": 0.0008999999845400453
+      },
+      {
+        "token": "leaking",
+        "weight": 0.000699999975040555
+      },
+      {
+        "token": "when",
+        "weight": 0.002400000113993883
+      },
+      {
+        "token": "the",
+        "weight": 0.0015999999595806003
+      },
+      {
+        "token": "water",
+        "weight": 0.014800000004470348
+      },
+      {
+        "token": "heater",
+        "weight": 0.013000000268220901
+      },
+      {
+        "token": "valve",
+        "weight": 0.01209999993443489
+      },
+      {
+        "token": "was",
+        "weight": 0.002899999963119626
+      },
+      {
+        "token": "opened",
+        "weight": 0.02969999983906746
+      },
+      {
+        "token": "natural",
+        "weight": 0.12839999794960022
+      }
+    ]
+  },
+  {
+    "sample_index": 40,
+    "record_id": "OILPS_IOGP_SPI_0061",
+    "ground_truth_sif": 1,
+    "predicted_sif_prob": 0.9998,
+    "narrative_preview": "Responding to volume anomalies, a Reliability Operator (RO) and Senior Reliability Operator (SRO) discovered \nsurfaced emulsion in an offsit...",
+    "top_attended_tokens": [
+      {
+        "token": "10",
+        "weight": 0.17180000245571136
+      },
+      {
+        "token": "500",
+        "weight": 0.1160999983549118
+      },
+      {
+        "token": "emulsion",
+        "weight": 0.066600002348423
+      },
+      {
+        "token": "emulsion",
+        "weight": 0.059300001710653305
+      },
+      {
+        "token": "700",
+        "weight": 0.0502999983727932
+      },
+      {
+        "token": "traveling",
+        "weight": 0.04479999840259552
+      }
+    ],
+    "full_token_attentions": [
+      {
+        "token": "responding",
+        "weight": 0.00039999998989515007
+      },
+      {
+        "token": "to",
+        "weight": 0.0006000000284984708
+      },
+      {
+        "token": "volume",
+        "weight": 0.000699999975040555
+      },
+      {
+        "token": "anomalies",
+        "weight": 0.0003000000142492354
+      },
+      {
+        "token": "a",
+        "weight": 0.0007999999797903001
+      },
+      {
+        "token": "reliability",
+        "weight": 0.000699999975040555
+      },
+      {
+        "token": "operator",
+        "weight": 0.00139999995008111
+      },
+      {
+        "token": "ro",
+        "weight": 0.001500000013038516
+      },
+      {
+        "token": "and",
+        "weight": 0.0010999999940395355
+      },
+      {
+        "token": "senior",
+        "weight": 0.0005000000237487257
+      },
+      {
+        "token": "reliability",
+        "weight": 0.000699999975040555
+      },
+      {
+        "token": "operator",
+        "weight": 0.001500000013038516
+      },
+      {
+        "token": "sro",
+        "weight": 0.002300000051036477
+      },
+      {
+        "token": "discovered",
+        "weight": 0.0034000000450760126
+      },
+      {
+        "token": "surfaced",
+        "weight": 0.00279999990016222
+      },
+      {
+        "token": "emulsion",
+        "weight": 0.027899999171495438
+      },
+      {
+        "token": "in",
+        "weight": 0.002199999988079071
+      },
+      {
+        "token": "an",
+        "weight": 0.00279999990016222
+      },
+      {
+        "token": "offsite",
+        "weight": 0.000699999975040555
+      },
+      {
+        "token": "right",
+        "weight": 0.0010999999940395355
+      }
+    ]
+  }
+]
