@@ -5,7 +5,7 @@ import { SifAnalysisResult } from '../models/SifAnalysisResult';
 import { Site } from '../models/Site';
 import { Activity } from '../models/Activity';
 import { SITE_NAMES, ACTIVITY_NAMES, SiteName, ActivityName } from '../types';
-import { requestAnalysis } from '../services/aiService';
+import { requestAnalysis, analyzeIncidentText } from '../services/aiService';
 import { regeneratePatterns } from '../services/patternService';
 import { logAudit } from '../services/auditService';
 import { CreateReportInput, UpdateReportInput } from '../validators/reportValidator';
@@ -245,4 +245,19 @@ export async function getAiResults(req: Request, res: Response) {
     return res.status(404).json({ message: `AI results for report ${req.params.reportId} not found` });
   }
   res.json(result.toJSON());
+}
+
+export async function analyzeIncidentDirect(req: Request, res: Response) {
+  const { incident_text, incident_id } = req.body;
+  if (!incident_text || typeof incident_text !== 'string' || !incident_text.trim()) {
+    return res.status(400).json({ message: 'Incident text is required and cannot be empty.' });
+  }
+
+  try {
+    const result = await analyzeIncidentText(incident_text.trim(), incident_id || 'INC-MANUAL');
+    return res.json(result);
+  } catch (err: any) {
+    const statusCode = err.message.includes('timed out') ? 504 : 503;
+    return res.status(statusCode).json({ message: err.message });
+  }
 }

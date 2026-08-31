@@ -1,0 +1,46 @@
+{
+  "manifest_version": "1.0.0",
+  "project_name": "OILPS Precursor Safety Intelligence Service",
+  "api_version": "2.0.0",
+  "status": "FROZEN_FOR_PRODUCTION",
+  "freeze_timestamp": "2026-08-31T14:00:00Z",
+  "models": {
+    "sif_model": {
+      "name": "Stage 6 Champion Optimized Bidirectional GRU + Attention",
+      "checkpoint": "checkpoints/sif_stage6_champion.pt",
+      "threshold": 0.30,
+      "num_classes": 1,
+      "status": "FROZEN"
+    },
+    "lsr_model": {
+      "name": "Stage 7 Champion Robust Bidirectional GRU + Attention",
+      "checkpoint": "checkpoints/lsr_stage7_champion.pt",
+      "num_classes": 9,
+      "threshold_default": 0.50,
+      "status": "FROZEN"
+    }
+  },
+  "rag_subsystem": {
+    "embedding_model": "all-MiniLM-L6-v2",
+    "embedding_dimension": 384,
+    "vector_database": "FAISS IndexFlatIP",
+    "faiss_index_path": "datasets/rag/vector_index.faiss",
+    "similarity_metric": "Cosine Similarity (Unit L2 Normalized Inner Product)",
+    "reranker": "SafetyReranker (Domain Hazard Rescorer)",
+    "generator_model": "llama3.2:1b",
+    "ollama_endpoint": "http://localhost:11434",
+    "grounding_validator": "Stage 20 GroundingValidator",
+    "knowledge_corpus": [
+      "IOGP Life-Saving Rules.pdf",
+      "Process Safety Fundamentals.pdf",
+      "Safety performance indicators – 2023 data.pdf",
+      "Safety performance indicators – 2024 data.pdf",
+      "Safety performance indicators – 2025 data.pdf"
+    ]
+  },
+  "api_contract": {
+    "health_endpoint": "GET /health",
+    "analyze_endpoint": "POST /api/v1/analyze",
+    "interactive_docs": "GET /docs"
+  }
+}

@@ -7,7 +7,7 @@ import {
   mockInterventionsService,
   mockAuditService,
 } from './mockService';
-import type { SafetyReport, SifAnalysisResult, CreateReportPayload, ReportFilterOptions } from '../types/reports';
+import type { SafetyReport, SifAnalysisResult, CreateReportPayload, ReportFilterOptions, FastApiIncidentAnalysisResponse } from '../types/reports';
 import type { LoginCredentials, AuthResponse, User } from '../types/auth';
 import type { PrecursorPattern } from '../types/patterns';
 import type { HSEIntervention } from '../types/interventions';
@@ -188,6 +188,13 @@ export const reportsService = {
       }
       throw error;
     }
+  },
+
+  async analyzeIncidentDirect(incidentText: string): Promise<FastApiIncidentAnalysisResponse> {
+    const response = await apiClient.post<FastApiIncidentAnalysisResponse>('/incidents/analyze', {
+      incident_text: incidentText,
+    }, { timeout: 35000 });
+    return response.data;
   },
 };
 

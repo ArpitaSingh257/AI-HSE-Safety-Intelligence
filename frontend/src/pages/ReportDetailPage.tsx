@@ -10,6 +10,8 @@ import { formatDate, formatScore } from '../utils/formatters';
 import { IOGP_LIFE_SAVING_RULES } from '../utils/iogpRules';
 import { ArrowLeft, Sparkles, AlertTriangle, FileText, MapPin, Building, User, ChevronRight, RefreshCw, ExternalLink } from 'lucide-react';
 
+import { SafetyIntelligenceView } from '../components/SafetyIntelligenceView';
+
 export const ReportDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -216,7 +218,9 @@ export const ReportDetailPage: React.FC = () => {
 
         {/* Right Column (5 Cols) */}
         <div className="space-y-6 lg:col-span-5">
-          {ai ? (
+          {ai?.full_ai_response ? (
+            <SafetyIntelligenceView data={ai.full_ai_response} />
+          ) : ai ? (
             <div className="hse-card p-5 border-slate-300">
               <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
                 <div className="flex items-center gap-2">

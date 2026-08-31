@@ -11,6 +11,7 @@ sys.path.insert(0, str(BASE_DIR))
 
 from inference.safety_pipeline import SafetyPipeline
 from inference.recommendation_engine import SafetyRecommendationEngine
+from inference.explainability import SafetyIntelligenceFormatter
 from app.schemas import (
     IncidentAnalysisRequest,
     IncidentAnalysisResponse,
@@ -19,6 +20,8 @@ from app.schemas import (
     LSRRulePrediction,
     SalientToken,
     SafetyRecommendationsResponse,
+    ExplainableSafetyOutputSchema,
+    LSRExplanationSchema,
     ModelInfo
 )
 
@@ -138,20 +141,54 @@ async def analyze_incident_endpoint(request: IncidentAnalysisRequest):
             salient_tokens=lsr_salient
         )
         
-        # Generate Deterministic Recommendations
+        # Generate RAG-Based Grounded Safety Recommendations
         rec_data = rec_engine.generate_recommendations(
             sif_result={"probability": sif_raw["probability"], "is_sif": bool(sif_raw["label"] == 1), "risk_tier": raw_result["risk_tier"], "threshold": sif_raw["threshold"]},
-            lsr_result={"triggered_rules": lsr_raw.get("predicted_rules", []), "probabilities": lsr_raw["probabilities"]}
+            lsr_result={"triggered_rules": lsr_raw.get("predicted_rules", []), "probabilities": lsr_raw["probabilities"]},
+            narrative=narrative_text
         )
         
         rec_response = SafetyRecommendationsResponse(
+            status=rec_data.get("recommendation_status", "GROUNDED"),
+            grounded=rec_data.get("grounded", True),
             priority=rec_data["priority"],
             summary=rec_data["summary"],
-            immediate_actions=rec_data["immediate_actions"],
-            control_verification=rec_data["control_verification"],
-            escalation=rec_data["escalation"],
-            rule_specific_guidance=rec_data["rule_specific_guidance"],
-            disclaimer=rec_data["disclaimer"]
+            immediate_actions=rec_data.get("immediate_actions", []),
+            verification_actions=rec_data.get("verification_actions", rec_data.get("control_verification", [])),
+            control_verification=rec_data.get("control_verification", []),
+            escalation_actions=rec_data.get("escalation_actions", rec_data.get("escalation", [])),
+            escalation=rec_data.get("escalation", []),
+            preventive_actions=rec_data.get("preventive_actions", []),
+            sources=rec_data.get("sources", []),
+            rule_specific_guidance=rec_data.get("rule_specific_guidance", {}),
+            disclaimer=rec_data.get("disclaimer", "")
+        )
+        
+        # Generate Stage 19 Explainable Safety Intelligence Output
+        formatter = SafetyIntelligenceFormatter()
+        exp_data = formatter.format_output(
+            narrative=narrative_text,
+            sif_data=sif_response.model_dump(),
+            lsr_data=lsr_response.model_dump(),
+            rec_data=rec_response.model_dump()
+        )
+        
+        lsr_exp_schemas = [
+            LSRExplanationSchema(
+                rule=e["rule"],
+                model_probability=e["model_probability"],
+                why_triggered=e["why_triggered"]
+            )
+            for e in exp_data["lsr_explanations"]
+        ]
+        
+        explainability_response = ExplainableSafetyOutputSchema(
+            risk_level_display=exp_data["risk_level_display"],
+            sif_interpretation=exp_data["sif_interpretation"],
+            why_flagged=exp_data["why_flagged"],
+            lsr_explanations=lsr_exp_schemas,
+            grounding_banner=exp_data["grounding_banner"],
+            formatted_text=exp_data["formatted_text"]
         )
         
         return IncidentAnalysisResponse(
@@ -160,6 +197,7 @@ async def analyze_incident_endpoint(request: IncidentAnalysisRequest):
             sif=sif_response,
             lsr=lsr_response,
             recommendations=rec_response,
+            explainability=explainability_response,
             model_info=ModelInfo()
         )
         

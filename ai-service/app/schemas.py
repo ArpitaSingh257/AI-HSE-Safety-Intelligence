@@ -9,12 +9,12 @@ class IncidentAnalysisRequest(BaseModel):
     incident_text: str = Field(
         ...,
         description="The raw narrative text describing the workplace safety incident or precursor event.",
-        example="During hydrostatic testing of the 6-inch discharge line at 4,500 psi, an operator attempted to tighten a leaking fitting. The bleeder plug ruptured and struck the worker."
+        json_schema_extra={"example": "During hydrostatic testing of the 6-inch discharge line at 4,500 psi, an operator attempted to tighten a leaking fitting. The bleeder plug ruptured and struck the worker."}
     )
     incident_id: Optional[str] = Field(
         default=None,
         description="Optional client-side incident tracking identifier.",
-        example="INC-2026-0891"
+        json_schema_extra={"example": "INC-2026-0891"}
     )
 
 class SalientToken(BaseModel):
@@ -39,15 +39,29 @@ class LSRAnalysisResponse(BaseModel):
     rule_predictions: List[LSRRulePrediction] = Field(default_factory=list, description="Detailed per-rule probabilities, thresholds, and trigger statuses.")
     salient_tokens: List[SalientToken] = Field(default_factory=list, description="Top tokens salient to barrier failure and operational activity.")
 
+class SourceCitationSchema(BaseModel):
+    document: str = Field(..., description="Source reference document filename")
+    page: int = Field(..., description="Page number of retrieved reference")
+    section: str = Field(default="General", description="Section header")
+    chunk_id: str = Field(..., description="Unique ID of source passage")
+    similarity: float = Field(default=0.0, description="Cosine similarity score")
+    snippet: str = Field(default="", description="Relevant supporting text passage snippet")
+
 class SafetyRecommendationsResponse(BaseModel):
+    status: str = Field(default="GROUNDED", description="RAG recommendation status: GROUNDED, INSUFFICIENT_SOURCE_SUPPORT, or FALLBACK")
+    grounded: bool = Field(default=True, description="Flag indicating if recommendation is grounded in retrieved PDF sources")
     priority: str = Field(..., description="Action priority level: CRITICAL, HIGH, MODERATE, or LOW.")
     summary: str = Field(..., description="High-level narrative overview of the required safety response.")
     immediate_actions: List[str] = Field(default_factory=list, description="Immediate stop-work, isolation, or evacuation actions.")
-    control_verification: List[str] = Field(default_factory=list, description="Specific safety barrier and permit checks to verify before proceeding.")
-    escalation: List[str] = Field(default_factory=list, description="Escalation protocol for HSE officers and site leadership.")
+    verification_actions: List[str] = Field(default_factory=list, description="Specific safety barrier and permit checks to verify before proceeding.")
+    control_verification: List[str] = Field(default_factory=list, description="Alias for verification_actions for backward compatibility.")
+    escalation_actions: List[str] = Field(default_factory=list, description="Escalation protocol for HSE officers and site leadership.")
+    escalation: List[str] = Field(default_factory=list, description="Alias for escalation_actions for backward compatibility.")
+    preventive_actions: List[str] = Field(default_factory=list, description="Longer-term preventive actions and engineering controls.")
+    sources: List[SourceCitationSchema] = Field(default_factory=list, description="Source provenance citations from approved safety PDFs.")
     rule_specific_guidance: Dict[str, Dict[str, Any]] = Field(default_factory=dict, description="Detailed per-rule guidance for all triggered Life-Saving Rules.")
     disclaimer: str = Field(
-        default="Recommendations are generated as decision-support guidance from detected IOGP Life-Saving Rules and SIF precursor risk tiers. They do not replace site-specific operating procedures or competent HSE professional review.",
+        default="Recommendations are generated as decision-support guidance from retrieved approved safety documents. They do not replace site-specific operating procedures or competent HSE professional review.",
         description="Standard safety decision-support disclaimer."
     )
 
@@ -57,12 +71,26 @@ class ModelInfo(BaseModel):
     version: str = Field(default="2.0.0", description="Production AI model engine version.")
     status: str = Field(default="FROZEN_FOR_PRODUCTION", description="Model freeze confirmation.")
 
+class LSRExplanationSchema(BaseModel):
+    rule: str = Field(..., description="Official IOGP Life-Saving Rule canonical name.")
+    model_probability: str = Field(..., description="Model probability percentage, e.g. '82.4%'")
+    why_triggered: str = Field(..., description="Non-technical explanation of rule activation.")
+
+class ExplainableSafetyOutputSchema(BaseModel):
+    risk_level_display: str = Field(..., description="Categorical risk indicator badge: 🔴 CRITICAL, 🟠 HIGH, 🟡 MODERATE, or 🟢 LOW.")
+    sif_interpretation: str = Field(..., description="Clear explanation of SIF precursor potential.")
+    why_flagged: List[str] = Field(default_factory=list, description="Bullet points explaining why the incident was flagged.")
+    lsr_explanations: List[LSRExplanationSchema] = Field(default_factory=list, description="User-friendly explanation of each triggered Life-Saving Rule.")
+    grounding_banner: str = Field(..., description="Status badge indicating if recommendations are grounded in reference PDFs.")
+    formatted_text: str = Field(..., description="Clean ASCII/terminal formatted user-facing text layout.")
+
 class IncidentAnalysisResponse(BaseModel):
     incident_id: Optional[str] = Field(default=None, description="Client-provided incident tracking identifier.")
     incident_text: str = Field(..., description="Original incident narrative evaluated.")
     sif: SIFAnalysisResponse = Field(..., description="SIF precursor classification, probability, and risk tier.")
     lsr: LSRAnalysisResponse = Field(..., description="IOGP Life-Saving Rules multi-label activations and breakdown.")
     recommendations: Optional[SafetyRecommendationsResponse] = Field(default=None, description="Actionable safety recommendations and control verifications.")
+    explainability: Optional[ExplainableSafetyOutputSchema] = Field(default=None, description="Stage 19 non-technical explainable safety intelligence response.")
     model_info: ModelInfo = Field(default_factory=ModelInfo, description="Metadata describing frozen champion architectures.")
 
 class HealthCheckResponse(BaseModel):

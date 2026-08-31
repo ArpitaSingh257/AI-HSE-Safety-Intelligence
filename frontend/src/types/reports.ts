@@ -16,6 +16,72 @@ export interface LifeSavingRuleMatch {
   description?: string;
 }
 
+export interface AISourceCitation {
+  document: string;
+  page: number;
+  section: string;
+  chunk_id: string;
+  similarity: number;
+  snippet: string;
+}
+
+export interface AISafetyRecommendations {
+  status: string;
+  grounded: boolean;
+  priority: string;
+  summary: string;
+  immediate_actions: string[];
+  verification_actions: string[];
+  control_verification: string[];
+  escalation_actions: string[];
+  escalation: string[];
+  preventive_actions: string[];
+  sources: AISourceCitation[];
+  disclaimer: string;
+}
+
+export interface LSRExplanation {
+  rule: string;
+  model_probability: string;
+  why_triggered: string;
+}
+
+export interface AIExplainableOutput {
+  risk_level_display: string;
+  sif_interpretation: string;
+  why_flagged: string[];
+  lsr_explanations: LSRExplanation[];
+  grounding_banner: string;
+  formatted_text: string;
+}
+
+export interface AIModelInfo {
+  sif_model: string;
+  lsr_model: string;
+  version: string;
+  status: string;
+}
+
+export interface FastApiIncidentAnalysisResponse {
+  incident_id?: string;
+  incident_text: string;
+  sif: {
+    probability: number;
+    threshold: number;
+    is_sif: boolean;
+    risk_tier: string;
+    salient_tokens: { token: string; weight: number }[];
+  };
+  lsr: {
+    triggered_rules: string[];
+    rule_predictions: { rule: string; probability: number; threshold: number; triggered: boolean }[];
+    salient_tokens: { token: string; weight: number }[];
+  };
+  recommendations: AISafetyRecommendations;
+  explainability: AIExplainableOutput;
+  model_info: AIModelInfo;
+}
+
 export interface SifAnalysisResult {
   report_id: string;
   sif: {
@@ -29,6 +95,7 @@ export interface SifAnalysisResult {
   priority: PriorityLevel;
   analyzed_at?: string;
   model_version?: string;
+  full_ai_response?: FastApiIncidentAnalysisResponse;
 }
 
 export interface SafetyReport {

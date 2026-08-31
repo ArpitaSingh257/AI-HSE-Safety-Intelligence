@@ -35,6 +35,12 @@ router.post(
   asyncHandler(reportsController.analyzeReport)
 );
 
+router.post(
+  '/incidents/analyze',
+  authorize(PERMISSIONS.canTriggerAIAnalysis),
+  asyncHandler(reportsController.analyzeIncidentDirect)
+);
+
 router.get('/ai-results/:reportId', asyncHandler(reportsController.getAiResults));
 
 export default router;
