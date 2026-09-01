@@ -234,6 +234,256 @@ class SiteRiskListResponse(BaseModel):
     site_profiles: List[SiteRiskProfileSchema] = Field(..., description="Ranked site risk profiles.")
 
 
+class ActivitySiteSummarySchema(BaseModel):
+    site_name: str = Field(..., description="Site or location name.")
+    count: int = Field(..., description="Occurrence count.")
+
+
+class ActivityRiskProfileSchema(BaseModel):
+    activity_id: str = Field(..., description="Canonical activity ID.")
+    activity_name: str = Field(..., description="Canonical activity name.")
+    total_reports: int = Field(..., description="Total unique report count.")
+    sif_reports: int = Field(..., description="SIF report count.")
+    non_sif_reports: int = Field(..., description="Non-SIF report count.")
+    sif_density: float = Field(..., description="SIF density ratio (0.0 to 1.0).")
+    recurring_pattern_count: int = Field(..., description="Stage 23 pattern count.")
+    barrier_failure_pattern_count: int = Field(..., description="Stage 24 barrier pattern count.")
+    risk_index: float = Field(..., description="Deterministic Activity Risk Index R_a (0.0 to 1.0).")
+    risk_level: str = Field(..., description="Risk level: CRITICAL, HIGH, MEDIUM, LOW, or INSUFFICIENT_DATA.")
+    sif_component: float = Field(..., description="SIF component score.")
+    pattern_component: float = Field(..., description="Pattern component score.")
+    barrier_component: float = Field(..., description="Barrier component score.")
+    top_hazards: List[SiteHazardSummarySchema] = Field(..., description="Top hazards.")
+    top_barrier_failures: List[SiteBarrierSummarySchema] = Field(..., description="Top barrier failures.")
+    top_life_saving_rules: List[SiteLsrSummarySchema] = Field(..., description="Top Life-Saving Rules.")
+    associated_sites: List[ActivitySiteSummarySchema] = Field(..., description="Associated operational sites.")
+    first_observed: str = Field(..., description="Earliest report date.")
+    last_observed: str = Field(..., description="Most recent report date.")
+    report_ids: List[str] = Field(..., description="Contributing report IDs.")
+    pattern_ids: List[str] = Field(..., description="Linked Stage 23 pattern IDs.")
+    barrier_pattern_ids: List[str] = Field(..., description="Linked Stage 24 barrier pattern IDs.")
+
+
+class ActivityRiskListResponse(BaseModel):
+    total_activities: int = Field(..., description="Total activities analyzed.")
+    min_activity_reports_threshold: int = Field(..., description="Minimum reports required for classification.")
+    activity_profiles: List[ActivityRiskProfileSchema] = Field(..., description="Ranked activity risk profiles.")
+
+
+class LsrTimeSeriesItemSchema(BaseModel):
+    period: str = Field(..., description="Time period bucket (YYYY-MM).")
+    report_count: int = Field(..., description="Report count in period.")
+    sif_count: int = Field(..., description="SIF count in period.")
+    sif_density: float = Field(..., description="SIF density ratio in period.")
+
+
+class LsrActivitySummarySchema(BaseModel):
+    activity_name: str = Field(..., description="Activity name.")
+    count: int = Field(..., description="Occurrence count.")
+
+
+class LsrBarrierSummarySchema(BaseModel):
+    name: str = Field(..., description="Barrier failure name.")
+    count: int = Field(..., description="Occurrence count.")
+
+
+class LsrTrendProfileSchema(BaseModel):
+    lsr_rule: str = Field(..., description="Canonical Life-Saving Rule name.")
+    total_reports: int = Field(..., description="Total unique report count.")
+    sif_reports: int = Field(..., description="SIF report count.")
+    sif_density: float = Field(..., description="Overall SIF density ratio (0.0 to 1.0).")
+    trend: str = Field(..., description="Trend state: INCREASING, STABLE, DECREASING, or INSUFFICIENT_DATA.")
+    trend_delta: float = Field(..., description="Recent vs earlier SIF density delta.")
+    time_series: List[LsrTimeSeriesItemSchema] = Field(..., description="Monthly time series breakdown.")
+    top_sites: List[ActivitySiteSummarySchema] = Field(..., description="Top associated sites.")
+    top_activities: List[LsrActivitySummarySchema] = Field(..., description="Top associated activities.")
+    top_barrier_failures: List[LsrBarrierSummarySchema] = Field(..., description="Top associated barrier failures.")
+    recurring_pattern_ids: List[str] = Field(..., description="Linked Stage 23 pattern IDs.")
+    barrier_pattern_ids: List[str] = Field(..., description="Linked Stage 24 barrier pattern IDs.")
+    first_observed: str = Field(..., description="Earliest report date.")
+    last_observed: str = Field(..., description="Most recent report date.")
+    report_ids: List[str] = Field(..., description="Contributing report IDs.")
+
+
+class LsrTrendListResponse(BaseModel):
+    total_lsr_rules: int = Field(..., description="Total official Life-Saving Rules analyzed.")
+    min_lsr_reports_threshold: int = Field(..., description="Minimum reports required for trend calculation.")
+    unknown_lsr_records: int = Field(default=0, description="Count of historical records with missing or unclassified LSR labels.")
+    unknown_lsr_rate: float = Field(default=0.0, description="Ratio of records with missing LSR labels.")
+    lsr_profiles: List[LsrTrendProfileSchema] = Field(..., description="List of official LSR trend profiles.")
+
+
+class EarlyWarningProfileSchema(BaseModel):
+    warning_id: str = Field(..., description="Unique early warning ID.")
+    signal_type: str = Field(..., description="Signal type: BARRIER_FAILURE, RECURRING_PATTERN, SIF_DENSITY, SITE_RISK, ACTIVITY_RISK, LSR_TREND.")
+    signal_name: str = Field(..., description="Signal or pattern name.")
+    warning_level: str = Field(..., description="Warning level: HIGH_PRIORITY, EARLY_WARNING, WATCH, NORMAL, INSUFFICIENT_DATA.")
+    period: str = Field(..., description="Most recent time period (YYYY-MM).")
+    baseline_value: float = Field(..., description="Baseline period average metric.")
+    recent_value: float = Field(..., description="Recent period average metric.")
+    delta: float = Field(..., description="Recent vs baseline metric delta.")
+    consecutive_increasing_periods: int = Field(..., description="Count of consecutive increasing periods.")
+    affected_sites: List[ActivitySiteSummarySchema] = Field(..., description="Top affected sites.")
+    affected_activities: List[LsrActivitySummarySchema] = Field(..., description="Top affected activities.")
+    pattern_ids: List[str] = Field(..., description="Linked Stage 23 pattern IDs.")
+    barrier_pattern_ids: List[str] = Field(..., description="Linked Stage 24 barrier pattern IDs.")
+    supporting_incident_ids: List[str] = Field(..., description="Supporting historical report IDs.")
+    reason: str = Field(..., description="Deterministic explanation string.")
+    first_observed: str = Field(..., description="Earliest report date.")
+    last_observed: str = Field(..., description="Most recent report date.")
+    time_series: List[LsrTimeSeriesItemSchema] = Field(..., description="Time series breakdown.")
+
+
+class EarlyWarningListResponse(BaseModel):
+    total_warnings: int = Field(..., description="Total early warning signals evaluated.")
+    high_priority_count: int = Field(..., description="Count of HIGH_PRIORITY warnings.")
+    early_warning_count: int = Field(..., description="Count of EARLY_WARNING signals.")
+    watch_count: int = Field(..., description="Count of WATCH signals.")
+    warnings: List[EarlyWarningProfileSchema] = Field(..., description="List of early warning profiles.")
+
+
+class PriorityComponentScoresSchema(BaseModel):
+    sif_impact: float = Field(..., description="Normalized SIF precursor impact score (0.0 - 1.0).")
+    recurrence: float = Field(..., description="Normalized recurrence frequency score (0.0 - 1.0).")
+    barrier_impact: float = Field(..., description="Normalized barrier failure severity score (0.0 - 1.0).")
+    site_activity: float = Field(..., description="Normalized site/activity concentration index (0.0 - 1.0).")
+    early_warning: float = Field(..., description="Normalized early warning signal contribution (0.0 - 1.0).")
+
+
+class PriorityProfileSchema(BaseModel):
+    priority_id: str = Field(..., description="Unique priority ID.")
+    entity_type: str = Field(..., description="Entity type: BARRIER_FAILURE, RECURRING_PATTERN, SITE, ACTIVITY.")
+    entity_id: str = Field(..., description="Entity identifier.")
+    entity_name: str = Field(..., description="Entity display name.")
+    priority_score: float = Field(..., description="Unified priority score (0.00 - 1.00).")
+    priority_level: str = Field(..., description="Priority classification level: CRITICAL, HIGH, MEDIUM, LOW, INSUFFICIENT_DATA.")
+    components: PriorityComponentScoresSchema = Field(..., description="Normalized component scores breakdown.")
+    supporting_report_ids: List[str] = Field(..., description="Supporting historical report IDs.")
+    pattern_ids: List[str] = Field(..., description="Linked Stage 23 pattern IDs.")
+    barrier_pattern_ids: List[str] = Field(..., description="Linked Stage 24 barrier pattern IDs.")
+    site_ids: List[str] = Field(..., description="Linked site IDs.")
+    activity_ids: List[str] = Field(..., description="Linked activity IDs.")
+    warning_ids: List[str] = Field(..., description="Linked Stage 29 early warning IDs.")
+    first_observed: str = Field(..., description="Earliest report date.")
+    last_observed: str = Field(..., description="Most recent report date.")
+    reason: str = Field(..., description="Deterministic explanation string.")
+
+
+class PriorityListResponse(BaseModel):
+    total_priorities: int = Field(..., description="Total HSE priorities evaluated.")
+    critical_count: int = Field(..., description="Count of CRITICAL priorities.")
+    high_count: int = Field(..., description="Count of HIGH priorities.")
+    medium_count: int = Field(..., description="Count of MEDIUM priorities.")
+    priorities: List[PriorityProfileSchema] = Field(..., description="Ranked list of priority profiles.")
+
+
+class RiskMatrixItemSchema(BaseModel):
+    matrix_item_id: str = Field(..., description="Unique matrix item ID.")
+    entity_type: str = Field(..., description="Entity type: BARRIER_FAILURE, RECURRING_PATTERN, SITE, ACTIVITY.")
+    entity_id: str = Field(..., description="Entity identifier.")
+    entity_name: str = Field(..., description="Entity display name.")
+    severity_score: float = Field(..., description="Normalized severity / SIF potential score (0.00 - 1.00).")
+    recurrence_score: float = Field(..., description="Normalized recurrence frequency score (0.00 - 1.00).")
+    severity_level: str = Field(..., description="Severity level: HIGH, LOW, INSUFFICIENT_DATA.")
+    recurrence_level: str = Field(..., description="Recurrence level: HIGH, LOW, INSUFFICIENT_DATA.")
+    quadrant: str = Field(..., description="Matrix quadrant: HIGH_SEVERITY_HIGH_RECURRENCE, HIGH_SEVERITY_LOW_RECURRENCE, LOW_SEVERITY_HIGH_RECURRENCE, LOW_SEVERITY_LOW_RECURRENCE, INSUFFICIENT_DATA.")
+    classification: str = Field(..., description="Interpretation classification: CRITICAL_PRIORITY, HIGH_POTENTIAL_RARE, FREQUENT_LOWER_POTENTIAL, LOW_PRIORITY_MONITOR, INSUFFICIENT_DATA.")
+    supporting_report_ids: List[str] = Field(..., description="Supporting historical report IDs.")
+    pattern_ids: List[str] = Field(..., description="Linked Stage 23 pattern IDs.")
+    barrier_pattern_ids: List[str] = Field(..., description="Linked Stage 24 barrier pattern IDs.")
+    site_ids: List[str] = Field(..., description="Linked site IDs.")
+    activity_ids: List[str] = Field(..., description="Linked activity IDs.")
+    first_observed: str = Field(..., description="Earliest report date.")
+    last_observed: str = Field(..., description="Most recent report date.")
+    reason: str = Field(..., description="Deterministic explanation string.")
+
+
+class RiskMatrixListResponse(BaseModel):
+    total_items: int = Field(..., description="Total 2D risk matrix items evaluated.")
+    critical_priority_count: int = Field(..., description="Count of CRITICAL_PRIORITY (High/High) items.")
+    high_potential_rare_count: int = Field(..., description="Count of HIGH_POTENTIAL_RARE (High/Low) items.")
+    frequent_lower_potential_count: int = Field(..., description="Count of FREQUENT_LOWER_POTENTIAL (Low/High) items.")
+    low_priority_monitor_count: int = Field(..., description="Count of LOW_PRIORITY_MONITOR (Low/Low) items.")
+    matrix_items: List[RiskMatrixItemSchema] = Field(..., description="List of 2D matrix items.")
+
+
+class BowTieNodeSchema(BaseModel):
+    id: str = Field(..., description="Node identifier.")
+    type: str = Field(..., description="Node type: HAZARD, THREAT, FAILED_BARRIER, PREVENTIVE_BARRIER, MITIGATING_BARRIER, TOP_EVENT, CONSEQUENCE.")
+    label: str = Field(..., description="Node label text.")
+    provenance: str = Field(..., description="Provenance: OBSERVED, INFERRED, UNKNOWN.")
+    canonical_barrier: Optional[str] = Field(default=None, description="Optional canonical barrier code.")
+    barrier_role: Optional[str] = Field(default=None, description="Optional barrier role: PREVENTIVE, MITIGATING.")
+    raw_evidence: Optional[str] = Field(default=None, description="Optional raw evidence text excerpt.")
+
+
+class BowTieEdgeSchema(BaseModel):
+    source: str = Field(..., description="Source node ID.")
+    target: str = Field(..., description="Target node ID.")
+    provenance: str = Field(..., description="Relationship provenance: OBSERVED, INFERRED, UNKNOWN.")
+
+
+class BowTieProfileSchema(BaseModel):
+    bow_tie_id: str = Field(..., description="Unique Bow-Tie ID.")
+    report_id: str = Field(..., description="Associated report ID.")
+    hazards: List[str] = Field(..., description="Identified hazards.")
+    threats: List[str] = Field(..., description="Identified threats.")
+    failed_barriers: List[str] = Field(..., description="Identified failed barriers.")
+    preventive_barriers: List[str] = Field(..., description="Preventive barriers.")
+    mitigating_barriers: List[str] = Field(..., description="Mitigating barriers.")
+    top_events: List[str] = Field(..., description="Top event / loss of control labels.")
+    consequences: List[str] = Field(..., description="Potential consequences.")
+    nodes: List[BowTieNodeSchema] = Field(..., description="Bow-Tie graph nodes.")
+    edges: List[BowTieEdgeSchema] = Field(..., description="Bow-Tie graph edges.")
+    sif_information: Dict[str, Any] = Field(..., description="Stage 6 SIF context.")
+    lsr_information: Dict[str, Any] = Field(..., description="Stage 7 LSR context.")
+    pattern_ids: List[str] = Field(..., description="Linked Stage 23 precursor pattern IDs.")
+    barrier_pattern_ids: List[str] = Field(..., description="Linked Stage 24 barrier pattern IDs.")
+    evidence: Dict[str, Any] = Field(..., description="Supporting evidence excerpts.")
+    provenance: str = Field(..., description="Overall provenance classification.")
+    mapping_confidence: str = Field(..., description="Deterministic mapping confidence: HIGH, MEDIUM, LOW.")
+
+
+class FeedbackSubmissionSchema(BaseModel):
+    report_id: str = Field(..., description="Target report ID.")
+    field_name: str = Field(..., description="AI prediction field being reviewed.")
+    ai_value: Any = Field(..., description="Original AI prediction value.")
+    human_value: Any = Field(..., description="Human correction or accepted value.")
+    action: str = Field(..., description="Review action: ACCEPT, CORRECT, REJECT, NEEDS_REVIEW.")
+    comment: Optional[str] = Field(default="", description="Optional analyst commentary.")
+    reviewer_id: Optional[str] = Field(default="HSE_ANALYST_01", description="Reviewer identifier.")
+
+
+class FeedbackRecordSchema(BaseModel):
+    feedback_id: str = Field(..., description="Unique feedback record ID.")
+    report_id: str = Field(..., description="Target report ID.")
+    field_name: str = Field(..., description="AI prediction field.")
+    ai_value: Any = Field(..., description="Original AI prediction value.")
+    human_value: Any = Field(..., description="Human correction value.")
+    action: str = Field(..., description="Review action: ACCEPT, CORRECT, REJECT, NEEDS_REVIEW.")
+    comment: str = Field(..., description="Analyst commentary.")
+    reviewer_id: str = Field(..., description="Reviewer identifier.")
+    review_timestamp: str = Field(..., description="Review timestamp ISO 8601.")
+    model_version: str = Field(..., description="Target model version.")
+    pipeline_version: str = Field(..., description="System pipeline version.")
+    schema_version: str = Field(..., description="Schema version.")
+    status: str = Field(..., description="Lifecycle status: SUBMITTED, REVIEWED, ACCEPTED_FOR_EVALUATION.")
+    revision: int = Field(..., description="Revision version number.")
+    created_at: str = Field(..., description="Created timestamp.")
+    updated_at: str = Field(..., description="Updated timestamp.")
+
+
+class FeedbackStatsSchema(BaseModel):
+    total_feedback: int = Field(..., description="Total feedback records evaluated.")
+    accepted_count: int = Field(..., description="Count of ACCEPT actions.")
+    corrected_count: int = Field(..., description="Count of CORRECT actions.")
+    rejected_count: int = Field(..., description="Count of REJECT actions.")
+    accept_rate: float = Field(..., description="Acceptance rate (0.00 - 1.00).")
+    correction_rate: float = Field(..., description="Correction rate (0.00 - 1.00).")
+    reject_rate: float = Field(..., description="Rejection rate (0.00 - 1.00).")
+    field_breakdown: Dict[str, Any] = Field(..., description="Per-field accuracy breakdown.")
+
+
 class HealthCheckResponse(BaseModel):
     status: str = Field(default="healthy", description="API health status.")
     ai_engine: str = Field(default="OILPS AI-HSE-Safety-Intelligence", description="Engine name.")

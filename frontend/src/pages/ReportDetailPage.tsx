@@ -12,6 +12,8 @@ import { ArrowLeft, Sparkles, AlertTriangle, FileText, MapPin, Building, User, C
 
 import { SafetyIntelligenceView } from '../components/SafetyIntelligenceView';
 import { SimilarReportsView } from '../components/SimilarReportsView';
+import { BowTieView } from '../components/reports/BowTieView';
+import { AnalystFeedbackPanel } from '../components/feedback/AnalystFeedbackPanel';
 
 export const ReportDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -340,6 +342,16 @@ export const ReportDetailPage: React.FC = () => {
                 </div>
               </div>
 
+              {/* Stage 33 Human-in-the-Loop Analyst Feedback Overlay */}
+              {id && (
+                <AnalystFeedbackPanel
+                  reportId={id}
+                  fieldName="primary_life_saving_rule"
+                  fieldLabel="Life-Saving Rule Classification"
+                  aiValue={report.life_saving_rule}
+                />
+              )}
+
               {/* Associated Pattern Links */}
               {ai.patterns && ai.patterns.length > 0 && (
                 <div className="pt-3 border-t border-slate-200">
@@ -377,6 +389,9 @@ export const ReportDetailPage: React.FC = () => {
               )}
             </div>
           )}
+
+          {/* Stage 32 Bow-Tie Barrier Failure Pathway */}
+          {id && <BowTieView reportId={id} />}
 
           {/* Stage 25 Similar Historical Reports */}
           {id && <SimilarReportsView reportId={id} />}

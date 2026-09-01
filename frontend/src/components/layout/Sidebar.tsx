@@ -9,6 +9,8 @@ import {
   Flame,
   ShieldAlert,
   AlertTriangle,
+  AlertOctagon,
+  Grid,
   History,
   Info,
 } from 'lucide-react';
@@ -61,6 +63,24 @@ export const Sidebar: React.FC = () => {
       name: 'Life-Saving Rules',
       path: '/life-saving-rules',
       icon: ShieldAlert,
+    },
+    {
+      name: 'Early Warning',
+      path: '/early-warnings',
+      icon: AlertOctagon,
+      badge: 'Stage 29',
+    },
+    {
+      name: 'HSE Priorities',
+      path: '/priorities',
+      icon: ShieldAlert,
+      badge: 'Stage 30',
+    },
+    {
+      name: 'Risk Matrix',
+      path: '/risk-matrix',
+      icon: Grid,
+      badge: 'Stage 31',
     },
     {
       name: 'Risk & Interventions',

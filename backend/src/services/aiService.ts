@@ -261,3 +261,232 @@ export async function fetchAiSiteRiskById(siteId: string): Promise<any> {
     return null;
   }
 }
+
+/**
+ * Calls FastAPI /api/v1/activity-risk to retrieve ranked activity-level risk intelligence profiles.
+ */
+export async function fetchAiActivityRisk(): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const actUrl = `${baseUrl}/activity-risk`;
+
+  try {
+    const response = await fetch(actUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI activity risk endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/activity-risk/{activity_id} to retrieve a single activity risk profile.
+ */
+export async function fetchAiActivityRiskById(activityId: string): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const actUrl = `${baseUrl}/activity-risk/${activityId}`;
+
+  try {
+    const response = await fetch(actUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn(`FastAPI activity risk endpoint for ${activityId} unreachable:`, (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/lsr-trends to retrieve Life-Saving Rule trend intelligence profiles.
+ */
+export async function fetchAiLsrTrends(): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const lsrUrl = `${baseUrl}/lsr-trends`;
+
+  try {
+    const response = await fetch(lsrUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI lsr trends endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/lsr-trends/{lsr_rule} to retrieve a single LSR trend profile.
+ */
+export async function fetchAiLsrTrendsByRule(lsrRule: string): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const lsrUrl = `${baseUrl}/lsr-trends/${encodeURIComponent(lsrRule)}`;
+
+  try {
+    const response = await fetch(lsrUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn(`FastAPI lsr trends endpoint for ${lsrRule} unreachable:`, (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/early-warnings to retrieve early warning signals.
+ */
+export async function fetchAiEarlyWarnings(): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const ewUrl = `${baseUrl}/early-warnings`;
+
+  try {
+    const response = await fetch(ewUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI early warnings endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/early-warnings/{warning_id} to retrieve a single early warning signal.
+ */
+export async function fetchAiEarlyWarningById(warningId: string): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const ewUrl = `${baseUrl}/early-warnings/${encodeURIComponent(warningId)}`;
+
+  try {
+    const response = await fetch(ewUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn(`FastAPI early warning endpoint for ${warningId} unreachable:`, (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/priorities to retrieve ranked HSE priority intelligence.
+ */
+export async function fetchAiPriorities(): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const priUrl = `${baseUrl}/priorities`;
+
+  try {
+    const response = await fetch(priUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI priorities endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/priorities/{priority_id} to retrieve a single priority item detail.
+ */
+export async function fetchAiPriorityById(priorityId: string): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const priUrl = `${baseUrl}/priorities/${encodeURIComponent(priorityId)}`;
+
+  try {
+    const response = await fetch(priUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn(`FastAPI priorities endpoint for ${priorityId} unreachable:`, (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/risk-matrix to retrieve 2D risk matrix dataset & quadrant classifications.
+ */
+export async function fetchAiRiskMatrix(): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const matrixUrl = `${baseUrl}/risk-matrix`;
+
+  try {
+    const response = await fetch(matrixUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI risk matrix endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/risk-matrix/{matrix_item_id} to retrieve a single risk matrix item detail.
+ */
+export async function fetchAiRiskMatrixById(matrixItemId: string): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const matrixUrl = `${baseUrl}/risk-matrix/${encodeURIComponent(matrixItemId)}`;
+
+  try {
+    const response = await fetch(matrixUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn(`FastAPI risk matrix endpoint for ${matrixItemId} unreachable:`, (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/bow-ties/{report_id} to retrieve Bow-Tie risk pathway mapping.
+ */
+export async function fetchAiBowTieByReportId(reportId: string): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const btUrl = `${baseUrl}/bow-ties/${encodeURIComponent(reportId)}`;
+
+  try {
+    const response = await fetch(btUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn(`FastAPI Bow-Tie endpoint for ${reportId} unreachable:`, (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/feedback to validate and record feedback into the microservice evaluation queue.
+ */
+export async function submitAiFeedback(payload: any): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const fbUrl = `${baseUrl}/feedback`;
+
+  try {
+    const response = await fetch(fbUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI submit feedback endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/feedback/stats to retrieve aggregate feedback metrics.
+ */
+export async function fetchAiFeedbackStats(): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const statsUrl = `${baseUrl}/feedback/stats`;
+
+  try {
+    const response = await fetch(statsUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI feedback stats endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
+
+
+

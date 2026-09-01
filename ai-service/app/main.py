@@ -16,6 +16,13 @@ from app.api.v1.endpoints.patterns import router as patterns_router
 from app.api.v1.endpoints.barrier_patterns import router as barrier_patterns_router
 from app.api.v1.endpoints.similar_reports import router as similar_reports_router
 from app.api.v1.endpoints.site_risk import router as site_risk_router
+from app.api.v1.endpoints.activity_risk import router as activity_risk_router
+from app.api.v1.endpoints.lsr_trends import router as lsr_trends_router
+from app.api.v1.endpoints.early_warnings import router as early_warnings_router
+from app.api.v1.endpoints.priorities import router as priorities_router
+from app.api.v1.endpoints.risk_matrix import router as risk_matrix_router
+from app.api.v1.endpoints.bow_ties import router as bow_ties_router
+from app.api.v1.endpoints.feedback import router as feedback_router
 
 app = FastAPI(
     title="OILPS AI Precursor Safety Intelligence Service",
@@ -40,6 +47,13 @@ app.include_router(patterns_router, prefix="/api/v1/patterns", tags=["Patterns"]
 app.include_router(barrier_patterns_router, prefix="/api/v1/barrier-patterns", tags=["Barrier Patterns"])
 app.include_router(similar_reports_router, prefix="/api/v1/similar-reports", tags=["Similar Reports"])
 app.include_router(site_risk_router, prefix="/api/v1/site-risk", tags=["Site Risk"])
+app.include_router(activity_risk_router, prefix="/api/v1/activity-risk", tags=["Activity Risk"])
+app.include_router(lsr_trends_router, prefix="/api/v1/lsr-trends", tags=["LSR Trends"])
+app.include_router(early_warnings_router, prefix="/api/v1/early-warnings", tags=["Early Warnings"])
+app.include_router(priorities_router, prefix="/api/v1/priorities", tags=["Priorities"])
+app.include_router(risk_matrix_router, prefix="/api/v1/risk-matrix", tags=["Risk Matrix"])
+app.include_router(bow_ties_router, prefix="/api/v1/bow-ties", tags=["Bow-Tie Mapping"])
+app.include_router(feedback_router, prefix="/api/v1/feedback", tags=["Human Analyst Feedback"])
 
 @app.get(
     "/health",

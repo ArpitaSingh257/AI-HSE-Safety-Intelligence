@@ -14,6 +14,9 @@ import { BarrierFailureExplorerPage } from '../pages/BarrierFailureExplorerPage'
 import { SiteAnalyticsPage } from '../pages/SiteAnalyticsPage';
 import { ActivityAnalyticsPage } from '../pages/ActivityAnalyticsPage';
 import { LifeSavingRulesPage } from '../pages/LifeSavingRulesPage';
+import { EarlyWarningDashboardPage } from '../pages/EarlyWarningDashboardPage';
+import { PriorityIntelligencePage } from '../pages/PriorityIntelligencePage';
+import { RiskMatrixPage } from '../pages/RiskMatrixPage';
 import { RiskInterventionsPage } from '../pages/RiskInterventionsPage';
 import { AuditLogPage } from '../pages/AuditLogPage';
 
@@ -61,6 +64,9 @@ export const AppRoutes: React.FC = () => {
         <Route path="sites" element={<SiteAnalyticsPage />} />
         <Route path="activities" element={<ActivityAnalyticsPage />} />
         <Route path="life-saving-rules" element={<LifeSavingRulesPage />} />
+        <Route path="early-warnings" element={<EarlyWarningDashboardPage />} />
+        <Route path="priorities" element={<PriorityIntelligencePage />} />
+        <Route path="risk-matrix" element={<RiskMatrixPage />} />
         <Route path="interventions" element={<RiskInterventionsPage />} />
         <Route
           path="audit"
