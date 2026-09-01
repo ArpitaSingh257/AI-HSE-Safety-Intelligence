@@ -91,7 +91,148 @@ class IncidentAnalysisResponse(BaseModel):
     lsr: LSRAnalysisResponse = Field(..., description="IOGP Life-Saving Rules multi-label activations and breakdown.")
     recommendations: Optional[SafetyRecommendationsResponse] = Field(default=None, description="Actionable safety recommendations and control verifications.")
     explainability: Optional[ExplainableSafetyOutputSchema] = Field(default=None, description="Stage 19 non-technical explainable safety intelligence response.")
+    recurring_patterns: Optional[List["RecurringPatternSchema"]] = Field(default=None, description="Matching recurring precursor patterns if detected.")
     model_info: ModelInfo = Field(default_factory=ModelInfo, description="Metadata describing frozen champion architectures.")
+
+
+class RecurringPatternSchema(BaseModel):
+    pattern_id: str = Field(..., description="Deterministic pattern ID.")
+    pattern_code: Optional[str] = Field(default=None, description="Short pattern code (e.g. P001).")
+    pattern_name: str = Field(..., description="Human-readable pattern title.")
+    summary: str = Field(..., description="Deterministic text summary of pattern.")
+    pattern_strength: str = Field(..., description="Pattern strength: HIGH, MEDIUM, or LOW.")
+    incident_count: int = Field(..., description="Total historical incident support count.")
+    sif_incident_count: int = Field(..., description="Number of SIF-potential incidents in pattern.")
+    sif_density: float = Field(..., description="Ratio of SIF incidents (0.0 to 1.0).")
+    dominant_activity: str = Field(..., description="Primary activity associated with pattern.")
+    dominant_lsr: str = Field(..., description="Primary Life-Saving Rule associated with pattern.")
+    dominant_hazard: str = Field(..., description="Primary high-energy hazard associated with pattern.")
+    dominant_barrier_failure: str = Field(..., description="Primary barrier failure associated with pattern.")
+    locations: List[str] = Field(..., description="Locations where pattern has been observed.")
+    first_observed: str = Field(..., description="Date of earliest observed incident in pattern.")
+    last_observed: str = Field(..., description="Date of most recent observed incident in pattern.")
+    incident_ids: List[str] = Field(..., description="List of contributing incident IDs.")
+    evidence_quotes: List[str] = Field(..., description="Representative quotes from historical reports.")
+
+
+class PatternListResponse(BaseModel):
+    total_patterns: int = Field(..., description="Total recurring precursor patterns discovered.")
+    min_support_threshold: int = Field(..., description="Configured minimum support threshold.")
+    patterns: List[RecurringPatternSchema] = Field(..., description="List of detected recurring patterns.")
+
+
+class BarrierPatternSchema(BaseModel):
+    barrier_pattern_id: str = Field(..., description="Deterministic barrier pattern ID.")
+    barrier_code_prefix: Optional[str] = Field(default=None, description="Short code (e.g. B001).")
+    barrier_code: str = Field(..., description="Canonical barrier failure code.")
+    barrier_name: str = Field(..., description="Human-readable barrier failure name.")
+    incident_count: int = Field(..., description="Total unique incident occurrences.")
+    sif_incident_count: int = Field(..., description="Number of SIF-potential incidents.")
+    sif_density: float = Field(..., description="Ratio of SIF incidents (0.0 to 1.0).")
+    pattern_strength: str = Field(..., description="Strength indicator: HIGH, MEDIUM, or LOW.")
+    dominant_activity: str = Field(..., description="Primary activity associated with barrier failure.")
+    dominant_lsr: str = Field(..., description="Primary Life-Saving Rule associated with barrier failure.")
+    dominant_hazard: str = Field(..., description="Primary hazard associated with barrier failure.")
+    locations: List[str] = Field(..., description="Locations where barrier failure was observed.")
+    potential_consequences: List[str] = Field(..., description="Key worst-case consequences.")
+    stage23_pattern_ids: List[str] = Field(..., description="Linked Stage 23 recurring pattern IDs.")
+    incident_ids: List[str] = Field(..., description="List of contributing incident IDs.")
+    first_observed: str = Field(..., description="Date of earliest observed failure.")
+    last_observed: str = Field(..., description="Date of most recent observed failure.")
+    supporting_evidence: List[str] = Field(..., description="Representative narrative quotes.")
+
+
+class BarrierPatternListResponse(BaseModel):
+    total_barrier_patterns: int = Field(..., description="Total recurring barrier failure patterns discovered.")
+    min_support_threshold: int = Field(..., description="Configured minimum support threshold.")
+    barrier_patterns: List[BarrierPatternSchema] = Field(..., description="List of detected barrier patterns.")
+
+
+class SimilarReportItemSchema(BaseModel):
+    report_id: str = Field(..., description="Historical report ID.")
+    similarity_score: float = Field(..., description="Cosine similarity score (0.0 to 1.0).")
+    similarity_percentage: int = Field(..., description="Similarity percentage integer.")
+    report_date: str = Field(..., description="Reported date.")
+    location: str = Field(..., description="Site or location.")
+    activity: str = Field(..., description="Activity during incident.")
+    hazard: str = Field(..., description="Primary hazard involved.")
+    barrier_failure: str = Field(..., description="Barrier failure identified.")
+    primary_life_saving_rule: str = Field(..., description="Associated IOGP Life-Saving Rule.")
+    is_sif: bool = Field(..., description="SIF precursor indicator.")
+    narrative_excerpt: str = Field(..., description="Concise text excerpt.")
+    explanation: str = Field(..., description="Deterministic similarity explanation.")
+    stage23_pattern_id: Optional[str] = Field(default=None, description="Linked Stage 23 pattern ID if applicable.")
+    stage24_barrier_id: Optional[str] = Field(default=None, description="Linked Stage 24 barrier pattern ID if applicable.")
+
+
+class SimilarReportsResponse(BaseModel):
+    query_report_id: Optional[str] = Field(default=None, description="Query report ID if provided.")
+    total_matches: int = Field(..., description="Total similar historical reports returned.")
+    top_k: int = Field(..., description="Configured Top-K parameter.")
+    min_similarity_threshold: float = Field(..., description="Minimum similarity threshold used.")
+    similar_reports: List[SimilarReportItemSchema] = Field(..., description="Ranked similar historical reports.")
+
+
+class SimilarReportSearchRequest(BaseModel):
+    query_text: Optional[str] = Field(default=None, description="Free text narrative to search.")
+    top_k: int = Field(default=5, ge=1, le=20, description="Top-K count.")
+    min_similarity: float = Field(default=0.40, ge=0.0, le=1.0, description="Minimum similarity threshold.")
+
+
+class SiteActivitySummarySchema(BaseModel):
+    name: str = Field(..., description="Activity name.")
+    report_count: int = Field(..., description="Report count.")
+    sif_count: int = Field(..., description="SIF count.")
+    sif_density: float = Field(..., description="SIF rate.")
+
+
+class SiteHazardSummarySchema(BaseModel):
+    name: str = Field(..., description="Hazard name.")
+    count: int = Field(..., description="Occurrence count.")
+
+
+class SiteBarrierSummarySchema(BaseModel):
+    name: str = Field(..., description="Barrier failure name.")
+    count: int = Field(..., description="Occurrence count.")
+    sif_count: int = Field(..., description="SIF count.")
+    sif_density: float = Field(..., description="SIF rate.")
+
+
+class SiteLsrSummarySchema(BaseModel):
+    name: str = Field(..., description="LSR rule name.")
+    count: int = Field(..., description="Occurrence count.")
+
+
+class SiteRiskProfileSchema(BaseModel):
+    site_id: str = Field(..., description="Canonical site ID.")
+    site_name: str = Field(..., description="Canonical site name.")
+    total_reports: int = Field(..., description="Total unique report count.")
+    sif_reports: int = Field(..., description="SIF report count.")
+    non_sif_reports: int = Field(..., description="Non-SIF report count.")
+    sif_density: float = Field(..., description="SIF density ratio (0.0 to 1.0).")
+    recurring_pattern_count: int = Field(..., description="Stage 23 pattern count.")
+    barrier_failure_pattern_count: int = Field(..., description="Stage 24 barrier pattern count.")
+    risk_index: float = Field(..., description="Deterministic Site Risk Index R_s (0.0 to 1.0).")
+    risk_level: str = Field(..., description="Risk level: CRITICAL, HIGH, MEDIUM, LOW, or INSUFFICIENT_DATA.")
+    sif_component: float = Field(..., description="SIF component score.")
+    pattern_component: float = Field(..., description="Pattern component score.")
+    barrier_component: float = Field(..., description="Barrier component score.")
+    top_activities: List[SiteActivitySummarySchema] = Field(..., description="Top activities.")
+    top_hazards: List[SiteHazardSummarySchema] = Field(..., description="Top hazards.")
+    top_barrier_failures: List[SiteBarrierSummarySchema] = Field(..., description="Top barrier failures.")
+    top_life_saving_rules: List[SiteLsrSummarySchema] = Field(..., description="Top Life-Saving Rules.")
+    first_observed: str = Field(..., description="Earliest report date.")
+    last_observed: str = Field(..., description="Most recent report date.")
+    report_ids: List[str] = Field(..., description="Contributing report IDs.")
+    pattern_ids: List[str] = Field(..., description="Linked Stage 23 pattern IDs.")
+    barrier_pattern_ids: List[str] = Field(..., description="Linked Stage 24 barrier pattern IDs.")
+
+
+class SiteRiskListResponse(BaseModel):
+    total_sites: int = Field(..., description="Total sites analyzed.")
+    min_site_reports_threshold: int = Field(..., description="Minimum reports required for classification.")
+    site_profiles: List[SiteRiskProfileSchema] = Field(..., description="Ranked site risk profiles.")
+
 
 class HealthCheckResponse(BaseModel):
     status: str = Field(default="healthy", description="API health status.")

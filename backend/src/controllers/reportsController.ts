@@ -5,7 +5,7 @@ import { SifAnalysisResult } from '../models/SifAnalysisResult';
 import { Site } from '../models/Site';
 import { Activity } from '../models/Activity';
 import { SITE_NAMES, ACTIVITY_NAMES, SiteName, ActivityName } from '../types';
-import { requestAnalysis, analyzeIncidentText } from '../services/aiService';
+import { requestAnalysis, analyzeIncidentText, fetchAiSimilarReports } from '../services/aiService';
 import { regeneratePatterns } from '../services/patternService';
 import { logAudit } from '../services/auditService';
 import { CreateReportInput, UpdateReportInput } from '../validators/reportValidator';
@@ -90,6 +90,20 @@ export async function getReportById(req: Request, res: Response) {
   if (aiResult) json.ai_result = aiResult.toJSON();
 
   res.json(json);
+}
+
+export async function getSimilarReportsForReport(req: Request, res: Response) {
+  const data = await fetchAiSimilarReports(req.params.id);
+  if (!data) {
+    return res.json({
+      query_report_id: req.params.id,
+      total_matches: 0,
+      top_k: 5,
+      min_similarity_threshold: 0.40,
+      similar_reports: []
+    });
+  }
+  res.json(data);
 }
 
 export async function createReport(req: Request<{}, {}, CreateReportInput>, res: Response) {

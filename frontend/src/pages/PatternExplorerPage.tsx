@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { patternsService } from '../api';
-import type { PrecursorPattern } from '../types/patterns';
+import type { PrecursorPattern, AIRecurringPattern } from '../types/patterns';
 import { PageHeader } from '../components/common/PageHeader';
 import { SeverityBadge } from '../components/common/SeverityBadge';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { Modal } from '../components/common/Modal';
 import { formatPercentage } from '../utils/formatters';
-import {
-  ArrowRight,
-  Lightbulb,
-} from 'lucide-react';
+import { ArrowRight, Lightbulb, ShieldAlert, Sparkles, CheckCircle, FileText } from 'lucide-react';
 
 export const PatternExplorerPage: React.FC = () => {
   const navigate = useNavigate();
-  const [patterns, setPatterns] = useState<PrecursorPattern[]>([]);
+  const [aiPatterns, setAiPatterns] = useState<AIRecurringPattern[]>([]);
+  const [dbPatterns, setDbPatterns] = useState<PrecursorPattern[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedPattern, setSelectedPattern] = useState<PrecursorPattern | null>(null);
+  const [selectedAiPattern, setSelectedAiPattern] = useState<AIRecurringPattern | null>(null);
+  const [selectedDbPattern, setSelectedDbPattern] = useState<PrecursorPattern | null>(null);
 
   useEffect(() => {
     const fetchPatterns = async () => {
       try {
-        const data = await patternsService.getPatterns();
-        setPatterns(data);
+        const res = await patternsService.getPatterns();
+        setAiPatterns(res.ai_patterns || []);
+        setDbPatterns(res.db_patterns || []);
       } finally {
         setLoading(false);
       }
@@ -31,96 +31,160 @@ export const PatternExplorerPage: React.FC = () => {
   }, []);
 
   if (loading) {
-    return <LoadingSpinner label="Clustering Precursor Patterns across OIL Assets..." />;
+    return <LoadingSpinner label="Clustering Precursor Patterns across Historical Safety Reports..." />;
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <PageHeader
         title="Precursor Pattern Explorer"
-        subtitle="Unsupervised NLP clustering identifying recurring barrier breakdowns and systemic failure signatures."
+        subtitle="Unsupervised NLP clustering & hybrid similarity engine identifying recurring safety failure signatures across historical reports."
         showDemoBadge={true}
       />
 
-      {/* Pattern Grid */}
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {patterns.map((pat) => (
-          <div
-            key={pat.id}
-            className="hse-card flex flex-col justify-between p-5 hover:border-slate-400 transition-colors cursor-pointer"
-            onClick={() => setSelectedPattern(pat)}
-          >
-            <div>
-              {/* Card Header */}
-              <div className="flex items-start justify-between gap-2 mb-2">
-                <span className="font-mono text-xs font-bold text-slate-500">{pat.id}</span>
-                <div className="flex items-center gap-1.5">
-                  <span
-                    className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${
-                      pat.trendStatus === 'SURGING'
-                        ? 'bg-red-100 text-red-800'
-                        : pat.trendStatus === 'RECURRING'
-                        ? 'bg-amber-100 text-amber-800'
-                        : 'bg-slate-100 text-slate-700'
-                    }`}
-                  >
-                    {pat.trendStatus}
-                  </span>
-                  <SeverityBadge priority={pat.priority} size="sm" />
-                </div>
+      {/* AI Microservice Patterns (Stage 23 Engine) */}
+      {aiPatterns.length > 0 && (
+        <div className="space-y-4">
+          <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+            <div className="flex items-center gap-2">
+              <div className="p-1.5 rounded bg-slate-900 text-white">
+                <Sparkles className="h-4 w-4 text-slate-200" />
               </div>
-
-              <h2 className="text-sm font-bold text-slate-900 leading-snug mb-2">
-                {pat.name}
+              <h2 className="text-sm font-bold text-slate-900">
+                Stage 23 AI Recurring Precursor Patterns ({aiPatterns.length})
               </h2>
+            </div>
+            <span className="text-xs font-mono text-slate-500">384-dim all-MiniLM-L6-v2 Embeddings</span>
+          </div>
 
-              <p className="text-xs text-slate-600 line-clamp-3 mb-4">
-                {pat.description}
-              </p>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {aiPatterns.map((pat) => (
+              <div
+                key={pat.pattern_id}
+                className="hse-card flex flex-col justify-between p-5 hover:border-slate-400 transition-colors cursor-pointer border-t-4 border-t-slate-800"
+                onClick={() => setSelectedAiPattern(pat)}
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <span className="font-mono text-xs font-bold text-slate-500">{pat.pattern_code || pat.pattern_id}</span>
+                    <span
+                      className={`rounded px-2 py-0.5 text-[10px] font-extrabold ${
+                        pat.pattern_strength === 'HIGH'
+                          ? 'bg-red-600 text-white'
+                          : pat.pattern_strength === 'MEDIUM'
+                          ? 'bg-amber-500 text-slate-950'
+                          : 'bg-slate-700 text-white'
+                      }`}
+                    >
+                      {pat.pattern_strength} STRENGTH
+                    </span>
+                  </div>
 
-              {/* Pattern Metrics */}
-              <div className="space-y-2 border-t border-slate-100 pt-3 text-xs">
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-500">Incident Frequency:</span>
-                  <span className="font-bold text-slate-900">{pat.reportCount} Reports</span>
+                  <h3 className="text-sm font-bold text-slate-900 leading-snug mb-2">
+                    {pat.pattern_name}
+                  </h3>
+
+                  <p className="text-xs text-slate-600 line-clamp-3 mb-4 leading-relaxed">
+                    {pat.summary}
+                  </p>
+
+                  <div className="space-y-2 border-t border-slate-100 pt-3 text-xs">
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-500">Historical Support:</span>
+                      <span className="font-bold text-slate-900">{pat.incident_count} Incidents</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-500">SIF Density:</span>
+                      <span className="font-bold text-red-600">
+                        {formatPercentage(pat.sif_density)} ({pat.sif_incident_count} SIF)
+                      </span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-500">Primary Rule:</span>
+                      <span className="font-medium text-slate-800">{pat.dominant_lsr}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-500">Barrier Failure:</span>
+                      <span className="font-medium text-slate-800 truncate max-w-[150px]">{pat.dominant_barrier_failure}</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-500">SIF Probability:</span>
-                  <span className="font-bold text-red-600">
-                    {formatPercentage(pat.sifPotentialRate)}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-500">Main Activity:</span>
-                  <span className="font-medium text-slate-800">{pat.mainActivity}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-500">Most Affected Site:</span>
-                  <span className="font-medium text-slate-800">{pat.mostAffectedSite}</span>
+
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-800 font-semibold">
+                  <span>Inspect Pattern ({pat.incident_ids.length} Incidents)</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </div>
               </div>
-            </div>
-
-            {/* Footer Action */}
-            <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-700 font-semibold">
-              <span>Inspect Cluster ({pat.matchedReportIds.length} Linked)</span>
-              <ArrowRight className="h-3.5 w-3.5" />
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      )}
 
-      {/* Pattern Detail Modal */}
-      {selectedPattern && (
+      {/* DB Patterns (If present) */}
+      {dbPatterns.length > 0 && (
+        <div className="space-y-4 pt-4 border-t border-slate-200">
+          <div className="flex items-center justify-between pb-2">
+            <h2 className="text-sm font-bold text-slate-900">
+              Operational Precursor Patterns ({dbPatterns.length})
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {dbPatterns.map((pat) => (
+              <div
+                key={pat.id}
+                className="hse-card flex flex-col justify-between p-5 hover:border-slate-400 transition-colors cursor-pointer"
+                onClick={() => setSelectedDbPattern(pat)}
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <span className="font-mono text-xs font-bold text-slate-500">{pat.id}</span>
+                    <SeverityBadge priority={pat.priority} size="sm" />
+                  </div>
+
+                  <h3 className="text-sm font-bold text-slate-900 leading-snug mb-2">
+                    {pat.name}
+                  </h3>
+
+                  <p className="text-xs text-slate-600 line-clamp-3 mb-4">
+                    {pat.description}
+                  </p>
+
+                  <div className="space-y-2 border-t border-slate-100 pt-3 text-xs">
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-500">Incident Frequency:</span>
+                      <span className="font-bold text-slate-900">{pat.reportCount} Reports</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-slate-500">SIF Probability:</span>
+                      <span className="font-bold text-red-600">
+                        {formatPercentage(pat.sifPotentialRate)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-800 font-semibold">
+                  <span>Inspect Pattern ({pat.matchedReportIds.length} Linked)</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* AI Pattern Detail Modal */}
+      {selectedAiPattern && (
         <Modal
-          isOpen={!!selectedPattern}
-          onClose={() => setSelectedPattern(null)}
-          title={`Pattern ${selectedPattern.id}: ${selectedPattern.name}`}
-          subtitle={`Detected across ${selectedPattern.reportCount} incident narratives (SIF Potential: ${formatPercentage(selectedPattern.sifPotentialRate)})`}
+          isOpen={!!selectedAiPattern}
+          onClose={() => setSelectedAiPattern(null)}
+          title={`Pattern ${selectedAiPattern.pattern_code || selectedAiPattern.pattern_id}: ${selectedAiPattern.pattern_name}`}
+          subtitle={`Discovered across ${selectedAiPattern.incident_count} incidents (SIF Density: ${formatPercentage(selectedAiPattern.sif_density)})`}
           maxWidth="2xl"
           footer={
             <button
-              onClick={() => setSelectedPattern(null)}
+              onClick={() => setSelectedAiPattern(null)}
               className="rounded bg-slate-900 px-4 py-1.5 text-xs font-semibold text-white"
             >
               Close
@@ -129,62 +193,77 @@ export const PatternExplorerPage: React.FC = () => {
         >
           <div className="space-y-4 text-xs text-slate-800">
             <div>
-              <span className="font-semibold text-slate-700 block mb-1">Pattern Signature Summary</span>
-              <p className="text-slate-600 bg-slate-50 p-3 rounded border border-slate-200">
-                {selectedPattern.description}
+              <span className="font-semibold text-slate-700 block mb-1">Pattern Summary & Scope</span>
+              <p className="text-slate-700 bg-slate-50 p-3 rounded border border-slate-200 leading-relaxed font-medium">
+                {selectedAiPattern.summary}
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="border border-slate-200 p-3 rounded bg-white">
-                <span className="font-semibold text-slate-700 block mb-1.5">Common Barrier Failures</span>
-                <ul className="list-disc list-inside space-y-1 text-slate-600 text-[11px]">
-                  {selectedPattern.commonBarrierFailures.map((bf, idx) => (
-                    <li key={idx}>{bf}</li>
-                  ))}
-                </ul>
+              <div className="border border-slate-200 p-3 rounded bg-white space-y-1.5">
+                <span className="font-semibold text-slate-700 block text-[11px] uppercase">Structured Safety Dimensions</span>
+                <div><span className="text-slate-500">Activity:</span> <span className="font-bold text-slate-900">{selectedAiPattern.dominant_activity}</span></div>
+                <div><span className="text-slate-500">Life-Saving Rule:</span> <span className="font-bold text-slate-900">{selectedAiPattern.dominant_lsr}</span></div>
+                <div><span className="text-slate-500">Hazard:</span> <span className="font-bold text-slate-900">{selectedAiPattern.dominant_hazard}</span></div>
+                <div><span className="text-slate-500">Barrier Failure:</span> <span className="font-bold text-amber-700">{selectedAiPattern.dominant_barrier_failure}</span></div>
               </div>
 
-              <div className="border border-slate-200 p-3 rounded bg-white">
-                <span className="font-semibold text-slate-700 block mb-1.5">Associated Hazards</span>
-                <ul className="list-disc list-inside space-y-1 text-slate-600 text-[11px]">
-                  {selectedPattern.keyHazards.map((hz, idx) => (
-                    <li key={idx}>{hz}</li>
-                  ))}
-                </ul>
+              <div className="border border-slate-200 p-3 rounded bg-white space-y-1.5">
+                <span className="font-semibold text-slate-700 block text-[11px] uppercase">Traceability & Observed Window</span>
+                <div><span className="text-slate-500">First Observed:</span> <span className="font-mono text-slate-800">{selectedAiPattern.first_observed}</span></div>
+                <div><span className="text-slate-500">Last Observed:</span> <span className="font-mono text-slate-800">{selectedAiPattern.last_observed}</span></div>
+                <div><span className="text-slate-500">Affected Sites:</span> <span className="font-semibold text-slate-900">{selectedAiPattern.locations.join(', ')}</span></div>
               </div>
             </div>
 
-            <div className="border-t border-slate-200 pt-3">
-              <div className="flex items-center gap-1.5 font-semibold text-slate-900 mb-1">
-                <Lightbulb className="h-4 w-4 text-amber-600" />
-                <span>Recommended Systemic HSE Intervention:</span>
+            {selectedAiPattern.evidence_quotes && selectedAiPattern.evidence_quotes.length > 0 && (
+              <div className="border-t border-slate-200 pt-3">
+                <span className="font-semibold text-slate-700 block mb-2">Representative Evidence Snippets:</span>
+                <div className="space-y-2">
+                  {selectedAiPattern.evidence_quotes.map((quote, idx) => (
+                    <div key={idx} className="p-2.5 rounded bg-slate-50 border border-slate-200 text-slate-600 italic text-[11px] leading-relaxed">
+                      &quot;{quote}&quot;
+                    </div>
+                  ))}
+                </div>
               </div>
-              <p className="text-xs text-slate-700 bg-amber-50/60 border border-amber-200 p-3 rounded">
-                {selectedPattern.recommendedIntervention}
-              </p>
-            </div>
+            )}
 
             <div className="border-t border-slate-200 pt-3">
-              <span className="font-semibold text-slate-700 block mb-2">Sample Linked Reports in this Cluster:</span>
-              <div className="space-y-1.5">
-                {selectedPattern.matchedReportIds.map((repId) => (
-                  <button
-                    key={repId}
-                    onClick={() => {
-                      setSelectedPattern(null);
-                      navigate(`/reports/${repId}`);
-                    }}
-                    className="flex w-full items-center justify-between rounded bg-slate-100 p-2 text-xs font-mono text-slate-800 hover:bg-slate-200 transition-colors"
-                  >
-                    <span>{repId}</span>
-                    <span className="text-[11px] font-sans text-slate-600 flex items-center gap-1">
-                      View AI Narrative Breakdown <ArrowRight className="h-3 w-3" />
-                    </span>
-                  </button>
+              <span className="font-semibold text-slate-700 block mb-2">Traceable Incident IDs ({selectedAiPattern.incident_ids.length}):</span>
+              <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto p-2 bg-slate-50 rounded border border-slate-200 font-mono text-xs">
+                {selectedAiPattern.incident_ids.map((id) => (
+                  <span key={id} className="px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-800 font-bold">
+                    {id}
+                  </span>
                 ))}
               </div>
             </div>
+          </div>
+        </Modal>
+      )}
+
+      {/* DB Pattern Detail Modal */}
+      {selectedDbPattern && (
+        <Modal
+          isOpen={!!selectedDbPattern}
+          onClose={() => setSelectedDbPattern(null)}
+          title={`Pattern ${selectedDbPattern.id}: ${selectedDbPattern.name}`}
+          subtitle={`Detected across ${selectedDbPattern.reportCount} incident narratives`}
+          maxWidth="2xl"
+          footer={
+            <button
+              onClick={() => setSelectedDbPattern(null)}
+              className="rounded bg-slate-900 px-4 py-1.5 text-xs font-semibold text-white"
+            >
+              Close
+            </button>
+          }
+        >
+          <div className="space-y-4 text-xs text-slate-800">
+            <p className="text-slate-600 bg-slate-50 p-3 rounded border border-slate-200">
+              {selectedDbPattern.description}
+            </p>
           </div>
         </Modal>
       )}

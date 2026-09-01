@@ -142,3 +142,122 @@ export async function requestAnalysis(report: ISafetyReport): Promise<SifAnalysi
     return buildStubResult(reportId, reportText);
   }
 }
+
+/**
+ * Calls FastAPI /api/v1/patterns to retrieve AI-detected precursor patterns.
+ */
+export async function fetchAiPatterns(): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const patternsUrl = `${baseUrl}/patterns`;
+
+  try {
+    const response = await fetch(patternsUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI pattern endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/patterns/{pattern_id} to retrieve details of a specific pattern.
+ */
+export async function fetchAiPatternById(patternId: string): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const patternUrl = `${baseUrl}/patterns/${patternId}`;
+
+  try {
+    const response = await fetch(patternUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn(`FastAPI pattern endpoint for ${patternId} unreachable:`, (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/barrier-patterns to retrieve mined barrier failure patterns.
+ */
+export async function fetchAiBarrierPatterns(): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const barrierUrl = `${baseUrl}/barrier-patterns`;
+
+  try {
+    const response = await fetch(barrierUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI barrier pattern endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/barrier-patterns/{id} to retrieve details of a specific barrier failure pattern.
+ */
+export async function fetchAiBarrierPatternById(barrierPatternId: string): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const barrierUrl = `${baseUrl}/barrier-patterns/${barrierPatternId}`;
+
+  try {
+    const response = await fetch(barrierUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn(`FastAPI barrier pattern endpoint for ${barrierPatternId} unreachable:`, (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/similar-reports/{id} to retrieve semantically similar historical safety reports.
+ */
+export async function fetchAiSimilarReports(reportId: string): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const similarUrl = `${baseUrl}/similar-reports/${reportId}`;
+
+  try {
+    const response = await fetch(similarUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn(`FastAPI similar reports endpoint for ${reportId} unreachable:`, (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/site-risk to retrieve ranked site-level risk intelligence profiles.
+ */
+export async function fetchAiSiteRisk(): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const siteUrl = `${baseUrl}/site-risk`;
+
+  try {
+    const response = await fetch(siteUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI site risk endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
+/**
+ * Calls FastAPI /api/v1/site-risk/{site_id} to retrieve a single site risk profile.
+ */
+export async function fetchAiSiteRiskById(siteId: string): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const siteUrl = `${baseUrl}/site-risk/${siteId}`;
+
+  try {
+    const response = await fetch(siteUrl, { method: 'GET' });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn(`FastAPI site risk endpoint for ${siteId} unreachable:`, (err as Error).message);
+    return null;
+  }
+}

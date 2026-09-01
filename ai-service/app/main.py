@@ -12,6 +12,10 @@ sys.path.insert(0, str(BASE_DIR))
 
 from app.schemas import HealthCheckResponse
 from app.api.v1.endpoints.analyze import router as analyze_router, get_pipeline
+from app.api.v1.endpoints.patterns import router as patterns_router
+from app.api.v1.endpoints.barrier_patterns import router as barrier_patterns_router
+from app.api.v1.endpoints.similar_reports import router as similar_reports_router
+from app.api.v1.endpoints.site_risk import router as site_risk_router
 
 app = FastAPI(
     title="OILPS AI Precursor Safety Intelligence Service",
@@ -32,6 +36,10 @@ app.add_middleware(
 
 # Include API v1 routes
 app.include_router(analyze_router, prefix="/api/v1", tags=["Inference"])
+app.include_router(patterns_router, prefix="/api/v1/patterns", tags=["Patterns"])
+app.include_router(barrier_patterns_router, prefix="/api/v1/barrier-patterns", tags=["Barrier Patterns"])
+app.include_router(similar_reports_router, prefix="/api/v1/similar-reports", tags=["Similar Reports"])
+app.include_router(site_risk_router, prefix="/api/v1/site-risk", tags=["Site Risk"])
 
 @app.get(
     "/health",

@@ -42,6 +42,12 @@ export const Sidebar: React.FC = () => {
       icon: Boxes,
     },
     {
+      name: 'Barrier Explorer',
+      path: '/barrier-patterns',
+      icon: ShieldAlert,
+      badge: 'Stage 24',
+    },
+    {
       name: 'Site Analytics',
       path: '/sites',
       icon: MapPin,

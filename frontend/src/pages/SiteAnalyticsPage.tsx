@@ -1,220 +1,254 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { dashboardService } from '../api';
-import type { HighRiskSiteSummary } from '../types/dashboard';
+import { siteRiskService } from '../api';
+import type { AISiteRiskProfile } from '../types/siteRisk';
 import { PageHeader } from '../components/common/PageHeader';
-import { SeverityBadge } from '../components/common/SeverityBadge';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
-import { Navigation, ArrowRight } from 'lucide-react';
-import {
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-} from 'recharts';
+import { MapPin, ShieldAlert, AlertTriangle, Layers, Activity, ArrowRight, CheckCircle2, ChevronRight, Filter } from 'lucide-react';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 export const SiteAnalyticsPage: React.FC = () => {
   const navigate = useNavigate();
-  const [sites, setSites] = useState<HighRiskSiteSummary[]>([]);
+  const [siteProfiles, setSiteProfiles] = useState<AISiteRiskProfile[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedSite, setSelectedSite] = useState<HighRiskSiteSummary | null>(null);
+  const [selectedSite, setSelectedSite] = useState<AISiteRiskProfile | null>(null);
 
   useEffect(() => {
-    const fetchSites = async () => {
+    const fetchSiteRisk = async () => {
       try {
-        const data = await dashboardService.getSites();
-        setSites(data);
-        if (data.length > 0) setSelectedSite(data[0]);
+        const data = await siteRiskService.getSiteRiskProfiles();
+        const profiles: AISiteRiskProfile[] = data.site_profiles || [];
+        setSiteProfiles(profiles);
+        if (profiles.length > 0) {
+          setSelectedSite(profiles[0]);
+        }
+      } catch (err) {
+        console.warn('Failed to load site risk profiles:', err);
       } finally {
         setLoading(false);
       }
     };
-    fetchSites();
+    fetchSiteRisk();
   }, []);
 
   if (loading) {
-    return <LoadingSpinner label="Evaluating Site Precursor Densities across OIL Assets..." />;
+    return <LoadingSpinner label="Evaluating Volume-Normalized Site Risk Intelligence across Operational Facilities..." />;
   }
 
-  const chartData = sites.map((s) => ({
-    name: s.site.split(' ')[0],
-    fullName: s.site,
-    sifRate: s.sifRate,
-    sifCount: s.sifCount,
-    totalReports: s.totalReports,
+  const getRiskBadgeColor = (level: string) => {
+    switch (level) {
+      case 'CRITICAL':
+        return 'bg-red-600 text-white font-extrabold border-red-700';
+      case 'HIGH':
+        return 'bg-amber-600 text-white font-bold border-amber-700';
+      case 'MEDIUM':
+        return 'bg-yellow-100 text-yellow-900 font-bold border-yellow-300';
+      case 'LOW':
+        return 'bg-emerald-100 text-emerald-900 font-bold border-emerald-300';
+      default:
+        return 'bg-slate-100 text-slate-700 font-medium border-slate-300';
+    }
+  };
+
+  const chartData = siteProfiles.map((s) => ({
+    name: s.site_name,
+    sifDensity: Math.round(s.sif_density * 100),
+    riskIndex: Math.round(s.risk_index * 100),
+    sifReports: s.sif_reports,
+    totalReports: s.total_reports,
   }));
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-12">
       <PageHeader
-        title="Site-Level SIF Precursor Density Analytics"
-        subtitle="Geographic risk profiling, precursor density ranking, and localized barrier compliance across OIL operational assets."
-        showDemoBadge={true}
+        title="Site-Level Risk Intelligence"
+        subtitle="Volume-normalized safety risk ranking, SIF precursor densities, and control gap concentrations across OIL operational sites."
+        icon={MapPin}
       />
 
-      {/* Top Chart & Map Overview */}
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-        {/* Left: Comparative Site SIF Density Chart (7 Cols) */}
-        <div className="hse-card p-5 lg:col-span-7">
-          <h2 className="text-sm font-bold text-slate-900 mb-1">
-            SIF Precursor Rate (%) by Operational Field
-          </h2>
-          <p className="text-xs text-slate-500 mb-4">
-            Percentage of total site safety submissions containing confirmed high-energy precursor signatures
-          </p>
-
-          <div className="h-64 w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
-                <XAxis dataKey="name" tick={{ fontSize: 11, fill: '#64748b' }} axisLine={{ stroke: '#cbd5e1' }} />
-                <YAxis tick={{ fontSize: 11, fill: '#64748b' }} unit="%" axisLine={{ stroke: '#cbd5e1' }} />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: '#0f172a',
-                    color: '#ffffff',
-                    borderRadius: '4px',
-                    fontSize: '12px',
-                    border: 'none',
-                  }}
-                  formatter={(value) => [`${value}% SIF Rate`, 'Precursor Density']}
-                />
-                <Bar dataKey="sifRate" fill="#dc2626" radius={[4, 4, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
+      {/* Top Banner metrics */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
+          <span className="text-xs text-slate-500 font-bold uppercase">Total Facilities Analyzed</span>
+          <p className="text-2xl font-black text-slate-900 mt-1">{siteProfiles.length}</p>
         </div>
-
-        {/* Right: Operational Asset Geographic Cards / Visualizer (5 Cols) */}
-        <div className="hse-card p-5 lg:col-span-5 flex flex-col justify-between">
-          <div>
-            <div className="flex items-center justify-between pb-2 mb-3 border-b border-slate-100">
-              <div className="flex items-center gap-1.5 font-bold text-sm text-slate-900">
-                <Navigation className="h-4 w-4 text-slate-700" />
-                <span>OIL Field Asset Radar (Assam)</span>
-              </div>
-              <span className="text-[10px] text-slate-400">Coordinates Validated</span>
-            </div>
-
-            {selectedSite ? (
-              <div className="space-y-3 text-xs">
-                <div className="flex items-center justify-between">
-                  <span className="font-bold text-slate-900 text-sm">{selectedSite.site}</span>
-                  <SeverityBadge priority={selectedSite.riskLevel} size="sm" />
-                </div>
-
-                <div className="p-3 rounded bg-slate-50 border border-slate-200 space-y-2">
-                  <div className="flex justify-between">
-                    <span className="text-slate-500">Asset Code:</span>
-                    <span className="font-mono font-bold text-slate-800">{selectedSite.code}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-500">Total Safety Reports:</span>
-                    <span className="font-bold text-slate-800">{selectedSite.totalReports}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-500">SIF Precursors Detected:</span>
-                    <span className="font-bold text-red-600">{selectedSite.sifCount} ({selectedSite.sifRate}%)</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-500">Top Barrier Breakdown:</span>
-                    <span className="font-semibold text-slate-800">{selectedSite.topRule}</span>
-                  </div>
-                  {selectedSite.coordinates && (
-                    <div className="flex justify-between">
-                      <span className="text-slate-500">GPS Coordinates:</span>
-                      <span className="font-mono text-[11px] text-slate-600">
-                        {selectedSite.coordinates[0]}°N, {selectedSite.coordinates[1]}°E
-                      </span>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ) : null}
-          </div>
-
-          <div className="mt-4 pt-3 border-t border-slate-100">
-            <button
-              onClick={() => {
-                if (selectedSite) {
-                  navigate(`/reports?site=${encodeURIComponent(selectedSite.site)}`);
-                }
-              }}
-              className="flex w-full items-center justify-center gap-1.5 rounded bg-slate-900 py-2 text-xs font-semibold text-white hover:bg-slate-800 transition-colors"
-            >
-              <span>Drill Down into {selectedSite?.site} Reports</span>
-              <ArrowRight className="h-3.5 w-3.5" />
-            </button>
-          </div>
+        <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
+          <span className="text-xs text-slate-500 font-bold uppercase">High / Critical Risk Sites</span>
+          <p className="text-2xl font-black text-red-600 mt-1">
+            {siteProfiles.filter((s) => s.risk_level === 'CRITICAL' || s.risk_level === 'HIGH').length}
+          </p>
+        </div>
+        <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
+          <span className="text-xs text-slate-500 font-bold uppercase">Top SIF Precursor Site</span>
+          <p className="text-sm font-bold text-slate-900 mt-1.5 truncate">
+            {siteProfiles.length > 0 ? `${siteProfiles[0].site_name} (${Math.round(siteProfiles[0].sif_density * 100)}% SIF Rate)` : 'N/A'}
+          </p>
+        </div>
+        <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
+          <span className="text-xs text-slate-500 font-bold uppercase">Min Data Threshold</span>
+          <p className="text-2xl font-black text-slate-900 mt-1">3 Reports</p>
         </div>
       </div>
 
-      {/* Full Site Ranking Table */}
-      <div className="hse-card overflow-hidden">
-        <div className="px-5 py-3 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
-          <h2 className="text-xs font-bold uppercase tracking-wider text-slate-700">
-            Operational Asset Precursor Ranking Table
-          </h2>
-          <span className="text-xs text-slate-500">Ranked by SIF Precursor Rate</span>
+      {/* SIF Density Comparison Chart */}
+      <div className="bg-white border border-slate-200 rounded-lg p-5 shadow-sm space-y-3">
+        <h3 className="text-sm font-bold text-slate-900">SIF Precursor Rate (% SIF Density) by Operational Site</h3>
+        <div className="h-56 w-full">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={chartData} margin={{ top: 10, right: 20, left: 0, bottom: 20 }}>
+              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
+              <XAxis dataKey="name" stroke="#64748B" fontSize={11} />
+              <YAxis stroke="#64748B" fontSize={11} unit="%" />
+              <Tooltip
+                formatter={(val: number) => [`${val}%`, 'SIF Density']}
+                contentStyle={{ backgroundColor: '#0F172A', color: '#FFF', borderRadius: '6px', fontSize: '12px' }}
+              />
+              <Bar dataKey="sifDensity" fill="#DC2626" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+
+      {/* Ranked Site Profiles & Detail Explorer */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Left: Ranked Site List */}
+        <div className="lg:col-span-1 space-y-3">
+          <h3 className="text-sm font-bold text-slate-900 flex items-center justify-between">
+            <span>Ranked Operational Sites</span>
+            <span className="text-xs font-mono text-slate-500 font-normal">R_s Score Order</span>
+          </h3>
+
+          <div className="space-y-2">
+            {siteProfiles.map((site, idx) => (
+              <div
+                key={site.site_id}
+                onClick={() => setSelectedSite(site)}
+                className={`p-3.5 rounded-lg border cursor-pointer transition-all ${
+                  selectedSite?.site_id === site.site_id
+                    ? 'bg-slate-900 text-white border-slate-900 shadow-md'
+                    : 'bg-white text-slate-900 border-slate-200 hover:border-slate-400'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className={`text-xs font-black font-mono w-5 h-5 flex items-center justify-center rounded ${
+                      selectedSite?.site_id === site.site_id ? 'bg-slate-800 text-white' : 'bg-slate-100 text-slate-600'
+                    }`}>
+                      #{idx + 1}
+                    </span>
+                    <span className="text-sm font-bold truncate">{site.site_name}</span>
+                  </div>
+                  <span className={`text-[10px] uppercase px-2 py-0.5 rounded border ${getRiskBadgeColor(site.risk_level)}`}>
+                    {site.risk_level}
+                  </span>
+                </div>
+
+                <div className="mt-2 flex items-center justify-between text-xs opacity-90">
+                  <span>SIF Rate: <strong>{Math.round(site.sif_density * 100)}%</strong> ({site.sif_reports}/{site.total_reports})</span>
+                  <span className="font-mono">R_s: {site.risk_index.toFixed(2)}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs hse-table">
-            <thead>
-              <tr>
-                <th>Asset Code</th>
-                <th>Operational Site Name</th>
-                <th className="text-right">Total Submissions</th>
-                <th className="text-right">SIF Precursors</th>
-                <th className="text-right">SIF Density (%)</th>
-                <th>Primary Rule Vulnerability</th>
-                <th>Risk Priority</th>
-                <th className="text-right">Action</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-100">
-              {sites.map((site) => (
-                <tr
-                  key={site.code}
-                  onClick={() => setSelectedSite(site)}
-                  className={`hover:bg-slate-50 cursor-pointer transition-colors ${
-                    selectedSite?.code === site.code ? 'bg-slate-50/80 font-medium' : ''
-                  }`}
-                >
-                  <td className="font-mono font-bold text-slate-800">{site.code}</td>
-                  <td className="font-semibold text-slate-900">{site.site}</td>
-                  <td className="text-right font-medium">{site.totalReports}</td>
-                  <td className="text-right font-bold text-red-600">{site.sifCount}</td>
-                  <td className="text-right">
-                    <span className="font-bold text-slate-900">{site.sifRate}%</span>
-                  </td>
-                  <td>
-                    <span className="rounded bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-800 border border-slate-200">
-                      {site.topRule}
+        {/* Right: Selected Site Detailed Breakdown */}
+        <div className="lg:col-span-2 space-y-4">
+          {selectedSite ? (
+            <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm space-y-5">
+              <div className="flex items-start justify-between border-b border-slate-100 pb-4">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-5 w-5 text-slate-700" />
+                    <h2 className="text-lg font-bold text-slate-900">{selectedSite.site_name}</h2>
+                    <span className={`text-xs uppercase px-2.5 py-0.5 rounded border ${getRiskBadgeColor(selectedSite.risk_level)}`}>
+                      {selectedSite.risk_level} RISK
                     </span>
-                  </td>
-                  <td>
-                    <SeverityBadge priority={site.riskLevel} size="sm" />
-                  </td>
-                  <td className="text-right">
+                  </div>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Observed Window: {selectedSite.first_observed} → {selectedSite.last_observed}
+                  </p>
+                </div>
+                <div className="text-right">
+                  <span className="text-xs text-slate-400 font-mono block">Site Risk Index (R_s)</span>
+                  <span className="text-2xl font-black text-slate-900 font-mono">{selectedSite.risk_index.toFixed(2)}</span>
+                </div>
+              </div>
+
+              {/* Core Site Metrics Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs bg-slate-50 p-3.5 rounded-lg border border-slate-200">
+                <div>
+                  <span className="text-slate-500 block font-bold uppercase text-[10px]">Total Reports</span>
+                  <span className="text-base font-bold text-slate-900">{selectedSite.total_reports}</span>
+                </div>
+                <div>
+                  <span className="text-slate-500 block font-bold uppercase text-[10px]">SIF Reports</span>
+                  <span className="text-base font-bold text-red-600">{selectedSite.sif_reports}</span>
+                </div>
+                <div>
+                  <span className="text-slate-500 block font-bold uppercase text-[10px]">SIF Density</span>
+                  <span className="text-base font-bold text-emerald-700">{Math.round(selectedSite.sif_density * 100)}%</span>
+                </div>
+                <div>
+                  <span className="text-slate-500 block font-bold uppercase text-[10px]">Stage 23 / 24 Patterns</span>
+                  <span className="text-base font-bold text-purple-700">{selectedSite.recurring_pattern_count} P / {selectedSite.barrier_failure_pattern_count} B</span>
+                </div>
+              </div>
+
+              {/* Detailed Categorical Concentrations */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                {/* Top Activities */}
+                <div className="border border-slate-200 rounded p-3 space-y-2">
+                  <h4 className="font-bold text-slate-900 uppercase text-[11px] flex items-center gap-1.5">
+                    <Activity className="h-3.5 w-3.5 text-slate-500" /> Top Activities at Risk
+                  </h4>
+                  <ul className="space-y-1.5">
+                    {selectedSite.top_activities.map((act) => (
+                      <li key={act.name} className="flex justify-between items-center bg-slate-50 p-1.5 rounded">
+                        <span className="font-semibold text-slate-800">{act.name}</span>
+                        <span className="text-slate-500">{act.report_count} reports ({Math.round(act.sif_density * 100)}% SIF)</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Top Barrier Failures */}
+                <div className="border border-slate-200 rounded p-3 space-y-2">
+                  <h4 className="font-bold text-slate-900 uppercase text-[11px] flex items-center gap-1.5">
+                    <AlertTriangle className="h-3.5 w-3.5 text-amber-600" /> Top Control / Barrier Failures
+                  </h4>
+                  <ul className="space-y-1.5">
+                    {selectedSite.top_barrier_failures.map((bf) => (
+                      <li key={bf.name} className="flex justify-between items-center bg-slate-50 p-1.5 rounded">
+                        <span className="font-semibold text-slate-800 truncate max-w-[170px]">{bf.name}</span>
+                        <span className="text-amber-700 font-semibold">{bf.count} occurrences</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Contributing Report IDs Traceability */}
+              <div className="pt-3 border-t border-slate-100 space-y-2">
+                <h4 className="font-bold text-xs text-slate-900">Traceable Historical Reports ({selectedSite.report_ids.length})</h4>
+                <div className="flex flex-wrap gap-1.5">
+                  {selectedSite.report_ids.map((id) => (
                     <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        navigate(`/reports?site=${encodeURIComponent(site.site)}`);
-                      }}
-                      className="inline-flex items-center gap-1 text-slate-700 hover:text-slate-950 font-semibold text-xs"
+                      key={id}
+                      onClick={() => navigate(`/reports/${id}`)}
+                      className="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-[11px] rounded transition-colors"
                     >
-                      <span>Drill-Down</span>
-                      <ArrowRight className="h-3 w-3" />
+                      {id}
                     </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="bg-white border border-slate-200 rounded-lg p-6 text-center text-slate-500 text-xs">
+              Select an operational site from the ranking list to view detailed risk breakdown.
+            </div>
+          )}
         </div>
       </div>
     </div>

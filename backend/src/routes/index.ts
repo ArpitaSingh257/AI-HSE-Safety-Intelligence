@@ -3,6 +3,8 @@ import authRoutes from './authRoutes';
 import reportsRoutes from './reportsRoutes';
 import dashboardRoutes from './dashboardRoutes';
 import patternsRoutes from './patternsRoutes';
+import barrierPatternsRoutes from './barrierPatternsRoutes';
+import siteRiskRoutes from './siteRiskRoutes';
 import interventionsRoutes from './interventionsRoutes';
 import auditRoutes from './auditRoutes';
 
@@ -14,6 +16,8 @@ router.use('/auth', authRoutes);
 router.use('/', reportsRoutes);
 router.use('/', dashboardRoutes);
 router.use('/', patternsRoutes);
+router.use('/', barrierPatternsRoutes);
+router.use('/', siteRiskRoutes);
 router.use('/', interventionsRoutes);
 router.use('/', auditRoutes);
 

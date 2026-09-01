@@ -190,11 +190,19 @@ export const reportsService = {
     }
   },
 
-  async analyzeIncidentDirect(incidentText: string): Promise<FastApiIncidentAnalysisResponse> {
-    const response = await apiClient.post<FastApiIncidentAnalysisResponse>('/incidents/analyze', {
-      incident_text: incidentText,
-    }, { timeout: 35000 });
+  async analyzeIncidentDirect(payload: { incidentText: string; title?: string; site?: string; activity?: string }): Promise<FastApiIncidentAnalysisResponse> {
+    const response = await apiClient.post<FastApiIncidentAnalysisResponse>('/incidents/analyze', payload);
     return response.data;
+  },
+
+  async getSimilarReports(id: string): Promise<any> {
+    try {
+      const response = await apiClient.get(`/reports/${id}/similar`);
+      return response.data;
+    } catch (error) {
+      console.warn(`Similar reports API call for report ${id} failed:`, error);
+      return { query_report_id: id, total_matches: 0, similar_reports: [] };
+    }
   },
 };
 
@@ -287,33 +295,91 @@ export const dashboardService = {
  * PATTERNS SERVICE (GET /api/patterns, GET /api/patterns/:id)
  */
 export const patternsService = {
-  async getPatterns(): Promise<PrecursorPattern[]> {
+  async getPatterns(): Promise<{ ai_patterns: AIRecurringPattern[]; db_patterns: PrecursorPattern[] }> {
     if (USE_MOCK) {
-      return mockPatternsService.getPatterns();
+      const mockPats = await mockPatternsService.getPatterns();
+      return { ai_patterns: [], db_patterns: mockPats };
     }
     try {
-      const response = await apiClient.get<PrecursorPattern[]>('/patterns');
-      return response.data;
+      const response = await apiClient.get<{ ai_patterns: AIRecurringPattern[]; db_patterns: PrecursorPattern[] }>('/patterns');
+      if (Array.isArray(response.data)) {
+        return { ai_patterns: [], db_patterns: response.data };
+      }
+      return {
+        ai_patterns: response.data?.ai_patterns || [],
+        db_patterns: response.data?.db_patterns || []
+      };
     } catch (error) {
       if (shouldFallbackToMock(error)) {
-        return mockPatternsService.getPatterns();
+        const mockPats = await mockPatternsService.getPatterns();
+        return { ai_patterns: [], db_patterns: mockPats };
       }
       throw error;
     }
   },
 
-  async getPatternById(id: string): Promise<PrecursorPattern> {
+  async getPatternById(id: string): Promise<any> {
     if (USE_MOCK) {
       return mockPatternsService.getPatternById(id);
     }
     try {
-      const response = await apiClient.get<PrecursorPattern>(`/patterns/${id}`);
+      const response = await apiClient.get<any>(`/patterns/${id}`);
       return response.data;
     } catch (error) {
       if (shouldFallbackToMock(error)) {
         return mockPatternsService.getPatternById(id);
       }
       throw error;
+    }
+  },
+};
+
+/**
+ * BARRIER PATTERNS SERVICE (GET /api/barrier-patterns, GET /api/barrier-patterns/:id)
+ */
+export const barrierPatternsService = {
+  async getBarrierPatterns(): Promise<any> {
+    try {
+      const response = await apiClient.get('/barrier-patterns');
+      return response.data;
+    } catch (error) {
+      console.warn('Barrier patterns API call failed:', error);
+      return { total_barrier_patterns: 0, barrier_patterns: [] };
+    }
+  },
+
+  async getBarrierPatternById(id: string): Promise<any> {
+    try {
+      const response = await apiClient.get(`/barrier-patterns/${id}`);
+      return response.data;
+    } catch (error) {
+      console.warn(`Barrier pattern detail call for ${id} failed:`, error);
+      return null;
+    }
+  },
+};
+
+/**
+ * SITE RISK SERVICE (GET /api/site-risk, GET /api/site-risk/:id)
+ */
+export const siteRiskService = {
+  async getSiteRiskProfiles(): Promise<any> {
+    try {
+      const response = await apiClient.get('/site-risk');
+      return response.data;
+    } catch (error) {
+      console.warn('Site risk profiles API call failed:', error);
+      return { total_sites: 0, site_profiles: [] };
+    }
+  },
+
+  async getSiteRiskProfileById(id: string): Promise<any> {
+    try {
+      const response = await apiClient.get(`/site-risk/${id}`);
+      return response.data;
+    } catch (error) {
+      console.warn(`Site risk profile call for ${id} failed:`, error);
+      return null;
     }
   },
 };

@@ -11,6 +11,7 @@ import { IOGP_LIFE_SAVING_RULES } from '../utils/iogpRules';
 import { ArrowLeft, Sparkles, AlertTriangle, FileText, MapPin, Building, User, ChevronRight, RefreshCw, ExternalLink } from 'lucide-react';
 
 import { SafetyIntelligenceView } from '../components/SafetyIntelligenceView';
+import { SimilarReportsView } from '../components/SimilarReportsView';
 
 export const ReportDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -376,6 +377,9 @@ export const ReportDetailPage: React.FC = () => {
               )}
             </div>
           )}
+
+          {/* Stage 25 Similar Historical Reports */}
+          {id && <SimilarReportsView reportId={id} />}
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ import { DashboardPage } from '../pages/DashboardPage';
 import { ReportsPage } from '../pages/ReportsPage';
 import { ReportDetailPage } from '../pages/ReportDetailPage';
 import { PatternExplorerPage } from '../pages/PatternExplorerPage';
+import { BarrierFailureExplorerPage } from '../pages/BarrierFailureExplorerPage';
 import { SiteAnalyticsPage } from '../pages/SiteAnalyticsPage';
 import { ActivityAnalyticsPage } from '../pages/ActivityAnalyticsPage';
 import { LifeSavingRulesPage } from '../pages/LifeSavingRulesPage';
@@ -56,6 +57,7 @@ export const AppRoutes: React.FC = () => {
         <Route path="reports" element={<ReportsPage />} />
         <Route path="reports/:id" element={<ReportDetailPage />} />
         <Route path="patterns" element={<PatternExplorerPage />} />
+        <Route path="barrier-patterns" element={<BarrierFailureExplorerPage />} />
         <Route path="sites" element={<SiteAnalyticsPage />} />
         <Route path="activities" element={<ActivityAnalyticsPage />} />
         <Route path="life-saving-rules" element={<LifeSavingRulesPage />} />

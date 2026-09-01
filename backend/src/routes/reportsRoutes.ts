@@ -42,5 +42,6 @@ router.post(
 );
 
 router.get('/ai-results/:reportId', asyncHandler(reportsController.getAiResults));
+router.get('/reports/:id/similar', asyncHandler(reportsController.getSimilarReportsForReport));
 
 export default router;
