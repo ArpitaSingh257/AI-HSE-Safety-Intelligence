@@ -1,5 +1,5 @@
 import { ISafetyReport } from '../models/SafetyReport';
-import { SifStatus, PriorityLevel, FastApiIncidentAnalysisResponse } from '../types';
+import { SifStatus, PriorityLevel, FastApiIncidentAnalysisResponse, Stage43IntelligenceResponse } from '../types';
 
 export interface SifAnalysisResultShape {
   report_id: string;
@@ -473,19 +473,78 @@ export async function submitAiFeedback(payload: any): Promise<any> {
 /**
  * Calls FastAPI /api/v1/feedback/stats to retrieve aggregate feedback metrics.
  */
-export async function fetchAiFeedbackStats(): Promise<any> {
+/**
+ * Calls FastAPI /api/v1/triage to evaluate confidence-calibrated triage decision.
+ */
+export async function fetchAiTriage(payload: any): Promise<any> {
+/**
+ * Calls FastAPI /api/v1/text/normalize to process multilingual and noisy field report text.
+ */
+export async function normalizeReportText(text: string): Promise<any> {
   const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
-  const statsUrl = `${baseUrl}/feedback/stats`;
+  const normUrl = `${baseUrl}/text/normalize`;
 
   try {
-    const response = await fetch(statsUrl, { method: 'GET' });
+    const response = await fetch(normUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text })
+    });
     if (!response.ok) return null;
-    return await response.json();
   } catch (err) {
-    console.warn('FastAPI feedback stats endpoint unreachable:', (err as Error).message);
+    console.warn('FastAPI text normalize endpoint unreachable:', (err as Error).message);
     return null;
   }
 }
+ * Calls Stage 43 FastAPI /api/v1/intelligence/analyze for unified end-to-end intelligence analysis.
+ */
+export async function analyzeIntelligence(reqPayload: {
+  incident_text: string;
+  site?: string;
+  activity?: string;
+  incident_id?: string;
+}): Promise<Stage43IntelligenceResponse> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const intelUrl = `${baseUrl}/intelligence/analyze`;
+
+  if (!reqPayload.incident_text || !reqPayload.incident_text.trim()) {
+    throw new Error('Incident text is required and cannot be empty.');
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 45000);
+
+  try {
+    const response = await fetch(intelUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        incident_text: reqPayload.incident_text.trim(),
+        site: reqPayload.site || undefined,
+        activity: reqPayload.activity || undefined,
+        incident_id: reqPayload.incident_id || undefined,
+      }),
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+
+    if (!response.ok) {
+      const errText = await response.text().catch(() => '');
+      throw new Error(`AI Safety Intelligence service returned HTTP ${response.status}: ${errText}`);
+    }
+
+    const data = (await response.json()) as Stage43IntelligenceResponse;
+    return data;
+  } catch (err: any) {
+    clearTimeout(timeout);
+    if (err.name === 'AbortError') {
+      throw new Error('AI Safety Intelligence analysis request timed out after 45 seconds.');
+    }
+    throw new Error(`AI Safety Intelligence service is currently unavailable: ${err.message}`);
+  }
+}
+
+
 
 
 

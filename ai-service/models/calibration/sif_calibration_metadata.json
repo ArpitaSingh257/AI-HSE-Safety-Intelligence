@@ -1,0 +1,18 @@
+{
+  "calibration_id": "CALIB-SIF-SIGMOID-V1",
+  "model_name": "OILPS SIF Classifier Champion",
+  "model_version": "OILPS_v2.0.0",
+  "calibration_method": "sigmoid",
+  "calibration_dataset_version": "OILPS_HELDOUT_V1",
+  "sample_count": 4529,
+  "positive_count": 890,
+  "negative_count": 3639,
+  "calibration_date": "2026-09-02",
+  "metrics": {
+    "brier_score_before": 0.0984,
+    "brier_score_after": 0.082,
+    "log_loss_before": 0.3412,
+    "log_loss_after": 0.295
+  },
+  "status": "ACTIVE"
+}

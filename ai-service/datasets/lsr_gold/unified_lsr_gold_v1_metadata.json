@@ -1,0 +1,47 @@
+{
+  "dataset_name": "Unified LSR Gold Dataset",
+  "version": "v1",
+  "stage": "37C",
+  "created_at": "2026-09-03T05:16:32Z",
+  "canonical_dataset": "oilps_unified_deduped.csv",
+  "canonical_input_count": 4529,
+  "stage37a1_input_count": 427,
+  "raw_union_count": 4956,
+  "final_count": 4956,
+  "confirmed_deduplicated_overlap": 0,
+  "source_grounded_lsr_count": 432,
+  "unknown_lsr_count": 4524,
+  "inferred_lsr_count": 0,
+  "pseudo_label_count": 0,
+  "canonical_matches": 0,
+  "dataset_origin_counts": {
+    "CANONICAL": 4529,
+    "IOGP_STAGE37A1": 427
+  },
+  "lsr_class_distribution": {
+    "Line of Fire": 199,
+    "Safe Mechanical Lifting": 70,
+    "Energy Isolation": 37,
+    "Bypassing Safety Controls": 35,
+    "Work Authorization": 35,
+    "Working at Height": 30,
+    "Hot Work": 13,
+    "Driving": 11,
+    "Confined Space": 2
+  },
+  "multi_lsr_count": 0,
+  "rare_classes": {
+    "Confined Space": 2
+  },
+  "deduplication": {
+    "exact_record_id_duplicates": 0,
+    "cross_dataset_overlap": 0
+  },
+  "provenance_policy": "EXPLICIT_SOURCE_GROUNDED_ONLY",
+  "production_protection": {
+    "production_sif_champion_frozen": true,
+    "production_lsr_champion_frozen": true,
+    "production_rag_untouched": true,
+    "canonical_dataset_untouched": true
+  }
+}

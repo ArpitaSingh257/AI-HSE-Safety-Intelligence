@@ -14,6 +14,8 @@ import { SafetyIntelligenceView } from '../components/SafetyIntelligenceView';
 import { SimilarReportsView } from '../components/SimilarReportsView';
 import { BowTieView } from '../components/reports/BowTieView';
 import { AnalystFeedbackPanel } from '../components/feedback/AnalystFeedbackPanel';
+import { SafetyTriagePanel } from '../components/triage/SafetyTriagePanel';
+import { MultilingualBadge } from '../components/reports/MultilingualBadge';
 
 export const ReportDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -206,6 +208,13 @@ export const ReportDetailPage: React.FC = () => {
               {report.description}
             </div>
 
+            {/* Stage 35 Multilingual & Field Language Normalization Badge */}
+            {report.description && (
+              <div className="mt-3">
+                <MultilingualBadge description={report.description} />
+              </div>
+            )}
+
             {report.immediate_actions_taken && (
               <div className="mt-4 pt-4 border-t border-slate-100">
                 <span className="text-xs font-semibold text-slate-700 block mb-1">
@@ -222,9 +231,31 @@ export const ReportDetailPage: React.FC = () => {
         {/* Right Column (5 Cols) */}
         <div className="space-y-6 lg:col-span-5">
           {ai?.full_ai_response ? (
-            <SafetyIntelligenceView data={ai.full_ai_response} />
+            <div className="space-y-4">
+              {id && (
+                <SafetyTriagePanel
+                  reportId={id}
+                  rawSifProb={ai.sif.score}
+                  priorityLevel={ai.priority}
+                  priorityScore={ai.priority === 'CRITICAL' ? 0.90 : ai.priority === 'HIGH' ? 0.75 : 0.50}
+                  earlyWarningLevel="NORMAL"
+                  riskMatrixCategory="LOW_SEVERITY_LOW_RECURRENCE"
+                />
+              )}
+              <SafetyIntelligenceView data={ai.full_ai_response} />
+            </div>
           ) : ai ? (
-            <div className="hse-card p-5 border-slate-300">
+            <div className="hse-card p-5 border-slate-300 space-y-4">
+              {id && (
+                <SafetyTriagePanel
+                  reportId={id}
+                  rawSifProb={ai.sif.score}
+                  priorityLevel={ai.priority}
+                  priorityScore={ai.priority === 'CRITICAL' ? 0.90 : ai.priority === 'HIGH' ? 0.75 : 0.50}
+                  earlyWarningLevel="NORMAL"
+                  riskMatrixCategory="LOW_SEVERITY_LOW_RECURRENCE"
+                />
+              )}
               <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
                 <div className="flex items-center gap-2">
                   <div className="rounded bg-slate-900 p-1.5 text-white">
@@ -344,12 +375,14 @@ export const ReportDetailPage: React.FC = () => {
 
               {/* Stage 33 Human-in-the-Loop Analyst Feedback Overlay */}
               {id && (
-                <AnalystFeedbackPanel
-                  reportId={id}
-                  fieldName="primary_life_saving_rule"
-                  fieldLabel="Life-Saving Rule Classification"
-                  aiValue={report.life_saving_rule}
-                />
+                <div id="analyst-feedback-section">
+                  <AnalystFeedbackPanel
+                    reportId={id}
+                    fieldName="primary_life_saving_rule"
+                    fieldLabel="Life-Saving Rule Classification"
+                    aiValue={report.life_saving_rule}
+                  />
+                </div>
               )}
 
               {/* Associated Pattern Links */}

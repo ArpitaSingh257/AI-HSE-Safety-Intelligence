@@ -1,0 +1,63 @@
+{
+  "stage": "STAGE_39A_CANONICAL_LSR_ENRICHMENT",
+  "timestamp": "2026-09-03T07:11:44Z",
+  "random_seed": 42,
+  "accounting": {
+    "canonical_input_count": 4529,
+    "canonical_output_count": 4529,
+    "native_canonical_count": 10,
+    "iogp_source_incidents": 112,
+    "iogp_explicit_assignments": 299
+  },
+  "reconciliation_breakdown": {
+    "exact_matches": 0,
+    "structured_matches": 0,
+    "semantic_structured_matches": 0,
+    "ambiguous_matches": 0,
+    "rejected_matches": 4519
+  },
+  "final_dataset_counts": {
+    "total_records": 4529,
+    "final_source_grounded_count": 10,
+    "final_unknown_count": 4519,
+    "model_predicted_count": 0,
+    "synthetic_record_count": 0,
+    "multilabel_record_count": 0
+  },
+  "lsr_distribution": {
+    "Driving": 0,
+    "Bypassing Safety Controls": 0,
+    "Line of Fire": 0,
+    "Energy Isolation": 0,
+    "Safe Mechanical Lifting": 0,
+    "Working at Height": 0,
+    "Work Authorization": 0,
+    "Confined Space": 0,
+    "Hot Work": 0
+  },
+  "production_protection": {
+    "canonical_dataset_untouched": true,
+    "production_sif_champion_frozen": true,
+    "production_lsr_champion_frozen": true,
+    "production_rag_untouched": true
+  },
+  "hashes": {
+    "initial": {
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf",
+      "semantic_chunks": "db5156ba99d33bb7878eab74f9911021e2c0e3eb6d203910866a1164397fa037"
+    },
+    "final": {
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf",
+      "semantic_chunks": "db5156ba99d33bb7878eab74f9911021e2c0e3eb6d203910866a1164397fa037"
+    }
+  },
+  "determinism_result": "PASS",
+  "status": "PASS",
+  "output_sha256": "996346e78c8087a6834620b3970be96e13321076b6aad50777924af361b94b05"
+}

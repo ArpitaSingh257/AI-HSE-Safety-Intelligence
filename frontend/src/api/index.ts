@@ -13,6 +13,7 @@ import type { PrecursorPattern } from '../types/patterns';
 import type { HSEIntervention } from '../types/interventions';
 import type { AuditLogEntry } from '../types/audit';
 import type { DashboardOverviewResponse } from '../types/dashboard';
+import type { Stage43IntelligenceResponse } from '../types/intelligence';
 
 const USE_MOCK = import.meta.env.VITE_USE_MOCK !== 'false';
 
@@ -687,6 +688,86 @@ export const feedbackService = {
     } catch (error) {
       console.warn(`Failed to update feedback status for ${feedbackId}:`, (error as Error).message);
       return null;
+    }
+  }
+};
+
+/**
+ * STAGE 34 CONFIDENCE-CALIBRATED TRIAGE SERVICE
+ */
+export const triageService = {
+  async evaluateTriage(payload: any): Promise<any> {
+    try {
+      const response = await apiClient.post('/triage', payload);
+      return response.data;
+    } catch (error) {
+      console.warn('Backend triage endpoint unreachable, attempting direct FastAPI call:', (error as Error).message);
+      try {
+        const directRes = await fetch('http://127.0.0.1:8000/api/v1/triage', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (directRes.ok) return await directRes.json();
+      } catch (e) {
+        console.warn('Direct FastAPI triage call failed:', (e as Error).message);
+      }
+      return null;
+    }
+  }
+};
+
+/**
+ * STAGE 35 MULTILINGUAL TEXT NORMALIZATION SERVICE
+ */
+export const multilingualService = {
+  async normalizeText(text: string): Promise<any> {
+    try {
+      const response = await apiClient.post('/text/normalize', { text });
+      return response.data;
+    } catch (error) {
+      console.warn('Backend text normalize unreachable, attempting direct FastAPI call:', (error as Error).message);
+      try {
+        const directRes = await fetch('http://127.0.0.1:8000/api/v1/text/normalize', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text })
+        });
+        if (directRes.ok) return await directRes.json();
+      } catch (e) {
+        console.warn('Direct FastAPI text normalize call failed:', (e as Error).message);
+      }
+      return null;
+    }
+  }
+};
+
+/**
+ * STAGE 43 END-TO-END INTELLIGENCE SERVICE
+ */
+export const intelligenceService = {
+  async analyzeIntelligence(data: {
+    incident_text: string;
+    site?: string;
+    activity?: string;
+    incident_id?: string;
+  }): Promise<Stage43IntelligenceResponse> {
+    try {
+      const response = await apiClient.post('/intelligence/analyze', data);
+      return response.data;
+    } catch (error) {
+      console.warn('Backend intelligence service unreachable, attempting direct FastAPI call:', (error as Error).message);
+      try {
+        const directRes = await fetch('http://127.0.0.1:8000/api/v1/intelligence/analyze', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (directRes.ok) return await directRes.json();
+      } catch (e) {
+        console.warn('Direct FastAPI intelligence call failed:', (e as Error).message);
+      }
+      throw error;
     }
   }
 };

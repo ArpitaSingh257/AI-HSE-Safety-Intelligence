@@ -1,0 +1,183 @@
+{
+  "experiment_id": "EXP-STAGE36B1-SIF-ROBUSTNESS",
+  "n_splits": 5,
+  "n_repeats": 3,
+  "total_cv_runs": 15,
+  "train_val_pool_size": 3849,
+  "locked_test_size": 680,
+  "leakage_audit": {
+    "cv_fold_val_leakage": "NONE",
+    "locked_test_leakage": "NONE"
+  },
+  "aggregate_statistics": {
+    "real_only": {
+      "precision": {
+        "mean": 0.8997,
+        "std": 0.0359,
+        "median": 0.9038,
+        "min": 0.8333,
+        "max": 0.98
+      },
+      "recall": {
+        "mean": 0.966,
+        "std": 0.0232,
+        "median": 0.9608,
+        "min": 0.9216,
+        "max": 1.0
+      },
+      "f1": {
+        "mean": 0.931,
+        "std": 0.0174,
+        "median": 0.9273,
+        "min": 0.9009,
+        "max": 0.9703
+      },
+      "roc_auc": {
+        "mean": 0.9985,
+        "std": 0.0013,
+        "median": 0.9992,
+        "min": 0.9956,
+        "max": 0.9997
+      },
+      "pr_auc": {
+        "mean": 0.9855,
+        "std": 0.0086,
+        "median": 0.9888,
+        "min": 0.967,
+        "max": 0.9963
+      },
+      "balanced_accuracy": {
+        "mean": 0.9791,
+        "std": 0.0109,
+        "median": 0.9776,
+        "min": 0.9573,
+        "max": 0.9958
+      },
+      "false_negatives": {
+        "mean": 1.7333,
+        "std": 1.1813,
+        "median": 2.0,
+        "min": 0.0,
+        "max": 4.0
+      }
+    },
+    "real_plus_synthetic": {
+      "precision": {
+        "mean": 0.8992,
+        "std": 0.034,
+        "median": 0.8947,
+        "min": 0.8475,
+        "max": 0.98
+      },
+      "recall": {
+        "mean": 0.9634,
+        "std": 0.0236,
+        "median": 0.9608,
+        "min": 0.9216,
+        "max": 1.0
+      },
+      "f1": {
+        "mean": 0.9296,
+        "std": 0.0178,
+        "median": 0.932,
+        "min": 0.8952,
+        "max": 0.9703
+      },
+      "roc_auc": {
+        "mean": 0.9986,
+        "std": 0.0011,
+        "median": 0.9991,
+        "min": 0.9962,
+        "max": 0.9997
+      },
+      "pr_auc": {
+        "mean": 0.9854,
+        "std": 0.008,
+        "median": 0.987,
+        "min": 0.9664,
+        "max": 0.9953
+      },
+      "balanced_accuracy": {
+        "mean": 0.9778,
+        "std": 0.0113,
+        "median": 0.9769,
+        "min": 0.9559,
+        "max": 0.9958
+      },
+      "false_negatives": {
+        "mean": 1.8667,
+        "std": 1.2037,
+        "median": 2.0,
+        "min": 0.0,
+        "max": 4.0
+      }
+    }
+  },
+  "paired_deltas_summary": {
+    "delta_precision": {
+      "mean": -0.0005,
+      "std": 0.0154,
+      "median": 0.0
+    },
+    "delta_recall": {
+      "mean": -0.0026,
+      "std": 0.0098,
+      "median": 0.0
+    },
+    "delta_f1": {
+      "mean": -0.0014,
+      "std": 0.0098,
+      "median": 0.0
+    },
+    "delta_pr_auc": {
+      "mean": -0.0001,
+      "std": 0.0015,
+      "median": -0.0006
+    },
+    "delta_roc_auc": {
+      "mean": 0.0001,
+      "std": 0.0003,
+      "median": 0.0001
+    },
+    "delta_false_negatives": {
+      "mean": 0.1333,
+      "std": 0.4989,
+      "median": 0.0
+    }
+  },
+  "final_locked_test_comparison": {
+    "real_only_champion": {
+      "threshold": 0.5,
+      "precision": 0.8627,
+      "recall": 0.9778,
+      "f1": 0.9167,
+      "roc_auc": 0.9988,
+      "pr_auc": 0.9863,
+      "balanced_accuracy": 0.9834,
+      "false_negatives": 1,
+      "false_positives": 7,
+      "true_positives": 44,
+      "true_negatives": 628
+    },
+    "real_plus_synthetic_challenger": {
+      "threshold": 0.5,
+      "precision": 0.88,
+      "recall": 0.9778,
+      "f1": 0.9263,
+      "roc_auc": 0.9988,
+      "pr_auc": 0.987,
+      "balanced_accuracy": 0.9842,
+      "false_negatives": 1,
+      "false_positives": 6,
+      "true_positives": 44,
+      "true_negatives": 629
+    }
+  },
+  "robustness_conclusion": "NO_MEANINGFUL_IMPROVEMENT",
+  "production_protection": {
+    "production_sif_champion_frozen": true,
+    "production_lsr_champion_frozen": true,
+    "production_rag_untouched": true,
+    "canonical_dataset_untouched": true
+  }
+}

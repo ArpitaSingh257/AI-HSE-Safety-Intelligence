@@ -4,6 +4,10 @@ schemas.py - Production Pydantic Schemas for OILPS AI Inference API Contract.
 
 from typing import List, Optional, Dict, Any
 from pydantic import BaseModel, Field
+try:
+    from pydantic import field_validator
+except ImportError:
+    from pydantic import validator as field_validator
 
 class IncidentAnalysisRequest(BaseModel):
     incident_text: str = Field(
@@ -484,9 +488,217 @@ class FeedbackStatsSchema(BaseModel):
     field_breakdown: Dict[str, Any] = Field(..., description="Per-field accuracy breakdown.")
 
 
+class TriageRequestSchema(BaseModel):
+    report_id: str = Field(..., description="Target report ID.")
+    raw_sif_probability: Optional[float] = Field(default=0.50, description="Raw SIF prediction probability (0.00 - 1.00).")
+    priority_level: Optional[str] = Field(default="MEDIUM", description="Upstream Priority Intelligence level (CRITICAL, HIGH, MEDIUM, LOW).")
+    priority_score: Optional[float] = Field(default=0.50, description="Upstream Priority score (0.00 - 1.00).")
+    early_warning_level: Optional[str] = Field(default="NORMAL", description="Upstream Early Warning signal level.")
+    risk_matrix_category: Optional[str] = Field(default="LOW_SEVERITY_LOW_RECURRENCE", description="Upstream 2D Risk Matrix category.")
+
+
+class TriageResultSchema(BaseModel):
+    report_id: str = Field(..., description="Target report ID.")
+    sif_raw_probability: float = Field(..., description="Raw SIF prediction probability.")
+    sif_calibrated_probability: float = Field(..., description="Post-processing calibrated SIF probability.")
+    calibration_status: str = Field(..., description="Calibration status: ACTIVE, INSUFFICIENT_DATA, UNAVAILABLE.")
+    calibration_method: str = Field(..., description="Calibration method: sigmoid, platt.")
+    calibration_version: str = Field(..., description="Calibration metadata version.")
+    triage_level: str = Field(..., description="Deterministic triage decision: IMMEDIATE_ESCALATION, NEEDS_REVIEW, AUTO_CLEAR.")
+    reason_code: str = Field(..., description="Deterministic reason code.")
+    human_readable_reason: str = Field(..., description="Human-readable triage explanation.")
+    priority_level: str = Field(..., description="Priority level context.")
+    priority_score: float = Field(..., description="Priority score context.")
+    early_warning_level: str = Field(..., description="Early warning level context.")
+    risk_matrix_category: str = Field(..., description="Risk matrix category context.")
+    model_version: str = Field(..., description="Champion model version.")
+    pipeline_version: str = Field(..., description="Pipeline version.")
+    policy_version: str = Field(..., description="Triage policy version.")
+
+
+class TriageBatchResponseSchema(BaseModel):
+    total_evaluated: int = Field(..., description="Total safety reports evaluated for triage.")
+    immediate_escalation_count: int = Field(..., description="Count of IMMEDIATE_ESCALATION decisions.")
+    needs_review_count: int = Field(..., description="Count of NEEDS_REVIEW decisions.")
+    auto_clear_count: int = Field(..., description="Count of AUTO_CLEAR decisions.")
+    triage_results: List[TriageResultSchema] = Field(..., description="List of triage results.")
+
+
 class HealthCheckResponse(BaseModel):
     status: str = Field(default="healthy", description="API health status.")
     ai_engine: str = Field(default="OILPS AI-HSE-Safety-Intelligence", description="Engine name.")
     sif_champion_loaded: bool = Field(..., description="Confirmation that Stage 6 SIF weights are active.")
     lsr_champion_loaded: bool = Field(..., description="Confirmation that Stage 7 LSR weights are active.")
     version: str = Field(default="2.0.0", description="Production API version.")
+
+
+class TextNormalizeRequestSchema(BaseModel):
+    text: str = Field(..., description="Raw field report text to normalize.")
+
+
+class MultilingualNormalizationResultSchema(BaseModel):
+    original_text: str = Field(..., description="Original raw report text.")
+    normalized_text: str = Field(..., description="Normalized safety text for downstream inference.")
+    language_code: str = Field(..., description="Detected language code (hi, en, hi-en, hi_roman, unknown).")
+    language_confidence: float = Field(..., description="Language detection confidence (0.00 - 1.00).")
+    detected_languages: List[str] = Field(..., description="List of detected languages.")
+    is_code_mixed: bool = Field(..., description="Flag indicating English + Hindi / regional code-mixing.")
+    normalization_method: str = Field(default="RULE_BASED_FALLBACK", description="Normalization method: NEURAL, RULE_BASED_FALLBACK, UNCHANGED.")
+    corrections_applied: List[str] = Field(..., description="List of spelling/shorthand corrections applied.")
+    abbreviations_expanded: List[str] = Field(..., description="List of domain abbreviations expanded.")
+    processing_status: str = Field(..., description="Processing status: SUCCESS, PARTIAL, LIMITED_SUPPORT, FAILED.")
+
+
+# ==============================================================================
+# STAGE 43 — END-TO-END INTELLIGENCE API SCHEMAS
+# ==============================================================================
+
+class IntelligenceAnalysisRequest(BaseModel):
+    incident_text: str = Field(
+        ...,
+        description="The raw narrative text describing the workplace safety incident or precursor event.",
+        json_schema_extra={"example": "Worker entered a confined space without gas testing and without a valid work authorization."}
+    )
+    site: Optional[str] = Field(
+        default=None,
+        description="Optional site or facility location name for localized risk analytics.",
+        json_schema_extra={"example": "Offshore Rig 4"}
+    )
+    activity: Optional[str] = Field(
+        default=None,
+        description="Optional operational activity name.",
+        json_schema_extra={"example": "Maintenance"}
+    )
+    incident_id: Optional[str] = Field(
+        default=None,
+        description="Optional client-side tracking identifier.",
+        json_schema_extra={"example": "INC-2026-9901"}
+    )
+
+    @field_validator("incident_text")
+    @classmethod
+    def validate_incident_text(cls, v: str) -> str:
+        if not v or not v.strip():
+            raise ValueError("incident_text must not be empty or whitespace-only")
+        stripped = v.strip()
+        if len(stripped) < 5:
+            raise ValueError("incident_text must be at least 5 characters long")
+        if len(stripped) > 4000:
+            raise ValueError("incident_text must not exceed 4000 characters")
+        return stripped
+
+
+class InputSectionSchema(BaseModel):
+    original_text: str
+    normalized_text: str
+    language: str = "en"
+    normalization_method: str = "STAGE_35_MULTILINGUAL_PREPROCESSING"
+
+
+class SIFAssessmentSchema(BaseModel):
+    potential: bool
+    probability: float
+    risk_score: float
+    triage: str
+    model_version: str = "SIF_BiGRU_Attention_v2.1"
+
+
+class LSRAssessmentSchema(BaseModel):
+    labels: List[str] = Field(default_factory=list)
+    primary: str = "UNKNOWN"
+    secondary: List[str] = Field(default_factory=list)
+    confidence: Dict[str, float] = Field(default_factory=dict)
+    provenance: str = "MODEL_PREDICTED"
+    agreement_state: str = "STRONG_AGREEMENT"
+    human_review_required: bool = False
+
+
+class PrecursorSchema(BaseModel):
+    token: str
+    precursor_type: str = "ENERGY_OR_BARRIER"
+    salience_weight: float = 0.0
+
+
+class SimilarIncidentSchema(BaseModel):
+    record_id: str
+    similarity: float
+    narrative: str
+    site: str = "UNKNOWN_SITE"
+    activity: str = "UNKNOWN_ACTIVITY"
+    lsr_labels: str = "UNKNOWN"
+    provenance: str = "UNKNOWN"
+
+
+class BarrierAnalysisSchema(BaseModel):
+    observed_barriers: List[str] = Field(default_factory=list)
+    failed_barriers: List[str] = Field(default_factory=list)
+    missing_barriers: List[str] = Field(default_factory=list)
+
+
+class RiskIntelligenceSubSchema(BaseModel):
+    status: str = "SUCCESS"
+    details: Dict[str, Any] = Field(default_factory=dict)
+
+
+class RiskIntelligenceSchema(BaseModel):
+    site: RiskIntelligenceSubSchema
+    activity: RiskIntelligenceSubSchema
+    recurrence: RiskIntelligenceSubSchema
+    lsr_trends: RiskIntelligenceSubSchema
+    early_warning: RiskIntelligenceSubSchema
+    priority: RiskIntelligenceSubSchema
+    severity_recurrence: RiskIntelligenceSubSchema
+
+
+class BowTieSchema(BaseModel):
+    threat: str = "UNKNOWN_THREAT"
+    barrier_failures: List[str] = Field(default_factory=list)
+    top_event: str = "LOSS_OF_CONTROL"
+    potential_consequences: List[str] = Field(default_factory=list)
+
+
+class RecommendationSchema(BaseModel):
+    rule: str
+    recommendation_text: str
+    grounded_sources: List[str] = Field(default_factory=list)
+    status: str = "VERIFIED"
+
+
+class ExplainabilitySchema(BaseModel):
+    sif_explanation: str
+    lsr_explanation: str
+    risk_explanation: str
+    triage_explanation: str
+
+
+class TriageSchema(BaseModel):
+    action: str
+    confidence_category: str
+    human_review_required: bool
+    explanation: str
+
+
+class IntelligenceMetadataSchema(BaseModel):
+    pipeline_version: str = "43.0.0"
+    deterministic_core: bool = True
+    historical_dataset: Dict[str, Any] = Field(
+        default_factory=lambda: {"name": "oilps_final_master_v2.csv", "record_count": 4529}
+    )
+
+
+class IntelligenceAnalysisResponse(BaseModel):
+    request_id: str
+    input: InputSectionSchema
+    sif_assessment: SIFAssessmentSchema
+    lsr_assessment: LSRAssessmentSchema
+    precursors: List[PrecursorSchema] = Field(default_factory=list)
+    similar_incidents: List[SimilarIncidentSchema] = Field(default_factory=list)
+    barrier_analysis: BarrierAnalysisSchema
+    risk_intelligence: RiskIntelligenceSchema
+    bowtie: BowTieSchema
+    recommendations: List[RecommendationSchema] = Field(default_factory=list)
+    evidence: List[str] = Field(default_factory=list)
+    explainability: ExplainabilitySchema
+    triage: TriageSchema
+    metadata: IntelligenceMetadataSchema
+

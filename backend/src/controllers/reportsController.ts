@@ -5,7 +5,7 @@ import { SifAnalysisResult } from '../models/SifAnalysisResult';
 import { Site } from '../models/Site';
 import { Activity } from '../models/Activity';
 import { SITE_NAMES, ACTIVITY_NAMES, SiteName, ActivityName } from '../types';
-import { requestAnalysis, analyzeIncidentText, fetchAiSimilarReports } from '../services/aiService';
+import { requestAnalysis, analyzeIncidentText, analyzeIntelligence, fetchAiSimilarReports } from '../services/aiService';
 import { regeneratePatterns } from '../services/patternService';
 import { logAudit } from '../services/auditService';
 import { CreateReportInput, UpdateReportInput } from '../validators/reportValidator';
@@ -269,6 +269,26 @@ export async function analyzeIncidentDirect(req: Request, res: Response) {
 
   try {
     const result = await analyzeIncidentText(incident_text.trim(), incident_id || 'INC-MANUAL');
+    return res.json(result);
+  } catch (err: any) {
+    const statusCode = err.message.includes('timed out') ? 504 : 503;
+    return res.status(statusCode).json({ message: err.message });
+  }
+}
+
+export async function analyzeIntelligenceDirect(req: Request, res: Response) {
+  const { incident_text, site, activity, incident_id } = req.body;
+  if (!incident_text || typeof incident_text !== 'string' || !incident_text.trim()) {
+    return res.status(400).json({ message: 'Incident text is required and cannot be empty.' });
+  }
+
+  try {
+    const result = await analyzeIntelligence({
+      incident_text: incident_text.trim(),
+      site,
+      activity,
+      incident_id
+    });
     return res.json(result);
   } catch (err: any) {
     const statusCode = err.message.includes('timed out') ? 504 : 503;

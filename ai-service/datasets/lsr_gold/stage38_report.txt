@@ -1,0 +1,70 @@
+================================================================================
+STAGE 38 — LSR MULTILABEL CHALLENGER EVALUATION REPORT
+================================================================================
+Timestamp:      2026-09-03T06:55:44Z
+Random Seed:    42
+Accounting:     80 + 66 = 146 (Real Train 80 + Synthetic 66 = 146)
+Final Status:   NO_MEANINGFUL_IMPROVEMENT
+Research Note:  Stage 38 evaluated Model A (Real-Only, 80 rows) vs Model B (Synthetic-Augmented, 146 rows) on the locked 16-record Real Test set. Final experimental status: NO_MEANINGFUL_IMPROVEMENT.
+--------------------------------------------------------------------------------
+
+GLOBAL METRICS COMPARISON (Model B Augmented vs Model A Real-Only):
+   - micro_precision          : Model A=0.8519  | Model B=0.8519  | Delta=+0.0000
+   - micro_recall             : Model A=0.6389  | Model B=0.6389  | Delta=+0.0000
+   - micro_f1                 : Model A=0.7302  | Model B=0.7302  | Delta=+0.0000
+   - macro_precision          : Model A=0.185   | Model B=0.185   | Delta=+0.0000
+   - macro_recall             : Model A=0.2099  | Model B=0.2099  | Delta=+0.0000
+   - macro_f1                 : Model A=0.1964  | Model B=0.1964  | Delta=+0.0000
+   - weighted_precision       : Model A=0.5724  | Model B=0.5724  | Delta=+0.0000
+   - weighted_recall          : Model A=0.6389  | Model B=0.6389  | Delta=+0.0000
+   - weighted_f1              : Model A=0.6032  | Model B=0.6032  | Delta=+0.0000
+   - samples_precision        : Model A=0.8438  | Model B=0.8438  | Delta=+0.0000
+   - samples_recall           : Model A=0.6458  | Model B=0.6458  | Delta=+0.0000
+   - samples_f1               : Model A=0.7125  | Model B=0.7125  | Delta=+0.0000
+   - hamming_loss             : Model A=0.1181  | Model B=0.1181  | Delta=+0.0000
+   - jaccard_score            : Model A=0.1782  | Model B=0.1782  | Delta=+0.0000
+   - subset_accuracy          : Model A=0.3125  | Model B=0.3125  | Delta=+0.0000
+--------------------------------------------------------------------------------
+
+PER-LABEL METRICS BREAKDOWN:
+   [Driving] (Test Support=0)
+     Model A (Real-Only): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=0)
+     Model B (Augmented): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=0)
+     Deltas:             Precision=+0.0000 Recall=+0.0000 F1=+0.0000 (FN Delta=+0)
+   [Bypassing Safety Controls] (Test Support=1)
+     Model A (Real-Only): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=1)
+     Model B (Augmented): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=1)
+     Deltas:             Precision=+0.0000 Recall=+0.0000 F1=+0.0000 (FN Delta=+0)
+   [Line of Fire] (Test Support=15)
+     Model A (Real-Only): Precision=0.9375 Recall=1.0 F1=0.9677 (TP=15, FN=0)
+     Model B (Augmented): Precision=0.9375 Recall=1.0 F1=0.9677 (TP=15, FN=0)
+     Deltas:             Precision=+0.0000 Recall=+0.0000 F1=+0.0000 (FN Delta=+0)
+   [Energy Isolation] (Test Support=3)
+     Model A (Real-Only): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=3)
+     Model B (Augmented): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=3)
+     Deltas:             Precision=+0.0000 Recall=+0.0000 F1=+0.0000 (FN Delta=+0)
+   [Safe Mechanical Lifting] (Test Support=9)
+     Model A (Real-Only): Precision=0.7273 Recall=0.8889 F1=0.8 (TP=8, FN=1)
+     Model B (Augmented): Precision=0.7273 Recall=0.8889 F1=0.8 (TP=8, FN=1)
+     Deltas:             Precision=+0.0000 Recall=+0.0000 F1=+0.0000 (FN Delta=+0)
+   [Working at Height] (Test Support=3)
+     Model A (Real-Only): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=3)
+     Model B (Augmented): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=3)
+     Deltas:             Precision=+0.0000 Recall=+0.0000 F1=+0.0000 (FN Delta=+0)
+   [Work Authorization] (Test Support=3)
+     Model A (Real-Only): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=3)
+     Model B (Augmented): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=3)
+     Deltas:             Precision=+0.0000 Recall=+0.0000 F1=+0.0000 (FN Delta=+0)
+   [Confined Space] (Test Support=0)
+     Model A (Real-Only): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=0)
+     Model B (Augmented): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=0)
+     Deltas:             Precision=+0.0000 Recall=+0.0000 F1=+0.0000 (FN Delta=+0)
+   [Hot Work] (Test Support=2)
+     Model A (Real-Only): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=2)
+     Model B (Augmented): Precision=0.0 Recall=0.0 F1=0.0 (TP=0, FN=2)
+     Deltas:             Precision=+0.0000 Recall=+0.0000 F1=+0.0000 (FN Delta=+0)
+================================================================================
+PRODUCTION PROTECTION STATUS:
+   Canonical Dataset Untouched: True
+   Production Champions Frozen:  True
+================================================================================

@@ -1,0 +1,211 @@
+synthetic_id,source_type,is_synthetic,sif_potential,description,synthetic_parent_ids,activity_category,primary_hazard,barrier_failure,site_location,generation_method,generation_model,generation_version,created_at,validation_status,validation_reason
+SYN-SIF-000001,SYNTHETIC,True,1,"During high potential event, an unexpected toxic gas release occurred at process unit 4 following hardware barrier failures: detection systems
+human barrier failures: surveillance, operator rounds and routine inspection
+management system element barrier failure: plans and procedures, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,"Hardware Barrier Failures: Detection Systems
+Human Barrier Failures: Surveillance, operator rounds and routine inspection
+Management System Element Barrier Failure: Plans and procedures",process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000002,SYNTHETIC,True,1,Field observation during high potential event: high pressure stored energy detected at compressor station B due to hardware barrier failures: emergency response equipment and systems with potential serious consequence.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,Hardware Barrier Failures: Emergency Response Equipment and Systems,compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000003,SYNTHETIC,True,1,Work involving high potential event resulted in uncontrolled flame at offshore rig alpha because of hardware barrier failures: ignition control. Immediate isolation initiated.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,Hardware Barrier Failures: Ignition Control,offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000004,SYNTHETIC,True,1,Uncontrolled suspended load identified while performing high potential event at storage tank farm. Root cause traced to hardware barrier failures: life-saving equipment - including evacuation systems.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,Hardware Barrier Failures: Life-Saving Equipment - including evacuation systems,storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000005,SYNTHETIC,True,1,"During high potential event, an unexpected electrical arc flash occurred at refinery pipe rack following hardware barrier failures: process containment, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,Hardware Barrier Failures: Process Containment,refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000006,SYNTHETIC,True,1,"Field observation during high potential event: toxic gas release detected at process unit 4 due to hardware barrier failures: process containment
+hardware barrier failures: detection systems with potential serious consequence.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,"Hardware Barrier Failures: Process Containment
+Hardware Barrier Failures: Detection Systems",process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000007,SYNTHETIC,True,1,"Work involving high potential event resulted in high pressure stored energy at compressor station B because of hardware barrier failures: process containment
+hardware barrier failures: ignition control. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,"Hardware Barrier Failures: Process Containment
+Hardware Barrier Failures: Ignition Control",compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000008,SYNTHETIC,True,1,"Uncontrolled uncontrolled flame identified while performing high potential event at offshore rig alpha. Root cause traced to hardware barrier failures: process containment
+hardware barrier failures: ignition control
+hardware barrier failures: protection systems - including deluge and fire water systems
+management system element barrier failure: asset design and integrity.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,"Hardware Barrier Failures: Process Containment
+Hardware Barrier Failures: Ignition Control
+Hardware Barrier Failures: Protection Systems - including deluge and fire water systems
+Management System Element Barrier Failure: Asset design and integrity",offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000009,SYNTHETIC,True,1,"During high potential event, an unexpected suspended load occurred at storage tank farm following hardware barrier failures: process containment
+human barrier failures: acceptance of handover or restart of facilities or equipment, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,"Hardware Barrier Failures: Process Containment
+Human Barrier Failures: Acceptance of handover or restart of facilities or equipment",storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000010,SYNTHETIC,True,1,"Field observation during high potential event: electrical arc flash detected at refinery pipe rack due to hardware barrier failures: process containment
+human barrier failures: operating in accordance with procedures - ptw, isolation of equipment, overrides and 
+inhibits of safety systems, shift handover, etc. with potential serious consequence.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,"Hardware Barrier Failures: Process Containment
+Human Barrier Failures: Operating in accordance with procedures - PTW, Isolation of equipment, Overrides and 
+inhibits of safety systems, Shift handover, etc.",refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000011,SYNTHETIC,True,1,"Work involving high potential event resulted in toxic gas release at process unit 4 because of hardware barrier failures: process containment
+human barrier failures: surveillance, operator rounds and routine inspection. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,"Hardware Barrier Failures: Process Containment
+Human Barrier Failures: Surveillance, operator rounds and routine inspection",process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000012,SYNTHETIC,True,1,"Uncontrolled high pressure stored energy identified while performing high potential event at compressor station B. Root cause traced to hardware barrier failures: process containment
+management system element barrier failure: asset design and integrity.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,"Hardware Barrier Failures: Process Containment
+Management System Element Barrier Failure: Asset design and integrity",compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000013,SYNTHETIC,True,1,"During high potential event, an unexpected uncontrolled flame occurred at offshore rig alpha following hardware barrier failures: process containment
+management system element barrier failure: asset design and integrity
+116
+safety performance indicators – process safety events – 2025 data, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,"Hardware Barrier Failures: Process Containment
+Management System Element Barrier Failure: Asset design and integrity
+116
+Safety performance indicators – Process safety events – 2025 data",offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000014,SYNTHETIC,True,1,"Field observation during high potential event: suspended load detected at storage tank farm due to hardware barrier failures: process containment
+management system element barrier failure: asset design and integrity
+unspecified: unspecified with potential serious consequence.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,"Hardware Barrier Failures: Process Containment
+Management System Element Barrier Failure: Asset design and integrity
+Unspecified: Unspecified",storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000015,SYNTHETIC,True,1,"Work involving high potential event resulted in electrical arc flash at refinery pipe rack because of hardware barrier failures: process containment
+management system element barrier failure: plans and procedures. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,"Hardware Barrier Failures: Process Containment
+Management System Element Barrier Failure: Plans and procedures",refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000016,SYNTHETIC,True,1,"Uncontrolled toxic gas release identified while performing high potential event at process unit 4. Root cause traced to hardware barrier failures: process containment
+management system element barrier failure: risk assessment and control.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,"Hardware Barrier Failures: Process Containment
+Management System Element Barrier Failure: Risk assessment and control",process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000017,SYNTHETIC,True,1,"During high potential event, an unexpected high pressure stored energy occurred at compressor station B following hardware barrier failures: process containment
+safety performance indicators – process safety events – 2025 data
+77, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,"Hardware Barrier Failures: Process Containment
+Safety performance indicators – Process safety events – 2025 data
+77",compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000018,SYNTHETIC,True,1,Field observation during high potential event: uncontrolled flame detected at offshore rig alpha due to hardware barrier failures: protection systems - including deluge and fire water systems with potential serious consequence.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,Hardware Barrier Failures: Protection Systems - including deluge and fire water systems,offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000019,SYNTHETIC,True,1,"Work involving high potential event resulted in suspended load at storage tank farm because of hardware barrier failures: shutdown systems - including operational well isolation and drilling well control 
+equipment. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,"Hardware Barrier Failures: Shutdown Systems - including operational well isolation and drilling well control 
+equipment",storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000020,SYNTHETIC,True,1,Uncontrolled electrical arc flash identified while performing high potential event at refinery pipe rack. Root cause traced to hardware barrier failures: shutdown systems - including operational well isolation and drilling well control equipment.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,Hardware Barrier Failures: Shutdown Systems - including operational well isolation and drilling well control equipment,refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,ACCEPTED,VALID
+SYN-SIF-000021,SYNTHETIC,True,1,"During high potential event, an unexpected toxic gas release occurred at process unit 4 following hardware barrier failures: shutdown systems - including operational well isolation and drilling well control equipment
+safety performance indicators – process safety events – 2025 data
+61, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,"Hardware Barrier Failures: Shutdown Systems - including operational well isolation and drilling well control equipment
+Safety performance indicators – Process safety events – 2025 data
+61",process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000022,SYNTHETIC,True,1,"Field observation during high potential event: high pressure stored energy detected at compressor station B due to hardware barrier failures: shutdown systems - including operational well isolation and drilling well control equipment
+safety performance indicators – process safety events – 2025 data
+73 with potential serious consequence.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,"Hardware Barrier Failures: Shutdown Systems - including operational well isolation and drilling well control equipment
+Safety performance indicators – Process safety events – 2025 data
+73",compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000023,SYNTHETIC,True,1,"Work involving high potential event resulted in uncontrolled flame at offshore rig alpha because of hardware barrier failures: shutdown systems - including operational well isolation and drilling well control equipment
+safety performance indicators – process safety events – 2025 data
+75. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,"Hardware Barrier Failures: Shutdown Systems - including operational well isolation and drilling well control equipment
+Safety performance indicators – Process safety events – 2025 data
+75",offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000024,SYNTHETIC,True,1,Uncontrolled suspended load identified while performing high potential event at storage tank farm. Root cause traced to hardware barrier failures: structural integrity.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,Hardware Barrier Failures: Structural Integrity,storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000025,SYNTHETIC,True,1,"During high potential event, an unexpected electrical arc flash occurred at refinery pipe rack following hardware barrier failures: structural integrity
+hardware barrier failures: protection systems - including deluge and fire water systems
+human barrier failures: surveillance, operator rounds and routine inspection
+114
+safety performance indicators – process safety events – 2025 data, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,"Hardware Barrier Failures: Structural Integrity
+Hardware Barrier Failures: Protection Systems - including deluge and fire water systems
+Human Barrier Failures: Surveillance, operator rounds and routine inspection
+114
+Safety performance indicators – Process safety events – 2025 data",refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000026,SYNTHETIC,True,1,"Field observation during high potential event: toxic gas release detected at process unit 4 due to hardware barrier failures: structural integrity
+human barrier failures: acceptance of handover or restart of facilities or equipment
+management system element barrier failure: organization, resources and capability
+management system element barrier failure: execution of activities with potential serious consequence.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,"Hardware Barrier Failures: Structural Integrity
+Human Barrier Failures: Acceptance of handover or restart of facilities or equipment
+Management System Element Barrier Failure: Organization, resources and capability
+Management System Element Barrier Failure: Execution of activities",process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000027,SYNTHETIC,True,1,"Work involving high potential event resulted in high pressure stored energy at compressor station B because of hardware barrier failures: structural integrity
+human barrier failures: operating in accordance with procedures - ptw, isolation of equipment, overrides and 
+inhibits of safety systems, shift handover, etc.. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,"Hardware Barrier Failures: Structural Integrity
+Human Barrier Failures: Operating in accordance with procedures - PTW, Isolation of equipment, Overrides and 
+inhibits of safety systems, Shift handover, etc.",compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000028,SYNTHETIC,True,1,"Uncontrolled uncontrolled flame identified while performing high potential event at offshore rig alpha. Root cause traced to hardware barrier failures: structural integrity
+human barrier failures: operating in accordance with procedures - ptw, isolation of equipment, overrides and 
+inhibits of safety systems, shift handover, etc.
+management system element barrier failure: asset design and integrity.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,"Hardware Barrier Failures: Structural Integrity
+Human Barrier Failures: Operating in accordance with procedures - PTW, Isolation of equipment, Overrides and 
+inhibits of safety systems, Shift handover, etc.
+Management System Element Barrier Failure: Asset design and integrity",offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000029,SYNTHETIC,True,1,"During high potential event, an unexpected suspended load occurred at storage tank farm following hardware barrier failures: structural integrity
+human barrier failures: surveillance, operator rounds and routine inspection, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,"Hardware Barrier Failures: Structural Integrity
+Human Barrier Failures: Surveillance, operator rounds and routine inspection",storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000030,SYNTHETIC,True,1,"Field observation during high potential event: electrical arc flash detected at refinery pipe rack due to hardware barrier failures: structural integrity
+safety performance indicators – process safety events – 2025 data
+117 with potential serious consequence.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,"Hardware Barrier Failures: Structural Integrity
+Safety performance indicators – Process safety events – 2025 data
+117",refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000031,SYNTHETIC,True,1,"Work involving high potential event resulted in toxic gas release at process unit 4 because of human barrier failures: operating in accordance with procedures - ptw, isolation of equipment, overrides and 
+inhibits of safety systems, shift handover, etc.. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,"Human Barrier Failures: Operating in accordance with procedures - PTW, Isolation of equipment, Overrides and 
+inhibits of safety systems, Shift handover, etc.",process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000032,SYNTHETIC,True,1,"Uncontrolled high pressure stored energy identified while performing high potential event at compressor station B. Root cause traced to human barrier failures: operating in accordance with procedures - ptw, isolation of equipment, overrides and 
+inhibits of safety systems, shift handover, etc.
+118
+safety performance indicators – process safety events – 2025 data.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,"Human Barrier Failures: Operating in accordance with procedures - PTW, Isolation of equipment, Overrides and 
+inhibits of safety systems, Shift handover, etc.
+118
+Safety performance indicators – Process safety events – 2025 data",compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000033,SYNTHETIC,True,1,"During high potential event, an unexpected uncontrolled flame occurred at offshore rig alpha following human barrier failures: operating in accordance with procedures - ptw, isolation of equipment, overrides and 
+inhibits of safety systems, shift handover, etc.
+human barrier failures: response to emergencies
+management system element barrier failure: plans and procedures
+safety performance indicators – process safety events – 2025 data
+111, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,"Human Barrier Failures: Operating in accordance with procedures - PTW, Isolation of equipment, Overrides and 
+inhibits of safety systems, Shift handover, etc.
+Human Barrier Failures: Response to emergencies
+Management System Element Barrier Failure: Plans and procedures
+Safety performance indicators – Process safety events – 2025 data
+111",offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000034,SYNTHETIC,True,1,Field observation during high potential event: suspended load detected at storage tank farm due to human barrier failures: response to emergencies with potential serious consequence.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,Human Barrier Failures: Response to emergencies,storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000035,SYNTHETIC,True,1,"Work involving high potential event resulted in electrical arc flash at refinery pipe rack because of human barrier failures: response to emergencies
+management system element barrier failure: risk assessment and control
+20
+safety performance indicators – process safety events – 2025 data. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,"Human Barrier Failures: Response to emergencies
+Management System Element Barrier Failure: Risk assessment and control
+20
+Safety performance indicators – Process safety events – 2025 data",refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000036,SYNTHETIC,True,1,Uncontrolled toxic gas release identified while performing high potential event at process unit 4. Root cause traced to human barrier failures: response to process alarm and upset conditions (e.g. outside safe envelope).,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,Human Barrier Failures: Response to process alarm and upset conditions (e.g. outside safe envelope),process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000037,SYNTHETIC,True,1,"During high potential event, an unexpected high pressure stored energy occurred at compressor station B following human barrier failures: surveillance, operator rounds and routine inspection, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,"Human Barrier Failures: Surveillance, operator rounds and routine inspection",compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000038,SYNTHETIC,True,1,Field observation during high potential event: uncontrolled flame detected at offshore rig alpha due to management system element barrier failure: asset design and integrity with potential serious consequence.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,Management System Element Barrier Failure: Asset design and integrity,offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000039,SYNTHETIC,True,1,Work involving high potential event resulted in suspended load at storage tank farm because of management system element barrier failure: execution of activities. Immediate isolation initiated.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,Management System Element Barrier Failure: Execution of activities,storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000040,SYNTHETIC,True,1,"Uncontrolled electrical arc flash identified while performing high potential event at refinery pipe rack. Root cause traced to management system element barrier failure: monitoring, reporting and learning.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,"Management System Element Barrier Failure: Monitoring, reporting and learning",refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000041,SYNTHETIC,True,1,"During high potential event, an unexpected toxic gas release occurred at process unit 4 following management system element barrier failure: plans and procedures, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,Management System Element Barrier Failure: Plans and procedures,process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000042,SYNTHETIC,True,1,Field observation during high potential event: high pressure stored energy detected at compressor station B due to management system element barrier failure: risk assessment and control with potential serious consequence.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,Management System Element Barrier Failure: Risk assessment and control,compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000043,SYNTHETIC,True,1,"Work involving high potential event resulted in uncontrolled flame at offshore rig alpha because of management system element barrier failure: risk assessment and control
+management system element barrier failure: execution of activities. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,"Management System Element Barrier Failure: Risk assessment and control
+Management System Element Barrier Failure: Execution of activities",offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000044,SYNTHETIC,True,1,"Uncontrolled suspended load identified while performing high potential event at storage tank farm. Root cause traced to management system element barrier failure: risk assessment and control
+management system element barrier failure: plans and procedures.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,"Management System Element Barrier Failure: Risk assessment and control
+Management System Element Barrier Failure: Plans and procedures",storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000045,SYNTHETIC,True,1,"During high potential event, an unexpected electrical arc flash occurred at refinery pipe rack following unspecified: unspecified, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,Unspecified: Unspecified,refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000046,SYNTHETIC,True,1,"Field observation during high potential event: toxic gas release detected at process unit 4 due to hardware barrier failures: detection systems
+human barrier failures: surveillance, operator rounds and routine inspection
+management system element barrier failure: plans and procedures with potential serious consequence.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,"Hardware Barrier Failures: Detection Systems
+Human Barrier Failures: Surveillance, operator rounds and routine inspection
+Management System Element Barrier Failure: Plans and procedures",process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000047,SYNTHETIC,True,1,Work involving high potential event resulted in high pressure stored energy at compressor station B because of hardware barrier failures: emergency response equipment and systems. Immediate isolation initiated.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,Hardware Barrier Failures: Emergency Response Equipment and Systems,compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000048,SYNTHETIC,True,1,Uncontrolled uncontrolled flame identified while performing high potential event at offshore rig alpha. Root cause traced to hardware barrier failures: ignition control.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,Hardware Barrier Failures: Ignition Control,offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000049,SYNTHETIC,True,1,"During high potential event, an unexpected suspended load occurred at storage tank farm following hardware barrier failures: life-saving equipment - including evacuation systems, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,Hardware Barrier Failures: Life-Saving Equipment - including evacuation systems,storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000050,SYNTHETIC,True,1,Field observation during high potential event: electrical arc flash detected at refinery pipe rack due to hardware barrier failures: process containment with potential serious consequence.,"[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,Hardware Barrier Failures: Process Containment,refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000051,SYNTHETIC,True,1,"Work involving high potential event resulted in toxic gas release at process unit 4 because of hardware barrier failures: process containment
+hardware barrier failures: detection systems. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,"Hardware Barrier Failures: Process Containment
+Hardware Barrier Failures: Detection Systems",process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000052,SYNTHETIC,True,1,"Uncontrolled high pressure stored energy identified while performing high potential event at compressor station B. Root cause traced to hardware barrier failures: process containment
+hardware barrier failures: ignition control.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,"Hardware Barrier Failures: Process Containment
+Hardware Barrier Failures: Ignition Control",compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000053,SYNTHETIC,True,1,"During high potential event, an unexpected uncontrolled flame occurred at offshore rig alpha following hardware barrier failures: process containment
+hardware barrier failures: ignition control
+hardware barrier failures: protection systems - including deluge and fire water systems
+management system element barrier failure: asset design and integrity, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,"Hardware Barrier Failures: Process Containment
+Hardware Barrier Failures: Ignition Control
+Hardware Barrier Failures: Protection Systems - including deluge and fire water systems
+Management System Element Barrier Failure: Asset design and integrity",offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000054,SYNTHETIC,True,1,"Field observation during high potential event: suspended load detected at storage tank farm due to hardware barrier failures: process containment
+human barrier failures: acceptance of handover or restart of facilities or equipment with potential serious consequence.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,"Hardware Barrier Failures: Process Containment
+Human Barrier Failures: Acceptance of handover or restart of facilities or equipment",storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000055,SYNTHETIC,True,1,"Work involving high potential event resulted in electrical arc flash at refinery pipe rack because of hardware barrier failures: process containment
+human barrier failures: operating in accordance with procedures - ptw, isolation of equipment, overrides and 
+inhibits of safety systems, shift handover, etc.. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,"Hardware Barrier Failures: Process Containment
+Human Barrier Failures: Operating in accordance with procedures - PTW, Isolation of equipment, Overrides and 
+inhibits of safety systems, Shift handover, etc.",refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000056,SYNTHETIC,True,1,"Uncontrolled toxic gas release identified while performing high potential event at process unit 4. Root cause traced to hardware barrier failures: process containment
+human barrier failures: surveillance, operator rounds and routine inspection.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,toxic gas release,"Hardware Barrier Failures: Process Containment
+Human Barrier Failures: Surveillance, operator rounds and routine inspection",process unit 4,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000057,SYNTHETIC,True,1,"During high potential event, an unexpected high pressure stored energy occurred at compressor station B following hardware barrier failures: process containment
+management system element barrier failure: asset design and integrity, creating critical SIF exposure.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,high pressure stored energy,"Hardware Barrier Failures: Process Containment
+Management System Element Barrier Failure: Asset design and integrity",compressor station B,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000058,SYNTHETIC,True,1,"Field observation during high potential event: uncontrolled flame detected at offshore rig alpha due to hardware barrier failures: process containment
+management system element barrier failure: asset design and integrity
+116
+safety performance indicators – process safety events – 2025 data with potential serious consequence.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,uncontrolled flame,"Hardware Barrier Failures: Process Containment
+Management System Element Barrier Failure: Asset design and integrity
+116
+Safety performance indicators – Process safety events – 2025 data",offshore rig alpha,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000059,SYNTHETIC,True,1,"Work involving high potential event resulted in suspended load at storage tank farm because of hardware barrier failures: process containment
+management system element barrier failure: asset design and integrity
+unspecified: unspecified. Immediate isolation initiated.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,suspended load,"Hardware Barrier Failures: Process Containment
+Management System Element Barrier Failure: Asset design and integrity
+Unspecified: Unspecified",storage tank farm,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED
+SYN-SIF-000060,SYNTHETIC,True,1,"Uncontrolled electrical arc flash identified while performing high potential event at refinery pipe rack. Root cause traced to hardware barrier failures: process containment
+management system element barrier failure: plans and procedures.","[""REAL-SIF-0"", ""REAL-SIF-1""]",High Potential Event,electrical arc flash,"Hardware Barrier Failures: Process Containment
+Management System Element Barrier Failure: Plans and procedures",refinery pipe rack,COVERAGE_AWARE_VARIATION,OILPS_SyntheticSIFGen_v2,2.0.0,2026-09-02T05:40:57Z,REJECTED,TARGET_COUNT_CAP_REACHED

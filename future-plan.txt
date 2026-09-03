@@ -1,0 +1,99 @@
+ai-service/datasets/processed/oilps_final_master_v2.csv
+
+Knowledge graph
+
+**Exactly. That is the architecture I would recommend.** And yes, think about the agents **after the base system is integrated**, not before.
+
+### Base system first
+
+Use `oilps_final_master_v2.csv` **only for historical/risk analytics**:
+
+```text
+Historical Master Dataset
+        │
+        ├── Site Risk
+        ├── Activity Risk
+        ├── Recurrence
+        ├── LSR Trends
+        ├── Early Warning
+        └── Severity × Recurrence
+```
+
+For a **new incident**:
+
+```text
+New Incident
+     │
+     ├── SIF Model
+     ├── LSR Model
+     ├── Precursor / Barrier Analysis
+     ├── FAISS Similar Incidents
+     ├── Risk Analytics ← final master dataset
+     └── RAG Recommendations
+              │
+              ▼
+       Grounding + Triage
+              │
+              ▼
+       Human Review Required?
+```
+
+### Then the agentic layer 🚀
+
+If the system says **HUMAN_REVIEW_REQUIRED**, that's a perfect place to introduce an agent.
+
+For example:
+
+```text
+                 HUMAN REVIEW
+                      │
+                      ▼
+              Safety Intelligence Agent
+                      │
+              ┌───────┼────────┐
+              ▼       ▼        ▼
+            MCP     RAG      Internal APIs
+           Tools
+              │
+       ┌──────┼───────────┐
+       ▼      ▼           ▼
+   External  Regulations  Historical
+   sources   / standards  incidents
+```
+
+The agent could then **gather additional evidence using approved MCP tools**, evaluate it, and present a recommendation to the human analyst.
+
+And yes — **the same architecture can be extended to other parts**:
+
+* 🔎 **Investigation Agent** → gather evidence
+* 📊 **Risk Analyst Agent** → investigate unusual risk patterns
+* 📚 **Compliance Agent** → check applicable standards/regulations
+* 🛡️ **Barrier Agent** → investigate failed barriers
+* 📝 **Report Agent** → prepare investigation summaries
+* 👨‍💼 **HSE Analyst Agent** → coordinate multiple specialist agents
+
+But these should be **second-layer capabilities**, not something we add before the deterministic foundation works.
+
+### Your architecture becomes
+
+**Layer 1 — Deterministic Intelligence**
+
+> Models + historical data + FAISS + analytics + RAG + grounding
+
+↓
+
+**Layer 2 — Agentic Intelligence**
+
+> Agents + MCP + external tools + multi-agent orchestration
+
+↓
+
+**Layer 3 — Human Decision**
+
+> HSE analyst reviews evidence and takes action
+
+That's a **much stronger architecture** than making everything an agent.
+
+So yes: **finish Stage 43 → integrate MERN → verify the complete base → then add agents/MCP where they genuinely provide additional value.**
+
+That way, you aren't wasting time building an agentic layer on top of components that haven't been properly integrated yet.

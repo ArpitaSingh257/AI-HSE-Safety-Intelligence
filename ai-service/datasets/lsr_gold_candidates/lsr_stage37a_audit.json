@@ -1,0 +1,43 @@
+{
+  "stage": "STAGE_37A_LSR_SOURCE_DISCOVERY",
+  "timestamp": "2026-09-03T04:27:13Z",
+  "resources_inspected": {
+    "total_files": 5,
+    "pdf_files": 5,
+    "csv_files": 0,
+    "other_files": 0
+  },
+  "lsr_mentions_breakdown": {
+    "incident_explicit_assignments": 427,
+    "rule_definitions": 7,
+    "general_discussions": 97,
+    "ambiguous_candidates": 13
+  },
+  "ground_truth_discovery": {
+    "previously_known_native_incidents": 10,
+    "new_explicit_native_incidents_discovered": 427,
+    "total_unique_source_grounded_incidents": 437
+  },
+  "lsr_class_distribution": {
+    "Driving": 11,
+    "Bypassing Safety Controls": 35,
+    "Line of Fire": 195,
+    "Energy Isolation": 37,
+    "Safe Mechanical Lifting": 70,
+    "Working at Height": 30,
+    "Work Authorization": 35,
+    "Confined Space": 2,
+    "Hot Work": 12
+  },
+  "canonical_mapping": {
+    "exact_matches": 0,
+    "unmatched": 427
+  },
+  "stage37b_annotation_required": true,
+  "production_protection": {
+    "production_sif_champion_frozen": true,
+    "production_lsr_champion_frozen": true,
+    "production_rag_untouched": true,
+    "canonical_dataset_untouched": true
+  }
+}

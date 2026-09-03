@@ -1,0 +1,71 @@
+{
+  "stage": "STAGE_40_LSR_MODEL_ENRICHMENT",
+  "timestamp": "2026-09-03T09:01:12Z",
+  "random_seed": 42,
+  "accounting": {
+    "total_canonical_records": 4529,
+    "existing_source_grounded_before": 12,
+    "unknown_before_enrichment": 4517,
+    "records_scored": 4517,
+    "records_with_at_least_1_predicted_label": 2017,
+    "records_with_zero_predicted_labels": 2500
+  },
+  "confidence_breakdown": {
+    "HIGH_CONFIDENCE": 1351,
+    "MEDIUM_CONFIDENCE": 434,
+    "LOW_CONFIDENCE": 233,
+    "NO_PREDICTION": 2499
+  },
+  "final_provenance_counts": {
+    "SOURCE_GROUNDED": 12,
+    "MODEL_PREDICTED": 1351,
+    "HUMAN_REVIEWED_PENDING": 434,
+    "UNKNOWN_AFTER_ENRICHMENT": 3166
+  },
+  "percentages": {
+    "pct_source_grounded": 0.26,
+    "pct_model_predicted": 29.83,
+    "pct_sent_to_human_review": 9.58,
+    "pct_remaining_unknown": 69.91
+  },
+  "multilabel_metrics": {
+    "average_labels_per_scored_record": 0.5716,
+    "max_labels_per_record": 5
+  },
+  "lsr_distribution": {
+    "Bypassing Safety Controls": 1,
+    "Confined Space": 10,
+    "Driving": 274,
+    "Energy Isolation": 329,
+    "Hot Work": 208,
+    "Line of Fire": 117,
+    "Safe Mechanical Lifting": 413,
+    "Work Authorization": 12,
+    "Working at Height": 292
+  },
+  "production_protection": {
+    "canonical_dataset_untouched": true,
+    "production_sif_champion_frozen": true,
+    "production_lsr_champion_frozen": true,
+    "production_rag_untouched": true
+  },
+  "hashes": {
+    "initial": {
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf",
+      "semantic_chunks": "db5156ba99d33bb7878eab74f9911021e2c0e3eb6d203910866a1164397fa037"
+    },
+    "final": {
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf",
+      "semantic_chunks": "db5156ba99d33bb7878eab74f9911021e2c0e3eb6d203910866a1164397fa037"
+    }
+  },
+  "determinism_result": "PASS",
+  "status": "PASS",
+  "output_sha256": "38043530a0bb136faae03cb1b4755d47fb9a55496d24d92826610a9f17109d57"
+}

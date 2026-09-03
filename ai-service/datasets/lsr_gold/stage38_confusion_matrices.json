@@ -1,0 +1,128 @@
+{
+  "Driving": {
+    "model_a_real_only": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16
+    },
+    "model_b_augmented": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16
+    }
+  },
+  "Bypassing Safety Controls": {
+    "model_a_real_only": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 15
+    },
+    "model_b_augmented": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 15
+    }
+  },
+  "Line of Fire": {
+    "model_a_real_only": {
+      "tp": 15,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0
+    },
+    "model_b_augmented": {
+      "tp": 15,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0
+    }
+  },
+  "Energy Isolation": {
+    "model_a_real_only": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "tn": 13
+    },
+    "model_b_augmented": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "tn": 13
+    }
+  },
+  "Safe Mechanical Lifting": {
+    "model_a_real_only": {
+      "tp": 8,
+      "fp": 3,
+      "fn": 1,
+      "tn": 4
+    },
+    "model_b_augmented": {
+      "tp": 8,
+      "fp": 3,
+      "fn": 1,
+      "tn": 4
+    }
+  },
+  "Working at Height": {
+    "model_a_real_only": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "tn": 13
+    },
+    "model_b_augmented": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "tn": 13
+    }
+  },
+  "Work Authorization": {
+    "model_a_real_only": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "tn": 13
+    },
+    "model_b_augmented": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 3,
+      "tn": 13
+    }
+  },
+  "Confined Space": {
+    "model_a_real_only": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16
+    },
+    "model_b_augmented": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 16
+    }
+  },
+  "Hot Work": {
+    "model_a_real_only": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 2,
+      "tn": 14
+    },
+    "model_b_augmented": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 2,
+      "tn": 14
+    }
+  }
+}

@@ -1,0 +1,29 @@
+canonical_record_id,source_incident_group,canonical_text,source_text,match_type,match_score,structured_evidence,decision,decision_reason,lsr_labels,source_document,source_page
+OILPS_IOGP_HPE_0005,NATIVE_CANONICAL,"During a heavy rainstorm, two aluminium composite panels (component of the external cladding material for the 
+Office building) dislodged and dropped.","During a heavy rainstorm, two aluminium composite panels (component of the external cladding material for the 
+Office building) dislodged and dropped.",NATIVE_CANONICAL,1.0,Native label present,ACCEPT,Native canonical label preserved.,Line of fire,NATIVE_CANONICAL,N/A
+OILPS_IOGP_SPI_0196,NATIVE_CANONICAL,Fire incident occurred at the lube oil breather valve on the crankcase of Gas Lift Compressor. • The working procedure did not follow the manufacturer,Fire incident occurred at the lube oil breather valve on the crankcase of Gas Lift Compressor. • The working procedure did not follow the manufacturer,NATIVE_CANONICAL,1.0,Native label present,ACCEPT,Native canonical label preserved.,Hot work,NATIVE_CANONICAL,N/A
+OILPS_IOGP_SPI_0198,NATIVE_CANONICAL,"An incident occurred at NGL Loading Bay involving the overfilling of a truck and subsequent spill of NGL. The event 
+resulted from the failure of the ","An incident occurred at NGL Loading Bay involving the overfilling of a truck and subsequent spill of NGL. The event 
+resulted from the failure of the ",NATIVE_CANONICAL,1.0,Native label present,ACCEPT,Native canonical label preserved.,Other issue – no applicable rule,NATIVE_CANONICAL,N/A
+OILPS_IOGP_SPI_0205,NATIVE_CANONICAL,"On 7th July 2025 at 15:03 hrs, a hydrocarbon gas release occurred onboard the FPSO from anti-surge valve (part 
+of the gas compression system). Gas de","On 7th July 2025 at 15:03 hrs, a hydrocarbon gas release occurred onboard the FPSO from anti-surge valve (part 
+of the gas compression system). Gas de",NATIVE_CANONICAL,1.0,Native label present,ACCEPT,Native canonical label preserved.,Line of fire,NATIVE_CANONICAL,N/A
+OILPS_IOGP_SPI_0209,NATIVE_CANONICAL,"A 1 inch thermal isolator coupling failed on a line that is used to mount an ultraviolet light flame detector to the hot 
+oil heater. After the coupli","A 1 inch thermal isolator coupling failed on a line that is used to mount an ultraviolet light flame detector to the hot 
+oil heater. After the coupli",NATIVE_CANONICAL,1.0,Native label present,ACCEPT,Native canonical label preserved.,Other issue – no applicable rule,NATIVE_CANONICAL,N/A
+OILPS_IOGP_SPI_0210,NATIVE_CANONICAL,"During station shutdown, while troubleshooting on the Emergency Shut Down (ESD) actuator valve to reconfirm 
+either it’s opened or closed for readines","During station shutdown, while troubleshooting on the Emergency Shut Down (ESD) actuator valve to reconfirm 
+either it’s opened or closed for readines",NATIVE_CANONICAL,1.0,Native label present,ACCEPT,Native canonical label preserved.,Line of fire,NATIVE_CANONICAL,N/A
+OILPS_IOGP_SPI_0211,NATIVE_CANONICAL,"During Booster compressor (BC) commissioning, the operator observed a smoldering fire in the engine exhaust 
+elbow. The operator immediately shut down","During Booster compressor (BC) commissioning, the operator observed a smoldering fire in the engine exhaust 
+elbow. The operator immediately shut down",NATIVE_CANONICAL,1.0,Native label present,ACCEPT,Native canonical label preserved.,Other issue – no applicable rule,NATIVE_CANONICAL,N/A
+OILPS_IOGP_SPI_0215,NATIVE_CANONICAL,"A gas leak was detected from the BV bypass of the liquid filter due to a flange plug snapping out. The leak was 
+successfully stopped, the area was de","A gas leak was detected from the BV bypass of the liquid filter due to a flange plug snapping out. The leak was 
+successfully stopped, the area was de",NATIVE_CANONICAL,1.0,Native label present,ACCEPT,Native canonical label preserved.,Line of fire,NATIVE_CANONICAL,N/A
+OILPS_IOGP_SPI_0217,NATIVE_CANONICAL,"During preparations to install and test a blowout preventer (BOP) on a re-entry well, a downhole isolation 
+arrangement was in place and surface check","During preparations to install and test a blowout preventer (BOP) on a re-entry well, a downhole isolation 
+arrangement was in place and surface check",NATIVE_CANONICAL,1.0,Native label present,ACCEPT,Native canonical label preserved.,Other issue – no applicable rule,NATIVE_CANONICAL,N/A
+OILPS_IOGP_SPI_0219,NATIVE_CANONICAL,"A manual emergency shutdown was initiated following a report of a valve flange leakage in a relief line to the flare 
+header. Investigation after shut","A manual emergency shutdown was initiated following a report of a valve flange leakage in a relief line to the flare 
+header. Investigation after shut",NATIVE_CANONICAL,1.0,Native label present,ACCEPT,Native canonical label preserved.,Other issue – no applicable rule,NATIVE_CANONICAL,N/A

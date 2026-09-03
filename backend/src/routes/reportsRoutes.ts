@@ -41,6 +41,12 @@ router.post(
   asyncHandler(reportsController.analyzeIncidentDirect)
 );
 
+router.post(
+  '/intelligence/analyze',
+  authorize(PERMISSIONS.canTriggerAIAnalysis),
+  asyncHandler(reportsController.analyzeIntelligenceDirect)
+);
+
 router.get('/ai-results/:reportId', asyncHandler(reportsController.getAiResults));
 router.get('/reports/:id/similar', asyncHandler(reportsController.getSimilarReportsForReport));
 

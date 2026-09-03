@@ -1,0 +1,58 @@
+{
+  "stage": "STAGE_39B_LSR_RECONSTRUCTION",
+  "timestamp": "2026-09-03T07:54:06Z",
+  "random_seed": 42,
+  "accounting": {
+    "canonical_records": 4529,
+    "eligible_iogp_records": 300,
+    "gold_incident_groups": 112,
+    "gold_lsr_assignments": 299
+  },
+  "reconstruction_outcomes": {
+    "high_confidence_matches": 2,
+    "ambiguous_matches": 16,
+    "rejected_matches": 94,
+    "new_canonical_records_enriched": 2,
+    "final_source_grounded_records": 12,
+    "final_unknown_records": 4517,
+    "model_predicted_records": 0,
+    "synthetic_records": 0,
+    "multilabel_records": 2
+  },
+  "lsr_distribution": {
+    "Driving": 0,
+    "Bypassing Safety Controls": 1,
+    "Line of Fire": 2,
+    "Energy Isolation": 0,
+    "Safe Mechanical Lifting": 2,
+    "Working at Height": 0,
+    "Work Authorization": 0,
+    "Confined Space": 0,
+    "Hot Work": 0
+  },
+  "production_protection": {
+    "canonical_dataset_untouched": true,
+    "production_sif_champion_frozen": true,
+    "production_lsr_champion_frozen": true,
+    "production_rag_untouched": true
+  },
+  "hashes": {
+    "initial": {
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf",
+      "semantic_chunks": "db5156ba99d33bb7878eab74f9911021e2c0e3eb6d203910866a1164397fa037"
+    },
+    "final": {
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf",
+      "semantic_chunks": "db5156ba99d33bb7878eab74f9911021e2c0e3eb6d203910866a1164397fa037"
+    }
+  },
+  "determinism_result": "PASS",
+  "status": "PASS",
+  "output_sha256": "c4da2c96a6bfa5a828b2fa29b471b3836b2e77c08ab2831a30bca0c76c687435"
+}

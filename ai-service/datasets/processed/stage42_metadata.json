@@ -1,0 +1,80 @@
+{
+  "stage": "STAGE_42_CONTROLLED_LSR_COVERAGE_EXPANSION",
+  "timestamp": "2026-09-03T09:39:16Z",
+  "random_seed": 42,
+  "stage41_baseline": {
+    "total_canonical_records": 4529,
+    "source_grounded_native": 10,
+    "source_grounded_reconstructed": 2,
+    "existing_model_predicted": 1351,
+    "existing_human_review": 434,
+    "existing_unknown": 2732,
+    "previously_assigned_records": 1363
+  },
+  "stage42_incremental": {
+    "fresh_inference_count": 0,
+    "preserved_stage41_assignments": 1363,
+    "new_model_predicted_records": 11,
+    "new_human_review_pending_records": 1136,
+    "remaining_unknown_records": 2019
+  },
+  "final_accounting": {
+    "source_grounded_native": 10,
+    "source_grounded_reconstructed": 2,
+    "total_model_predicted": 1362,
+    "human_review_pending": 1136,
+    "unknown": 2019,
+    "final_assigned_records": 1374,
+    "final_unassigned_or_review": 3155
+  },
+  "coverage_metrics": {
+    "coverage_before_pct": 30.09,
+    "coverage_after_pct": 30.34,
+    "coverage_improvement_pct": 0.25
+  },
+  "agreement_distribution": {
+    "STRONG_AGREEMENT": 1410,
+    "PARTIAL_AGREEMENT": 1100,
+    "CONFLICT": 0,
+    "NO_EVIDENCE": 2019
+  },
+  "lsr_distribution_after": {
+    "Bypassing Safety Controls": 1,
+    "Confined Space": 2,
+    "Driving": 183,
+    "Energy Isolation": 241,
+    "Hot Work": 183,
+    "Line of Fire": 66,
+    "Safe Mechanical Lifting": 256,
+    "Work Authorization": 4,
+    "Working at Height": 179
+  },
+  "production_protection": {
+    "master_v1_input_untouched": true,
+    "canonical_dataset_untouched": true,
+    "production_sif_champion_frozen": true,
+    "production_lsr_champion_frozen": true,
+    "production_rag_untouched": true
+  },
+  "hashes": {
+    "initial": {
+      "master_v1_input": "38c7038f0d0ebe7f3652e086c276446a3211037526459761493bdc9b3b5f90c1",
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf",
+      "semantic_chunks": "db5156ba99d33bb7878eab74f9911021e2c0e3eb6d203910866a1164397fa037"
+    },
+    "final": {
+      "master_v1_input": "38c7038f0d0ebe7f3652e086c276446a3211037526459761493bdc9b3b5f90c1",
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf",
+      "semantic_chunks": "db5156ba99d33bb7878eab74f9911021e2c0e3eb6d203910866a1164397fa037"
+    }
+  },
+  "determinism_result": "PASS",
+  "status": "PASS",
+  "output_sha256": "ab2c6ed2d6454dfec79f7c5e24caf896749cbebbc56666152ef16434a7a40c03"
+}

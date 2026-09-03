@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { reportsService } from '../api';
+import { reportsService, intelligenceService } from '../api';
 import type { SafetyReport, ReportType, SifStatus, PriorityLevel, CreateReportPayload } from '../types/reports';
+import type { Stage43IntelligenceResponse } from '../types/intelligence';
 import { useAuth } from '../context/AuthContext';
 import { PageHeader } from '../components/common/PageHeader';
 import { SeverityBadge } from '../components/common/SeverityBadge';
 import { LoadingSpinner } from '../components/common/LoadingSpinner';
 import { Modal } from '../components/common/Modal';
 import { EmptyState } from '../components/common/EmptyState';
+import { IntelligenceResultView } from '../components/reports/IntelligenceResultView';
 import { formatDate, formatScore } from '../utils/formatters';
 import {
   Search,
@@ -53,6 +55,37 @@ export const ReportsPage: React.FC = () => {
     immediate_actions_taken: '',
     priority: 'MEDIUM',
   });
+
+  // Stage 43 Intelligence Analysis Modal State
+  const [isIntelligenceModalOpen, setIsIntelligenceModalOpen] = useState(false);
+  const [intelText, setIntelText] = useState('');
+  const [intelSite, setIntelSite] = useState('');
+  const [intelActivity, setIntelActivity] = useState('');
+  const [intelResult, setIntelResult] = useState<Stage43IntelligenceResponse | null>(null);
+  const [analyzingIntel, setAnalyzingIntel] = useState(false);
+  const [intelError, setIntelError] = useState<string | null>(null);
+
+  const handleRunIntelligenceAnalysis = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!intelText.trim() || intelText.trim().length < 5) {
+      setIntelError('Incident narrative must be at least 5 characters long.');
+      return;
+    }
+    setAnalyzingIntel(true);
+    setIntelError(null);
+    try {
+      const res = await intelligenceService.analyzeIntelligence({
+        incident_text: intelText.trim(),
+        site: intelSite.trim() || undefined,
+        activity: intelActivity.trim() || undefined
+      });
+      setIntelResult(res);
+    } catch (err: any) {
+      setIntelError(err.message || 'Failed to run Stage 43 AI Intelligence Analysis.');
+    } finally {
+      setAnalyzingIntel(false);
+    }
+  };
 
   const fetchReports = async () => {
     setLoading(true);
@@ -125,6 +158,13 @@ export const ReportsPage: React.FC = () => {
         showDemoBadge={true}
         actions={
           <div className="flex items-center gap-2">
+            <button
+              onClick={() => setIsIntelligenceModalOpen(true)}
+              className="flex items-center gap-1.5 rounded bg-emerald-700 px-3 py-1.5 text-xs font-semibold text-white hover:bg-emerald-800 transition-colors shadow-xs"
+            >
+              <Sparkles className="h-4 w-4 text-emerald-300" />
+              <span>Stage 43 AI Analysis</span>
+            </button>
             {hasPermission('canCreateReport') && (
               <button
                 onClick={() => setIsModalOpen(true)}
@@ -506,6 +546,92 @@ export const ReportsPage: React.FC = () => {
             />
           </div>
         </form>
+      </Modal>
+
+      {/* Stage 43 AI Intelligence Analysis Modal */}
+      <Modal
+        isOpen={isIntelligenceModalOpen}
+        onClose={() => setIsIntelligenceModalOpen(false)}
+        title="OILPS Stage 43 End-to-End Safety Intelligence Pipeline"
+        maxWidth="max-w-5xl"
+      >
+        <div className="space-y-4">
+          <form onSubmit={handleRunIntelligenceAnalysis} className="space-y-3 bg-slate-50 p-4 rounded border border-slate-200 text-xs">
+            <div>
+              <label className="block font-semibold text-slate-800 mb-1">Incident Narrative Text (Required, min 5 chars)</label>
+              <textarea
+                rows={3}
+                required
+                value={intelText}
+                onChange={(e) => setIntelText(e.target.value)}
+                placeholder="Enter safety narrative (e.g., 'Worker entered confined space without gas testing...', 'Operator entered line of fire near suspended load...', or Hinglish text)..."
+                className="w-full rounded border border-slate-300 bg-white p-2 text-slate-900 font-mono text-xs focus:border-emerald-500 focus:outline-none"
+              />
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">Asset Site (Optional Context)</label>
+                <input
+                  type="text"
+                  value={intelSite}
+                  onChange={(e) => setIntelSite(e.target.value)}
+                  placeholder="e.g., Off-shore Rig 4, Duliajan Complex"
+                  className="w-full rounded border border-slate-300 bg-white p-2 text-xs text-slate-900"
+                />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">Activity (Optional Context)</label>
+                <input
+                  type="text"
+                  value={intelActivity}
+                  onChange={(e) => setIntelActivity(e.target.value)}
+                  placeholder="e.g., Maintenance, Hot Work, Rig Operations"
+                  className="w-full rounded border border-slate-300 bg-white p-2 text-xs text-slate-900"
+                />
+              </div>
+            </div>
+
+            {intelError && (
+              <div className="p-2.5 rounded bg-red-50 text-red-700 text-xs font-medium border border-red-200">
+                {intelError}
+              </div>
+            )}
+
+            <div className="flex justify-end gap-2 pt-2">
+              <button
+                type="button"
+                onClick={() => { setIntelText(''); setIntelResult(null); setIntelError(null); }}
+                className="rounded border border-slate-300 px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-100"
+              >
+                Clear
+              </button>
+              <button
+                type="submit"
+                disabled={analyzingIntel}
+                className="rounded bg-emerald-700 px-4 py-1.5 text-xs font-bold text-white hover:bg-emerald-800 disabled:opacity-50 flex items-center gap-1.5"
+              >
+                {analyzingIntel ? (
+                  <span>Executing 15-Subsystem Pipeline...</span>
+                ) : (
+                  <>
+                    <Sparkles className="h-4 w-4" />
+                    <span>Run Stage 43 Pipeline</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </form>
+
+          {analyzingIntel && <LoadingSpinner label="Running Stage 43 Safety Intelligence & Historical Integration Pipeline..." />}
+
+          {intelResult && !analyzingIntel && (
+            <div className="mt-4 pt-4 border-t border-slate-200">
+              <IntelligenceResultView data={intelResult} />
+            </div>
+          )}
+        </div>
       </Modal>
     </div>
   );

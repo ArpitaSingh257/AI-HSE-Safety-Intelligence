@@ -1,0 +1,10 @@
+{
+  "target_count": 20,
+  "candidate_multiplier": 3,
+  "random_seed": 42,
+  "generation_method": "COVERAGE_AWARE_VARIATION",
+  "generation_model": "OILPS_SyntheticSIFGen_v2",
+  "diversity_strategy": "SAFETY_FACTOR_POOLS",
+  "source_dataset_version": "OILPS_UNIFIED_V1",
+  "timestamp": "2026-09-02T05:40:57Z"
+}

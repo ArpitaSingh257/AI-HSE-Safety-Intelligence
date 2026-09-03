@@ -1,0 +1,24 @@
+{
+  "dataset_name": "OILPS Synthetic Rare-SIF Dataset",
+  "version": "2.0.0",
+  "total_candidates": 60,
+  "accepted_count": 20,
+  "rejected_count": 40,
+  "diversity_diagnostics": {
+    "accepted_count": 20,
+    "synthetic_unique_activities": 1,
+    "synthetic_unique_hazards": 5,
+    "synthetic_unique_barriers": 20,
+    "synthetic_unique_locations": 5,
+    "coverage_pct": {
+      "activities_coverage": 100.0,
+      "hazards_coverage": 100.0,
+      "barriers_coverage": 44.4,
+      "locations_coverage": 100.0
+    }
+  },
+  "isolation_status": "STRICTLY_ISOLATED",
+  "production_models_affected": false,
+  "production_rag_affected": false,
+  "created_at": "2026-09-02T05:40:57Z"
+}

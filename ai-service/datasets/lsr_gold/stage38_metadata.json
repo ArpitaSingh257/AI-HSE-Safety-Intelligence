@@ -1,0 +1,50 @@
+{
+  "stage": "STAGE_38_LSR_MULTILABEL_CHALLENGER",
+  "timestamp": "2026-09-03T06:55:44Z",
+  "seed": 42,
+  "counts": {
+    "real_train": 80,
+    "real_validation": 16,
+    "real_test": 16,
+    "synthetic": 66,
+    "augmented_train": 146,
+    "accounting_equation": "80 + 66 = 146"
+  },
+  "taxonomy": {
+    "label_count": 9,
+    "label_order": [
+      "Driving",
+      "Bypassing Safety Controls",
+      "Line of Fire",
+      "Energy Isolation",
+      "Safe Mechanical Lifting",
+      "Working at Height",
+      "Work Authorization",
+      "Confined Space",
+      "Hot Work"
+    ]
+  },
+  "threshold_policy": "DEFAULT_0.5_OR_ESTIMATOR_PROBABILITY",
+  "model_a_name": "real_only_lsr_challenger",
+  "model_b_name": "synthetic_augmented_lsr_challenger",
+  "test_set_locked": true,
+  "synthetic_used_only_for_training": true,
+  "production_artifacts_unchanged": true,
+  "canonical_dataset_unchanged": true,
+  "final_status": "NO_MEANINGFUL_IMPROVEMENT",
+  "research_interpretation": "Stage 38 evaluated Model A (Real-Only, 80 rows) vs Model B (Synthetic-Augmented, 146 rows) on the locked 16-record Real Test set. Final experimental status: NO_MEANINGFUL_IMPROVEMENT.",
+  "hashes": {
+    "initial": {
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf"
+    },
+    "final": {
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf"
+    }
+  }
+}

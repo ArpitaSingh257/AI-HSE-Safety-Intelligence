@@ -1,0 +1,46 @@
+{
+  "stage": "STAGE_37A.1_LSR_VALIDATION_RECONCILIATION",
+  "timestamp": "2026-09-03T04:41:45Z",
+  "candidate_counts": {
+    "raw_stage37a_candidates": 427,
+    "validated_gold_candidates": 427,
+    "unique_incidents": 427,
+    "unique_lsr_assignments": 427,
+    "multi_lsr_incidents": 0,
+    "duplicate_source_appearances": 0,
+    "non_incident_references": 0,
+    "ambiguous_candidates": 0,
+    "conflicts": 0,
+    "invalid_extractions": 0
+  },
+  "canonical_reconciliation": {
+    "exact_matches": 0,
+    "high_confidence_matches": 0,
+    "ambiguous_matches": 0,
+    "unmapped_source_incidents": 427
+  },
+  "ground_truth_comparison": {
+    "previously_known_native_incidents": 10,
+    "rediscovered_existing_incidents": 10,
+    "new_validated_native_incidents": 417,
+    "total_unique_native_incidents": 427
+  },
+  "lsr_class_distribution": {
+    "Driving": 11,
+    "Bypassing Safety Controls": 35,
+    "Line of Fire": 195,
+    "Energy Isolation": 37,
+    "Safe Mechanical Lifting": 70,
+    "Working at Height": 30,
+    "Work Authorization": 35,
+    "Confined Space": 2,
+    "Hot Work": 12
+  },
+  "stage37b_annotation_required": false,
+  "production_protection": {
+    "production_sif_champion_frozen": true,
+    "production_lsr_champion_frozen": true,
+    "production_rag_untouched": true,
+    "canonical_dataset_untouched": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "stage": "STAGE_37C.1_IOGP_INCIDENT_LSR_RECONSTRUCTION",
+  "timestamp": "2026-09-03T06:11:55Z",
+  "input_stage37a1_records": 427,
+  "reconstruction_status_breakdown": {
+    "RECONSTRUCTED": 427,
+    "AMBIGUOUS": 0,
+    "RECONSTRUCTION_FAILED": 0
+  },
+  "incident_group_counts": {
+    "total_unique_groups": 112,
+    "single_lsr_incidents": 427,
+    "multi_lsr_incidents": 0
+  },
+  "lsr_class_distribution": {
+    "Driving": 11,
+    "Bypassing Safety Controls": 35,
+    "Line of Fire": 195,
+    "Energy Isolation": 37,
+    "Safe Mechanical Lifting": 70,
+    "Working at Height": 30,
+    "Work Authorization": 35,
+    "Confined Space": 2,
+    "Hot Work": 12
+  },
+  "audits": {
+    "leakage_audit": "PASS",
+    "provenance_audit": "PASS",
+    "synthetic_text_audit": "PASS (0 Synthetic Text Generated)",
+    "determinism_audit": "PASS",
+    "original_dataset_untouched": true,
+    "production_models_frozen": true,
+    "rag_index_untouched": true
+  }
+}

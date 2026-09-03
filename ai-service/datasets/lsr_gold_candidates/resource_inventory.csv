@@ -1,0 +1,6 @@
+file_name,relative_path,file_type,file_size_bytes,source_organization,document_title,document_year,page_count,likely_relevance_to_LSR
+IOGP Life-Saving Rules.pdf,resources/safety-recommendation-engine/IOGP Life-Saving Rules.pdf,pdf,1100603,IOGP,Iogp Life Saving Rules,UNKNOWN,24,HIGH
+Process Safety Fundamentals.pdf,resources/safety-recommendation-engine/Process Safety Fundamentals.pdf,pdf,8873875,UNKNOWN,Process Safety Fundamentals,UNKNOWN,38,MEDIUM
+Safety performance indicators – 2023 data.pdf,resources/safety-recommendation-engine/Safety performance indicators – 2023 data.pdf,pdf,539114,UNKNOWN,Safety Performance Indicators – 2023 Data,2023,112,HIGH
+Safety performance indicators – 2024 data.pdf,resources/safety-recommendation-engine/Safety performance indicators – 2024 data.pdf,pdf,547140,UNKNOWN,Safety Performance Indicators – 2024 Data,2024,120,HIGH
+Safety performance indicators – 2025 data.pdf,resources/safety-recommendation-engine/Safety performance indicators – 2025 data.pdf,pdf,454731,UNKNOWN,Safety Performance Indicators – 2025 Data,2025,92,HIGH

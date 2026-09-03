@@ -1,0 +1,102 @@
+{
+  "global_deltas": {
+    "micro_precision": 0.0,
+    "micro_recall": 0.0,
+    "micro_f1": 0.0,
+    "macro_precision": 0.0,
+    "macro_recall": 0.0,
+    "macro_f1": 0.0,
+    "weighted_precision": 0.0,
+    "weighted_recall": 0.0,
+    "weighted_f1": 0.0,
+    "samples_precision": 0.0,
+    "samples_recall": 0.0,
+    "samples_f1": 0.0,
+    "hamming_loss": 0.0,
+    "jaccard_score": 0.0,
+    "subset_accuracy": 0.0
+  },
+  "per_label_deltas": {
+    "Driving": {
+      "precision_delta": 0.0,
+      "recall_delta": 0.0,
+      "f1_delta": 0.0,
+      "tp_delta": 0,
+      "fp_delta": 0,
+      "fn_delta": 0,
+      "tn_delta": 0
+    },
+    "Bypassing Safety Controls": {
+      "precision_delta": 0.0,
+      "recall_delta": 0.0,
+      "f1_delta": 0.0,
+      "tp_delta": 0,
+      "fp_delta": 0,
+      "fn_delta": 0,
+      "tn_delta": 0
+    },
+    "Line of Fire": {
+      "precision_delta": 0.0,
+      "recall_delta": 0.0,
+      "f1_delta": 0.0,
+      "tp_delta": 0,
+      "fp_delta": 0,
+      "fn_delta": 0,
+      "tn_delta": 0
+    },
+    "Energy Isolation": {
+      "precision_delta": 0.0,
+      "recall_delta": 0.0,
+      "f1_delta": 0.0,
+      "tp_delta": 0,
+      "fp_delta": 0,
+      "fn_delta": 0,
+      "tn_delta": 0
+    },
+    "Safe Mechanical Lifting": {
+      "precision_delta": 0.0,
+      "recall_delta": 0.0,
+      "f1_delta": 0.0,
+      "tp_delta": 0,
+      "fp_delta": 0,
+      "fn_delta": 0,
+      "tn_delta": 0
+    },
+    "Working at Height": {
+      "precision_delta": 0.0,
+      "recall_delta": 0.0,
+      "f1_delta": 0.0,
+      "tp_delta": 0,
+      "fp_delta": 0,
+      "fn_delta": 0,
+      "tn_delta": 0
+    },
+    "Work Authorization": {
+      "precision_delta": 0.0,
+      "recall_delta": 0.0,
+      "f1_delta": 0.0,
+      "tp_delta": 0,
+      "fp_delta": 0,
+      "fn_delta": 0,
+      "tn_delta": 0
+    },
+    "Confined Space": {
+      "precision_delta": 0.0,
+      "recall_delta": 0.0,
+      "f1_delta": 0.0,
+      "tp_delta": 0,
+      "fp_delta": 0,
+      "fn_delta": 0,
+      "tn_delta": 0
+    },
+    "Hot Work": {
+      "precision_delta": 0.0,
+      "recall_delta": 0.0,
+      "f1_delta": 0.0,
+      "tp_delta": 0,
+      "fp_delta": 0,
+      "fn_delta": 0,
+      "tn_delta": 0
+    }
+  }
+}

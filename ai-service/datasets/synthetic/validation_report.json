@@ -1,0 +1,24 @@
+{
+  "total_candidates": 60,
+  "accepted_count": 20,
+  "rejected_count": 40,
+  "flagged_count": 0,
+  "acceptance_rate": 0.3333,
+  "reasons_breakdown": {
+    "VALID": 20,
+    "TARGET_COUNT_CAP_REACHED": 40
+  },
+  "diversity_diagnostics": {
+    "accepted_count": 20,
+    "synthetic_unique_activities": 1,
+    "synthetic_unique_hazards": 5,
+    "synthetic_unique_barriers": 20,
+    "synthetic_unique_locations": 5,
+    "coverage_pct": {
+      "activities_coverage": 100.0,
+      "hazards_coverage": 100.0,
+      "barriers_coverage": 44.4,
+      "locations_coverage": 100.0
+    }
+  }
+}

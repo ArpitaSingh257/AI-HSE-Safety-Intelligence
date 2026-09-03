@@ -12,6 +12,8 @@ import prioritiesRoutes from './prioritiesRoutes';
 import riskMatrixRoutes from './riskMatrixRoutes';
 import bowTiesRoutes from './bowTiesRoutes';
 import feedbackRoutes from './feedbackRoutes';
+import triageRoutes from './triageRoutes';
+import textNormalizeRoutes from './textNormalizeRoutes';
 import interventionsRoutes from './interventionsRoutes';
 import auditRoutes from './auditRoutes';
 
@@ -32,6 +34,8 @@ router.use('/priorities', prioritiesRoutes);
 router.use('/risk-matrix', riskMatrixRoutes);
 router.use('/bow-ties', bowTiesRoutes);
 router.use('/feedback', feedbackRoutes);
+router.use('/triage', triageRoutes);
+router.use('/text', textNormalizeRoutes);
 router.use('/', interventionsRoutes);
 router.use('/', auditRoutes);
 

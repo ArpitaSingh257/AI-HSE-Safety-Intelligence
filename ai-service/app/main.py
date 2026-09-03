@@ -23,6 +23,9 @@ from app.api.v1.endpoints.priorities import router as priorities_router
 from app.api.v1.endpoints.risk_matrix import router as risk_matrix_router
 from app.api.v1.endpoints.bow_ties import router as bow_ties_router
 from app.api.v1.endpoints.feedback import router as feedback_router
+from app.api.v1.endpoints.triage import router as triage_router
+from app.api.v1.endpoints.text_normalize import router as text_normalize_router
+from app.api.v1.endpoints.intelligence import router as intelligence_router
 
 app = FastAPI(
     title="OILPS AI Precursor Safety Intelligence Service",
@@ -43,6 +46,7 @@ app.add_middleware(
 
 # Include API v1 routes
 app.include_router(analyze_router, prefix="/api/v1", tags=["Inference"])
+app.include_router(intelligence_router, prefix="/api/v1/intelligence", tags=["End-to-End Intelligence API"])
 app.include_router(patterns_router, prefix="/api/v1/patterns", tags=["Patterns"])
 app.include_router(barrier_patterns_router, prefix="/api/v1/barrier-patterns", tags=["Barrier Patterns"])
 app.include_router(similar_reports_router, prefix="/api/v1/similar-reports", tags=["Similar Reports"])
@@ -54,6 +58,8 @@ app.include_router(priorities_router, prefix="/api/v1/priorities", tags=["Priori
 app.include_router(risk_matrix_router, prefix="/api/v1/risk-matrix", tags=["Risk Matrix"])
 app.include_router(bow_ties_router, prefix="/api/v1/bow-ties", tags=["Bow-Tie Mapping"])
 app.include_router(feedback_router, prefix="/api/v1/feedback", tags=["Human Analyst Feedback"])
+app.include_router(triage_router, prefix="/api/v1/triage", tags=["Confidence-Calibrated Triage"])
+app.include_router(text_normalize_router, prefix="/api/v1/text", tags=["Multilingual Text Normalization"])
 
 @app.get(
     "/health",

@@ -1,0 +1,111 @@
+{
+  "stage": "STAGE_37C.3-R.1_RECONCILIATION_MULTILABEL_AUDIT",
+  "timestamp": "2026-09-03T06:46:10Z",
+  "accounting": {
+    "real_train": 80,
+    "real_val": 16,
+    "real_test": 16,
+    "synthetic_train": 66,
+    "augmented_train": 146,
+    "mathematical_invariant_pass": true,
+    "equation": "80 (Real Train) + 66 (Synthetic) = 146 (Augmented Train)"
+  },
+  "synthetic_quality": {
+    "total_synthetic_records": 66,
+    "unique_parents": 66,
+    "max_children_per_parent": 1,
+    "exact_normalized_text_duplicates": 0
+  },
+  "individual_lsr_counts": {
+    "Driving": {
+      "real_train": 6,
+      "synthetic": 5,
+      "augmented": 11
+    },
+    "Bypassing Safety Controls": {
+      "real_train": 24,
+      "synthetic": 21,
+      "augmented": 45
+    },
+    "Line of Fire": {
+      "real_train": 71,
+      "synthetic": 59,
+      "augmented": 130
+    },
+    "Energy Isolation": {
+      "real_train": 27,
+      "synthetic": 24,
+      "augmented": 51
+    },
+    "Safe Mechanical Lifting": {
+      "real_train": 39,
+      "synthetic": 34,
+      "augmented": 73
+    },
+    "Working at Height": {
+      "real_train": 21,
+      "synthetic": 17,
+      "augmented": 38
+    },
+    "Work Authorization": {
+      "real_train": 21,
+      "synthetic": 18,
+      "augmented": 39
+    },
+    "Confined Space": {
+      "real_train": 2,
+      "synthetic": 2,
+      "augmented": 4
+    },
+    "Hot Work": {
+      "real_train": 4,
+      "synthetic": 3,
+      "augmented": 7
+    }
+  },
+  "cardinality_distributions": {
+    "real_train": {
+      "1-label": 4,
+      "2-label": 28,
+      "3-label": 38,
+      "4-label": 9,
+      "5-label": 1
+    },
+    "synthetic": {
+      "1-label": 3,
+      "2-label": 19,
+      "3-label": 35,
+      "4-label": 8,
+      "5-label": 1
+    },
+    "augmented_train": {
+      "1-label": 7,
+      "2-label": 47,
+      "3-label": 73,
+      "4-label": 17,
+      "5-label": 2
+    }
+  },
+  "similarity_threshold_audit": {
+    "min": 0.9116,
+    "mean": 0.9947,
+    "max": 1.0,
+    "count_ge_0_99": 59,
+    "count_ge_0_995": 58,
+    "count_ge_0_999": 58,
+    "exact_normalized_duplicates": 0
+  },
+  "leakage_audit": {
+    "parent_val_intersection": 0,
+    "parent_test_intersection": 0,
+    "val_test_leakage_status": "PASS"
+  },
+  "research_interpretation": "Stage 37C.3-R.1 verifies the mathematical accounting invariant len(augmented_train) == len(real_train) + len(synthetic_train), performs individual LSR rule frequency auditing across all 9 official rules, and confirms zero parent leakage to validation or test sets.",
+  "readiness_status": "SUITABLE",
+  "production_protection": {
+    "canonical_dataset_untouched": true,
+    "production_sif_champion_frozen": true,
+    "production_lsr_champion_frozen": true,
+    "production_rag_untouched": true
+  }
+}

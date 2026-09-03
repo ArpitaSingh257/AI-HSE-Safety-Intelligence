@@ -1,0 +1,100 @@
+{
+  "stage": "STAGE_41_FINAL_OILPS_DATASET_CONSOLIDATION",
+  "timestamp": "2026-09-03T09:19:32Z",
+  "random_seed": 42,
+  "accounting": {
+    "total_canonical_records": 4529,
+    "total_records_accounted_for": 4529,
+    "source_grounded_native": 10,
+    "source_grounded_reconstructed": 2,
+    "model_predicted": 1351,
+    "human_review": 434,
+    "unknown": 2732,
+    "total_assigned": 1363,
+    "total_unassigned_or_pending": 3166
+  },
+  "percentages": {
+    "pct_source_grounded": 0.26,
+    "pct_model_predicted": 29.83,
+    "pct_human_review": 9.58,
+    "pct_unknown": 60.32
+  },
+  "cardinality": {
+    "single_label_records": 1361,
+    "multilabel_records": 2
+  },
+  "lsr_distributions": {
+    "SOURCE_GROUNDED": {
+      "Bypassing Safety Controls": 1,
+      "Confined Space": 0,
+      "Driving": 0,
+      "Energy Isolation": 0,
+      "Hot Work": 0,
+      "Line of Fire": 2,
+      "Safe Mechanical Lifting": 2,
+      "Work Authorization": 0,
+      "Working at Height": 0
+    },
+    "MODEL_PREDICTED": {
+      "Bypassing Safety Controls": 0,
+      "Confined Space": 2,
+      "Driving": 180,
+      "Energy Isolation": 241,
+      "Hot Work": 181,
+      "Line of Fire": 62,
+      "Safe Mechanical Lifting": 252,
+      "Work Authorization": 4,
+      "Working at Height": 175
+    },
+    "HUMAN_REVIEW": {
+      "Bypassing Safety Controls": 0,
+      "Confined Space": 0,
+      "Driving": 0,
+      "Energy Isolation": 0,
+      "Hot Work": 0,
+      "Line of Fire": 0,
+      "Safe Mechanical Lifting": 0,
+      "Work Authorization": 0,
+      "Working at Height": 0
+    },
+    "ALL_ASSIGNED": {
+      "Bypassing Safety Controls": 1,
+      "Confined Space": 2,
+      "Driving": 180,
+      "Energy Isolation": 241,
+      "Hot Work": 181,
+      "Line of Fire": 64,
+      "Safe Mechanical Lifting": 254,
+      "Work Authorization": 4,
+      "Working at Height": 175
+    }
+  },
+  "quality_control": {
+    "total_quality_flags": 0
+  },
+  "production_protection": {
+    "canonical_dataset_untouched": true,
+    "production_sif_champion_frozen": true,
+    "production_lsr_champion_frozen": true,
+    "production_rag_untouched": true
+  },
+  "hashes": {
+    "initial": {
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf",
+      "semantic_chunks": "db5156ba99d33bb7878eab74f9911021e2c0e3eb6d203910866a1164397fa037"
+    },
+    "final": {
+      "canonical_dataset": "70fd46353d140b1322b0802496c5f1b2a11235cc8edf29d0f521260fcbe9f3e2",
+      "production_sif": "f64d474bb67d4ce4b0be6a22512b501667f7e7a835050ac0bb843033b3c39a2d",
+      "production_lsr": "dac093b91427fc2a814991e2f0e3328c5dd7385a8224033f2792aa37a5c01ae7",
+      "production_rag": "fc7055e2e800cd8358660a1c1f3f80c2dd348abbedd978a0d4a97995cfbe3bdf",
+      "semantic_chunks": "db5156ba99d33bb7878eab74f9911021e2c0e3eb6d203910866a1164397fa037"
+    }
+  },
+  "determinism_result": "PASS",
+  "status": "PASS",
+  "output_sha256": "38c7038f0d0ebe7f3652e086c276446a3211037526459761493bdc9b3b5f90c1"
+}
