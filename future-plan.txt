@@ -76,6 +76,9 @@ But these should be **second-layer capabilities**, not something we add before t
 
 ### Your architecture becomes
 
+
+ Image processing ??
+
 **Layer 1 — Deterministic Intelligence**
 
 > Models + historical data + FAISS + analytics + RAG + grounding

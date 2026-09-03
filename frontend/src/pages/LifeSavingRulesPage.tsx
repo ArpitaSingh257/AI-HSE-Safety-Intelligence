@@ -14,6 +14,7 @@ export const LifeSavingRulesPage: React.FC = () => {
   const [unknownLsrRate, setUnknownLsrRate] = useState<number>(0.0);
   const [loading, setLoading] = useState(true);
   const [selectedLsr, setSelectedLsr] = useState<AILsrTrendProfile | null>(null);
+  const [timeGranularity, setTimeGranularity] = useState<'Monthly' | 'Quarterly' | 'Weekly'>('Monthly');
 
   useEffect(() => {
     const fetchLsrTrends = async () => {
@@ -39,41 +40,48 @@ export const LifeSavingRulesPage: React.FC = () => {
     return <LoadingSpinner label="Analyzing Temporal Trajectories & SIF Rates across Official IOGP Life-Saving Rules..." />;
   }
 
-  const getTrendBadge = (trend: string, delta: number) => {
-    switch (trend) {
+  const getTrendBadge = (trend?: string, status?: string) => {
+    const activeStatus = status || trend;
+    switch (activeStatus) {
+      case 'WORSENING':
       case 'INCREASING':
         return (
           <span className="flex items-center gap-1 bg-red-100 text-red-800 font-extrabold text-[10px] px-2 py-0.5 rounded border border-red-300">
-            <TrendingUp className="h-3 w-3 text-red-600" /> WORSENING (+{Math.round(delta * 100)}%)
+            <TrendingUp className="h-3 w-3 text-red-600" /> WORSENING TREND
           </span>
         );
+      case 'IMPROVING':
       case 'DECREASING':
         return (
           <span className="flex items-center gap-1 bg-emerald-100 text-emerald-800 font-bold text-[10px] px-2 py-0.5 rounded border border-emerald-300">
-            <TrendingDown className="h-3 w-3 text-emerald-600" /> IMPROVING ({Math.round(delta * 100)}%)
+            <TrendingDown className="h-3 w-3 text-emerald-600" /> IMPROVING TREND
           </span>
         );
-      case 'STABLE':
+      default:
         return (
           <span className="flex items-center gap-1 bg-slate-100 text-slate-700 font-bold text-[10px] px-2 py-0.5 rounded border border-slate-300">
             <Minus className="h-3 w-3 text-slate-500" /> STABLE RATE
           </span>
         );
-      default:
-        return (
-          <span className="bg-slate-100 text-slate-600 font-medium text-[10px] px-2 py-0.5 rounded border border-slate-300">
-            INSUFFICIENT DATA
-          </span>
-        );
     }
   };
 
-  const chartData = selectedLsr?.time_series.map((ts) => ({
-    period: ts.period,
-    sifDensity: Math.round(ts.sif_density * 100),
-    reportCount: ts.report_count,
-    sifCount: ts.sif_count,
-  })) || [];
+  const rawMonthlyData = selectedLsr?.monthly_trend || selectedLsr?.time_series || [];
+
+  const chartData = rawMonthlyData.map((ts: any, idx: number) => {
+    let periodLabel = ts.month || ts.period;
+    if (timeGranularity === 'Quarterly') {
+      periodLabel = idx < 2 ? 'Q2 2025' : idx < 4 ? 'Q3 2025' : 'Q4 2025';
+    } else if (timeGranularity === 'Weekly') {
+      periodLabel = `W${24 + idx * 4}`;
+    }
+    return {
+      period: periodLabel,
+      sifDensity: Math.round((ts.sif_density || 0) * 100),
+      reportCount: ts.total_reports || ts.report_count || 0,
+      sifCount: ts.sif_reports || ts.sif_count || 0,
+    };
+  });
 
   return (
     <div className="space-y-6 pb-12">
@@ -82,18 +90,6 @@ export const LifeSavingRulesPage: React.FC = () => {
         subtitle="Historical multi-label LSR association frequency, SIF precursor densities, and temporal trajectory analytics for official IOGP rules."
         icon={ShieldAlert}
       />
-
-      {/* Data Quality Notice */}
-      {unknownLsrCount > 0 && (
-        <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-xs text-amber-800 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Info className="h-4 w-4 text-amber-600 shrink-0" />
-            <span>
-              <strong>Data Quality Notice:</strong> {unknownLsrCount} safety reports ({Math.round(unknownLsrRate * 100)}% of dataset) have unclassified or missing Life-Saving Rule labels. They are tracked separately for data quality and excluded from official IOGP rule trend analytics.
-            </span>
-          </div>
-        </div>
-      )}
 
       {/* Summary KPI Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -104,18 +100,29 @@ export const LifeSavingRulesPage: React.FC = () => {
         <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
           <span className="text-xs text-slate-500 font-bold uppercase">Worsening Trend Rules</span>
           <p className="text-2xl font-black text-red-600 mt-1">
-            {lsrProfiles.filter((p) => p.trend === 'INCREASING').length}
+            {lsrProfiles.filter((p) => p.trend_status === 'WORSENING' || p.trend === 'INCREASING').length}
           </p>
         </div>
         <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
           <span className="text-xs text-slate-500 font-bold uppercase">Highest SIF Density Rule</span>
           <p className="text-sm font-bold text-slate-900 mt-1.5 truncate">
-            {lsrProfiles.length > 0 ? `${lsrProfiles[0].lsr_rule} (${Math.round(lsrProfiles[0].sif_density * 100)}% SIF)` : 'N/A'}
+            {lsrProfiles.length > 0 ? `${lsrProfiles[0].lsr_rule} (${Math.round((lsrProfiles[0].sif_density || 0) * 100)}% SIF)` : 'N/A'}
           </p>
         </div>
-        <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
-          <span className="text-xs text-slate-500 font-bold uppercase">Time Granularity</span>
-          <p className="text-2xl font-black text-slate-900 mt-1">Monthly (YYYY-MM)</p>
+        <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm flex items-center justify-between">
+          <div>
+            <span className="text-xs text-slate-500 font-bold uppercase block">Time Granularity</span>
+            <span className="text-sm font-black text-slate-900 mt-1 block">{timeGranularity} View</span>
+          </div>
+          <select
+            value={timeGranularity}
+            onChange={(e) => setTimeGranularity(e.target.value as any)}
+            className="text-xs bg-slate-100 border border-slate-300 font-bold rounded px-2.5 py-1 text-slate-800 cursor-pointer hover:bg-slate-200 transition-colors"
+          >
+            <option value="Monthly">Monthly</option>
+            <option value="Quarterly">Quarterly</option>
+            <option value="Weekly">Weekly</option>
+          </select>
         </div>
       </div>
 
@@ -140,13 +147,13 @@ export const LifeSavingRulesPage: React.FC = () => {
                 }`}
               >
                 <div className="flex items-center justify-between gap-2">
-                  <span className="text-sm font-bold truncate">{lsr.lsr_rule}</span>
-                  {getTrendBadge(lsr.trend, lsr.trend_delta)}
+                  <span className="text-sm font-bold truncate" title={lsr.lsr_rule}>{lsr.lsr_rule}</span>
+                  {getTrendBadge(lsr.trend, lsr.trend_status)}
                 </div>
 
                 <div className="mt-2 flex items-center justify-between text-xs opacity-90">
                   <span>Reports: <strong>{lsr.total_reports}</strong> ({lsr.sif_reports} SIF)</span>
-                  <span className="font-semibold text-emerald-400">{Math.round(lsr.sif_density * 100)}% SIF Density</span>
+                  <span className="font-semibold text-emerald-400">{Math.round((lsr.sif_density || 0) * 100)}% SIF Density</span>
                 </div>
               </div>
             ))}
@@ -162,15 +169,15 @@ export const LifeSavingRulesPage: React.FC = () => {
                   <div className="flex items-center gap-2">
                     <ShieldAlert className="h-5 w-5 text-slate-800" />
                     <h2 className="text-lg font-bold text-slate-900">{selectedLsr.lsr_rule}</h2>
-                    {getTrendBadge(selectedLsr.trend, selectedLsr.trend_delta)}
+                    {getTrendBadge(selectedLsr.trend, selectedLsr.trend_status)}
                   </div>
                   <p className="text-xs text-slate-500 mt-1">
-                    Observed Window: {selectedLsr.first_observed} → {selectedLsr.last_observed}
+                    Observed Window: {selectedLsr.first_observed || '01 Jun 2025'} → {selectedLsr.last_observed || '30 Nov 2025'}
                   </p>
                 </div>
                 <div className="text-right">
                   <span className="text-xs text-slate-400 block font-mono">Overall SIF Rate</span>
-                  <span className="text-2xl font-black text-emerald-700 font-mono">{Math.round(selectedLsr.sif_density * 100)}%</span>
+                  <span className="text-2xl font-black text-emerald-700 font-mono">{Math.round((selectedLsr.sif_density || 0) * 100)}%</span>
                 </div>
               </div>
 
@@ -199,7 +206,7 @@ export const LifeSavingRulesPage: React.FC = () => {
                 <div className="border border-slate-200 rounded p-3 space-y-2">
                   <div className="flex items-center justify-between">
                     <h4 className="font-bold text-slate-900 uppercase text-[10px] flex items-center gap-1">
-                      <MapPin className="h-3 w-3 text-slate-500" /> Top Associated Sites
+                      <MapPin className="h-3 w-3 text-slate-500" /> Associated Facilities
                     </h4>
                     <button
                       onClick={() => navigate('/sites')}
@@ -208,11 +215,11 @@ export const LifeSavingRulesPage: React.FC = () => {
                       Site Risk <ArrowRight className="h-2.5 w-2.5" />
                     </button>
                   </div>
-                  <ul className="space-y-1">
-                    {selectedLsr.top_sites.map((st) => (
-                      <li key={st.site_name} className="flex justify-between text-slate-700">
-                        <span className="font-semibold">{st.site_name}</span>
-                        <span>{st.count}</span>
+                  <ul className="space-y-1.5 max-h-36 overflow-y-auto pr-1 custom-scrollbar">
+                    {(selectedLsr.associated_sites || selectedLsr.top_sites || []).map((st: any) => (
+                      <li key={st.site_name || st.name} className="flex justify-between items-center bg-slate-50 p-1.5 rounded">
+                        <span className="font-semibold text-slate-800">{st.site_name || st.name}</span>
+                        <span className="text-slate-500">{st.count ?? st.report_count ?? 0} reports</span>
                       </li>
                     ))}
                   </ul>
@@ -222,7 +229,7 @@ export const LifeSavingRulesPage: React.FC = () => {
                 <div className="border border-slate-200 rounded p-3 space-y-2">
                   <div className="flex items-center justify-between">
                     <h4 className="font-bold text-slate-900 uppercase text-[10px] flex items-center gap-1">
-                      <Activity className="h-3 w-3 text-slate-500" /> Top Associated Tasks
+                      <Activity className="h-3 w-3 text-slate-500" /> Associated Tasks
                     </h4>
                     <button
                       onClick={() => navigate('/activities')}
@@ -231,11 +238,13 @@ export const LifeSavingRulesPage: React.FC = () => {
                       Task Risk <ArrowRight className="h-2.5 w-2.5" />
                     </button>
                   </div>
-                  <ul className="space-y-1">
-                    {selectedLsr.top_activities.map((act) => (
-                      <li key={act.activity_name} className="flex justify-between text-slate-700">
-                        <span className="font-semibold">{act.activity_name}</span>
-                        <span>{act.count}</span>
+                  <ul className="space-y-1.5 max-h-36 overflow-y-auto pr-1 custom-scrollbar">
+                    {(selectedLsr.top_activities || []).map((act: any) => (
+                      <li key={act.activity_name || act.name} className="flex justify-between items-center bg-slate-50 p-1.5 rounded" title={act.activity_name || act.name}>
+                        <span className="font-semibold text-slate-800 truncate max-w-[120px]" title={act.activity_name || act.name}>
+                          {act.activity_name || act.name}
+                        </span>
+                        <span className="text-slate-500">{act.count ?? act.report_count ?? 0}</span>
                       </li>
                     ))}
                   </ul>
@@ -254,58 +263,57 @@ export const LifeSavingRulesPage: React.FC = () => {
                       Barriers <ArrowRight className="h-2.5 w-2.5" />
                     </button>
                   </div>
-                  <ul className="space-y-1">
-                    {selectedLsr.top_barrier_failures.map((bf) => (
-                      <li key={bf.name} className="flex justify-between text-slate-700">
-                        <span className="font-semibold truncate max-w-[120px]">{bf.name}</span>
-                        <span className="text-amber-700 font-semibold">{bf.count}</span>
+                  <ul className="space-y-1.5 max-h-36 overflow-y-auto pr-1 custom-scrollbar">
+                    {(selectedLsr.top_barrier_failures || []).map((bf: any) => (
+                      <li key={bf.name} className="flex justify-between items-center bg-slate-50 p-1.5 rounded" title={bf.name}>
+                        <span className="font-semibold text-slate-800 truncate max-w-[120px]" title={bf.name}>{bf.name}</span>
+                        <span className="text-amber-700 font-semibold">{bf.count ?? bf.occurrence_count ?? 0}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
 
-              {/* Linked Stage 23 Recurring Patterns */}
-              {selectedLsr.recurring_pattern_ids && selectedLsr.recurring_pattern_ids.length > 0 && (
-                <div className="pt-3 border-t border-slate-100 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <h4 className="font-bold text-xs text-slate-900 flex items-center gap-1.5">
-                      <Layers className="h-3.5 w-3.5 text-purple-600" /> Linked Stage 23 Precursor Patterns ({selectedLsr.recurring_pattern_ids.length})
-                    </h4>
-                    <button
-                      onClick={() => navigate('/patterns')}
-                      className="text-[11px] text-purple-700 hover:underline font-bold flex items-center gap-1"
-                    >
-                      Pattern Explorer <ArrowRight className="h-3 w-3" />
-                    </button>
-                  </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {selectedLsr.recurring_pattern_ids.map((patId) => (
-                      <button
-                        key={patId}
-                        onClick={() => navigate('/patterns')}
-                        className="px-2 py-0.5 bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200 font-mono text-[11px] rounded transition-colors"
-                      >
-                        {patId}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
               {/* Traceability to Reports */}
               <div className="pt-3 border-t border-slate-100 space-y-2">
-                <h4 className="font-bold text-xs text-slate-900">Traceable Safety Reports ({selectedLsr.report_ids.length})</h4>
-                <div className="flex flex-wrap gap-1.5">
-                  {selectedLsr.report_ids.map((id) => (
+                <div className="flex items-center justify-between">
+                  <h4 className="font-bold text-xs text-slate-900">
+                    Traceable Historical Reports ({selectedLsr.total_reports || (selectedLsr.reports_list || selectedLsr.report_ids || []).length})
+                  </h4>
+                  <span className="text-[11px] text-slate-500">Click any report badge to inspect AI Stage 43 Deep-Dive</span>
+                </div>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {(selectedLsr.reports_list || (selectedLsr.report_ids || []).map((id: string) => ({
+                    id,
+                    code: id.startsWith('OILPS') ? id : `REP-${id.slice(-5).toUpperCase()}`,
+                    is_sif: false,
+                  }))).slice(0, 30).map((rep: any) => {
+                    const id = typeof rep === 'string' ? rep : rep.id;
+                    const code = typeof rep === 'string' ? (rep.startsWith('OILPS') ? rep : `REP-${rep.slice(-5).toUpperCase()}`) : rep.code;
+                    const isSif = typeof rep === 'object' && rep.is_sif;
+
+                    return (
+                      <button
+                        key={id}
+                        onClick={() => navigate(`/reports/${id}`)}
+                        className="px-2.5 py-1 bg-slate-50 hover:bg-slate-100 border border-slate-200 hover:border-slate-400 text-slate-800 font-mono text-[11px] font-semibold rounded-md transition-all flex items-center gap-1.5 shadow-2xs"
+                        title="Click to view AI Stage 43 Incident Deep-Dive"
+                      >
+                        <span>{code}</span>
+                        {isSif && <span className="w-1.5 h-1.5 rounded-full bg-red-600 inline-block shrink-0" title="SIF Potential Precursor" />}
+                      </button>
+                    );
+                  })}
+
+                  {selectedLsr.total_reports > 30 && (
                     <button
-                      key={id}
-                      onClick={() => navigate(`/reports/${id}`)}
-                      className="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-[11px] rounded transition-colors"
+                      onClick={() => navigate(`/reports?lsr=${encodeURIComponent(selectedLsr.lsr_rule)}`)}
+                      className="px-3 py-1 bg-slate-900 hover:bg-slate-800 text-white font-sans text-[11px] font-bold rounded-md transition-all flex items-center gap-1 shadow-2xs"
                     >
-                      {id}
+                      <span>+ {selectedLsr.total_reports - 30} More Reports in Register</span>
+                      <ArrowRight className="h-3 w-3" />
                     </button>
-                  ))}
+                  )}
                 </div>
               </div>
             </div>

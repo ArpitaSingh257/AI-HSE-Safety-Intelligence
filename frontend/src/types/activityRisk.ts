@@ -14,13 +14,18 @@ export interface AIActivityRiskProfile {
   barrier_component: number;
   top_hazards: { name: string; count: number }[];
   top_barrier_failures: { name: string; count: number; sif_count: number; sif_density: number }[];
+  top_patterns?: { name: string; code: string; count: number }[];
   top_life_saving_rules: { name: string; count: number }[];
   associated_sites: { site_name: string; count: number }[];
+  top_sites?: any[];
+  reports_list?: any[];
   first_observed: string;
   last_observed: string;
   report_ids: string[];
   pattern_ids: string[];
   barrier_pattern_ids: string[];
+  stage23_pattern_ids?: string[];
+  stage24_barrier_ids?: string[];
 }
 
 export interface ActivityRiskListResponse {
