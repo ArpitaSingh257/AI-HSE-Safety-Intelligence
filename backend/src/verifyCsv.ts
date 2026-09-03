@@ -46,23 +46,17 @@ const csvPath = path.resolve(__dirname, '../../ai-service/datasets/processed/oil
 const content = fs.readFileSync(csvPath, 'utf-8');
 const rows = parseCsvRows(content);
 
-console.log(`Total Master CSV Rows (including header): ${rows.length}`);
 const header = rows[0];
-const sifIndex = header.indexOf('sif_potential');
-console.log(`Header sif_potential Index: ${sifIndex}`);
+const activityIndex = header.indexOf('activity');
 
-let trueCount = 0;
-let falseCount = 0;
+console.log(`Activity Column Index: ${activityIndex}`);
+
+const activityCounts: Record<string, number> = {};
 
 for (let i = 1; i < rows.length; i++) {
-  const sifVal = rows[i][sifIndex]?.trim()?.toUpperCase();
-  if (sifVal === 'TRUE' || sifVal === '1') {
-    trueCount++;
-  } else {
-    falseCount++;
-  }
+  const act = rows[i][activityIndex]?.trim() || 'EMPTY/BLANK';
+  activityCounts[act] = (activityCounts[act] || 0) + 1;
 }
 
-console.log(`Total Records: ${rows.length - 1}`);
-console.log(`SIF Potential TRUE Count: ${trueCount}`);
-console.log(`SIF Potential Percentage: ${(((trueCount) / (rows.length - 1)) * 100).toFixed(2)}%`);
+console.log('--- Unique Activity Values in Master CSV ---');
+console.log(activityCounts);

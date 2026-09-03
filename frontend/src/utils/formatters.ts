@@ -29,7 +29,9 @@ export function formatDateTime(dateString: string): string {
 }
 
 export function formatPercentage(val: number): string {
-  return `${(val * 100).toFixed(0)}%`;
+  if (val === undefined || val === null || isNaN(val)) return '0%';
+  const pct = val <= 1 ? val * 100 : val;
+  return `${pct.toFixed(1)}%`;
 }
 
 export function formatScore(score: number): string {

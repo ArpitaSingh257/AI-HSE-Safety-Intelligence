@@ -36,7 +36,9 @@ export const ReportsPage: React.FC = () => {
   const [selectedPriority, setSelectedPriority] = useState<string>(searchParams.get('priority') || 'ALL');
   const [selectedRule, setSelectedRule] = useState<string>(searchParams.get('life_saving_rule') || 'ALL');
   const [selectedActivity, setSelectedActivity] = useState<string>(searchParams.get('activity') || 'ALL');
-  const [sortBy, setSortBy] = useState<keyof SafetyReport>('date');
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(15);
+  const [sortBy, setSortBy] = useState<keyof SafetyReport | 'priority'>('priority');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
   // New Report Modal
@@ -46,7 +48,7 @@ export const ReportsPage: React.FC = () => {
     title: '',
     type: 'Unsafe Act',
     date: new Date().toISOString().split('T')[0],
-    site: 'Duliajan Central Complex',
+    site: 'Duliajan',
     department: 'Operations',
     location_detail: '',
     activity: 'Maintenance',
@@ -98,8 +100,10 @@ export const ReportsPage: React.FC = () => {
         sif_status: selectedSifStatus as SifStatus | 'ALL',
         priority: selectedPriority as PriorityLevel | 'ALL',
         life_saving_rule: selectedRule,
-        sortBy,
+        sortBy: sortBy as any,
         sortOrder,
+        page,
+        limit,
       });
       setReports(res.data);
       setTotal(res.total);
@@ -110,7 +114,7 @@ export const ReportsPage: React.FC = () => {
 
   useEffect(() => {
     fetchReports();
-  }, [selectedType, selectedSite, selectedSifStatus, selectedPriority, selectedRule, selectedActivity, sortBy, sortOrder]);
+  }, [selectedType, selectedSite, selectedSifStatus, selectedPriority, selectedRule, selectedActivity, sortBy, sortOrder, page, limit]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -231,13 +235,10 @@ export const ReportsPage: React.FC = () => {
               className="w-full rounded border border-slate-300 bg-white p-1.5 text-xs text-slate-800"
             >
               <option value="ALL">All Operational Sites</option>
-              <option value="Duliajan Central Complex">Duliajan Central</option>
-              <option value="Moran Oil & Gas Field">Moran Field</option>
-              <option value="Naharkatiya Production Station">Naharkatiya</option>
-              <option value="Digboi Refinery Asset">Digboi Asset</option>
-              <option value="Jorhat Drilling Block">Jorhat Block</option>
-              <option value="Kumchai Exploration Field">Kumchai Field</option>
-              <option value="Numaligarh Pipeline Corridor">Numaligarh</option>
+              <option value="Duliajan">Duliajan</option>
+              <option value="Moran">Moran</option>
+              <option value="Naharkatiya">Naharkatiya</option>
+              <option value="Digboi">Digboi</option>
             </select>
           </div>
 
@@ -278,14 +279,14 @@ export const ReportsPage: React.FC = () => {
               className="w-full rounded border border-slate-300 bg-white p-1.5 text-xs text-slate-800"
             >
               <option value="ALL">All Rules</option>
-              <option value="Energy Isolation">Energy Isolation</option>
+              <option value="Control of Hazardous Energy">Control of Hazardous Energy</option>
+              <option value="Confined Space Entry">Confined Space Entry</option>
               <option value="Hot Work">Hot Work</option>
+              <option value="Work at Height">Work at Height</option>
               <option value="Safe Mechanical Lifting">Safe Mechanical Lifting</option>
-              <option value="Confined Space">Confined Space</option>
-              <option value="Working at Height">Working at Height</option>
               <option value="Line of Fire">Line of Fire</option>
-              <option value="Bypassing Safety Controls">Bypassing Safety Controls</option>
               <option value="Driving">Driving</option>
+              <option value="Bypassing Safety Controls">Bypassing Safety Controls</option>
               <option value="Work Authorization">Work Authorization</option>
             </select>
           </div>
@@ -299,11 +300,10 @@ export const ReportsPage: React.FC = () => {
             >
               <option value="ALL">All Activities</option>
               <option value="Maintenance">Maintenance</option>
+              <option value="Rig Floor">Rig Floor</option>
               <option value="Hot Work">Hot Work</option>
-              <option value="Rig Floor Operations">Rig Floor Operations</option>
-              <option value="Confined Space Tank Cleaning">Tank Cleaning</option>
-              <option value="Working at Height">Working at Height</option>
-              <option value="Pipeline Pressure Testing">Pipeline Testing</option>
+              <option value="Confined Space">Confined Space</option>
+              <option value="Height Works">Height Works</option>
             </select>
           </div>
         </div>
@@ -361,7 +361,12 @@ export const ReportsPage: React.FC = () => {
                     </div>
                   </th>
                   <th>Life-Saving Rule</th>
-                  <th>Priority</th>
+                  <th onClick={() => handleSort('priority' as any)} className="cursor-pointer hover:bg-slate-100">
+                    <div className="flex items-center gap-1">
+                      <span>Priority</span>
+                      <ArrowUpDown className="h-3 w-3 text-slate-400" />
+                    </div>
+                  </th>
                   <th className="text-right">Actions</th>
                 </tr>
               </thead>
@@ -415,6 +420,51 @@ export const ReportsPage: React.FC = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+        )}
+
+        {/* Pagination Bar */}
+        {total > 0 && (
+          <div className="flex flex-col sm:flex-row items-center justify-between px-4 py-3 border-t border-slate-200 bg-slate-50 gap-3 text-xs text-slate-600">
+            <div className="flex items-center gap-2">
+              <span>Show</span>
+              <select
+                value={limit}
+                onChange={(e) => {
+                  setLimit(Number(e.target.value));
+                  setPage(1);
+                }}
+                className="rounded border border-slate-300 bg-white p-1 text-xs text-slate-800"
+              >
+                <option value={15}>15</option>
+                <option value={25}>25</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
+              </select>
+              <span>reports per page (Total {total.toLocaleString()} reports)</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                disabled={page <= 1}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
+                className="rounded border border-slate-300 bg-white px-3 py-1 font-semibold text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:hover:bg-white transition-colors"
+              >
+                Previous
+              </button>
+
+              <span className="font-semibold text-slate-900 px-2">
+                Page {page} of {Math.ceil(total / limit) || 1}
+              </span>
+
+              <button
+                disabled={page >= Math.ceil(total / limit)}
+                onClick={() => setPage((p) => Math.min(Math.ceil(total / limit), p + 1))}
+                className="rounded border border-slate-300 bg-white px-3 py-1 font-semibold text-slate-700 hover:bg-slate-100 disabled:opacity-40 disabled:hover:bg-white transition-colors"
+              >
+                Next
+              </button>
+            </div>
           </div>
         )}
       </div>
@@ -494,13 +544,10 @@ export const ReportsPage: React.FC = () => {
                 onChange={(e) => setNewReport({ ...newReport, site: e.target.value })}
                 className="w-full rounded border border-slate-300 p-2 text-xs text-slate-900"
               >
-                <option value="Duliajan Central Complex">Duliajan Central Complex</option>
-                <option value="Moran Oil & Gas Field">Moran Oil & Gas Field</option>
-                <option value="Naharkatiya Production Station">Naharkatiya Production Station</option>
-                <option value="Digboi Refinery Asset">Digboi Refinery Asset</option>
-                <option value="Jorhat Drilling Block">Jorhat Drilling Block</option>
-                <option value="Kumchai Exploration Field">Kumchai Exploration Field</option>
-                <option value="Numaligarh Pipeline Corridor">Numaligarh Pipeline Corridor</option>
+                <option value="Duliajan">Duliajan</option>
+                <option value="Moran">Moran</option>
+                <option value="Naharkatiya">Naharkatiya</option>
+                <option value="Digboi">Digboi</option>
               </select>
             </div>
             <div>
@@ -510,13 +557,11 @@ export const ReportsPage: React.FC = () => {
                 onChange={(e) => setNewReport({ ...newReport, activity: e.target.value })}
                 className="w-full rounded border border-slate-300 p-2 text-xs text-slate-900"
               >
-                <option value="Maintenance">Maintenance & Overhaul</option>
-                <option value="Hot Work">Hot Work & Welding</option>
-                <option value="Rig Floor Operations">Rig Floor Operations</option>
-                <option value="Confined Space Tank Cleaning">Confined Space Tank Cleaning</option>
-                <option value="Working at Height">Working at Height</option>
-                <option value="Pipeline Pressure Testing">Pipeline Pressure Testing</option>
-                <option value="Driving & Transport">Driving & Transport</option>
+                <option value="Maintenance">Maintenance</option>
+                <option value="Rig Floor">Rig Floor</option>
+                <option value="Hot Work">Hot Work</option>
+                <option value="Confined Space">Confined Space</option>
+                <option value="Height Works">Height Works</option>
               </select>
             </div>
           </div>

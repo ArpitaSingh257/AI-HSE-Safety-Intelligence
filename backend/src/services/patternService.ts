@@ -3,10 +3,10 @@ import { SifAnalysisResult } from '../models/SifAnalysisResult';
 import { Pattern } from '../models/Pattern';
 import { PriorityLevel, TrendStatus } from '../types';
 
-function priorityFromRate(rate: number): PriorityLevel {
-  if (rate >= 0.75) return 'CRITICAL';
-  if (rate >= 0.5) return 'HIGH';
-  if (rate >= 0.25) return 'MEDIUM';
+function priorityFromRate(rate: number, count: number): PriorityLevel {
+  if (count >= 30 || rate >= 0.05) return 'CRITICAL';
+  if (count >= 15 || rate >= 0.02) return 'HIGH';
+  if (count >= 5 || rate >= 0.01) return 'MEDIUM';
   return 'LOW';
 }
 
@@ -93,7 +93,7 @@ export async function regeneratePatterns(): Promise<number> {
       if (analysis?.precursors?.barrier_failure) barrierFailures.add(analysis.precursors.barrier_failure);
     }
 
-    const priority = priorityFromRate(sifPotentialRate);
+    const priority = priorityFromRate(sifPotentialRate, group.reports.length);
     const trendStatus = trendFromCounts(recentCount, olderCount);
 
     const name = `${group.rule} Failure — ${group.activity}`;

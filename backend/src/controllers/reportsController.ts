@@ -70,6 +70,38 @@ export async function getReports(req: Request, res: Response) {
   const sortField = sortBy === 'created_at' ? 'createdAt' : sortBy === 'updated_at' ? 'updatedAt' : sortBy;
   const sortDir = sortOrder === 'asc' ? 1 : -1;
 
+  if (sortBy === 'priority') {
+    const priorityWeight = {
+      $switch: {
+        branches: [
+          { case: { $eq: ['$priority', 'CRITICAL'] }, then: 4 },
+          { case: { $eq: ['$priority', 'HIGH'] }, then: 3 },
+          { case: { $eq: ['$priority', 'MEDIUM'] }, then: 2 },
+          { case: { $eq: ['$priority', 'LOW'] }, then: 1 },
+        ],
+        default: 0,
+      },
+    };
+
+    const [reports, total] = await Promise.all([
+      SafetyReport.aggregate([
+        { $match: query },
+        { $addFields: { priorityWeight } },
+        { $sort: { priorityWeight: sortDir, date: -1 } },
+        { $skip: (pageNum - 1) * limitNum },
+        { $limit: limitNum },
+      ]),
+      SafetyReport.countDocuments(query),
+    ]);
+
+    const formatted = reports.map((r: any) => ({
+      ...r,
+      id: r._id.toString(),
+    }));
+
+    return res.json({ data: formatted, total });
+  }
+
   const [reports, total] = await Promise.all([
     SafetyReport.find(query)
       .sort({ [sortField]: sortDir })

@@ -111,6 +111,12 @@ class RecurringPatternDetector:
         if not incidents or len(incidents) < self.min_pattern_incidents:
             return []
 
+        # Count total baseline incidents per activity
+        activity_totals: Dict[str, int] = {}
+        for r in incidents:
+            act = r.get("activity") or "General Operations"
+            activity_totals[act] = activity_totals.get(act, 0) + 1
+
         # 1. Group records by (activity, primary_life_saving_rule) anchor keys first
         anchor_groups: Dict[str, List[Dict[str, Any]]] = {}
         for r in incidents:
@@ -164,7 +170,6 @@ class RecurringPatternDetector:
             inc_ids = [c["record_id"] for c in cluster]
             inc_count = len(cluster)
             sif_count = sum(1 for c in cluster if c["is_sif"])
-            sif_density = round(sif_count / inc_count, 4)
 
             # Extract dominant values for structured dimensions
             activities = [c["activity"] for c in cluster if c["activity"]]
@@ -174,6 +179,8 @@ class RecurringPatternDetector:
             lsr_rules = [c["primary_life_saving_rule"] for c in cluster if c["primary_life_saving_rule"]]
 
             dom_activity = max(set(activities), key=activities.count) if activities else "General Operations"
+            act_baseline = activity_totals.get(dom_activity, len(incidents))
+            sif_density = round(sif_count / act_baseline, 4) if act_baseline > 0 else 0.0
             dom_lsr = max(set(lsr_rules), key=lsr_rules.count) if lsr_rules else "Safety Controls"
             dom_hazard = max(set(hazards), key=hazards.count) if hazards else "Operational Hazard"
             dom_barrier = max(set(barriers), key=barriers.count) if barriers else "Control Gap"
@@ -184,10 +191,10 @@ class RecurringPatternDetector:
             first_obs = dates_sorted[0] if dates_sorted else "Unknown"
             last_obs = dates_sorted[-1] if dates_sorted else "Unknown"
 
-            # Determine Pattern Strength
-            if (inc_count >= 5 and sif_density >= 0.40) or (inc_count >= 3 and sif_density >= 0.75):
+            # Determine Pattern Strength based on both incident support volume and SIF density
+            if inc_count >= 50 and sif_density >= 0.20:
                 strength = "HIGH"
-            elif inc_count >= 3 and (sif_density >= 0.25 or len(unique_locations) >= 2):
+            elif inc_count >= 15 or (inc_count >= 5 and sif_density >= 0.50):
                 strength = "MEDIUM"
             else:
                 strength = "LOW"

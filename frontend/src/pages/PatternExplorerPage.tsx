@@ -21,8 +21,26 @@ export const PatternExplorerPage: React.FC = () => {
     const fetchPatterns = async () => {
       try {
         const res = await patternsService.getPatterns();
-        setAiPatterns(res.ai_patterns || []);
-        setDbPatterns(res.db_patterns || []);
+        
+        const STRENGTH_WEIGHT: Record<string, number> = { HIGH: 3, MEDIUM: 2, LOW: 1 };
+        const PRIORITY_WEIGHT: Record<string, number> = { CRITICAL: 4, HIGH: 3, MEDIUM: 2, LOW: 1 };
+
+        const sortedAi = [...(res.ai_patterns || [])].sort((a, b) => {
+          const wA = STRENGTH_WEIGHT[a.pattern_strength] || 0;
+          const wB = STRENGTH_WEIGHT[b.pattern_strength] || 0;
+          if (wB !== wA) return wB - wA;
+          return b.incident_count - a.incident_count;
+        });
+
+        const sortedDb = [...(res.db_patterns || [])].sort((a, b) => {
+          const wA = PRIORITY_WEIGHT[a.priority] || 0;
+          const wB = PRIORITY_WEIGHT[b.priority] || 0;
+          if (wB !== wA) return wB - wA;
+          return b.reportCount - a.reportCount;
+        });
+
+        setAiPatterns(sortedAi);
+        setDbPatterns(sortedDb);
       } finally {
         setLoading(false);
       }
@@ -94,9 +112,9 @@ export const PatternExplorerPage: React.FC = () => {
                       <span className="font-bold text-slate-900">{pat.incident_count} Incidents</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-500">SIF Density:</span>
+                      <span className="text-slate-500">SIF Precursor Density:</span>
                       <span className="font-bold text-red-600">
-                        {formatPercentage(pat.sif_density)} ({pat.sif_incident_count} SIF)
+                        {pat.incident_count > 0 ? `${Math.round((pat.sif_incident_count / pat.incident_count) * 100)}%` : '0%'} ({pat.sif_incident_count} SIF)
                       </span>
                     </div>
                     <div className="flex items-center justify-between">

@@ -18,7 +18,14 @@ export const BarrierFailureExplorerPage: React.FC = () => {
     const fetchPatterns = async () => {
       try {
         const res = await barrierPatternsService.getBarrierPatterns();
-        setBarrierPatterns(res.barrier_patterns || []);
+        const STRENGTH_WEIGHT: Record<string, number> = { HIGH: 3, MEDIUM: 2, LOW: 1 };
+        const sorted = [...(res.barrier_patterns || [])].sort((a, b) => {
+          const wA = STRENGTH_WEIGHT[a.pattern_strength] || 0;
+          const wB = STRENGTH_WEIGHT[b.pattern_strength] || 0;
+          if (wB !== wA) return wB - wA;
+          return b.occurrences - a.occurrences;
+        });
+        setBarrierPatterns(sorted);
       } finally {
         setLoading(false);
       }

@@ -7,11 +7,27 @@ import { fetchAiPatterns, fetchAiPatternById } from '../services/aiService';
 
 export async function getPatterns(_req: Request, res: Response) {
   const aiPatterns = await fetchAiPatterns();
-  const dbPatterns = await Pattern.find({}).sort({ sifPotentialRate: -1 });
+  
+  const priorityWeight = {
+    $switch: {
+      branches: [
+        { case: { $eq: ['$priority', 'CRITICAL'] }, then: 4 },
+        { case: { $eq: ['$priority', 'HIGH'] }, then: 3 },
+        { case: { $eq: ['$priority', 'MEDIUM'] }, then: 2 },
+        { case: { $eq: ['$priority', 'LOW'] }, then: 1 },
+      ],
+      default: 0,
+    },
+  };
+
+  const dbPatterns = await Pattern.aggregate([
+    { $addFields: { priorityWeight } },
+    { $sort: { priorityWeight: -1, reportCount: -1 } },
+  ]);
 
   res.json({
     ai_patterns: aiPatterns?.patterns || [],
-    db_patterns: dbPatterns.map((p) => p.toJSON())
+    db_patterns: dbPatterns.map((p: any) => ({ ...p, id: p._id.toString() })),
   });
 }
 
