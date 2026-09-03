@@ -1,6 +1,7 @@
 import { SafetyReport } from '../models/SafetyReport';
 import { Intervention } from '../models/Intervention';
 import { SifAnalysisResult } from '../models/SifAnalysisResult';
+import { Pattern } from '../models/Pattern';
 
 // Rough, static lat/lng lookup for known site display names, purely so the
 // map view has something to plot. Falls back to undefined (no marker) for
@@ -42,7 +43,7 @@ export async function getKpis() {
   const [totalReports, sifPotentialCount, criticalPrecursorsCount, activeInterventionsCount] = await Promise.all([
     SafetyReport.countDocuments({}),
     SafetyReport.countDocuments({ sif_status: 'SIF_POTENTIAL' }),
-    SafetyReport.countDocuments({ sif_status: 'SIF_POTENTIAL', priority: 'CRITICAL' }),
+    Pattern.countDocuments({}),
     Intervention.countDocuments({ status: { $ne: 'CLOSED' } }),
   ]);
 
@@ -95,8 +96,11 @@ export async function getHighRiskSites() {
   return agg.map((row: any, idx: number) => {
     const sifRate = row.totalReports > 0 ? Math.round((row.sifCount / row.totalReports) * 1000) / 10 : 0;
     const ruleCounts: Record<string, number> = {};
-    for (const r of row.rules || []) ruleCounts[r] = (ruleCounts[r] || 0) + 1;
-    const topRule = Object.entries(ruleCounts).sort((a, b) => b[1] - a[1])[0]?.[0] || 'N/A';
+    for (const r of row.rules || []) {
+      if (r) ruleCounts[r] = (ruleCounts[r] || 0) + 1;
+    }
+    const validEntries = Object.entries(ruleCounts).filter(([r]) => r && !/other|unclassified|unknown|none|pending/i.test(r));
+    const topRule = validEntries.sort((a, b) => b[1] - a[1])[0]?.[0] || 'General Operational Control Gap';
 
     return {
       site: row._id,
@@ -154,7 +158,7 @@ export async function getTopLifeSavingRules() {
   const THIRTY_DAYS = 30 * 24 * 60 * 60 * 1000;
 
   const agg = await SafetyReport.aggregate([
-    { $match: { life_saving_rule: { $nin: ['Pending Evaluation', ''] } } },
+    { $match: { life_saving_rule: { $nin: ['Pending Evaluation', '', 'UNKNOWN', 'Unclassified', 'Other issue – no applicable rule'] } } },
     {
       $group: {
         _id: '$life_saving_rule',

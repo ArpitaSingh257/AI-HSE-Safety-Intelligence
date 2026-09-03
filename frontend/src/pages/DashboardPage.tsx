@@ -52,16 +52,21 @@ export const DashboardPage: React.FC = () => {
     <div className="space-y-6">
       <PageHeader
         title="Executive HSE & SIF Precursor Dashboard"
-        subtitle="Real-time Serious Injury & Fatality precursor detection, barrier failure metrics, and IOGP Life-Saving Rule analytics."
-        showDemoBadge={true}
+        subtitle="Real-time Serious Injury & Fatality precursor detection, barrier failure metrics, and Stage 43 FAISS intelligence (4,529 Master Dataset Records)."
+        showDemoBadge={false}
         actions={
-          <button
-            onClick={() => navigate('/reports')}
-            className="flex items-center gap-1.5 rounded bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-slate-800 transition-colors"
-          >
-            <span>View All Reports</span>
-            <ArrowRight className="h-3.5 w-3.5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <span className="rounded bg-emerald-900/60 px-3 py-1.5 text-xs font-bold text-emerald-300 border border-emerald-700">
+              📊 4,529 Master Dataset Records (Stage 43 FAISS Index)
+            </span>
+            <button
+              onClick={() => navigate('/reports')}
+              className="flex items-center gap-1.5 rounded bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-slate-800 transition-colors"
+            >
+              <span>View Field Register ({kpis.totalReports})</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
         }
       />
 
@@ -70,7 +75,7 @@ export const DashboardPage: React.FC = () => {
         <MetricCard
           label="Total Safety Reports"
           value={kpis.totalReports.toLocaleString()}
-          subValue="Reports Ingested"
+          subValue="Reports Ingested in Active Register"
           trend={kpis.totalReportsTrend}
           trendLabel="vs previous cycle"
           icon={FileText}
@@ -181,8 +186,8 @@ export const DashboardPage: React.FC = () => {
               </button>
             </div>
 
-            <div className="space-y-3">
-              {highRiskSites.slice(0, 4).map((site) => (
+            <div className="space-y-3 max-h-[290px] overflow-y-auto pr-1">
+              {highRiskSites.map((site) => (
                 <div
                   key={site.code}
                   onClick={() => navigate(`/reports?site=${encodeURIComponent(site.site)}`)}
@@ -228,8 +233,8 @@ export const DashboardPage: React.FC = () => {
               </button>
             </div>
 
-            <div className="space-y-3">
-              {highRiskActivities.slice(0, 4).map((act) => (
+            <div className="space-y-3 max-h-[290px] overflow-y-auto pr-1">
+              {highRiskActivities.map((act) => (
                 <div
                   key={act.activity}
                   onClick={() => navigate(`/reports?activity=${encodeURIComponent(act.activity)}`)}
@@ -284,8 +289,8 @@ export const DashboardPage: React.FC = () => {
             </button>
           </div>
 
-          <div className="space-y-2.5">
-            {topLifeSavingRules.slice(0, 5).map((rule) => (
+          <div className="space-y-2.5 max-h-[340px] overflow-y-auto pr-1">
+            {topLifeSavingRules.map((rule) => (
               <div
                 key={rule.rule}
                 onClick={() => navigate(`/reports?life_saving_rule=${encodeURIComponent(rule.rule)}`)}

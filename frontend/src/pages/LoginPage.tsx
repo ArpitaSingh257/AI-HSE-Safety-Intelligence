@@ -8,27 +8,45 @@ import { DemoDataBadge } from '../components/common/DemoDataBadge';
 export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
-  const [email, setEmail] = useState('officer@oilindia.in');
-  const [password, setPassword] = useState('••••••••');
+  const [email, setEmail] = useState('analyst@oilindia.in');
+  const [password, setPassword] = useState('Password@123');
   const [selectedRole, setSelectedRole] = useState<UserRole>('HSE Analyst');
   const [loading, setLoading] = useState(false);
+
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
     try {
       await login({ email, password, role: selectedRole });
       navigate('/dashboard');
+    } catch (err: any) {
+      console.error('Login error:', err);
+      setError(err.message || 'Authentication failed. Please check credentials or try a preset role.');
     } finally {
       setLoading(false);
     }
   };
 
+  const EMAIL_MAP: Record<UserRole, string> = {
+    'Admin': 'admin@oilindia.in',
+    'HSE Manager': 'manager@oilindia.in',
+    'HSE Analyst': 'analyst@oilindia.in',
+    'Viewer': 'viewer@oilindia.in',
+  };
+
   const handleQuickLogin = async (role: UserRole) => {
     setLoading(true);
+    setError(null);
     try {
-      await login({ email: `${role.toLowerCase().replace(' ', '.')}@oilindia.in`, role });
+      const emailToUse = EMAIL_MAP[role] || `${role.toLowerCase().replace(/\s+/g, '.')}@oilindia.in`;
+      await login({ email: emailToUse, password: 'Password@123', role });
       navigate('/dashboard');
+    } catch (err: any) {
+      console.error('Quick login error:', err);
+      setError(err.message || 'Authentication failed');
     } finally {
       setLoading(false);
     }
@@ -61,6 +79,11 @@ export const LoginPage: React.FC = () => {
         {/* Login Form Card */}
         <div className="hse-card overflow-hidden border-slate-700 bg-slate-800/90 p-6 shadow-2xl">
           <form onSubmit={handleSubmit} className="space-y-4">
+            {error && (
+              <div className="p-2.5 rounded bg-red-900/40 border border-red-700 text-xs font-semibold text-red-300">
+                {error}
+              </div>
+            )}
             <div>
               <label htmlFor="email-input" className="block text-xs font-medium text-slate-300">
                 Official Email ID

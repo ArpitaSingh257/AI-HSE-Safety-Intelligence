@@ -28,7 +28,7 @@ const SIF_KEYWORD_RULES: { pattern: RegExp; rule: string; hazard: string }[] = [
   { pattern: /elevated platform|lanyard|scaffold|height/i, rule: 'Work at Height', hazard: 'Fall from elevation' },
 ];
 
-function buildStubResult(reportId: string, reportText: string = ''): SifAnalysisResultShape {
+export function buildStubResult(reportId: string, reportText: string = ''): SifAnalysisResultShape {
   const match = SIF_KEYWORD_RULES.find((k) => k.pattern.test(reportText));
   const isSif = Boolean(match);
 
@@ -471,12 +471,26 @@ export async function submitAiFeedback(payload: any): Promise<any> {
 }
 
 /**
- * Calls FastAPI /api/v1/feedback/stats to retrieve aggregate feedback metrics.
- */
-/**
  * Calls FastAPI /api/v1/triage to evaluate confidence-calibrated triage decision.
  */
 export async function fetchAiTriage(payload: any): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const triageUrl = `${baseUrl}/triage`;
+
+  try {
+    const response = await fetch(triageUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (err) {
+    console.warn('FastAPI triage endpoint unreachable:', (err as Error).message);
+    return null;
+  }
+}
+
 /**
  * Calls FastAPI /api/v1/text/normalize to process multilingual and noisy field report text.
  */
@@ -491,11 +505,14 @@ export async function normalizeReportText(text: string): Promise<any> {
       body: JSON.stringify({ text })
     });
     if (!response.ok) return null;
+    return await response.json();
   } catch (err) {
     console.warn('FastAPI text normalize endpoint unreachable:', (err as Error).message);
     return null;
   }
 }
+
+/**
  * Calls Stage 43 FastAPI /api/v1/intelligence/analyze for unified end-to-end intelligence analysis.
  */
 export async function analyzeIntelligence(reqPayload: {
