@@ -86,87 +86,93 @@ export const BowTieView: React.FC<BowTieViewProps> = ({ reportId }) => {
   const consequences = bowTie.nodes.filter((n) => n.type === 'CONSEQUENCE');
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-4">
       {/* Governance Banner */}
-      <div className="bg-slate-900 text-white rounded-lg p-4 shadow-sm border border-slate-800 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <GitCommit className="h-5 w-5 text-amber-400 shrink-0" />
-          <div className="text-xs space-y-0.5">
-            <p className="font-bold text-amber-300">Bow-Tie Barrier Pathway & Decision-Support</p>
+      <div className="bg-slate-900 text-white rounded-lg p-3.5 shadow-sm border border-slate-800 flex items-center justify-between">
+        <div className="flex items-center gap-2.5">
+          <GitCommit className="h-4 w-4 text-amber-400 shrink-0" />
+          <div className="text-[11px] leading-snug">
+            <p className="font-bold text-amber-300">Bow-Tie Barrier Pathway & Risk Provenance</p>
             <p className="text-slate-300">
-              Qualitative safety barrier structure mapping Threats &rarr; Failed Barriers &rarr; Loss of Control Top Event &rarr; Potential Consequences. Nodes are strictly tagged as <span className="text-emerald-300 font-bold">OBSERVED</span> (report evidence) or <span className="text-amber-300 font-bold">INFERRED</span> (deterministic domain logic).
+              Qualitative safety barrier flow: <span className="text-amber-200">Threats</span> &rarr; <span className="text-amber-300">Failed Barriers</span> &rarr; <span className="text-red-300 font-bold">Top Event</span> &rarr; <span className="text-blue-300">Consequences</span>.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Bow-Tie Visual Horizontal Flow Diagram */}
-      <div className="bg-white border border-slate-200 rounded-lg p-5 shadow-sm space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-          <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+      {/* Bow-Tie Visual Flow Diagram (Sleek 2x2 or 4-Stage Layout) */}
+      <div className="bg-white border border-slate-200 rounded-lg p-4 shadow-sm space-y-4">
+        <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
+          <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
             <GitCommit className="h-4 w-4 text-slate-700" /> Incident Bow-Tie Barrier Pathway
           </h3>
-          <span className="text-[11px] font-mono text-slate-500">Mapping Confidence: <strong className="text-slate-800">{bowTie.mapping_confidence}</strong></span>
+          <span className="text-[10px] font-mono text-slate-500">Mapping Confidence: <strong className="text-slate-800">{bowTie.mapping_confidence}</strong></span>
         </div>
 
-        {/* 4-Stage Horizontal Flow Container */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 pt-1">
-          {/* Column 1: Threats & Hazards */}
+        {/* Responsive 2x2 Flow Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {/* Stage 1: Threats & Hazards */}
           <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 space-y-2">
-            <span className="text-[10px] font-black text-slate-700 uppercase block border-b border-slate-200 pb-1">
-              1. Threats & Hazards
-            </span>
+            <div className="flex items-center justify-between border-b border-slate-200 pb-1.5">
+              <span className="text-[10px] font-black text-slate-800 uppercase flex items-center gap-1">
+                <Search className="h-3 w-3 text-slate-600" /> 1. Threats & Hazards
+              </span>
+              <span className="text-[10px] text-slate-500 font-mono">Stage 1</span>
+            </div>
             <div className="space-y-2">
               {hazards.map((n) => (
                 <div
                   key={n.id}
                   onClick={() => setSelectedNode(n)}
-                  className={`p-2 rounded border cursor-pointer text-xs space-y-1 transition-all ${
-                    selectedNode?.id === n.id ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-800 border-slate-200 hover:border-slate-400'
+                  className={`p-2.5 rounded-lg border cursor-pointer text-xs space-y-1.5 transition-all ${
+                    selectedNode?.id === n.id ? 'bg-slate-900 text-white border-slate-900 shadow-sm' : 'bg-white text-slate-800 border-slate-200 hover:border-slate-400'
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-[10px] text-amber-500 uppercase">HAZARD</span>
+                  <div className="flex items-center justify-between gap-1 flex-wrap">
+                    <span className="font-bold text-[9px] text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 uppercase">HAZARD</span>
                     {getProvenanceBadge(n.provenance)}
                   </div>
-                  <p className="font-semibold text-xs leading-snug">{n.label}</p>
+                  <p className="font-bold text-xs leading-snug">{n.label}</p>
                 </div>
               ))}
               {threats.map((n) => (
                 <div
                   key={n.id}
                   onClick={() => setSelectedNode(n)}
-                  className={`p-2 rounded border cursor-pointer text-xs space-y-1 transition-all ${
-                    selectedNode?.id === n.id ? 'bg-slate-900 text-white border-slate-900' : 'bg-white text-slate-800 border-slate-200 hover:border-slate-400'
+                  className={`p-2.5 rounded-lg border cursor-pointer text-xs space-y-1.5 transition-all ${
+                    selectedNode?.id === n.id ? 'bg-slate-900 text-white border-slate-900 shadow-sm' : 'bg-white text-slate-800 border-slate-200 hover:border-slate-400'
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-[10px] text-purple-600 uppercase">THREAT</span>
+                  <div className="flex items-center justify-between gap-1 flex-wrap">
+                    <span className="font-bold text-[9px] text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-200 uppercase">THREAT</span>
                     {getProvenanceBadge(n.provenance)}
                   </div>
-                  <p className="font-semibold text-xs leading-snug">{n.label}</p>
+                  <p className="font-bold text-xs leading-snug">{n.label}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Column 2: Failed Barriers */}
-          <div className="bg-amber-50/50 border border-amber-200 rounded-lg p-3 space-y-2">
-            <span className="text-[10px] font-black text-amber-900 uppercase block border-b border-amber-200 pb-1">
-              2. Failed Barriers
-            </span>
+          {/* Stage 2: Failed Barriers */}
+          <div className="bg-amber-50/60 border border-amber-200/80 rounded-lg p-3 space-y-2">
+            <div className="flex items-center justify-between border-b border-amber-200 pb-1.5">
+              <span className="text-[10px] font-black text-amber-950 uppercase flex items-center gap-1">
+                <ShieldAlert className="h-3 w-3 text-amber-600" /> 2. Failed Barriers
+              </span>
+              <span className="text-[10px] text-amber-800 font-mono">Stage 2</span>
+            </div>
             <div className="space-y-2">
               {barriers.map((n) => (
                 <div
                   key={n.id}
                   onClick={() => setSelectedNode(n)}
-                  className={`p-2.5 rounded border cursor-pointer text-xs space-y-1 transition-all ${
-                    selectedNode?.id === n.id ? 'bg-amber-900 text-white border-amber-900 font-bold' : 'bg-white text-slate-800 border-amber-300 hover:border-amber-500 shadow-sm'
+                  className={`p-2.5 rounded-lg border cursor-pointer text-xs space-y-1.5 transition-all ${
+                    selectedNode?.id === n.id ? 'bg-amber-900 text-white border-amber-900 font-bold shadow-sm' : 'bg-white text-slate-800 border-amber-200 hover:border-amber-400'
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-[10px] text-amber-600 uppercase flex items-center gap-1">
-                      <ShieldAlert className="h-3 w-3" /> FAILED BARRIER
+                  <div className="flex items-center justify-between gap-1 flex-wrap">
+                    <span className="font-bold text-[9px] text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200 uppercase flex items-center gap-1">
+                      <ShieldAlert className="h-2.5 w-2.5" /> FAILED BARRIER
                     </span>
                     {getProvenanceBadge(n.provenance)}
                   </div>
@@ -176,23 +182,26 @@ export const BowTieView: React.FC<BowTieViewProps> = ({ reportId }) => {
             </div>
           </div>
 
-          {/* Column 3: Top Event (Loss of Control) */}
-          <div className="bg-red-50/50 border border-red-200 rounded-lg p-3 space-y-2">
-            <span className="text-[10px] font-black text-red-900 uppercase block border-b border-red-200 pb-1">
-              3. Top Event (Loss of Control)
-            </span>
+          {/* Stage 3: Top Event (Loss of Control) */}
+          <div className="bg-red-50/60 border border-red-200/80 rounded-lg p-3 space-y-2">
+            <div className="flex items-center justify-between border-b border-red-200 pb-1.5">
+              <span className="text-[10px] font-black text-red-950 uppercase flex items-center gap-1">
+                <AlertTriangle className="h-3 w-3 text-red-600" /> 3. Top Event (Loss of Control)
+              </span>
+              <span className="text-[10px] text-red-800 font-mono">Stage 3</span>
+            </div>
             <div className="space-y-2">
               {topEvents.map((n) => (
                 <div
                   key={n.id}
                   onClick={() => setSelectedNode(n)}
-                  className={`p-2.5 rounded border cursor-pointer text-xs space-y-1 transition-all ${
-                    selectedNode?.id === n.id ? 'bg-red-900 text-white border-red-900 font-bold' : 'bg-white text-slate-800 border-red-300 hover:border-red-500 shadow-sm'
+                  className={`p-2.5 rounded-lg border cursor-pointer text-xs space-y-1.5 transition-all ${
+                    selectedNode?.id === n.id ? 'bg-red-900 text-white border-red-900 font-bold shadow-sm' : 'bg-white text-slate-800 border-red-200 hover:border-red-400'
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-[10px] text-red-600 uppercase flex items-center gap-1">
-                      <AlertTriangle className="h-3 w-3" /> LOSS OF CONTROL
+                  <div className="flex items-center justify-between gap-1 flex-wrap">
+                    <span className="font-bold text-[9px] text-red-700 bg-red-50 px-1.5 py-0.5 rounded border border-red-200 uppercase flex items-center gap-1">
+                      <AlertTriangle className="h-2.5 w-2.5" /> LOSS OF CONTROL
                     </span>
                     {getProvenanceBadge(n.provenance)}
                   </div>
@@ -202,23 +211,26 @@ export const BowTieView: React.FC<BowTieViewProps> = ({ reportId }) => {
             </div>
           </div>
 
-          {/* Column 4: Consequences */}
-          <div className="bg-blue-50/50 border border-blue-200 rounded-lg p-3 space-y-2">
-            <span className="text-[10px] font-black text-blue-900 uppercase block border-b border-blue-200 pb-1">
-              4. Potential Consequences
-            </span>
+          {/* Stage 4: Potential Consequences */}
+          <div className="bg-blue-50/60 border border-blue-200/80 rounded-lg p-3 space-y-2">
+            <div className="flex items-center justify-between border-b border-blue-200 pb-1.5">
+              <span className="text-[10px] font-black text-blue-950 uppercase flex items-center gap-1">
+                <Flame className="h-3 w-3 text-blue-600" /> 4. Potential Consequences
+              </span>
+              <span className="text-[10px] text-blue-800 font-mono">Stage 4</span>
+            </div>
             <div className="space-y-2">
               {consequences.map((n) => (
                 <div
                   key={n.id}
                   onClick={() => setSelectedNode(n)}
-                  className={`p-2.5 rounded border cursor-pointer text-xs space-y-1 transition-all ${
-                    selectedNode?.id === n.id ? 'bg-blue-900 text-white border-blue-900 font-bold' : 'bg-white text-slate-800 border-blue-300 hover:border-blue-500 shadow-sm'
+                  className={`p-2.5 rounded-lg border cursor-pointer text-xs space-y-1.5 transition-all ${
+                    selectedNode?.id === n.id ? 'bg-blue-900 text-white border-blue-900 font-bold shadow-sm' : 'bg-white text-slate-800 border-blue-200 hover:border-blue-400'
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-[10px] text-blue-600 uppercase flex items-center gap-1">
-                      <Flame className="h-3 w-3" /> CONSEQUENCE
+                  <div className="flex items-center justify-between gap-1 flex-wrap">
+                    <span className="font-bold text-[9px] text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200 uppercase flex items-center gap-1">
+                      <Flame className="h-2.5 w-2.5" /> CONSEQUENCE
                     </span>
                     {getProvenanceBadge(n.provenance)}
                   </div>

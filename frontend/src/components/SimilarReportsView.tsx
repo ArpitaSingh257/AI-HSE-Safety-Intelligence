@@ -75,7 +75,8 @@ export const SimilarReportsView: React.FC<SimilarReportsViewProps> = ({ reportId
         <span className="text-xs font-mono text-slate-500">FAISS 384-D Vector Search</span>
       </div>
 
-      <div className="space-y-3">
+      {/* Scrollable Cards Container */}
+      <div className="space-y-3 max-h-[480px] overflow-y-auto pr-1 scrollbar-thin">
         {similarReports.map((item) => (
           <div
             key={item.report_id}

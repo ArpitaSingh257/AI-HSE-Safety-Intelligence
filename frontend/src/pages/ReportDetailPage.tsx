@@ -26,6 +26,9 @@ export const ReportDetailPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [analyzing, setAnalyzing] = useState(false);
 
+  // Tab State for Compact UX (eliminates endless vertical scrolling)
+  const [activeTab, setActiveTab] = useState<'intelligence' | 'bowtie' | 'similar'>('intelligence');
+
   const fetchReport = async () => {
     if (!id) return;
     setLoading(true);
@@ -204,7 +207,7 @@ export const ReportDetailPage: React.FC = () => {
               <span className="text-[10px] text-slate-400">Raw Input Text</span>
             </div>
 
-            <div className="rounded border border-slate-200 bg-slate-50/70 p-4 font-mono text-xs text-slate-800 leading-relaxed whitespace-pre-wrap">
+            <div className="rounded border border-slate-200 bg-slate-50/70 p-4 font-mono text-xs text-slate-800 leading-relaxed whitespace-pre-wrap max-h-56 overflow-y-auto scrollbar-thin">
               {report.description}
             </div>
 
@@ -228,206 +231,253 @@ export const ReportDetailPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column (5 Cols) */}
-        <div className="space-y-6 lg:col-span-5">
-          {ai?.full_ai_response ? (
-            <div className="space-y-4">
-              {id && (
-                <SafetyTriagePanel
-                  reportId={id}
-                  rawSifProb={ai.sif.score}
-                  priorityLevel={ai.priority}
-                  priorityScore={ai.priority === 'CRITICAL' ? 0.90 : ai.priority === 'HIGH' ? 0.75 : 0.50}
-                  earlyWarningLevel="NORMAL"
-                  riskMatrixCategory="LOW_SEVERITY_LOW_RECURRENCE"
-                />
-              )}
-              <SafetyIntelligenceView data={ai.full_ai_response} />
-            </div>
-          ) : ai ? (
-            <div className="hse-card p-5 border-slate-300 space-y-4">
-              {id && (
-                <SafetyTriagePanel
-                  reportId={id}
-                  rawSifProb={ai.sif.score}
-                  priorityLevel={ai.priority}
-                  priorityScore={ai.priority === 'CRITICAL' ? 0.90 : ai.priority === 'HIGH' ? 0.75 : 0.50}
-                  earlyWarningLevel="NORMAL"
-                  riskMatrixCategory="LOW_SEVERITY_LOW_RECURRENCE"
-                />
-              )}
-              <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
-                <div className="flex items-center gap-2">
-                  <div className="rounded bg-slate-900 p-1.5 text-white">
-                    <Sparkles className="h-4 w-4 text-slate-200" />
-                  </div>
-                  <div>
-                    <h2 className="text-sm font-bold text-slate-900">AI Precursor Analysis</h2>
-                    <span className="text-[10px] text-slate-500">Model: {ai.model_version || 'SIF-NLP-v2.4'}</span>
-                  </div>
-                </div>
-                <SeverityBadge sifStatus={ai.sif.label} />
-              </div>
+        {/* Right Column (5 Cols) with Compact Tab Navigation */}
+        <div className="space-y-4 lg:col-span-5">
+          {/* Tab Navigation Header */}
+          <div className="flex items-center gap-1 border-b border-slate-200 bg-white p-1 rounded-t-lg text-xs font-semibold">
+            <button
+              onClick={() => setActiveTab('intelligence')}
+              className={`flex-1 py-1.5 px-2 rounded text-center transition-colors ${
+                activeTab === 'intelligence'
+                  ? 'bg-slate-900 text-white font-bold shadow-xs'
+                  : 'text-slate-600 hover:bg-slate-100'
+              }`}
+            >
+              📊 AI Precursor & Triage
+            </button>
+            <button
+              onClick={() => setActiveTab('bowtie')}
+              className={`flex-1 py-1.5 px-2 rounded text-center transition-colors ${
+                activeTab === 'bowtie'
+                  ? 'bg-slate-900 text-white font-bold shadow-xs'
+                  : 'text-slate-600 hover:bg-slate-100'
+              }`}
+            >
+              🎀 Bow-Tie Pathway
+            </button>
+            <button
+              onClick={() => setActiveTab('similar')}
+              className={`flex-1 py-1.5 px-2 rounded text-center transition-colors ${
+                activeTab === 'similar'
+                  ? 'bg-slate-900 text-white font-bold shadow-xs'
+                  : 'text-slate-600 hover:bg-slate-100'
+              }`}
+            >
+              🔍 Similar Reports
+            </button>
+          </div>
 
-              <div className="grid grid-cols-2 gap-3 mb-4 p-3 rounded bg-slate-50 border border-slate-200">
-                <div>
-                  <span className="text-[10px] font-semibold uppercase text-slate-500">SIF Confidence</span>
-                  <div className="mt-0.5 text-xl font-bold text-slate-900">
-                    {formatScore(ai.sif.score)}
-                  </div>
-                  <div className="text-[10px] text-slate-500">NLP Probability</div>
+          {/* TAB 1: AI Precursor & Triage */}
+          {activeTab === 'intelligence' && (
+            <div>
+              {ai?.full_ai_response ? (
+                <div className="space-y-4">
+                  {id && (
+                    <SafetyTriagePanel
+                      reportId={id}
+                      rawSifProb={ai.sif.score}
+                      priorityLevel={ai.priority}
+                      priorityScore={ai.priority === 'CRITICAL' ? 0.90 : ai.priority === 'HIGH' ? 0.75 : 0.50}
+                      earlyWarningLevel="NORMAL"
+                      riskMatrixCategory="LOW_SEVERITY_LOW_RECURRENCE"
+                    />
+                  )}
+                  <SafetyIntelligenceView data={ai.full_ai_response} />
                 </div>
-                <div>
-                  <span className="text-[10px] font-semibold uppercase text-slate-500">Assigned Priority</span>
-                  <div className="mt-1">
-                    <SeverityBadge priority={ai.priority} size="sm" />
+              ) : ai ? (
+                <div className="hse-card p-5 border-slate-300 space-y-4 max-h-[600px] overflow-y-auto pr-1 scrollbar-thin">
+                  {id && (
+                    <SafetyTriagePanel
+                      reportId={id}
+                      rawSifProb={ai.sif.score}
+                      priorityLevel={ai.priority}
+                      priorityScore={ai.priority === 'CRITICAL' ? 0.90 : ai.priority === 'HIGH' ? 0.75 : 0.50}
+                      earlyWarningLevel="NORMAL"
+                      riskMatrixCategory="LOW_SEVERITY_LOW_RECURRENCE"
+                    />
+                  )}
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
+                    <div className="flex items-center gap-2">
+                      <div className="rounded bg-slate-900 p-1.5 text-white">
+                        <Sparkles className="h-4 w-4 text-slate-200" />
+                      </div>
+                      <div>
+                        <h2 className="text-sm font-bold text-slate-900">AI Precursor Analysis</h2>
+                        <span className="text-[10px] text-slate-500">Model: {ai.model_version || 'SIF-NLP-v2.4'}</span>
+                      </div>
+                    </div>
+                    <SeverityBadge sifStatus={ai.sif.label} />
                   </div>
-                </div>
-              </div>
 
-              <div className="space-y-3 mb-5">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                  Extracted Precursor Dimensions
-                </h3>
+                  <div className="grid grid-cols-2 gap-3 mb-4 p-3 rounded bg-slate-50 border border-slate-200">
+                    <div>
+                      <span className="text-[10px] font-semibold uppercase text-slate-500">SIF Confidence</span>
+                      <div className="mt-0.5 text-xl font-bold text-slate-900">
+                        {formatScore(ai.sif.score)}
+                      </div>
+                      <div className="text-[10px] text-slate-500">NLP Probability</div>
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-semibold uppercase text-slate-500">Assigned Priority</span>
+                      <div className="mt-1">
+                        <SeverityBadge priority={ai.priority} size="sm" />
+                      </div>
+                    </div>
+                  </div>
 
-                <div className="rounded border border-slate-200 p-2.5 text-xs space-y-2 bg-white">
-                  <div>
-                    <span className="text-slate-500 text-[11px] block">Activity Underway:</span>
-                    <span className="font-semibold text-slate-900">{ai.precursors.activity}</span>
-                  </div>
-                  <div>
-                    <span className="text-slate-500 text-[11px] block">High-Energy Hazard:</span>
-                    <span className="font-semibold text-slate-900">{ai.precursors.hazard}</span>
-                  </div>
-                  <div>
-                    <span className="text-slate-500 text-[11px] block">Barrier Failure Identified:</span>
-                    <span className="font-semibold text-amber-700">{ai.precursors.barrier_failure}</span>
-                  </div>
-                  <div>
-                    <span className="text-slate-500 text-[11px] block">Potential Worst-Case Consequence:</span>
-                    <span className="font-semibold text-red-700">{ai.precursors.potential_consequence}</span>
-                  </div>
-                </div>
-              </div>
+                  <div className="space-y-3 mb-5">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                      Extracted Precursor Dimensions
+                    </h3>
 
-              {/* Multiple IOGP Life-Saving Rules Mapping */}
-              <div className="space-y-2 mb-5">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                    IOGP Life-Saving Rules Mapped ({matchedRules.length})
-                  </h3>
-                  <button
-                    onClick={() => navigate('/life-saving-rules')}
-                    className="text-[11px] text-slate-600 hover:text-slate-900 flex items-center gap-0.5"
-                  >
-                    <span>All Rules</span>
-                    <ChevronRight className="h-3 w-3" />
-                  </button>
-                </div>
+                    <div className="rounded border border-slate-200 p-2.5 text-xs space-y-2 bg-white">
+                      <div>
+                        <span className="text-slate-500 text-[11px] block">Activity Underway:</span>
+                        <span className="font-semibold text-slate-900">{ai.precursors.activity}</span>
+                      </div>
+                      <div>
+                        <span className="text-slate-500 text-[11px] block">High-Energy Hazard:</span>
+                        <span className="font-semibold text-slate-900">{ai.precursors.hazard}</span>
+                      </div>
+                      <div>
+                        <span className="text-slate-500 text-[11px] block">Barrier Failure Identified:</span>
+                        <span className="font-semibold text-amber-700">{ai.precursors.barrier_failure}</span>
+                      </div>
+                      <div>
+                        <span className="text-slate-500 text-[11px] block">Potential Worst-Case Consequence:</span>
+                        <span className="font-semibold text-red-700">{ai.precursors.potential_consequence}</span>
+                      </div>
+                    </div>
+                  </div>
 
-                <div className="space-y-2.5">
-                  {matchedRules.map((rule, idx) => {
-                    const ruleMeta = IOGP_LIFE_SAVING_RULES[rule.name];
-                    return (
-                      <div key={idx} className="rounded border border-slate-200 p-3 bg-slate-50 space-y-2">
-                        <div className="flex items-center justify-between text-xs font-semibold text-slate-900">
-                          <div className="flex items-center gap-1.5">
-                            <span className="font-bold text-slate-900">{rule.name}</span>
+                  {/* Multiple IOGP Life-Saving Rules Mapping */}
+                  <div className="space-y-2 mb-5">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                        IOGP Life-Saving Rules Mapped ({matchedRules.length})
+                      </h3>
+                      <button
+                        onClick={() => navigate('/life-saving-rules')}
+                        className="text-[11px] text-slate-600 hover:text-slate-900 flex items-center gap-0.5"
+                      >
+                        <span>All Rules</span>
+                        <ChevronRight className="h-3 w-3" />
+                      </button>
+                    </div>
+
+                    <div className="space-y-2.5">
+                      {matchedRules.map((rule, idx) => {
+                        const ruleMeta = IOGP_LIFE_SAVING_RULES[rule.name];
+                        return (
+                          <div key={idx} className="rounded border border-slate-200 p-3 bg-slate-50 space-y-2">
+                            <div className="flex items-center justify-between text-xs font-semibold text-slate-900">
+                              <div className="flex items-center gap-1.5">
+                                <span className="font-bold text-slate-900">{rule.name}</span>
+                                {ruleMeta && (
+                                  <span className="rounded bg-slate-200 px-1.5 py-0.2 text-[10px] text-slate-700 font-mono">
+                                    {ruleMeta.id}
+                                  </span>
+                                )}
+                              </div>
+                              <span className="text-slate-700 font-bold">{formatScore(rule.score)} confidence</span>
+                            </div>
+
+                            {/* Progress Bar */}
+                            <div className="h-1.5 w-full rounded-full bg-slate-200 overflow-hidden">
+                              <div
+                                className={`h-full ${rule.score >= 0.8 ? 'bg-red-600' : 'bg-slate-700'}`}
+                                style={{ width: `${rule.score * 100}%` }}
+                              />
+                            </div>
+
                             {ruleMeta && (
-                              <span className="rounded bg-slate-200 px-1.5 py-0.2 text-[10px] text-slate-700 font-mono">
-                                {ruleMeta.id}
-                              </span>
+                              <div className="text-[11px] text-slate-600 pt-1 border-t border-slate-200/60">
+                                <p className="italic mb-1">&quot;{ruleMeta.description}&quot;</p>
+                                <span className="text-[10px] text-slate-500 font-semibold">Key Barrier:</span>
+                                <span className="text-[10px] text-slate-600 block">{ruleMeta.mandatoryRequirements[0]}</span>
+                              </div>
                             )}
                           </div>
-                          <span className="text-slate-700 font-bold">{formatScore(rule.score)} confidence</span>
-                        </div>
+                        );
+                      })}
+                    </div>
+                  </div>
 
-                        {/* Progress Bar */}
-                        <div className="h-1.5 w-full rounded-full bg-slate-200 overflow-hidden">
-                          <div
-                            className={`h-full ${rule.score >= 0.8 ? 'bg-red-600' : 'bg-slate-700'}`}
-                            style={{ width: `${rule.score * 100}%` }}
-                          />
-                        </div>
+                  {/* NLP Explanation Text */}
+                  <div className="space-y-2 mb-4">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                      AI Decision Support Explanation
+                    </h3>
+                    <div className="rounded border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700 leading-relaxed">
+                      {ai.explanation}
+                    </div>
+                  </div>
 
-                        {ruleMeta && (
-                          <div className="text-[11px] text-slate-600 pt-1 border-t border-slate-200/60">
-                            <p className="italic mb-1">&quot;{ruleMeta.description}&quot;</p>
-                            <span className="text-[10px] text-slate-500 font-semibold">Key Barrier:</span>
-                            <span className="text-[10px] text-slate-600 block">{ruleMeta.mandatoryRequirements[0]}</span>
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
+                  {/* Stage 33 Human-in-the-Loop Analyst Feedback Overlay */}
+                  {id && (
+                    <div id="analyst-feedback-section">
+                      <AnalystFeedbackPanel
+                        reportId={id}
+                        fieldName="primary_life_saving_rule"
+                        fieldLabel="Life-Saving Rule Classification"
+                        aiValue={report.life_saving_rule}
+                      />
+                    </div>
+                  )}
+
+                  {/* Associated Pattern Links */}
+                  {ai.patterns && ai.patterns.length > 0 && (
+                    <div className="pt-3 border-t border-slate-200">
+                      <span className="text-[11px] font-semibold text-slate-500 block mb-1.5">
+                        Associated Precursor Pattern:
+                      </span>
+                      {ai.patterns.map((pat, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => navigate('/patterns')}
+                          className="flex w-full items-center justify-between rounded bg-slate-100 hover:bg-slate-200 p-2 text-xs text-slate-800 transition-colors font-medium text-left"
+                        >
+                          <span className="truncate">{pat}</span>
+                          <ExternalLink className="h-3.5 w-3.5 flex-shrink-0 ml-1 text-slate-500" />
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div>
-
-              {/* NLP Explanation Text */}
-              <div className="space-y-2 mb-4">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                  AI Decision Support Explanation
-                </h3>
-                <div className="rounded border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700 leading-relaxed">
-                  {ai.explanation}
-                </div>
-              </div>
-
-              {/* Stage 33 Human-in-the-Loop Analyst Feedback Overlay */}
-              {id && (
-                <div id="analyst-feedback-section">
-                  <AnalystFeedbackPanel
-                    reportId={id}
-                    fieldName="primary_life_saving_rule"
-                    fieldLabel="Life-Saving Rule Classification"
-                    aiValue={report.life_saving_rule}
-                  />
-                </div>
-              )}
-
-              {/* Associated Pattern Links */}
-              {ai.patterns && ai.patterns.length > 0 && (
-                <div className="pt-3 border-t border-slate-200">
-                  <span className="text-[11px] font-semibold text-slate-500 block mb-1.5">
-                    Associated Precursor Pattern:
-                  </span>
-                  {ai.patterns.map((pat, idx) => (
+              ) : (
+                <div className="hse-card p-6 text-center">
+                  <AlertTriangle className="h-8 w-8 text-amber-500 mx-auto mb-2" />
+                  <h3 className="text-sm font-bold text-slate-900">AI Analysis Pending</h3>
+                  <p className="mt-1 text-xs text-slate-500">
+                    This report has not yet been processed by the NLP Precursor classifier.
+                  </p>
+                  {hasPermission('canTriggerAIAnalysis') && (
                     <button
-                      key={idx}
-                      onClick={() => navigate('/patterns')}
-                      className="flex w-full items-center justify-between rounded bg-slate-100 hover:bg-slate-200 p-2 text-xs text-slate-800 transition-colors font-medium text-left"
+                      onClick={handleTriggerAnalysis}
+                      disabled={analyzing}
+                      className="mt-4 rounded bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white"
                     >
-                      <span className="truncate">{pat}</span>
-                      <ExternalLink className="h-3.5 w-3.5 flex-shrink-0 ml-1 text-slate-500" />
+                      Run Analysis Pipeline
                     </button>
-                  ))}
+                  )}
                 </div>
-              )}
-            </div>
-          ) : (
-            <div className="hse-card p-6 text-center">
-              <AlertTriangle className="h-8 w-8 text-amber-500 mx-auto mb-2" />
-              <h3 className="text-sm font-bold text-slate-900">AI Analysis Pending</h3>
-              <p className="mt-1 text-xs text-slate-500">
-                This report has not yet been processed by the NLP Precursor classifier.
-              </p>
-              {hasPermission('canTriggerAIAnalysis') && (
-                <button
-                  onClick={handleTriggerAnalysis}
-                  disabled={analyzing}
-                  className="mt-4 rounded bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white"
-                >
-                  Run Analysis Pipeline
-                </button>
               )}
             </div>
           )}
 
-          {/* Stage 32 Bow-Tie Barrier Failure Pathway */}
-          {id && <BowTieView reportId={id} />}
+          {/* TAB 2: Bow-Tie Barrier Pathway */}
+          {activeTab === 'bowtie' && (
+            <div className="max-h-[580px] overflow-y-auto pr-1 scrollbar-thin">
+              {id && <BowTieView reportId={id} />}
+            </div>
+          )}
 
-          {/* Stage 25 Similar Historical Reports */}
-          {id && <SimilarReportsView reportId={id} />}
+          {/* TAB 3: Similar Historical Reports */}
+          {activeTab === 'similar' && (
+            <div className="max-h-[580px] overflow-y-auto pr-1 scrollbar-thin">
+              {id && <SimilarReportsView reportId={id} />}
+            </div>
+          )}
         </div>
       </div>
     </div>
