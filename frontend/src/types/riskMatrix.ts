@@ -1,3 +1,19 @@
+export interface SupportingReportDetail {
+  id: string;
+  sif_status?: 'SIF_POTENTIAL' | 'NON_SIF';
+  priority?: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
+  date?: string;
+  site?: string;
+  activity?: string;
+}
+
+export interface RAGSafetyRecommendations {
+  engineering_control: string;
+  procedural_protocol: string;
+  governance_audit: string;
+  rag_citations: string[];
+}
+
 export interface RiskMatrixItem {
   matrix_item_id: string;
   entity_type: 'BARRIER_FAILURE' | 'RECURRING_PATTERN' | 'SITE' | 'ACTIVITY';
@@ -20,6 +36,7 @@ export interface RiskMatrixItem {
     | 'LOW_PRIORITY_MONITOR'
     | 'INSUFFICIENT_DATA';
   supporting_report_ids: string[];
+  supporting_reports?: SupportingReportDetail[];
   pattern_ids: string[];
   barrier_pattern_ids: string[];
   site_ids: string[];
@@ -27,6 +44,7 @@ export interface RiskMatrixItem {
   first_observed: string;
   last_observed: string;
   reason: string;
+  recommendations?: RAGSafetyRecommendations;
 }
 
 export interface RiskMatrixListResponse {

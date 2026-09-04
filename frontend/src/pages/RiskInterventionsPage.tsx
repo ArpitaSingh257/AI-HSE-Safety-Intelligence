@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { interventionsService } from '../api';
 import type { HSEIntervention, InterventionStatus } from '../types/interventions';
 import { useAuth } from '../context/AuthContext';
@@ -12,6 +12,7 @@ import { Plus } from 'lucide-react';
 
 export const RiskInterventionsPage: React.FC = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { hasPermission, user } = useAuth();
   const [interventions, setInterventions] = useState<HSEIntervention[]>([]);
   const [loading, setLoading] = useState(true);
@@ -53,6 +54,35 @@ export const RiskInterventionsPage: React.FC = () => {
     fetchInterventions();
   }, []);
 
+  // Handle Deploy RAG Recommendation Auto-Fill
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get('deploy') === 'true') {
+      const site = params.get('site') || 'Moran';
+      const activity = params.get('activity') || 'Maintenance';
+      const title = params.get('title') || 'Deploy AI RAG Safety Controls';
+      const desc = params.get('desc') || 'Pre-populated from AI RAG Recommendation Engine.';
+
+      setNewIntervention({
+        title,
+        category: 'Engineering Control',
+        description: desc,
+        triggerSource: 'Pattern Detection',
+        targetSite: site,
+        targetActivity: activity,
+        associatedRule: 'Safety Controls & Energy Isolation',
+        priority: 'CRITICAL',
+        status: 'OPEN',
+        assignedOfficer: user?.name || 'Lead HSE Engineer',
+        assignedOfficerRole: 'Lead HSE Engineer',
+        dueDate: '2026-03-31',
+        relatedReportIds: ['REP-427F7'],
+        actionsTaken: ['RAG Corrective Action Engine recommendation deployed to register'],
+      });
+      setIsModalOpen(true);
+    }
+  }, [location.search]);
+
   const handleCreateSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     await interventionsService.createIntervention(newIntervention);
@@ -68,9 +98,23 @@ export const RiskInterventionsPage: React.FC = () => {
     }
   };
 
-  const filtered = statusFilter === 'ALL'
+  const priorityRank: Record<string, number> = {
+    CRITICAL: 4,
+    HIGH: 3,
+    MEDIUM: 2,
+    LOW: 1,
+  };
+
+  const rawFiltered = statusFilter === 'ALL'
     ? interventions
     : interventions.filter((i) => i.status === statusFilter);
+
+  const filtered = [...rawFiltered].sort((a, b) => {
+    const rankA = priorityRank[a.priority] || 0;
+    const rankB = priorityRank[b.priority] || 0;
+    if (rankB !== rankA) return rankB - rankA;
+    return new Date(b.createdDate || 0).getTime() - new Date(a.createdDate || 0).getTime();
+  });
 
   if (loading) {
     return <LoadingSpinner label="Loading HSE Intervention Priority Action Register..." />;

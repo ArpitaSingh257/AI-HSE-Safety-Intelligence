@@ -194,10 +194,17 @@ export async function getLsrTrendProfiles(_req: Request, res: Response) {
       sif_density: counts.total > 0 ? parseFloat((counts.sif / counts.total).toFixed(4)) : 0,
     }));
 
-    // Trend status (WORSENING vs STABLE vs IMPROVING)
-    const recentSifRate = p.monthlyCounts['2025-10'].sif + p.monthlyCounts['2025-11'].sif;
-    const earlySifRate = p.monthlyCounts['2025-06'].sif + p.monthlyCounts['2025-07'].sif;
-    p.trend_status = recentSifRate > earlySifRate ? 'WORSENING' : recentSifRate < earlySifRate ? 'IMPROVING' : 'STABLE';
+    // Trend status based on average SIF density trajectory (Recent Window vs Baseline Window)
+    const m6 = p.monthly_trend[0]?.sif_density || 0;
+    const m7 = p.monthly_trend[1]?.sif_density || 0;
+    const m10 = p.monthly_trend[4]?.sif_density || 0;
+    const m11 = p.monthly_trend[5]?.sif_density || 0;
+
+    const baselineDensity = (m6 + m7) / 2;
+    const recentDensity = (m10 + m11) / 2;
+    const deltaDensity = recentDensity - baselineDensity;
+
+    p.trend_status = deltaDensity > 0.005 ? 'WORSENING' : deltaDensity < -0.005 ? 'IMPROVING' : 'STABLE';
 
     // Associated Sites
     p.associated_sites = Object.entries(p.siteCounts)
@@ -239,7 +246,128 @@ export async function getLsrTrendProfiles(_req: Request, res: Response) {
       topBarriers = topBarriers.slice(0, 3);
     }
 
+    const RAG_RECOMMENDATIONS_KB: Record<string, { immediate_actions: string[]; recommended_controls: string[]; verification_actions: string[] }> = {
+      'Bypassing Safety Controls': {
+        immediate_actions: [
+          'Halt affected operations immediately until safety device status is verified.',
+          'Verify whether interlock bypass has formal management of change (MOC) approval.',
+        ],
+        recommended_controls: [
+          'Enforce strict permit-to-work (PTW) bypass authorization procedures.',
+          'Log and track temporary overrides on a dedicated site bypass register.',
+        ],
+        verification_actions: [
+          'Inspect physical interlocks and emergency shutdown (ESD) valves prior to restart.',
+        ],
+      },
+      'Confined Space': {
+        immediate_actions: [
+          'Prohibit all entry into enclosed vessels, separators, tanks, or mud pits.',
+          'Immediately verify atmospheric testing for oxygen, explosive vapors, and toxic H2S/CO gas.',
+        ],
+        recommended_controls: [
+          'Mandate active mechanical forced-air ventilation throughout entry duration.',
+          'Station a dedicated Confined Space Attendant at entrance with emergency retrieval gear.',
+        ],
+        verification_actions: [
+          'Inspect signed Confined Space Entry Permit and gas test log sheet before entry authorization.',
+        ],
+      },
+      'Driving': {
+        immediate_actions: [
+          'Review vehicle roadworthiness, tire integrity, and load securement before field transit.',
+          'Ensure driver is fully rested, licensed, and briefed on route hazards.',
+        ],
+        recommended_controls: [
+          'Enforce in-vehicle monitoring systems (IVMS) with real-time speed alerts.',
+          'Implement journey management plans (JMP) for remote oilfield transits.',
+        ],
+        verification_actions: [
+          'Verify 100% seatbelt compliance for all vehicle occupants prior to departure.',
+        ],
+      },
+      'Energy Isolation': {
+        immediate_actions: [
+          'Cease work on pressurized, electrical, or mechanical systems immediately.',
+          'Verify positive isolation, depressurization, and zero energy state.',
+        ],
+        recommended_controls: [
+          'Apply Lockout/Tagout (LOTO) padlocks and tags at all physical isolation points.',
+          'Install tested blind flanges or double block and bleed (DBB) arrangements.',
+        ],
+        verification_actions: [
+          'Conduct physical bleeder valve checks and electrical voltage testing to prove zero residual energy.',
+        ],
+      },
+      'Hot Work': {
+        immediate_actions: [
+          'Stop all open flame, welding, cutting, and grinding activities in hazardous zones.',
+          'Conduct combustible gas testing (LEL < 1%) across 15-meter radius.',
+        ],
+        recommended_controls: [
+          'Remove combustible materials or shield with certified fire-retardant blankets.',
+          'Deploy a dedicated Fire Watch with charged extinguishers during hot work plus 30 mins after.',
+        ],
+        verification_actions: [
+          'Inspect valid Hot Work Permit and continuous LEL gas detector calibration.',
+        ],
+      },
+      'Line of Fire': {
+        immediate_actions: [
+          'Establish and barricade red hazard zones around moving equipment, suspended loads, and pressurized lines.',
+          'Reposition personnel to designated safe standing zones outside swing trajectories.',
+        ],
+        recommended_controls: [
+          'Use hands-free taglines and push-poles for guiding loads rather than manual hand contact.',
+          'Install whip-checks and safety restraints on high-pressure hose connections.',
+        ],
+        verification_actions: [
+          'Confirm physical barriers and warning signage are intact before initiating high-energy operations.',
+        ],
+      },
+      'Safe Mechanical Lifting': {
+        immediate_actions: [
+          'Suspend lifting operations immediately if rigging integrity, crane stability, or load path is compromised.',
+          'Verify no personnel are standing beneath or adjacent to suspended loads.',
+        ],
+        recommended_controls: [
+          'Execute lift strictly according to an approved Lift Plan (critical lift review for loads > 10 tons).',
+          'Use certified, color-coded slings, shackles, and spreader bars with valid inspection tags.',
+        ],
+        verification_actions: [
+          'Inspect slings for cuts, abrasions, wire kinks, or sharp edge contact before every lift.',
+        ],
+      },
+      'Work Authorization': {
+        immediate_actions: [
+          'Confirm valid, signed Permit-to-Work (PTW) is posted at job site before work commencement.',
+          'Conduct mandatory pre-job Toolbox Talk (TBT) reviewing all JSA hazards.',
+        ],
+        recommended_controls: [
+          'Enforce strict shift-change PTW handover verification and active permit cross-referencing.',
+          'Conduct joint site inspection by Performing Authority and Area Authority prior to authorization.',
+        ],
+        verification_actions: [
+          'Verify all required isolations, gas tests, and PPE requirements specified on permit are active.',
+        ],
+      },
+      'Working at Height': {
+        immediate_actions: [
+          'Halt elevated work if fall protection, guardrails, or anchor points are missing or unsecured.',
+          'Ensure 100% tie-off using a certified full-body harness with double lanyards.',
+        ],
+        recommended_controls: [
+          'Install engineered anchor points capable of supporting 5,000 lbs (22.2 kN) per worker.',
+          'Erect fully planked scaffolding with double guardrails, toe boards, and green inspection tags.',
+        ],
+        verification_actions: [
+          'Inspect harnesses, lanyards, and self-retracting lifelines (SRLs) for damage or deployment markers.',
+        ],
+      },
+    };
+
     p.top_barrier_failures = topBarriers;
+    p.rag_recommendations = RAG_RECOMMENDATIONS_KB[p.lsr_rule] || RAG_RECOMMENDATIONS_KB['Work Authorization'];
     p.recurring_pattern_count = p.top_activities.length;
     p.barrier_failure_pattern_count = p.top_barrier_failures.length;
 

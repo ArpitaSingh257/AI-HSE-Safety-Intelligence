@@ -29,6 +29,11 @@ export interface AILsrTrendProfile {
   last_observed?: string;
   report_ids?: string[];
   reports_list?: any[];
+  rag_recommendations?: {
+    immediate_actions: string[];
+    recommended_controls: string[];
+    verification_actions: string[];
+  };
 }
 
 export interface LsrTrendListResponse {

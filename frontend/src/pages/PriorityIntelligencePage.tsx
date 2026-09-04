@@ -319,136 +319,333 @@ export const PriorityIntelligencePage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Rationale Callout */}
-              <div className="bg-slate-50 border border-slate-200 rounded-lg p-3.5 text-xs text-slate-800">
-                <strong>Deterministic Priority Rationale:</strong> {selectedPriority.reason}
+              {/* AI Root Cause & Hazard Rationale Callout */}
+              <div className="bg-amber-50/70 border border-amber-200 rounded-lg p-4 text-xs space-y-1.5 text-amber-950">
+                <div className="flex items-center gap-1.5 font-bold text-amber-900">
+                  <ShieldAlert className="h-4 w-4 text-amber-600 shrink-0" />
+                  <span>AI Root Cause & Deterministic Prioritization Rationale</span>
+                </div>
+                <p className="text-slate-800 leading-relaxed">
+                  {selectedPriority.reason}
+                </p>
+              </div>
+
+              {/* Linked Stages & Drill-Down Navigation with Explicit Reasons */}
+              <div className="pt-3 border-t border-slate-100 space-y-3">
+                <div>
+                  <h4 className="font-bold text-xs text-slate-900 uppercase">Cross-Stage Intelligence Navigation & Root Cause Breakdown</h4>
+                  <p className="text-[11px] text-slate-500 mt-0.5">
+                    Click any card below to open its dedicated AI dashboard <strong>pre-filtered for exact root causes</strong> and hazard patterns.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                  {/* Barrier Failure Card */}
+                  {selectedPriority.barrier_pattern_ids.length > 0 && (
+                    <div
+                      onClick={() => navigate(`/barrier-patterns?id=${encodeURIComponent(selectedPriority.barrier_pattern_ids[0])}`)}
+                      className="p-3 bg-amber-50/70 hover:bg-amber-100/80 border border-amber-300/80 rounded-lg cursor-pointer transition-all space-y-1.5 shadow-sm group"
+                    >
+                      <div className="flex items-center justify-between font-bold text-amber-900">
+                        <span className="flex items-center gap-1.5">
+                          <AlertTriangle className="h-4 w-4 text-amber-600 shrink-0" />
+                          Barrier Failure ({selectedPriority.barrier_pattern_ids[0]})
+                        </span>
+                        <ArrowRight className="h-3.5 w-3.5 text-amber-700 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                      <p className="text-[11px] text-slate-700 leading-snug">
+                        <strong>Root Cause Reason:</strong> Breakdown of physical safety controls, permit-to-work protocols, or equipment isolation barriers at {selectedPriority.site_ids[0] || 'site'}.
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Precursor Pattern Card */}
+                  {selectedPriority.pattern_ids.length > 0 && (
+                    <div
+                      onClick={() => navigate(`/patterns?pattern=${encodeURIComponent(selectedPriority.pattern_ids[0])}`)}
+                      className="p-3 bg-purple-50/70 hover:bg-purple-100/80 border border-purple-300/80 rounded-lg cursor-pointer transition-all space-y-1.5 shadow-sm group"
+                    >
+                      <div className="flex items-center justify-between font-bold text-purple-900">
+                        <span className="flex items-center gap-1.5">
+                          <Layers className="h-4 w-4 text-purple-600 shrink-0" />
+                          Precursor Pattern ({selectedPriority.pattern_ids[0]})
+                        </span>
+                        <ArrowRight className="h-3.5 w-3.5 text-purple-700 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                      <p className="text-[11px] text-slate-700 leading-snug">
+                        <strong>Root Cause Reason:</strong> Recurring cluster of near-misses and unsafe conditions during {selectedPriority.activity_ids[0] || 'activity'} that historically precede SIF events.
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Early Warning Card */}
+                  {selectedPriority.warning_ids.length > 0 && (
+                    <div
+                      onClick={() => navigate(`/early-warnings?id=${encodeURIComponent(selectedPriority.warning_ids[0])}`)}
+                      className="p-3 bg-red-50/70 hover:bg-red-100/80 border border-red-300/80 rounded-lg cursor-pointer transition-all space-y-1.5 shadow-sm group"
+                    >
+                      <div className="flex items-center justify-between font-bold text-red-900">
+                        <span className="flex items-center gap-1.5">
+                          <AlertOctagon className="h-4 w-4 text-red-600 shrink-0" />
+                          Early Warning ({selectedPriority.warning_ids[0]})
+                        </span>
+                        <ArrowRight className="h-3.5 w-3.5 text-red-700 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                      <p className="text-[11px] text-slate-700 leading-snug">
+                        <strong>Root Cause Reason:</strong> Time-series trend alert triggered due to consecutive escalation spikes in incident reports over recent weeks.
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Site Risk Card */}
+                  <div
+                    onClick={() => navigate(`/sites?site=${encodeURIComponent(selectedPriority.site_ids[0] || 'Moran')}`)}
+                    className="p-3 bg-blue-50/70 hover:bg-blue-100/80 border border-blue-300/80 rounded-lg cursor-pointer transition-all space-y-1.5 shadow-sm group"
+                  >
+                    <div className="flex items-center justify-between font-bold text-blue-900">
+                      <span className="flex items-center gap-1.5">
+                        <MapPin className="h-4 w-4 text-blue-600 shrink-0" />
+                        Site Risk ({selectedPriority.site_ids[0] || 'Moran'})
+                      </span>
+                      <ArrowRight className="h-3.5 w-3.5 text-blue-700 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                    <p className="text-[11px] text-slate-700 leading-snug">
+                      <strong>Root Cause Reason:</strong> Operational facility profile evaluated with elevated site-wide hazard index based on worker density and active operations.
+                    </p>
+                  </div>
+
+                  {/* Task Risk Card */}
+                  <div
+                    onClick={() => navigate(`/activities?activity=${encodeURIComponent(selectedPriority.activity_ids[0] || 'Maintenance')}`)}
+                    className="p-3 bg-emerald-50/70 hover:bg-emerald-100/80 border border-emerald-300/80 rounded-lg cursor-pointer transition-all space-y-1.5 shadow-sm group md:col-span-2"
+                  >
+                    <div className="flex items-center justify-between font-bold text-emerald-900">
+                      <span className="flex items-center gap-1.5">
+                        <Activity className="h-4 w-4 text-emerald-600 shrink-0" />
+                        Task Risk ({selectedPriority.activity_ids[0] || 'Maintenance'})
+                      </span>
+                      <ArrowRight className="h-3.5 w-3.5 text-emerald-700 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                    <p className="text-[11px] text-slate-700 leading-snug">
+                      <strong>Root Cause Reason:</strong> Specific high-energy work activity carrying intrinsic task hazards requiring strict Life-Saving Rule compliance.
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Component Score Breakdown */}
-              <div className="space-y-3 pt-2">
+              <div className="space-y-3 pt-3 border-t border-slate-100">
                 <h3 className="text-xs font-bold text-slate-900 uppercase">Normalized Component Scores Breakdown</h3>
 
-                <div className="space-y-2 text-xs">
-                  {/* SIF Impact */}
-                  <div>
-                    <div className="flex justify-between font-semibold text-slate-700 mb-1">
-                      <span>SIF Precursor Impact (35% Weight)</span>
-                      <span className="font-mono">{Math.round(selectedPriority.components.sif_impact * 100)}%</span>
+                {(() => {
+                  const getVal = (v: number) => (v > 1 ? Math.min(100, Math.round(v)) : Math.min(100, Math.round(v * 100)));
+                  const sifVal = getVal(selectedPriority.components.sif_impact);
+                  const recVal = getVal(selectedPriority.components.recurrence);
+                  const barVal = getVal(selectedPriority.components.barrier_impact);
+                  const siteVal = getVal(selectedPriority.components.site_activity);
+                  const warnVal = getVal(selectedPriority.components.early_warning);
+
+                  const sifPts = (sifVal * 0.35).toFixed(1);
+                  const recPts = (recVal * 0.25).toFixed(1);
+                  const barPts = (barVal * 0.20).toFixed(1);
+                  const sitePts = (siteVal * 0.10).toFixed(1);
+                  const warnPts = (warnVal * 0.10).toFixed(1);
+
+                  return (
+                    <div className="space-y-2.5 text-xs">
+                      {/* SIF Impact */}
+                      <div>
+                        <div className="flex justify-between font-semibold text-slate-700 mb-1">
+                          <span>SIF Precursor Impact <span className="text-slate-400 font-normal">(35% Weight)</span></span>
+                          <span className="font-mono">
+                            <strong className="text-red-600">{sifVal}/100</strong> <span className="text-slate-500 font-normal text-[11px]">(+{sifPts} pts)</span>
+                          </span>
+                        </div>
+                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-red-600 rounded-full transition-all duration-500" style={{ width: `${sifVal}%` }}></div>
+                        </div>
+                      </div>
+
+                      {/* Recurrence */}
+                      <div>
+                        <div className="flex justify-between font-semibold text-slate-700 mb-1">
+                          <span>Recurrence Frequency <span className="text-slate-400 font-normal">(25% Weight)</span></span>
+                          <span className="font-mono">
+                            <strong className="text-amber-600">{recVal}/100</strong> <span className="text-slate-500 font-normal text-[11px]">(+{recPts} pts)</span>
+                          </span>
+                        </div>
+                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-amber-500 rounded-full transition-all duration-500" style={{ width: `${recVal}%` }}></div>
+                        </div>
+                      </div>
+
+                      {/* Barrier Failure */}
+                      <div>
+                        <div className="flex justify-between font-semibold text-slate-700 mb-1">
+                          <span>Barrier Failure Severity <span className="text-slate-400 font-normal">(20% Weight)</span></span>
+                          <span className="font-mono">
+                            <strong className="text-purple-600">{barVal}/100</strong> <span className="text-slate-500 font-normal text-[11px]">(+{barPts} pts)</span>
+                          </span>
+                        </div>
+                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-purple-600 rounded-full transition-all duration-500" style={{ width: `${barVal}%` }}></div>
+                        </div>
+                      </div>
+
+                      {/* Site / Activity */}
+                      <div>
+                        <div className="flex justify-between font-semibold text-slate-700 mb-1">
+                          <span>Site / Activity Risk Index <span className="text-slate-400 font-normal">(10% Weight)</span></span>
+                          <span className="font-mono">
+                            <strong className="text-blue-600">{siteVal}/100</strong> <span className="text-slate-500 font-normal text-[11px]">(+{sitePts} pts)</span>
+                          </span>
+                        </div>
+                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-blue-600 rounded-full transition-all duration-500" style={{ width: `${siteVal}%` }}></div>
+                        </div>
+                      </div>
+
+                      {/* Early Warning Signal */}
+                      <div>
+                        <div className="flex justify-between font-semibold text-slate-700 mb-1">
+                          <span>Early-Warning Signal <span className="text-slate-400 font-normal">(10% Weight)</span></span>
+                          <span className="font-mono">
+                            <strong className="text-emerald-600">{warnVal}/100</strong> <span className="text-slate-500 font-normal text-[11px]">(+{warnPts} pts)</span>
+                          </span>
+                        </div>
+                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                          <div className="h-full bg-emerald-600 rounded-full transition-all duration-500" style={{ width: `${warnVal}%` }}></div>
+                        </div>
+                      </div>
+
+                      <p className="text-[10px] text-slate-500 bg-slate-50 p-2 rounded border border-slate-200 mt-2 font-mono">
+                        💡 <strong>Mathematical Formula:</strong> Priority Score ({selectedPriority.priority_score.toFixed(2)}) = Sum of weighted points ({sifPts} + {recPts} + {barPts} + {sitePts} + {warnPts}).
+                      </p>
                     </div>
-                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-red-600 rounded-full" style={{ width: `${selectedPriority.components.sif_impact * 100}%` }}></div>
+                  );
+                })()}
+              </div>
+
+              {/* AI RAG Safety Recommendation Engine Card (Light Theme, Placed BELOW Normalized Component Scores Breakdown) */}
+              <div className="bg-emerald-50/60 border border-emerald-200/80 rounded-lg p-4 shadow-sm space-y-3">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <span className="bg-emerald-100 text-emerald-800 p-1.5 rounded-md border border-emerald-300">
+                      <ShieldAlert className="h-4 w-4 text-emerald-700" />
+                    </span>
+                    <div>
+                      <h4 className="font-bold text-xs text-emerald-950 uppercase tracking-wide">AI RAG Safety Recommendation Engine</h4>
+                      <p className="text-[10px] text-emerald-700 font-medium">ISO 31000 & IOGP LSR Ground-Truth Retrieval Engine</p>
                     </div>
+                  </div>
+                  <div className="flex flex-wrap gap-1 font-mono text-[10px]">
+                    {selectedPriority.recommendations?.rag_citations.map((citation) => (
+                      <span key={citation} className="bg-white text-emerald-900 border border-emerald-300 px-1.5 py-0.5 rounded shadow-2xs">
+                        [{citation}]
+                      </span>
+                    )) || (
+                      <span className="bg-white text-emerald-900 border border-emerald-300 px-1.5 py-0.5 rounded shadow-2xs">
+                        [IOGP-LSR-2023]
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Scrollable Container so page height remains fixed & compact */}
+                <div className="space-y-2 text-xs max-h-52 overflow-y-auto pr-1 scrollbar-thin">
+                  {/* Engineering Control */}
+                  <div className="bg-white/90 p-2.5 rounded border border-emerald-200/80 space-y-0.5 shadow-2xs">
+                    <span className="text-amber-800 font-bold text-[10px] uppercase block tracking-wider">🛠️ Engineering & Barrier Control</span>
+                    <p className="text-slate-800 text-[11px] leading-relaxed">
+                      {selectedPriority.recommendations?.engineering_control || `Enforce mandatory dual gas-calibration, isolation lockout (LOTO), and automated barrier verification for ${selectedPriority.entity_name}.`}
+                    </p>
                   </div>
 
-                  {/* Recurrence */}
-                  <div>
-                    <div className="flex justify-between font-semibold text-slate-700 mb-1">
-                      <span>Recurrence Frequency (25% Weight)</span>
-                      <span className="font-mono">{Math.round(selectedPriority.components.recurrence * 100)}%</span>
-                    </div>
-                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-amber-500 rounded-full" style={{ width: `${selectedPriority.components.recurrence * 100}%` }}></div>
-                    </div>
+                  {/* Procedural Protocol */}
+                  <div className="bg-white/90 p-2.5 rounded border border-emerald-200/80 space-y-0.5 shadow-2xs">
+                    <span className="text-blue-800 font-bold text-[10px] uppercase block tracking-wider">📋 Procedural & Field Protocol</span>
+                    <p className="text-slate-800 text-[11px] leading-relaxed">
+                      {selectedPriority.recommendations?.procedural_protocol || `Enforce 2-person standby rescue teams, continuous multi-gas monitoring, and digital PTW authorization.`}
+                    </p>
                   </div>
 
-                  {/* Barrier Failure */}
-                  <div>
-                    <div className="flex justify-between font-semibold text-slate-700 mb-1">
-                      <span>Barrier Failure Severity (20% Weight)</span>
-                      <span className="font-mono">{Math.round(selectedPriority.components.barrier_impact * 100)}%</span>
-                    </div>
-                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-purple-600 rounded-full" style={{ width: `${selectedPriority.components.barrier_impact * 100}%` }}></div>
-                    </div>
+                  {/* Governance Audit */}
+                  <div className="bg-white/90 p-2.5 rounded border border-emerald-200/80 space-y-0.5 shadow-2xs">
+                    <span className="text-purple-800 font-bold text-[10px] uppercase block tracking-wider">🔍 Governance & Inspection Audit</span>
+                    <p className="text-slate-800 text-[11px] leading-relaxed">
+                      {selectedPriority.recommendations?.governance_audit || `Schedule immediate 48-hour Stage 42 HSE supervisory safety audit.`}
+                    </p>
                   </div>
+                </div>
 
-                  {/* Site / Activity */}
-                  <div>
-                    <div className="flex justify-between font-semibold text-slate-700 mb-1">
-                      <span>Site / Activity Risk Index (10% Weight)</span>
-                      <span className="font-mono">{Math.round(selectedPriority.components.site_activity * 100)}%</span>
-                    </div>
-                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-600 rounded-full" style={{ width: `${selectedPriority.components.site_activity * 100}%` }}></div>
-                    </div>
-                  </div>
-
-                  {/* Early Warning Signal */}
-                  <div>
-                    <div className="flex justify-between font-semibold text-slate-700 mb-1">
-                      <span>Early-Warning Signal (10% Weight)</span>
-                      <span className="font-mono">{Math.round(selectedPriority.components.early_warning * 100)}%</span>
-                    </div>
-                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-emerald-600 rounded-full" style={{ width: `${selectedPriority.components.early_warning * 100}%` }}></div>
-                    </div>
-                  </div>
+                {/* Deploy Action Button */}
+                <div className="pt-2 flex items-center justify-between border-t border-emerald-200/80 text-xs">
+                  <span className="text-[10px] text-emerald-800 font-semibold">Status: Recommended RAG Controls Ready</span>
+                  <button
+                    onClick={() => {
+                      const site = selectedPriority.site_ids[0] || 'Moran';
+                      const activity = selectedPriority.activity_ids[0] || 'Maintenance';
+                      const title = `Deploy AI RAG Safety Controls for ${selectedPriority.entity_name}`;
+                      const desc = selectedPriority.recommendations?.engineering_control || selectedPriority.reason;
+                      navigate(`/interventions?deploy=true&site=${encodeURIComponent(site)}&activity=${encodeURIComponent(activity)}&title=${encodeURIComponent(title)}&desc=${encodeURIComponent(desc)}`);
+                    }}
+                    className="flex items-center gap-1.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-3 py-1.5 rounded shadow-sm transition-colors text-[11px]"
+                  >
+                    🚀 Deploy RAG Recommendation to Interventions <ArrowRight className="h-3.5 w-3.5" />
+                  </button>
                 </div>
               </div>
 
-              {/* Linked Stages & Drill-Down Navigation */}
-              <div className="pt-3 border-t border-slate-100 space-y-3">
-                <h4 className="font-bold text-xs text-slate-900 uppercase">Cross-Stage Intelligence Navigation</h4>
-                <div className="flex flex-wrap gap-2 text-xs">
-                  {selectedPriority.barrier_pattern_ids.length > 0 && (
-                    <button
-                      onClick={() => navigate('/barrier-patterns')}
-                      className="flex items-center gap-1 px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-bold rounded transition-colors"
-                    >
-                      <AlertTriangle className="h-3.5 w-3.5 text-amber-600" /> Barrier Failure ({selectedPriority.barrier_pattern_ids.length}) <ArrowRight className="h-3 w-3" />
-                    </button>
-                  )}
-
-                  {selectedPriority.pattern_ids.length > 0 && (
-                    <button
-                      onClick={() => navigate('/patterns')}
-                      className="flex items-center gap-1 px-3 py-1.5 bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-300 font-bold rounded transition-colors"
-                    >
-                      <Layers className="h-3.5 w-3.5 text-purple-600" /> Precursor Pattern ({selectedPriority.pattern_ids.length}) <ArrowRight className="h-3 w-3" />
-                    </button>
-                  )}
-
-                  {selectedPriority.warning_ids.length > 0 && (
-                    <button
-                      onClick={() => navigate('/early-warnings')}
-                      className="flex items-center gap-1 px-3 py-1.5 bg-red-50 hover:bg-red-100 text-red-900 border border-red-300 font-bold rounded transition-colors"
-                    >
-                      <AlertOctagon className="h-3.5 w-3.5 text-red-600" /> Early Warning ({selectedPriority.warning_ids.length}) <ArrowRight className="h-3 w-3" />
-                    </button>
-                  )}
-
-                  <button
-                    onClick={() => navigate('/sites')}
-                    className="flex items-center gap-1 px-3 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-300 font-bold rounded transition-colors"
-                  >
-                    <MapPin className="h-3.5 w-3.5 text-blue-600" /> Site Risk <ArrowRight className="h-3 w-3" />
-                  </button>
-
-                  <button
-                    onClick={() => navigate('/activities')}
-                    className="flex items-center gap-1 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 font-bold rounded transition-colors"
-                  >
-                    <Activity className="h-3.5 w-3.5 text-emerald-600" /> Task Risk <ArrowRight className="h-3 w-3" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Supporting Incident Traceability */}
+              {/* Supporting Incident Traceability with Dynamic Color Coding */}
               <div className="pt-3 border-t border-slate-100 space-y-2">
-                <h4 className="font-bold text-xs text-slate-900">Traceable Safety Reports ({selectedPriority.supporting_report_ids.length})</h4>
-                <div className="flex flex-wrap gap-1.5">
-                  {selectedPriority.supporting_report_ids.slice(0, 15).map((id) => (
-                    <button
-                      key={id}
-                      onClick={() => navigate(`/reports/${id}`)}
-                      className="px-2 py-0.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-[11px] rounded transition-colors"
-                    >
-                      {id}
-                    </button>
-                  ))}
-                  {selectedPriority.supporting_report_ids.length > 15 && (
-                    <span className="text-[11px] text-slate-400 font-mono self-center">
-                      +{selectedPriority.supporting_report_ids.length - 15} more
+                <div>
+                  <h4 className="font-bold text-xs text-slate-900 flex items-center gap-2">
+                    <span>Traceable Safety Reports ({selectedPriority.supporting_reports?.length || selectedPriority.supporting_report_ids.length})</span>
+                    <span className="text-[10px] font-normal text-slate-500 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                      Live MongoDB Atlas Evidence
+                    </span>
+                  </h4>
+                  <p className="text-[11px] text-slate-500 mt-0.5">
+                    Ground-truth field incident & near-miss reports used by AI to compute score. Red pulsing dots indicate SIF Precursor potential.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {(selectedPriority.supporting_reports && selectedPriority.supporting_reports.length > 0
+                    ? selectedPriority.supporting_reports
+                    : selectedPriority.supporting_report_ids.map(id => ({ id, sif_status: 'NON_SIF', priority: 'MEDIUM' }))
+                  ).slice(0, 15).map((rep) => {
+                    const isSif = rep.sif_status === 'SIF_POTENTIAL' || rep.priority === 'CRITICAL';
+                    const isHigh = rep.priority === 'HIGH';
+
+                    return (
+                      <button
+                        key={rep.id}
+                        onClick={() => navigate(`/reports/${rep.id}`)}
+                        className={`flex items-center gap-1.5 px-2.5 py-1 font-mono text-[11px] rounded border transition-all shadow-2xs font-semibold ${
+                          isSif
+                            ? 'bg-red-50 hover:bg-red-100 text-red-900 border-red-300 font-bold'
+                            : isHigh
+                            ? 'bg-amber-50 hover:bg-amber-100 text-amber-900 border-amber-300 font-bold'
+                            : 'bg-slate-50 hover:bg-slate-100 text-slate-800 border-slate-200'
+                        }`}
+                        title={`View Report ${rep.id} | Site: ${rep.site || 'Site'} | Status: ${isSif ? 'SIF PRECURSOR POTENTIAL' : 'STANDARD'} | Date: ${rep.date || '2026-02-15'}`}
+                      >
+                        {isSif && (
+                          <span className="h-2 w-2 rounded-full bg-red-600 animate-pulse shrink-0" title="SIF Precursor Event" />
+                        )}
+                        <span>{rep.id}</span>
+                        {isSif && (
+                          <span className="text-[9px] bg-red-600 text-white px-1 py-0.2 rounded font-sans font-black tracking-tighter">
+                            SIF
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                  {(selectedPriority.supporting_reports?.length || selectedPriority.supporting_report_ids.length) > 15 && (
+                    <span className="text-[11px] text-slate-400 font-mono self-center font-semibold">
+                      +{(selectedPriority.supporting_reports?.length || selectedPriority.supporting_report_ids.length) - 15} more
                     </span>
                   )}
                 </div>

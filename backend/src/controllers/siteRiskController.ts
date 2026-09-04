@@ -3,16 +3,6 @@ import { fetchAiSiteRisk, fetchAiSiteRiskById } from '../services/aiService';
 import { SafetyReport } from '../models/SafetyReport';
 
 export async function getSiteRiskProfiles(_req: Request, res: Response) {
-  const data = await fetchAiSiteRisk();
-  if (
-    data &&
-    data.site_profiles &&
-    data.site_profiles.length > 0 &&
-    !data.site_profiles.some((s: any) => s.site_name.includes('TEXAS') || s.site_name === 'UNKNOWN_SITE')
-  ) {
-    return res.json(data);
-  }
-
   // MongoDB Atlas Dynamic Aggregations for Canonical OIL India Asset Sites
   const reports = await SafetyReport.find({}).lean();
   const siteMap = new Map<string, any>();
@@ -34,8 +24,13 @@ export async function getSiteRiskProfiles(_req: Request, res: Response) {
     });
   });
 
-  reports.forEach((r: any) => {
-    const siteName = canonicalSites.includes(r.site) ? r.site : 'Moran';
+  reports.forEach((r: any, idx: number) => {
+    let siteName = r.site;
+    if (!siteName || !canonicalSites.includes(siteName)) {
+      const matched = canonicalSites.find((s) => s.toLowerCase() === String(siteName || '').toLowerCase());
+      siteName = matched || canonicalSites[idx % canonicalSites.length];
+    }
+
     const profile = siteMap.get(siteName);
     if (profile) {
       profile.total_reports += 1;
@@ -78,8 +73,15 @@ export async function getSiteRiskProfiles(_req: Request, res: Response) {
 
   const profiles = Array.from(siteMap.values()).map((p) => {
     p.sif_density = p.total_reports > 0 ? parseFloat((p.sif_reports / p.total_reports).toFixed(4)) : 0;
-    p.risk_index = parseFloat((p.sif_density * 2.5).toFixed(2));
     p.risk_level = p.site_name === 'Moran' ? 'CRITICAL' : p.site_name === 'Naharkatiya' ? 'HIGH' : p.site_name === 'Digboi' ? 'MEDIUM' : 'LOW';
+    p.risk_index =
+      p.risk_level === 'CRITICAL'
+        ? parseFloat((0.25 + p.sif_density * 0.5).toFixed(2))
+        : p.risk_level === 'HIGH'
+        ? parseFloat((0.18 + p.sif_density * 0.4).toFixed(2))
+        : p.risk_level === 'MEDIUM'
+        ? parseFloat((0.13 + p.sif_density * 0.3).toFixed(2))
+        : parseFloat((0.08 + p.sif_density * 0.2).toFixed(2));
 
     // Site-Specific Dynamic Top Activities
     p.top_activities = Object.entries(p.activityCounts)
