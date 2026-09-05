@@ -137,3 +137,10 @@ Here are professional, industry-standard names for this feature that you can use
 
 Optimal Task assignment procedure for intevrention in the
 Oil PS application for SIF reports accurately via Agents.
+
+
+Knowledge Graph — Links Site → Activity → Hazard → Barrier Failure → LSR → SIF for connected safety intelligence.
+Report Management — Manage, store, view, search, filter, and retrieve submitted safety reports along with their AI analysis and results.
+Model Calibration — Calibrate SIF probability/confidence scores so that predicted probabilities better reflect actual likelihood and can support reliable risk-based triage.
+
+Try to solve Model timeout issue solving 
