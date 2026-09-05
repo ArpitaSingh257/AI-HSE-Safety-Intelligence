@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { FilterQuery } from 'mongoose';
 import { SafetyReport, ISafetyReport } from '../models/SafetyReport';
 import { SifAnalysisResult } from '../models/SifAnalysisResult';
+import { Intervention } from '../models/Intervention';
 import { Site } from '../models/Site';
 import { Activity } from '../models/Activity';
 import { SITE_NAMES, ACTIVITY_NAMES, SiteName, ActivityName } from '../types';
@@ -335,6 +336,48 @@ export async function analyzeReport(req: Request, res: Response) {
   report.priority = result.priority as any;
   report.analysis_status = 'COMPLETED';
   await report.save();
+
+  // Auto-generate HSE Intervention for Unsafe Conditions, SIF Detection, or Priority CRITICAL / HIGH / MEDIUM
+  const isEscalated = report.type === 'Unsafe Condition' || result.sif.score >= 0.50 || result.sif.label === 'SIF DETECTED' || result.priority === 'CRITICAL' || result.priority === 'HIGH' || result.priority === 'MEDIUM';
+  if (isEscalated) {
+    const reportIdStr = (report._id as any).toString();
+    const existingIntervention = await Intervention.findOne({ relatedReportIds: reportIdStr });
+    if (!existingIntervention) {
+      const categoryMap: Record<string, any> = {
+        'Confined Space': 'Operational Safeguard',
+        'Rig Floor': 'Engineering Control',
+        'Hot Work': 'Process Safety',
+        'Maintenance': 'Administrative',
+        'Height Works': 'PPE / Equipment',
+      };
+      const ruleName = result.life_saving_rules[0]?.name || report.life_saving_rule || 'Work Authorization';
+      const isCondition = report.type === 'Unsafe Condition';
+      const autoIntervention = await Intervention.create({
+        title: `[${isCondition ? 'Hazard Mitigation' : 'AI Escalation'}] ${report.title}`,
+        category: categoryMap[report.activity] || 'Engineering Control',
+        description: `${isCondition ? 'Unsafe Condition Remediation' : 'Immediate AI Escalation'} (${(result.sif.score * 100).toFixed(1)}% SIF Risk - Stage 34 Triage). Precursor narrative: ${report.description}`,
+        triggerSource: isCondition ? 'Condition Monitoring' : 'AI_PRECURSOR_MODEL',
+        targetSite: report.site,
+        targetActivity: report.activity,
+        associatedRule: ruleName,
+        priority: result.priority || (isCondition ? 'HIGH' : 'MEDIUM'),
+        status: 'OPEN',
+        assignedOfficer: report.reporter_name || 'Rajesh Sharma (HSE Manager)',
+        assignedOfficerRole: 'HSE Manager',
+        dueDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+        createdDate: new Date(),
+        relatedReportIds: [reportIdStr],
+      });
+
+      await logAudit({
+        req,
+        action: 'INTERVENTION_CREATED',
+        entityType: 'INTERVENTION',
+        entityId: (autoIntervention._id as any).toString(),
+        details: `Auto-generated HSE Intervention "${autoIntervention.title}" for ${report.type} Report ${reportIdStr}`,
+      });
+    }
+  }
 
   const patternsUpdated = await regeneratePatterns();
 
