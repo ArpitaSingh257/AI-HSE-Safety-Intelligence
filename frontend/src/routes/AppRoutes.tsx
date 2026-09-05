@@ -19,6 +19,8 @@ import { PriorityIntelligencePage } from '../pages/PriorityIntelligencePage';
 import { RiskMatrixPage } from '../pages/RiskMatrixPage';
 import { RiskInterventionsPage } from '../pages/RiskInterventionsPage';
 import { AuditLogPage } from '../pages/AuditLogPage';
+import { KnowledgeGraphPage } from '../pages/KnowledgeGraphPage';
+import { AgenticInvestigationPage } from '../pages/AgenticInvestigationPage';
 
 // Helper component for public /login route
 const PublicLoginRoute: React.FC = () => {
@@ -68,6 +70,8 @@ export const AppRoutes: React.FC = () => {
         <Route path="priorities" element={<PriorityIntelligencePage />} />
         <Route path="risk-matrix" element={<RiskMatrixPage />} />
         <Route path="interventions" element={<RiskInterventionsPage />} />
+        <Route path="knowledge-graph" element={<KnowledgeGraphPage />} />
+        <Route path="agentic-investigation" element={<AgenticInvestigationPage />} />
         <Route
           path="audit"
           element={

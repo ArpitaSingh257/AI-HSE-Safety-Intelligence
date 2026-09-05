@@ -16,6 +16,8 @@ import triageRoutes from './triageRoutes';
 import textNormalizeRoutes from './textNormalizeRoutes';
 import interventionsRoutes from './interventionsRoutes';
 import auditRoutes from './auditRoutes';
+import knowledgeGraphRoutes from './knowledgeGraphRoutes';
+import agenticRoutes from './agenticRoutes';
 
 const router = Router();
 
@@ -38,5 +40,7 @@ router.use('/triage', triageRoutes);
 router.use('/text', textNormalizeRoutes);
 router.use('/', interventionsRoutes);
 router.use('/', auditRoutes);
+router.use('/knowledge-graph', knowledgeGraphRoutes);
+router.use('/agentic', agenticRoutes);
 
 export default router;

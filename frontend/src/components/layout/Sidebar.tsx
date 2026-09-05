@@ -13,6 +13,8 @@ import {
   Grid,
   History,
   Info,
+  GitFork,
+  Brain,
 } from 'lucide-react';
 
 interface NavItem {
@@ -37,6 +39,18 @@ export const Sidebar: React.FC = () => {
       path: '/reports',
       icon: FileText,
       badge: '12 New',
+    },
+    {
+      name: 'Knowledge Graph',
+      path: '/knowledge-graph',
+      icon: GitFork,
+      badge: 'Graph RAG',
+    },
+    {
+      name: 'Agentic Investigator',
+      path: '/agentic-investigation',
+      icon: Brain,
+      badge: 'ReAct AI',
     },
     {
       name: 'Pattern Explorer',

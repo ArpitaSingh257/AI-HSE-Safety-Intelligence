@@ -26,6 +26,8 @@ from app.api.v1.endpoints.feedback import router as feedback_router
 from app.api.v1.endpoints.triage import router as triage_router
 from app.api.v1.endpoints.text_normalize import router as text_normalize_router
 from app.api.v1.endpoints.intelligence import router as intelligence_router
+from app.api.v1.endpoints.graph import router as graph_router
+from app.api.v1.endpoints.agentic_investigation import router as agentic_router
 
 app = FastAPI(
     title="OILPS AI Precursor Safety Intelligence Service",
@@ -47,6 +49,8 @@ app.add_middleware(
 # Include API v1 routes
 app.include_router(analyze_router, prefix="/api/v1", tags=["Inference"])
 app.include_router(intelligence_router, prefix="/api/v1/intelligence", tags=["End-to-End Intelligence API"])
+app.include_router(graph_router, prefix="/api/v1/graph", tags=["Graph RAG Lineage Topology"])
+app.include_router(agentic_router, prefix="/api/v1/agentic", tags=["Agentic Safety Intelligence Layer"])
 app.include_router(patterns_router, prefix="/api/v1/patterns", tags=["Patterns"])
 app.include_router(barrier_patterns_router, prefix="/api/v1/barrier-patterns", tags=["Barrier Patterns"])
 app.include_router(similar_reports_router, prefix="/api/v1/similar-reports", tags=["Similar Reports"])

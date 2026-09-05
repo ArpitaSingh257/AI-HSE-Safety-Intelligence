@@ -769,3 +769,58 @@ export const intelligenceService = {
     }
   }
 };
+
+/**
+ * FEATURE 2: KNOWLEDGE GRAPH LINEAGE SERVICE
+ */
+export const knowledgeGraphService = {
+  async getGraphData(params?: { site?: string; activity?: string; min_risk?: number }) {
+    try {
+      const response = await apiClient.get('/knowledge-graph', { params });
+      const resData = response.data;
+      if (resData && resData.nodes) {
+        return resData;
+      }
+      if (resData && resData.data && resData.data.nodes) {
+        return resData.data;
+      }
+      return resData;
+    } catch (error) {
+      console.warn('Express knowledge-graph endpoint failed, calling FastAPI directly:', (error as Error).message);
+      const query = new URLSearchParams();
+      if (params?.site && params.site !== 'ALL') query.append('site', params.site);
+      if (params?.activity && params.activity !== 'ALL') query.append('activity', params.activity);
+      if (params?.min_risk) query.append('min_risk', params.min_risk.toString());
+
+      const directRes = await fetch(`http://127.0.0.1:8000/api/v1/graph/lineage?${query.toString()}`);
+      if (directRes.ok) {
+        return await directRes.json();
+      }
+      throw new Error(`Failed to fetch dynamic graph from Python microservice: ${directRes.status}`);
+    }
+  }
+};
+
+/**
+ * FEATURE 3: AGENTIC SAFETY INVESTIGATOR SERVICE
+ */
+export const agenticService = {
+  async runInvestigation(payload: { narrative: string; site?: string; activity?: string; report_id?: string }) {
+    try {
+      const response = await apiClient.post('/agentic/investigate', payload, { timeout: 60000 });
+      return response.data;
+    } catch (error) {
+      console.warn('Express agentic endpoint failed, calling FastAPI directly:', (error as Error).message);
+      const directRes = await fetch('http://127.0.0.1:8000/api/v1/agentic/investigate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        signal: AbortSignal.timeout(60000),
+        body: JSON.stringify(payload)
+      });
+      if (directRes.ok) {
+        return await directRes.json();
+      }
+      throw new Error(`Failed to run agentic investigation from Python microservice: ${directRes.status}`);
+    }
+  }
+};

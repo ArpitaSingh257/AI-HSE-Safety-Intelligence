@@ -566,6 +566,33 @@ export async function analyzeIntelligence(reqPayload: {
   }
 }
 
+/**
+ * Calls Stage 43 FastAPI GET /api/v1/graph/lineage for Graph RAG topology data.
+ */
+export async function getKnowledgeGraphData(query: {
+  site?: string;
+  activity?: string;
+  min_risk?: number;
+}): Promise<any> {
+  const baseUrl = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8000/api/v1/analyze').replace('/analyze', '');
+  const url = new URL(`${baseUrl}/graph/lineage`);
+  if (query.site) url.searchParams.append('site', query.site);
+  if (query.activity) url.searchParams.append('activity', query.activity);
+  if (query.min_risk) url.searchParams.append('min_risk', query.min_risk.toString());
+
+  try {
+    const response = await fetch(url.toString(), { method: 'GET' });
+    if (!response.ok) {
+      throw new Error(`Graph service HTTP ${response.status}`);
+    }
+    return await response.json();
+  } catch (err: any) {
+    console.warn(`aiService.getKnowledgeGraphData failed to reach Python FastAPI at ${url.toString()}: ${err.message}`);
+    // Re-throw so backend controller or direct frontend fallback handles it dynamically
+    throw new Error(`Python AI Graph Service unavailable: ${err.message}`);
+  }
+}
+
 
 
 

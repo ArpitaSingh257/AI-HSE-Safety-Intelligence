@@ -115,8 +115,23 @@ export async function getReports(req: Request, res: Response) {
 }
 
 export async function getReportById(req: Request, res: Response) {
-  const report = await SafetyReport.findById(req.params.id);
-  if (!report) return res.status(404).json({ message: `Report ${req.params.id} not found` });
+  let report = null;
+  const paramId = req.params.id;
+
+  if (paramId && paramId.match(/^[0-9a-fA-F]{24}$/)) {
+    report = await SafetyReport.findById(paramId);
+  }
+
+  if (!report) {
+    report = await SafetyReport.findOne({
+      $or: [
+        { report_id: paramId },
+        { id: paramId }
+      ]
+    });
+  }
+
+  if (!report) return res.status(404).json({ message: `Report ${paramId} not found` });
 
   const aiResult = await SifAnalysisResult.findOne({ reportId: report._id });
   const json: any = report.toJSON();

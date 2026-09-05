@@ -1,0 +1,1079 @@
+{
+  "status": "SUCCESS",
+  "source_dataset": "oilps_final_master_v2.csv",
+  "nodes": [
+    {
+      "id": "site_moran",
+      "label": "Moran",
+      "type": "Site",
+      "category": "ASSET_SITE",
+      "risk_score": 79.5,
+      "details": {
+        "total_csv_records": 227,
+        "site_name": "Moran"
+      }
+    },
+    {
+      "id": "activity_maintenance",
+      "label": "Maintenance",
+      "type": "Activity",
+      "category": "OPERATIONAL_ACTIVITY",
+      "risk_score": 74.5,
+      "details": {
+        "total_csv_records": 227,
+        "activity_name": "Maintenance"
+      }
+    },
+    {
+      "id": "lsr_safe_mechanical_lifting",
+      "label": "Safe Mechanical Lifting",
+      "type": "LSR_Rule",
+      "category": "IOGP_LIFE_SAVING_RULE",
+      "risk_score": 79.0,
+      "details": {
+        "total_violations": 49,
+        "rule_name": "Safe Mechanical Lifting"
+      }
+    },
+    {
+      "id": "lsr_driving",
+      "label": "Driving",
+      "type": "LSR_Rule",
+      "category": "IOGP_LIFE_SAVING_RULE",
+      "risk_score": 78.9,
+      "details": {
+        "total_violations": 43,
+        "rule_name": "Driving"
+      }
+    },
+    {
+      "id": "lsr_confined_space_entry",
+      "label": "Confined Space Entry",
+      "type": "LSR_Rule",
+      "category": "IOGP_LIFE_SAVING_RULE",
+      "risk_score": 78.5,
+      "details": {
+        "total_violations": 27,
+        "rule_name": "Confined Space Entry"
+      }
+    },
+    {
+      "id": "lsr_work_at_height",
+      "label": "Work at Height",
+      "type": "LSR_Rule",
+      "category": "IOGP_LIFE_SAVING_RULE",
+      "risk_score": 78.5,
+      "details": {
+        "total_violations": 24,
+        "rule_name": "Work at Height"
+      }
+    },
+    {
+      "id": "lsr_control_of_hazardous_energy",
+      "label": "Control of Hazardous Energy",
+      "type": "LSR_Rule",
+      "category": "IOGP_LIFE_SAVING_RULE",
+      "risk_score": 78.5,
+      "details": {
+        "total_violations": 23,
+        "rule_name": "Control of Hazardous Energy"
+      }
+    },
+    {
+      "id": "lsr_hot_work",
+      "label": "Hot Work",
+      "type": "LSR_Rule",
+      "category": "IOGP_LIFE_SAVING_RULE",
+      "risk_score": 78.4,
+      "details": {
+        "total_violations": 20,
+        "rule_name": "Hot Work"
+      }
+    },
+    {
+      "id": "lsr_line_of_fire",
+      "label": "Line of Fire",
+      "type": "LSR_Rule",
+      "category": "IOGP_LIFE_SAVING_RULE",
+      "risk_score": 78.4,
+      "details": {
+        "total_violations": 19,
+        "rule_name": "Line of Fire"
+      }
+    },
+    {
+      "id": "lsr_work_authorization",
+      "label": "Work Authorization",
+      "type": "LSR_Rule",
+      "category": "IOGP_LIFE_SAVING_RULE",
+      "risk_score": 78.2,
+      "details": {
+        "total_violations": 12,
+        "rule_name": "Work Authorization"
+      }
+    },
+    {
+      "id": "lsr_bypassing_safety_controls",
+      "label": "Bypassing Safety Controls",
+      "type": "LSR_Rule",
+      "category": "IOGP_LIFE_SAVING_RULE",
+      "risk_score": 78.2,
+      "details": {
+        "total_violations": 10,
+        "rule_name": "Bypassing Safety Controls"
+      }
+    },
+    {
+      "id": "sif_critical_sif_precursor",
+      "label": "Critical SIF Precursor Potential",
+      "type": "SIF_Tier",
+      "category": "RISK_SEVERITY",
+      "risk_score": 96.0,
+      "details": {
+        "tier": "CRITICAL_SIF_PRECURSOR"
+      }
+    },
+    {
+      "id": "sif_elevated_sif_potential",
+      "label": "Elevated SIF Potential",
+      "type": "SIF_Tier",
+      "category": "RISK_SEVERITY",
+      "risk_score": 78.0,
+      "details": {
+        "tier": "ELEVATED_SIF_POTENTIAL"
+      }
+    },
+    {
+      "id": "sif_moderate_hazard",
+      "label": "Moderate Facility Hazard",
+      "type": "SIF_Tier",
+      "category": "RISK_SEVERITY",
+      "risk_score": 48.0,
+      "details": {
+        "tier": "MODERATE_HAZARD"
+      }
+    },
+    {
+      "id": "sif_low_potential_incident",
+      "label": "Low Precursor Potential",
+      "type": "SIF_Tier",
+      "category": "RISK_SEVERITY",
+      "risk_score": 22.0,
+      "details": {
+        "tier": "LOW_POTENTIAL_INCIDENT"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_hpe_0006",
+      "label": "CSV Record #OILPS_IOGP_HPE_0006",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_HPE_0006",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Safe Mechanical Lifting",
+        "hazard": "nan",
+        "barrier_failure": "nan",
+        "narrative": "At about 02:21hrs, while rig crew was picking 4\u201d drill pipe, a single drill pipe was picked from Catwalk to the rig \nfloor with Air winch tugger. The IP removed thread protector fr..."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_hpe_0006",
+      "label": "AI SIF Analysis (OILPS_IOGP_HPE_0006)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_HPE_0006",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_hpe_0026",
+      "label": "CSV Record #OILPS_IOGP_HPE_0026",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_HPE_0026",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Confined Space Entry",
+        "hazard": "nan",
+        "barrier_failure": "nan",
+        "narrative": "When filling a mud tank with brine to prepare for cleaning of the tank, the transfer hose became dislodged, fell \ntowards the ground (2.6m) and began to whip. The hose struck the p..."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_hpe_0026",
+      "label": "AI SIF Analysis (OILPS_IOGP_HPE_0026)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_HPE_0026",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_hpe_0047",
+      "label": "CSV Record #OILPS_IOGP_HPE_0047",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_HPE_0047",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Work at Height",
+        "hazard": "nan",
+        "barrier_failure": "nan",
+        "narrative": "Observed that a Contractor Scaffolder working at 12m height on a Piperack without using his fall protection, \nstanding on the hanging scaffold platform without using his double lan..."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_hpe_0047",
+      "label": "AI SIF Analysis (OILPS_IOGP_HPE_0047)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_HPE_0047",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_hpe_0067",
+      "label": "CSV Record #OILPS_IOGP_HPE_0067",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_HPE_0067",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Work at Height",
+        "hazard": "nan",
+        "barrier_failure": "nan",
+        "narrative": "Two project contractors were observed working outside the handrail on structural beams approximately 30 meters \nabove sea level. They were without the required fall-prevention barr..."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_hpe_0067",
+      "label": "AI SIF Analysis (OILPS_IOGP_HPE_0067)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_HPE_0067",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_hpe_0087",
+      "label": "CSV Record #OILPS_IOGP_HPE_0087",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_HPE_0087",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Driving",
+        "hazard": "nan",
+        "barrier_failure": "nan",
+        "narrative": "Crew shuttle collision during a braking manoeuvre, the shuttle initially collided with the vehicle in front, then \ncrossed into the oncoming lane and was struck on the right side b..."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_hpe_0087",
+      "label": "AI SIF Analysis (OILPS_IOGP_HPE_0087)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_HPE_0087",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0009",
+      "label": "CSV Record #OILPS_IOGP_SPI_0009",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0009",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Driving",
+        "hazard": "nan",
+        "barrier_failure": "Human Barrier Failures: Response to emergencies",
+        "narrative": "23 Sep 2025, 2:58 AM: Pressure drop (~6 psi) was detected during condensate shipping. Operations halted and \nsecurity alerted.\nEarly Response: \nBY Security Control Room (BYSCR) coo..."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_spi_0009",
+      "label": "AI SIF Analysis (OILPS_IOGP_SPI_0009)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0009",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0029",
+      "label": "CSV Record #OILPS_IOGP_SPI_0029",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0029",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Confined Space Entry",
+        "hazard": "nan",
+        "barrier_failure": "Hardware Barrier Failures: Detection Systems\nHuman Barrier Failures: Surveillance, operator rounds and routine inspection\nManagement System Element Barrier Failure: Plans and procedures",
+        "narrative": "During a routine condensate tanker loading operation at Loading Bay, an overfill occurred resulting in an \nestimated loss of 1040 kg of condensate. The event resulted from the fail..."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_spi_0029",
+      "label": "AI SIF Analysis (OILPS_IOGP_SPI_0029)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0029",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0050",
+      "label": "CSV Record #OILPS_IOGP_SPI_0050",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0050",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Confined Space Entry",
+        "hazard": "nan",
+        "barrier_failure": "Hardware Barrier Failures: Process Containment",
+        "narrative": "A leak was detected on the 3\u201d \u00d8 liquids line toward the battery limit, which is currently out of operation.\nActions: It was verified that the valves of the liquids circuit were clo..."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_spi_0050",
+      "label": "AI SIF Analysis (OILPS_IOGP_SPI_0050)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0050",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0070",
+      "label": "CSV Record #OILPS_IOGP_SPI_0070",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0070",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Safe Mechanical Lifting",
+        "hazard": "nan",
+        "barrier_failure": "Hardware Barrier Failures: Process Containment",
+        "narrative": "Frozen 3\u201d load line valve ejected ball releasing 211 bbl oil; oil migrated slightly off pad; remediation ongoing."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_spi_0070",
+      "label": "AI SIF Analysis (OILPS_IOGP_SPI_0070)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0070",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0090",
+      "label": "CSV Record #OILPS_IOGP_SPI_0090",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0090",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Line of Fire",
+        "hazard": "nan",
+        "barrier_failure": "Hardware Barrier Failures: Structural Integrity",
+        "narrative": "Pressure transmitter failure released 355 bbl oil; 250 bbl recovered."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_spi_0090",
+      "label": "AI SIF Analysis (OILPS_IOGP_SPI_0090)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0090",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0110",
+      "label": "CSV Record #OILPS_IOGP_SPI_0110",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0110",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Bypassing Safety Controls",
+        "hazard": "nan",
+        "barrier_failure": "Hardware Barrier Failures: Structural Integrity",
+        "narrative": "Failed suction-side valve filled sump and spilled 84 bbl oil inside unlined containment; 76 bbl recovered."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_spi_0110",
+      "label": "AI SIF Analysis (OILPS_IOGP_SPI_0110)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0110",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0131",
+      "label": "CSV Record #OILPS_IOGP_SPI_0131",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0131",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Confined Space Entry",
+        "hazard": "nan",
+        "barrier_failure": "Hardware Barrier Failures: Ignition Control",
+        "narrative": "Lightning strike on tanks, and fire followed."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_spi_0131",
+      "label": "AI SIF Analysis (OILPS_IOGP_SPI_0131)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0131",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0153",
+      "label": "CSV Record #OILPS_IOGP_SPI_0153",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0153",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Hot Work",
+        "hazard": "nan",
+        "barrier_failure": "Hardware Barrier Failures: Structural Integrity",
+        "narrative": "Two heaters caught fire and sustained damage."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_spi_0153",
+      "label": "AI SIF Analysis (OILPS_IOGP_SPI_0153)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0153",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0173",
+      "label": "CSV Record #OILPS_IOGP_SPI_0173",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0173",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Safe Mechanical Lifting",
+        "hazard": "nan",
+        "barrier_failure": "Hardware Barrier Failures: Process Containment",
+        "narrative": "During normal operations, a failure occurred in the vent header drainage system, causing liquid carryover to the \nflare. No material damage or personal injuries were reported; only..."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_spi_0173",
+      "label": "AI SIF Analysis (OILPS_IOGP_SPI_0173)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_SPI_0173",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "inc_oilps_iogp_fatal_0194",
+      "label": "CSV Record #OILPS_IOGP_FATAL_0194",
+      "type": "Live_Report",
+      "category": "HISTORICAL_CSV_DATASET",
+      "risk_score": 89.0,
+      "details": {
+        "record_id": "OILPS_IOGP_FATAL_0194",
+        "site": "Moran",
+        "activity": "Maintenance",
+        "lsr_primary": "Driving",
+        "hazard": "nan",
+        "barrier_failure": "nan",
+        "narrative": "Around 10 minutes into clearing/removal activities a high energy release occurred ejecting the contents of the \npiping assembly including the pig, fatally striking a contract worke..."
+      }
+    },
+    {
+      "id": "sifres_oilps_iogp_fatal_0194",
+      "label": "AI SIF Analysis (OILPS_IOGP_FATAL_0194)",
+      "type": "SIF_AI_Analysis",
+      "category": "SIF_ANALYSIS_RESULTS",
+      "risk_score": 91.0,
+      "details": {
+        "record_id": "OILPS_IOGP_FATAL_0194",
+        "sif_label": "CRITICAL_PRECURSOR",
+        "calibrated_score": 0.91,
+        "explanation": "High severity precursor detected with isolation barrier failure.",
+        "model_version": "OILPS_v2.0.0"
+      }
+    },
+    {
+      "id": "pattern_lockout_bypass",
+      "label": "Recurrent LOTO Isolation Failure",
+      "type": "Safety_Pattern",
+      "category": "RECURRENT_PATTERN",
+      "risk_score": 88.0,
+      "details": {
+        "pattern_name": "Recurrent LOTO Isolation Failure",
+        "associated_rule": "Control of Hazardous Energy"
+      }
+    },
+    {
+      "id": "pattern_hot_work_gas",
+      "label": "Gas Test Omission in Hot Work",
+      "type": "Safety_Pattern",
+      "category": "RECURRENT_PATTERN",
+      "risk_score": 92.0,
+      "details": {
+        "pattern_name": "Gas Test Omission in Hot Work",
+        "associated_rule": "Hot Work"
+      }
+    },
+    {
+      "id": "pattern_height_harness",
+      "label": "Unanchored Harness at Elevated Platform",
+      "type": "Safety_Pattern",
+      "category": "RECURRENT_PATTERN",
+      "risk_score": 85.0,
+      "details": {
+        "pattern_name": "Unanchored Harness at Elevated Platform",
+        "associated_rule": "Work at Height"
+      }
+    },
+    {
+      "id": "interv_audit_loto",
+      "label": "Mandatory LOTO Protocol Audit",
+      "type": "Corrective_Intervention",
+      "category": "CLOSED_LOOP_ACTION",
+      "risk_score": 78.0,
+      "details": {
+        "title": "Mandatory LOTO Protocol Audit",
+        "status": "OPEN",
+        "assigned_officer": "Senior Safety Officer"
+      }
+    },
+    {
+      "id": "interv_permit_hotwork",
+      "label": "Hot Work Permit System Overhaul",
+      "type": "Corrective_Intervention",
+      "category": "CLOSED_LOOP_ACTION",
+      "risk_score": 78.0,
+      "details": {
+        "title": "Hot Work Permit System Overhaul",
+        "status": "IN_PROGRESS",
+        "assigned_officer": "HSE Specialist"
+      }
+    },
+    {
+      "id": "fb_analyst_rev_01",
+      "label": "Analyst Verification (CONFIRMED)",
+      "type": "Analyst_Feedback",
+      "category": "HUMAN_ANALYST_FEEDBACK",
+      "risk_score": 80.0,
+      "details": {
+        "status": "ACCEPTED",
+        "notes": "Rule mapping verified by Chief HSE Inspector."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "inc_oilps_iogp_hpe_0006->sifres_oilps_iogp_hpe_0006",
+      "source": "inc_oilps_iogp_hpe_0006",
+      "target": "sifres_oilps_iogp_hpe_0006",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_hpe_0026->sifres_oilps_iogp_hpe_0026",
+      "source": "inc_oilps_iogp_hpe_0026",
+      "target": "sifres_oilps_iogp_hpe_0026",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_hpe_0047->sifres_oilps_iogp_hpe_0047",
+      "source": "inc_oilps_iogp_hpe_0047",
+      "target": "sifres_oilps_iogp_hpe_0047",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_hpe_0067->sifres_oilps_iogp_hpe_0067",
+      "source": "inc_oilps_iogp_hpe_0067",
+      "target": "sifres_oilps_iogp_hpe_0067",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_hpe_0087->sifres_oilps_iogp_hpe_0087",
+      "source": "inc_oilps_iogp_hpe_0087",
+      "target": "sifres_oilps_iogp_hpe_0087",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0009->sifres_oilps_iogp_spi_0009",
+      "source": "inc_oilps_iogp_spi_0009",
+      "target": "sifres_oilps_iogp_spi_0009",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0029->sifres_oilps_iogp_spi_0029",
+      "source": "inc_oilps_iogp_spi_0029",
+      "target": "sifres_oilps_iogp_spi_0029",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0050->sifres_oilps_iogp_spi_0050",
+      "source": "inc_oilps_iogp_spi_0050",
+      "target": "sifres_oilps_iogp_spi_0050",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0070->sifres_oilps_iogp_spi_0070",
+      "source": "inc_oilps_iogp_spi_0070",
+      "target": "sifres_oilps_iogp_spi_0070",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0090->sifres_oilps_iogp_spi_0090",
+      "source": "inc_oilps_iogp_spi_0090",
+      "target": "sifres_oilps_iogp_spi_0090",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0110->sifres_oilps_iogp_spi_0110",
+      "source": "inc_oilps_iogp_spi_0110",
+      "target": "sifres_oilps_iogp_spi_0110",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0131->sifres_oilps_iogp_spi_0131",
+      "source": "inc_oilps_iogp_spi_0131",
+      "target": "sifres_oilps_iogp_spi_0131",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0153->sifres_oilps_iogp_spi_0153",
+      "source": "inc_oilps_iogp_spi_0153",
+      "target": "sifres_oilps_iogp_spi_0153",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_spi_0173->sifres_oilps_iogp_spi_0173",
+      "source": "inc_oilps_iogp_spi_0173",
+      "target": "sifres_oilps_iogp_spi_0173",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "inc_oilps_iogp_fatal_0194->sifres_oilps_iogp_fatal_0194",
+      "source": "inc_oilps_iogp_fatal_0194",
+      "target": "sifres_oilps_iogp_fatal_0194",
+      "relationship": "HAS_AI_ANALYSIS",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_control_of_hazardous_energy->pattern_lockout_bypass",
+      "source": "lsr_control_of_hazardous_energy",
+      "target": "pattern_lockout_bypass",
+      "relationship": "HAS_RECURRENT_PATTERN",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_hot_work->pattern_hot_work_gas",
+      "source": "lsr_hot_work",
+      "target": "pattern_hot_work_gas",
+      "relationship": "HAS_RECURRENT_PATTERN",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_work_at_height->pattern_height_harness",
+      "source": "lsr_work_at_height",
+      "target": "pattern_height_harness",
+      "relationship": "HAS_RECURRENT_PATTERN",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_control_of_hazardous_energy->interv_audit_loto",
+      "source": "lsr_control_of_hazardous_energy",
+      "target": "interv_audit_loto",
+      "relationship": "CORRECTIVE_INTERVENTION",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_hot_work->interv_permit_hotwork",
+      "source": "lsr_hot_work",
+      "target": "interv_permit_hotwork",
+      "relationship": "CORRECTIVE_INTERVENTION",
+      "weight": 1.0
+    },
+    {
+      "id": "site_moran->activity_maintenance",
+      "source": "site_moran",
+      "target": "activity_maintenance",
+      "relationship": "CONTAINS_ACTIVITY",
+      "weight": 227.0
+    },
+    {
+      "id": "activity_maintenance->lsr_safe_mechanical_lifting",
+      "source": "activity_maintenance",
+      "target": "lsr_safe_mechanical_lifting",
+      "relationship": "EXPOSES_BARRIER",
+      "weight": 49.0
+    },
+    {
+      "id": "activity_maintenance->lsr_driving",
+      "source": "activity_maintenance",
+      "target": "lsr_driving",
+      "relationship": "EXPOSES_BARRIER",
+      "weight": 43.0
+    },
+    {
+      "id": "activity_maintenance->lsr_confined_space_entry",
+      "source": "activity_maintenance",
+      "target": "lsr_confined_space_entry",
+      "relationship": "EXPOSES_BARRIER",
+      "weight": 27.0
+    },
+    {
+      "id": "activity_maintenance->lsr_work_at_height",
+      "source": "activity_maintenance",
+      "target": "lsr_work_at_height",
+      "relationship": "EXPOSES_BARRIER",
+      "weight": 24.0
+    },
+    {
+      "id": "activity_maintenance->lsr_control_of_hazardous_energy",
+      "source": "activity_maintenance",
+      "target": "lsr_control_of_hazardous_energy",
+      "relationship": "EXPOSES_BARRIER",
+      "weight": 23.0
+    },
+    {
+      "id": "activity_maintenance->lsr_hot_work",
+      "source": "activity_maintenance",
+      "target": "lsr_hot_work",
+      "relationship": "EXPOSES_BARRIER",
+      "weight": 20.0
+    },
+    {
+      "id": "activity_maintenance->lsr_line_of_fire",
+      "source": "activity_maintenance",
+      "target": "lsr_line_of_fire",
+      "relationship": "EXPOSES_BARRIER",
+      "weight": 19.0
+    },
+    {
+      "id": "activity_maintenance->lsr_work_authorization",
+      "source": "activity_maintenance",
+      "target": "lsr_work_authorization",
+      "relationship": "EXPOSES_BARRIER",
+      "weight": 12.0
+    },
+    {
+      "id": "activity_maintenance->lsr_bypassing_safety_controls",
+      "source": "activity_maintenance",
+      "target": "lsr_bypassing_safety_controls",
+      "relationship": "EXPOSES_BARRIER",
+      "weight": 10.0
+    },
+    {
+      "id": "lsr_safe_mechanical_lifting->sif_critical_sif_precursor",
+      "source": "lsr_safe_mechanical_lifting",
+      "target": "sif_critical_sif_precursor",
+      "relationship": "TRIGGERS_PRECURSOR",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_driving->sif_critical_sif_precursor",
+      "source": "lsr_driving",
+      "target": "sif_critical_sif_precursor",
+      "relationship": "TRIGGERS_PRECURSOR",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_confined_space_entry->sif_critical_sif_precursor",
+      "source": "lsr_confined_space_entry",
+      "target": "sif_critical_sif_precursor",
+      "relationship": "TRIGGERS_PRECURSOR",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_work_at_height->sif_critical_sif_precursor",
+      "source": "lsr_work_at_height",
+      "target": "sif_critical_sif_precursor",
+      "relationship": "TRIGGERS_PRECURSOR",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_control_of_hazardous_energy->sif_critical_sif_precursor",
+      "source": "lsr_control_of_hazardous_energy",
+      "target": "sif_critical_sif_precursor",
+      "relationship": "TRIGGERS_PRECURSOR",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_hot_work->sif_critical_sif_precursor",
+      "source": "lsr_hot_work",
+      "target": "sif_critical_sif_precursor",
+      "relationship": "TRIGGERS_PRECURSOR",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_line_of_fire->sif_critical_sif_precursor",
+      "source": "lsr_line_of_fire",
+      "target": "sif_critical_sif_precursor",
+      "relationship": "TRIGGERS_PRECURSOR",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_work_authorization->sif_critical_sif_precursor",
+      "source": "lsr_work_authorization",
+      "target": "sif_critical_sif_precursor",
+      "relationship": "TRIGGERS_PRECURSOR",
+      "weight": 1.0
+    },
+    {
+      "id": "lsr_bypassing_safety_controls->sif_critical_sif_precursor",
+      "source": "lsr_bypassing_safety_controls",
+      "target": "sif_critical_sif_precursor",
+      "relationship": "TRIGGERS_PRECURSOR",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_hpe_0006",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_hpe_0006",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_hpe_0026",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_hpe_0026",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_hpe_0047",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_hpe_0047",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_hpe_0067",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_hpe_0067",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_hpe_0087",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_hpe_0087",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_spi_0009",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_spi_0009",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_spi_0029",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_spi_0029",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_spi_0050",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_spi_0050",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_spi_0070",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_spi_0070",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_spi_0090",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_spi_0090",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_spi_0110",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_spi_0110",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_spi_0131",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_spi_0131",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_spi_0153",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_spi_0153",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_spi_0173",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_spi_0173",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    },
+    {
+      "id": "sif_critical_sif_precursor->inc_oilps_iogp_fatal_0194",
+      "source": "sif_critical_sif_precursor",
+      "target": "inc_oilps_iogp_fatal_0194",
+      "relationship": "GROUNDED_EVIDENCE",
+      "weight": 1.0
+    }
+  ],
+  "metrics": {
+    "total_nodes": 51,
+    "total_edges": 54,
+    "site_count": 1,
+    "activity_count": 1,
+    "critical_sif_nodes": 35,
+    "connected_lsr_barriers": 9,
+    "dataset_baseline_records": 227,
+    "live_mongo_reports": 227,
+    "sif_analysis_results_count": 15,
+    "active_patterns": 3,
+    "active_interventions": 2,
+    "user_feedbacks": 1
+  }
+}
