@@ -11,6 +11,8 @@ from typing import List, Dict, Any, Optional
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
+import threading
+
 from knowledge.embeddings import SafetyEmbeddingEngine
 from knowledge.metadata import save_json, load_json
 
@@ -37,6 +39,7 @@ class VectorRetriever:
         self.metadata_store: List[Dict[str, Any]] = []
         self.embeddings_matrix: Optional[np.ndarray] = None
         self.vector_dim = self.embedding_engine.vector_dim
+        self._lock = threading.Lock()
 
     def build_index(self, chunks: List[Dict[str, Any]]):
         """
@@ -68,25 +71,29 @@ class VectorRetriever:
 
     def load_index(self) -> bool:
         """
-        Load index and metadata from disk if present.
+        Load index and metadata from disk if present (Thread-Safe).
         """
-        meta_path = self.index_dir / "vector_metadata.json"
-        emb_path = self.index_dir / "embeddings.npy"
-        faiss_path = self.index_dir / "vector_index.faiss"
+        with self._lock:
+            if self.metadata_store and (self.faiss_index is not None or self.embeddings_matrix is not None):
+                return True
 
-        if not meta_path.exists():
-            return False
+            meta_path = self.index_dir / "vector_metadata.json"
+            emb_path = self.index_dir / "embeddings.npy"
+            faiss_path = self.index_dir / "vector_index.faiss"
 
-        self.metadata_store = load_json(meta_path)
+            if not meta_path.exists():
+                return False
 
-        if HAS_FAISS and faiss_path.exists():
-            self.faiss_index = faiss.read_index(str(faiss_path))
-            logger.info("Loaded FAISS vector index successfully.")
-        elif emb_path.exists():
-            self.embeddings_matrix = np.load(emb_path)
-            logger.info("Loaded NumPy embeddings matrix fallback.")
+            self.metadata_store = load_json(meta_path)
 
-        return True
+            if HAS_FAISS and faiss_path.exists():
+                self.faiss_index = faiss.read_index(str(faiss_path))
+                logger.info("Loaded FAISS vector index successfully.")
+            elif emb_path.exists():
+                self.embeddings_matrix = np.load(emb_path)
+                logger.info("Loaded NumPy embeddings matrix fallback.")
+
+            return True
 
     def retrieve(self, query: str, top_k: int = 5, min_confidence: float = 0.25) -> List[Dict[str, Any]]:
         """
@@ -120,8 +127,9 @@ class VectorRetriever:
                     results.append(item)
         else:
             # NumPy cosine similarity fallback
-            if self.embeddings_matrix is None and emb_path.exists():
-                self.embeddings_matrix = np.load(self.index_dir / "embeddings.npy")
+            emb_file = self.index_dir / "embeddings.npy"
+            if self.embeddings_matrix is None and emb_file.exists():
+                self.embeddings_matrix = np.load(emb_file)
             
             if self.embeddings_matrix is not None:
                 sims = np.dot(self.embeddings_matrix, query_vec[0])

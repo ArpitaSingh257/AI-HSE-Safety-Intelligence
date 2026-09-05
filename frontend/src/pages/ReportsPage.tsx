@@ -63,6 +63,8 @@ export const ReportsPage: React.FC = () => {
   const [intelText, setIntelText] = useState('');
   const [intelSite, setIntelSite] = useState('');
   const [intelActivity, setIntelActivity] = useState('');
+  const [intelPtw, setIntelPtw] = useState('');
+  const [intelEquipment, setIntelEquipment] = useState('');
   const [intelResult, setIntelResult] = useState<Stage43IntelligenceResponse | null>(null);
   const [analyzingIntel, setAnalyzingIntel] = useState(false);
   const [intelError, setIntelError] = useState<string | null>(null);
@@ -76,8 +78,17 @@ export const ReportsPage: React.FC = () => {
     setAnalyzingIntel(true);
     setIntelError(null);
     try {
+      // Build enriched incident text with PTW and Equipment context if provided
+      let enrichedText = intelText.trim();
+      const metaTags: string[] = [];
+      if (intelPtw.trim()) metaTags.push(`PTW: ${intelPtw.trim()}`);
+      if (intelEquipment.trim()) metaTags.push(`Equipment: ${intelEquipment.trim()}`);
+      if (metaTags.length > 0) {
+        enrichedText = `[${metaTags.join(' | ')}] ${enrichedText}`;
+      }
+
       const res = await intelligenceService.analyzeIntelligence({
-        incident_text: intelText.trim(),
+        incident_text: enrichedText,
         site: intelSite.trim() || undefined,
         activity: intelActivity.trim() || undefined
       });
@@ -636,6 +647,34 @@ export const ReportsPage: React.FC = () => {
                   className="w-full rounded border border-slate-300 bg-white p-2 text-xs text-slate-900"
                 />
               </div>
+
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">Permit to Work (PTW) Status (Optional)</label>
+                <select
+                  value={intelPtw}
+                  onChange={(e) => setIntelPtw(e.target.value)}
+                  className="w-full rounded border border-slate-300 bg-white p-2 text-xs text-slate-900"
+                >
+                  <option value="">Select PTW Category (Optional)</option>
+                  <option value="Hot Work Permit">Hot Work Permit (Spark/Flame Hazard)</option>
+                  <option value="Cold Work Permit">Cold Work Permit (General Operations)</option>
+                  <option value="Confined Space Entry Permit">Confined Space Entry Permit</option>
+                  <option value="Working at Height Permit">Working at Height Permit</option>
+                  <option value="Electrical LOTO Permit">Electrical Isolation / LOTO Permit</option>
+                  <option value="Unpermitted / Missing PTW">Unpermitted / Missing PTW</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block font-semibold text-slate-700 mb-1">Equipment / Asset Class (Optional)</label>
+                <input
+                  type="text"
+                  value={intelEquipment}
+                  onChange={(e) => setIntelEquipment(e.target.value)}
+                  placeholder="e.g., Scaffolding, Pressure Valve, Crane, MCC Panel"
+                  className="w-full rounded border border-slate-300 bg-white p-2 text-xs text-slate-900"
+                />
+              </div>
             </div>
 
             {intelError && (
@@ -647,7 +686,7 @@ export const ReportsPage: React.FC = () => {
             <div className="flex justify-end gap-2 pt-2">
               <button
                 type="button"
-                onClick={() => { setIntelText(''); setIntelResult(null); setIntelError(null); }}
+                onClick={() => { setIntelText(''); setIntelSite(''); setIntelActivity(''); setIntelPtw(''); setIntelEquipment(''); setIntelResult(null); setIntelError(null); }}
                 className="rounded border border-slate-300 px-3 py-1.5 text-xs text-slate-600 hover:bg-slate-100"
               >
                 Clear

@@ -18,6 +18,10 @@ from typing import Dict, List, Any, Optional
 BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR))
 
+import copy
+import hashlib
+import threading
+from collections import OrderedDict
 from knowledge.metadata import SourceCitation
 from rag.retriever import VectorRetriever
 from rag.reranker import SafetyReranker
@@ -34,10 +38,58 @@ except ImportError:
     HAS_GEMINI = False
 
 
+class BoundedThreadSafeLRUCache:
+    """
+    Thread-safe bounded LRU cache for validated RAG recommendation outputs.
+    Ensures zero race conditions, deterministic eviction, and non-mutable safe copies.
+    """
+    def __init__(self, maxsize: int = 256):
+        self.maxsize = maxsize
+        self._cache = OrderedDict()
+        self._lock = threading.Lock()
+        self._hits = 0
+        self._misses = 0
+
+    def get(self, key: str) -> Optional[Dict[str, Any]]:
+        with self._lock:
+            if key in self._cache:
+                self._cache.move_to_end(key)
+                self._hits += 1
+                return copy.deepcopy(self._cache[key])
+            self._misses += 1
+            return None
+
+    def put(self, key: str, value: Dict[str, Any]):
+        with self._lock:
+            if key in self._cache:
+                self._cache.move_to_end(key)
+                self._cache[key] = copy.deepcopy(value)
+            else:
+                if len(self._cache) >= self.maxsize:
+                    self._cache.popitem(last=False)  # Evict oldest LRU item
+                self._cache[key] = copy.deepcopy(value)
+
+    def get_stats(self) -> Dict[str, Any]:
+        with self._lock:
+            return {
+                "hits": self._hits,
+                "misses": self._misses,
+                "size": len(self._cache),
+                "maxsize": self.maxsize
+            }
+
+    def clear(self):
+        with self._lock:
+            self._cache.clear()
+            self._hits = 0
+            self._misses = 0
+
+
 class RAGSafetyRecommendationEngine:
     """
     Production Hybrid RAG Recommendation Engine for OILPS.
-    Optimized for Stage 18 low-latency CPU generation, compact context, and negative control safety guardrails.
+    Optimized for Stage 18 low-latency CPU generation, compact context, negative control safety guardrails,
+    and thread-safe bounded LRU caching.
     """
 
     def __init__(
@@ -55,6 +107,7 @@ class RAGSafetyRecommendationEngine:
         self.use_llm = use_llm
         self.ollama_url = os.getenv("OLLAMA_URL", ollama_url)
         self.ollama_model = os.getenv("OLLAMA_MODEL", ollama_model)
+        self.recommendation_cache = BoundedThreadSafeLRUCache(maxsize=256)
         self._init_llm()
 
     def _init_llm(self):
@@ -86,19 +139,20 @@ class RAGSafetyRecommendationEngine:
                 logger.warning(f"Could not initialize Gemini LLM: {e}")
 
     def _query_ollama(self, prompt: str) -> Optional[Dict[str, Any]]:
-        """Query local Ollama server with deterministic settings and robust JSON parsing."""
+        """Query local Ollama server with deterministic settings, optimized keep_alive/context, and robust JSON parsing."""
         payload = {
             "model": self.ollama_model,
             "prompt": prompt,
             "stream": False,
             "format": "json",
+            "keep_alive": "60m",
             "options": {
-                "num_predict": 350,     # Headroom for full structured JSON
+                "num_predict": 350,     # Sufficient headroom for full structured JSON response
                 "temperature": 0.0,     # Deterministic zero-temperature sampling
                 "top_k": 1,             # Greedy decoding for 100% reproducibility
                 "top_p": 1.0,
                 "seed": 42,             # Fixed seed for reproducibility
-                "num_ctx": 1536,        # Compact context window
+                "num_ctx": 1024,        # Compact context window
                 "stop": ["\n\n\n", "```"]
             }
         }
@@ -111,7 +165,7 @@ class RAGSafetyRecommendationEngine:
         )
         t0 = time.time()
         try:
-            with urllib.request.urlopen(req, timeout=30.0) as resp:
+            with urllib.request.urlopen(req, timeout=35.0) as resp:
                 if resp.status == 200:
                     body = json.loads(resp.read().decode("utf-8"))
                     response_text = body.get("response", "").strip()
@@ -129,17 +183,20 @@ class RAGSafetyRecommendationEngine:
                             try:
                                 return json.loads(raw_json)
                             except Exception:
-                                # Attempt closing bracket fix if truncated
                                 repaired = raw_json.strip()
+                                # Handle unclosed quotes in truncated JSON strings
+                                if repaired.count('"') % 2 != 0:
+                                    repaired += '"'
                                 if not repaired.endswith("}"):
-                                    repaired += '"}' if repaired.endswith('"') else '}'
+                                    repaired += '}'
                                 try:
                                     return json.loads(repaired)
                                 except Exception:
                                     pass
         except Exception as e:
             t1 = time.time() - t0
-            logger.warning(f"Ollama local LLM query failed after {t1:.2f} seconds: {e}")
+            logger.warning(f"Ollama local LLM query failed/timed out after {t1:.2f} seconds: {e}")
+        return None
         return None
 
     def _query_gemini(self, prompt: str) -> Optional[Dict[str, Any]]:
@@ -259,7 +316,7 @@ OUTPUT FORMAT (JSON only):
         sif_prob = sif_result.get("probability", 0.0)
         is_sif = sif_result.get("is_sif", sif_prob >= sif_result.get("threshold", 0.30))
         risk_tier = sif_result.get("risk_tier", "LOW_POTENTIAL_INCIDENT")
-        triggered_rules = lsr_result.get("triggered_rules", [])
+        triggered_rules = sorted(lsr_result.get("triggered_rules", []))
 
         # Priority determination
         if is_sif or risk_tier == "CRITICAL_SIF_PRECURSOR":
@@ -271,10 +328,28 @@ OUTPUT FORMAT (JSON only):
         else:
             priority = "LOW"
 
+        # Deterministic SHA256 Cache Key Construction
+        raw_key_payload = {
+            "narrative": narrative.strip() if narrative else "",
+            "sif_prob": round(float(sif_prob), 4),
+            "risk_tier": risk_tier,
+            "triggered_rules": triggered_rules,
+            "model_version": self.ollama_model,
+            "min_confidence": self.min_retrieval_confidence
+        }
+        cache_key_str = json.dumps(raw_key_payload, sort_keys=True)
+        cache_key = f"RAG-REC-{hashlib.sha256(cache_key_str.encode('utf-8')).hexdigest()[:16]}"
+
+        # Check Thread-Safe LRU Cache first
+        cached_result = self.recommendation_cache.get(cache_key)
+        if cached_result is not None:
+            logger.info(f"LRU Cache HIT for key [{cache_key}]. Returning safe validated recommendation copy.")
+            return cached_result
+
         # Phase 6: Negative Control Safety Guardrail
         # Minor low-risk events without critical SIF or LSR breaches receive routine housekeeping advice directly
         if priority == "LOW" and not triggered_rules and not is_sif and sif_prob < 0.15:
-            return {
+            low_res = {
                 "grounded": True,
                 "recommendation_status": "GROUNDED",
                 "priority": "LOW",
@@ -309,6 +384,8 @@ OUTPUT FORMAT (JSON only):
                     "removed_recommendations": []
                 }
             }
+            self.recommendation_cache.put(cache_key, low_res)
+            return low_res
 
         # Build context query and retrieve
         query = self.context_builder.build_query(narrative, sif_result, lsr_result)
@@ -384,6 +461,12 @@ OUTPUT FORMAT (JSON only):
         from inference.grounding_validator import GroundingValidator
         validator = GroundingValidator()
         validated_payload = validator.validate_and_filter(raw_payload, ranked_passages)
+
+        # Cache ONLY successful grounded results
+        if validated_payload.get("grounded") is True and validated_payload.get("recommendation_status") == "GROUNDED":
+            self.recommendation_cache.put(cache_key, validated_payload)
+            logger.info(f"LRU Cache STORED for key [{cache_key}]. Validated grounded result cached.")
+
         return validated_payload
 
 
